@@ -96,8 +96,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
+		createItemType(
+			"OrderTrackingEmailProcess",
+			"Order",
+			com.abhrainc.core.jalo.OrderTrackingEmailProcess.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
 		createEnumerationType(
 			"SwatchColorEnum",
+			null
+		);
+	
+		createEnumerationType(
+			"AbhraincOrderStatus",
 			null
 		);
 	
@@ -137,6 +152,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_ApparelSizeVariantProduct_size();
 			
 				single_createattr_ElectronicsColorVariantProduct_color();
+			
+				single_createattr_OrderTrackingEmailProcess_AbhraincOrderStatus();
 			
 
 	}
@@ -244,6 +261,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_OrderTrackingEmailProcess_AbhraincOrderStatus() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"OrderTrackingEmailProcess", 
+					"AbhraincOrderStatus",  
+					null,
+					"AbhraincOrderStatus",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -272,6 +306,19 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				"SILVER",
 				"WHITE",
 				"YELLOW"
+			} )
+		);
+	
+		createEnumerationValues(
+			"AbhraincOrderStatus",
+			true,
+			Arrays.asList( new String[] {
+			
+				"ACCEPTED",
+				"READYFORDISPATCH",
+				"PICKED",
+				"DISPATCHED",
+				"DELIVERED"
 			} )
 		);
 	
@@ -352,6 +399,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 			single_setAttributeProperties_ElectronicsColorVariantProduct_color();
 		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"OrderTrackingEmailProcess",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_OrderTrackingEmailProcess_AbhraincOrderStatus();
+		
 				setDefaultProperties(
 					"GenderList",
 					true,
@@ -368,6 +430,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				setDefaultProperties(
 					"SwatchColorEnum",
+					true,
+					true,
+					null
+				);
+			
+				setDefaultProperties(
+					"AbhraincOrderStatus",
 					true,
 					true,
 					null
@@ -504,6 +573,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								true,
 								true,
 								"VariantAttributeDescriptor",
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_OrderTrackingEmailProcess_AbhraincOrderStatus() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"OrderTrackingEmailProcess", 
+								"AbhraincOrderStatus",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
 								customPropsMap,
 								null
 							);
