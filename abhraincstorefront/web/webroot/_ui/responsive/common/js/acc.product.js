@@ -17,6 +17,7 @@ ACC.product = {
                 inline: true,
                 width: "480px",
                 onComplete: function () {
+
                     $(document).on("click", ".js-product-facet .js-facet-name", function (e) {
                         e.preventDefault();
                         $(".js-product-facet  .js-facet").removeClass("active");
@@ -33,7 +34,6 @@ ACC.product = {
             $("#cboxClose").click();
         });
     },
-
 
     enableAddToCartButton: function () {
         $('.js-enable-btn').each(function () {
@@ -68,7 +68,6 @@ ACC.product = {
             ACC.minicart.updateMiniCartDisplay();
         }
         var titleHeader = $('#addToCartTitle').html();
-
         ACC.colorbox.open(titleHeader, {
             html: cartResult.addToCartLayer,
             width: "460px"
@@ -76,12 +75,10 @@ ACC.product = {
 
         var productCode = $('[name=productCodePost]', formElement).val();
         var quantityField = $('[name=qty]', formElement).val();
-
         var quantity = 1;
         if (quantityField != undefined) {
             quantity = quantityField;
         }
-
         var cartAnalyticsData = cartResult.cartAnalyticsData;
 
         var cartData = {
