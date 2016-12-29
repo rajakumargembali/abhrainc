@@ -32,11 +32,6 @@
 				<spring:theme code="text.account.order.status.display.${orderData.statusDisplay}" var="orderStatus"/>
 				<div><spring:theme code="text.account.order.orderStatus" text="The order is {0}" arguments="${orderStatus}"/></div>
 			</c:if>
-			
-				Expected Delivery data
-				<div>${deliveryDate}</div>
-
-			
 		</div>
 		<sec:authorize ifAnyGranted="ROLE_ANONYMOUS">
 			<div class="span-24 delivery_stages-guest last">

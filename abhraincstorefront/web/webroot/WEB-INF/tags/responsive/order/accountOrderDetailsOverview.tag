@@ -34,7 +34,4 @@
             <span class="item-value"><format:price priceData="${order.totalPrice}"/></span>
         </ycommerce:testId>
     </div>
-    <br>
-    				EXPECTED DELIVERY DATE
-				<div>${deliveryDate}</div>
 </div>

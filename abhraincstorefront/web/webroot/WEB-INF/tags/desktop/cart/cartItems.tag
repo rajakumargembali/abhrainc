@@ -119,6 +119,7 @@
 									<ycommerce:testId code="cart_product_quantity">
 										<form:label cssClass="skip" path="quantity" for="quantity${entry.entryNumber}"><spring:theme code="basket.page.quantity"/></form:label>
 										<form:input disabled="${not entry.updateable}" type="text" size="1" id="quantity${entry.entryNumber}" class="qty" path="quantity" />
+										<button id="updatecart" type="button">Add 10</button>
 									</ycommerce:testId>
 									<c:if test="${entry.updateable}" >
 										<ycommerce:testId code="cart_product_updateQuantity">

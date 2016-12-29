@@ -52,7 +52,7 @@
 			Filter used to server file resources by bypassing the other filters.
 		</description>
 		<filter-name>resourceFilter</filter-name>
-		<filter-class>com.abhrainc.storefront.filters.StaticResourceFilter</filter-class>
+		<filter-class>org.commerce.abhrainc.storefront.filters.StaticResourceFilter</filter-class>
 	</filter>
 	
 	<filter>
@@ -119,7 +119,7 @@
 			the platform as parent context. With having the global context set as parent you can access
 			or override beans of the global context and get the 'tenant' scope.
 		</description>
-		<listener-class>com.abhrainc.storefront.filters.HybrisStorefrontContextLoaderListener</listener-class>
+		<listener-class>org.commerce.abhrainc.storefront.filters.HybrisStorefrontContextLoaderListener</listener-class>
 	</listener>
 
 	<listener>

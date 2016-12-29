@@ -351,3 +351,27 @@ a:active {
 	font-weight: bold;
 	margin-left: 10px;
 }
+.offersBannerImg{
+	width:auto;
+	height:auto;
+}
+.offersBannerParagraph{
+	font-weight: bold;
+	margin-right: 5px;
+	color: #0000ff;
+	text-align: center;
+	font-size: 50px;
+	font-family: "Brush Script MT";
+	font-family:"Formal436 BT", "Arial Black", sans-serif
+	
+}
+
+.offerBannerParentDiv{
+	text-align: center;
+}
+
+.offerBannerChildDiv{
+	display: inline-block;
+	top:20px;
+	margin-left: 40px;
+}

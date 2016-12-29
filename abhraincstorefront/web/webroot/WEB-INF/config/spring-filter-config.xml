@@ -28,7 +28,7 @@
 
 	<!-- tenant scoped filter -->
 
-	<bean id="storefrontTenantFilterChain" class="com.abhrainc.storefront.filters.UrlPathFilter" >
+	<bean id="storefrontTenantFilterChain" class="org.commerce.abhrainc.storefront.filters.UrlPathFilter" >
 		<property name="defaultFilter" ref="storefrontTenantDefaultFilterChain"/>
 		<property name="urlPathHelper">
 			<bean class="org.springframework.web.util.UrlPathHelper"/>
@@ -101,7 +101,7 @@
 		</constructor-arg>
 	</bean>
 
-	<bean id="urlEncoderFilter" class="com.abhrainc.storefront.filters.UrlEncoderFilter" >
+	<bean id="urlEncoderFilter" class="org.commerce.abhrainc.storefront.filters.UrlEncoderFilter" >
 		<property name="urlEncoderFacade" ref="urlEncoderFacade"/>
 		<property name="sessionService" ref="sessionService"/>
 	</bean>
@@ -110,13 +110,13 @@
 		<property name="sessionService" ref="sessionService"/>
 	</bean>
 
-	<bean id="addOnDevelopmentFilter" class="com.abhrainc.storefront.filters.AcceleratorAddOnFilter" >
+	<bean id="addOnDevelopmentFilter" class="org.commerce.abhrainc.storefront.filters.AcceleratorAddOnFilter" >
 		<property name="configurationService" ref="configurationService"/>
 	</bean>
 
-	<bean id="requestLoggerFilter" class="com.abhrainc.storefront.filters.RequestLoggerFilter"/>
+	<bean id="requestLoggerFilter" class="org.commerce.abhrainc.storefront.filters.RequestLoggerFilter"/>
 
-	<bean id="cmsSiteFilter" class="com.abhrainc.storefront.filters.cms.CMSSiteFilter" >
+	<bean id="cmsSiteFilter" class="org.commerce.abhrainc.storefront.filters.cms.CMSSiteFilter" >
 		<property name="previewDataModelUrlResolver" ref="previewDataModelUrlResolver"/>
 		<property name="cmsSiteService" ref="cmsSiteService"/>
 		<property name="cmsPreviewService" ref="cmsPreviewService"/>
@@ -137,13 +137,13 @@
 		<ref bean="SiteChannel.B2C"/>
 	</util:set>
 
-	<bean id="storefrontFilter" class="com.abhrainc.storefront.filters.StorefrontFilter" >
+	<bean id="storefrontFilter" class="org.commerce.abhrainc.storefront.filters.StorefrontFilter" >
 		<property name="storeSessionFacade" ref="storeSessionFacade"/>
 		<property name="browseHistory" ref="browseHistory"/>
 		<property name="cookieGenerator" ref="sessionCookieGenerator"/>
 	</bean>
 	
-	<bean id="cartRestorationFilter" class="com.abhrainc.storefront.filters.CartRestorationFilter" >
+	<bean id="cartRestorationFilter" class="org.commerce.abhrainc.storefront.filters.CartRestorationFilter" >
 		<property name="baseSiteService" ref="baseSiteService"/>
 		<property name="cartService" ref="cartService"/>
 		<property name="cartFacade" ref="cartFacade"/>
@@ -152,17 +152,17 @@
 		<property name="sessionService" ref="sessionService"/>	
 	</bean>
 
-	<bean id="anonymousCheckoutFilter" class="com.abhrainc.storefront.filters.AnonymousCheckoutFilter" >
+	<bean id="anonymousCheckoutFilter" class="org.commerce.abhrainc.storefront.filters.AnonymousCheckoutFilter" >
 		<property name="guestCheckoutCartCleanStrategy"  ref="guestCheckoutCartCleanStrategy" />
 	</bean>
 
-	<bean id="customerLocationRestorationFilter" class="com.abhrainc.storefront.filters.CustomerLocationRestorationFilter" >
+	<bean id="customerLocationRestorationFilter" class="org.commerce.abhrainc.storefront.filters.CustomerLocationRestorationFilter" >
 		<property name="customerLocationFacade" ref="customerLocationFacade"/>
 		<property name="customerLocationCookieGenerator" ref="customerLocationCookieGenerator"/>
 	</bean>
 
 	<alias name="defaultSessionCookieGenerator" alias="sessionCookieGenerator"/>
-	<bean id="defaultSessionCookieGenerator" class="com.abhrainc.storefront.security.cookie.EnhancedCookieGenerator" >
+	<bean id="defaultSessionCookieGenerator" class="org.commerce.abhrainc.storefront.security.cookie.EnhancedCookieGenerator" >
 		<property name="cookieSecure" value="true"/>
 		<property name="cookieName" value="JSESSIONID"/>
 		<property name="cookieMaxAge" value="-1"/>
@@ -171,7 +171,7 @@
 	</bean>
 	
 	<alias name="defaultCartRestoreCookieGenerator" alias="cartRestoreCookieGenerator"/>
-	<bean id="defaultCartRestoreCookieGenerator" class="com.abhrainc.storefront.security.cookie.CartRestoreCookieGenerator" >
+	<bean id="defaultCartRestoreCookieGenerator" class="org.commerce.abhrainc.storefront.security.cookie.CartRestoreCookieGenerator" >
 		<property name="cookieSecure" value="true"/>
 		<property name="cookieMaxAge" value="360000000"/>
 		<property name="useDefaultPath" value="false"/>
@@ -180,7 +180,7 @@
 	</bean>
 
 	<alias name="defaultCustomerLocationCookieGenerator" alias="customerLocationCookieGenerator"/>
-	<bean id="defaultCustomerLocationCookieGenerator" class="com.abhrainc.storefront.security.cookie.CustomerLocationCookieGenerator" >
+	<bean id="defaultCustomerLocationCookieGenerator" class="org.commerce.abhrainc.storefront.security.cookie.CustomerLocationCookieGenerator" >
 		<property name="cookieSecure" value="true"/>
 		<property name="cookieMaxAge" value="360000000"/>
 		<property name="useDefaultPath" value="false"/>
@@ -189,24 +189,24 @@
 	</bean>
 
 	<!-- BTG filters -->
-	<bean id="abstractBtgFilter" class="com.abhrainc.storefront.filters.btg.AbstractBtgFilter" abstract="true" >
+	<bean id="abstractBtgFilter" class="org.commerce.abhrainc.storefront.filters.btg.AbstractBtgFilter" abstract="true" >
 		<property name="eventService" ref="eventService"/>
 		<property name="siteConfigService" ref="siteConfigService"/>
 	</bean>
 
-	<bean id="refererHeaderBtgFilter" class="com.abhrainc.storefront.filters.btg.RefererHeaderBtgFilter" parent="abstractBtgFilter"/>
+	<bean id="refererHeaderBtgFilter" class="org.commerce.abhrainc.storefront.filters.btg.RefererHeaderBtgFilter" parent="abstractBtgFilter"/>
 
-	<bean id="requestParamsBtgFilter" class="com.abhrainc.storefront.filters.btg.RequestParamsBtgFilter" parent="abstractBtgFilter"/>
+	<bean id="requestParamsBtgFilter" class="org.commerce.abhrainc.storefront.filters.btg.RequestParamsBtgFilter" parent="abstractBtgFilter"/>
 
-	<bean id="productVisitedBtgFilter" class="com.abhrainc.storefront.filters.btg.ProductVisitedBtgFilter" parent="abstractBtgFilter">
+	<bean id="productVisitedBtgFilter" class="org.commerce.abhrainc.storefront.filters.btg.ProductVisitedBtgFilter" parent="abstractBtgFilter">
 		<property name="pkResolvingStrategy" ref="productPkResolvingStrategy"/>
 	</bean>
 
-	<bean id="categoryVisitedBtgFilter" class="com.abhrainc.storefront.filters.btg.CategoryVisitedBtgFilter" parent="abstractBtgFilter">
+	<bean id="categoryVisitedBtgFilter" class="org.commerce.abhrainc.storefront.filters.btg.CategoryVisitedBtgFilter" parent="abstractBtgFilter">
 		<property name="pkResolvingStrategy" ref="categoryPkResolvingStrategy"/>
 	</bean>
 
-	<bean id="btgSegmentFilter" class="com.abhrainc.storefront.filters.btg.BTGSegmentFilter" >
+	<bean id="btgSegmentFilter" class="org.commerce.abhrainc.storefront.filters.btg.BTGSegmentFilter" >
 		<property name="btgSegmentStrategy" ref="btgSegmentStrategy"/>
 	</bean>
 

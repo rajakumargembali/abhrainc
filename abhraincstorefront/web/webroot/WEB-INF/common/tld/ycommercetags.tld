@@ -11,7 +11,7 @@
 
 	<tag>
 		<name>testId</name>
-		<tag-class>com.abhrainc.storefront.tags.TestIdTag</tag-class>
+		<tag-class>org.commerce.abhrainc.storefront.tags.TestIdTag</tag-class>
 		<body-content>scriptless</body-content>
 		<info>Render a text id wrapper</info>
 		<attribute>

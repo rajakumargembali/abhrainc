@@ -21,25 +21,25 @@
            
     <context:annotation-config/>
 
-	<bean id="productPkResolvingStrategy" class="com.abhrainc.storefront.filters.btg.support.impl.ProductPkResolvingStrategy" >
+	<bean id="productPkResolvingStrategy" class="org.commerce.abhrainc.storefront.filters.btg.support.impl.ProductPkResolvingStrategy" >
 		<property name="urlParsingStrategy" ref="productUrlParsingStrategy" />
 		<property name="productService" ref="productService" />
 	</bean>
 
-	<bean id="productUrlParsingStrategy" class="com.abhrainc.storefront.filters.btg.support.impl.DefaultUrlParsingStrategy" >
+	<bean id="productUrlParsingStrategy" class="org.commerce.abhrainc.storefront.filters.btg.support.impl.DefaultUrlParsingStrategy" >
 		<property name="regex" value="^/.+/p/(\w+)$" />
 	</bean>
 
-	<bean id="categoryPkResolvingStrategy" class="com.abhrainc.storefront.filters.btg.support.impl.CategoryPkResolvingStrategy" >
+	<bean id="categoryPkResolvingStrategy" class="org.commerce.abhrainc.storefront.filters.btg.support.impl.CategoryPkResolvingStrategy" >
 		<property name="urlParsingStrategy" ref="categoryUrlParsingStrategy" />
 		<property name="categoryService" ref="commerceCategoryService" />
 	</bean>
-	<bean id="categoryUrlParsingStrategy" class="com.abhrainc.storefront.filters.btg.support.impl.DefaultUrlParsingStrategy" >
+	<bean id="categoryUrlParsingStrategy" class="org.commerce.abhrainc.storefront.filters.btg.support.impl.DefaultUrlParsingStrategy" >
 		<property name="regex" value="^/.+/c/(\w+)$" />
 	</bean>
 
 	<alias name="defaultBTGSegmentStrategy" alias="btgSegmentStrategy" />
-	<bean id="defaultBTGSegmentStrategy" class="com.abhrainc.storefront.filters.btg.support.impl.DefaultBTGSegmentStrategy" >
+	<bean id="defaultBTGSegmentStrategy" class="org.commerce.abhrainc.storefront.filters.btg.support.impl.DefaultBTGSegmentStrategy" >
 		<property name="btgEvaluationService" ref="btgEvaluationService"/>
 		<property name="btgResultService" ref="btgResultService"/>
 		<property name="cmsSiteService" ref="cmsSiteService"/>
