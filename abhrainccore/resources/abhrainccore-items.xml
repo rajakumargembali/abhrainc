@@ -35,6 +35,15 @@
 			<value code="WHITE"/>
 			<value code="YELLOW"/>
 		</enumtype>
+		
+			<enumtype generate="true" code="AbhraincOrderStatus" autocreate="true" dynamic="true">
+			<value code="ACCEPTED"/>
+			<value code="READYFORDISPATCH"/>
+			<value code="PICKED"/>
+			<value code="DISPATCHED"/>
+			<value code="DELIVERED"/>
+		</enumtype>
+		
 	</enumtypes>
 
 	<itemtypes>
@@ -126,6 +135,16 @@
 					</attribute>
 				</attributes>
 			</itemtype>
+			
+			<itemtype code = "OrderTrackingEmailProcess" extends="Order" autocreate="true"  generate="true"
+			 jaloclass="com.abhrainc.core.jalo.OrderTrackingEmailProcess">
+			<attributes>
+			<attribute qualifier="AbhraincOrderStatus" type="AbhraincOrderStatus">
+				<description>AbhraincOrderStatus</description>
+				<persistence type="property" />
+			</attribute>
+		</attributes>
+			</itemtype> 
 		</typegroup>
 
 	</itemtypes>

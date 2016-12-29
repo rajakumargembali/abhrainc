@@ -436,4 +436,17 @@
 		<property name="rootCategoryCode" value="categories"/>
 	</bean>
 	
+	
+	<bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController" autowire="byName"/>
+	
+	<alias name="abhraProductDAO" alias="productAbhraDao"/>
+	<bean id="abhraProductDAO" class="com.abhrainc.core.dao.impl.ProductAbhraDaoImpl">
+	</bean>
+	
+	
+	<alias name="abhraProductService" alias="productAbhraService"/>
+	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
+		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>
+		
+		
 </beans>
