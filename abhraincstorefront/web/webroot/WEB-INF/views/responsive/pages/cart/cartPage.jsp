@@ -30,8 +30,6 @@
             <cms:pageSlot position="TopContent" var="feature">
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
             </cms:pageSlot>
-            <button id="updatecart" type="button">Update</button>
-             	 
 		</div>
 
 	   <c:if test="${not empty cartData.entries}">
@@ -65,7 +63,6 @@
 					<cms:pageSlot position="EmptyCartMiddleContent" var="feature">
 						<cms:component component="${feature}" element="div" class="yComponentWrapper"/>
 					</cms:pageSlot>
-					
 				</div>
 			</div>
 		</c:if>

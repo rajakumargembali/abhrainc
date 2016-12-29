@@ -24,7 +24,7 @@
 		
 	<context:annotation-config/>
 
-	<context:component-scan  base-package="org.commerce.abhrainc.storefront.controllers.pages.checkout" scope-resolver="de.hybris.platform.spring.IgnoreTenantScopeMetadataResolver" />
+	<context:component-scan  base-package="com.abhrainc.storefront.controllers.pages.checkout" scope-resolver="de.hybris.platform.spring.IgnoreTenantScopeMetadataResolver" />
 	
 	<!-- Checkout Steps -->
 
@@ -307,18 +307,18 @@
 		<property name="checkoutFacade" ref="checkoutFacade"/>
 	</bean>
 
-	<bean id="defaultMultiStepCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.DefaultMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="deliveryAddressCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.DefaultDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="deliveryMethodCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.DefaultDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultPaymentMethodCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.DefaultPaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultPickupCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.DefaultPickupCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultSummaryCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.DefaultSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultMultiStepCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.DefaultMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="deliveryAddressCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.DefaultDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="deliveryMethodCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.DefaultDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultPaymentMethodCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.DefaultPaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultPickupCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.DefaultPickupCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultSummaryCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.DefaultSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
 
-	<bean id="defaultResponsiveMultiStepCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsiveDeliveryAddressCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsiveDeliveryMethodCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsivePaymentMethodCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.ResponsivePaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	<bean id="defaultResponsiveSummaryCheckoutValidator" class="org.commerce.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsiveMultiStepCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveMultiStepCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsiveDeliveryAddressCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveDeliveryAddressCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsiveDeliveryMethodCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsivePaymentMethodCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.ResponsivePaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
+	<bean id="defaultResponsiveSummaryCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
 	
 	<!--Validation-->
 

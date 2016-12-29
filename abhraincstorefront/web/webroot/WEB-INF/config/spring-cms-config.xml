@@ -31,7 +31,7 @@
 	<bean id="defaultRequestContextData" class="de.hybris.platform.acceleratorservices.data.RequestContextData" scope="request"/>
 
 	<!-- Converter that creates the CMS Restriction Data -->
-	<bean id="requestContextRestrictionConverter" class="org.commerce.abhrainc.storefront.util.RequestContextRestrictionConverter" >
+	<bean id="requestContextRestrictionConverter" class="com.abhrainc.storefront.util.RequestContextRestrictionConverter" >
 		<property name="cmsDataFactory" ref="cmsDataFactory"/>
 	</bean>
 
@@ -39,7 +39,7 @@
 	<!-- CMS Component Renderers -->
 
 	<alias name="defaultCMSLinkComponentRenderer" alias="cmsLinkComponentRenderer"/>
-	<bean id="defaultCMSLinkComponentRenderer" class="org.commerce.abhrainc.storefront.renderer.CMSLinkComponentRenderer" >
+	<bean id="defaultCMSLinkComponentRenderer" class="com.abhrainc.storefront.renderer.CMSLinkComponentRenderer" >
 		<property name="categoryUrlConverter" ref="categoryUrlConverter"/>
 		<property name="productUrlConverter" ref="productUrlConverter"/>
 	</bean>

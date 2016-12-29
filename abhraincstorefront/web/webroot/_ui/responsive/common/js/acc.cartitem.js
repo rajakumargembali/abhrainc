@@ -8,18 +8,7 @@ ACC.cartitem = {
 
 	bindCartItem: function ()
 	{
-		
-		$('#updatecartcount').on("click", function (){
-			
-			var ele = $('.update-entry-quantity-input');
-			var eleval = ele.val();
-			if(eleval !== null){
-				var updatevalue = parseInt(eleval) + 10;
-				ele.attr("value",updatevalue);
-				ele.val(updatevalue)
-			}
-		});
-		
+
 		$('.remove-entry-button').on("click", function ()
 		{
 			var entryNumber = $(this).attr('id').split("_")
@@ -36,23 +25,19 @@ ACC.cartitem = {
 			form.submit();
 		});
 
-		$('#updatecart').on("click", function (e)
+		$('.update-entry-quantity-input').on("blur", function (e)
 		{
-			var ele = $('.update-entry-quantity-input');
-			ACC.cartitem.handleUpdateQuantity(ele, e);
-			//alert("12");
+			ACC.cartitem.handleUpdateQuantity(this, e);
 
-		})
-//		.on("keyup", function (e)
-//		{
-//			return ACC.cartitem.handleKeyEvent(this, e);
-//			alert("13");
-//		}
-//		).on("keydown", function (e)
-//		{
-//			return ACC.cartitem.handleKeyEvent(this, e);
-//		}
-//		);
+		}).on("keyup", function (e)
+		{
+			return ACC.cartitem.handleKeyEvent(this, e);
+		}
+		).on("keydown", function (e)
+		{
+			return ACC.cartitem.handleKeyEvent(this, e);
+		}
+		);
 	},
 
 	handleKeyEvent: function (elementRef, event)
@@ -63,7 +48,6 @@ ACC.cartitem = {
 		{
 			ACC.cartitem.submitTriggered = ACC.cartitem.handleUpdateQuantity(elementRef, event);
 			return ACC.cartitem.submitTriggered;
-			alert("1");
 		}
 		else 
 		{
@@ -84,12 +68,10 @@ ACC.cartitem = {
 		var productCode = form.find('input[name=productCode]').val();
 		var initialCartQuantity = form.find('input[name=initialQuantity]').val();
 		var newCartQuantity = form.find('input[name=quantity]').val();
-		console.log(entryNumber);
 
 		if(initialCartQuantity != newCartQuantity)
 		{
 			ACC.track.trackUpdateCart(productCode, initialCartQuantity, newCartQuantity);
-			//alert("dasda");
 			form.submit();
 
 			return true;

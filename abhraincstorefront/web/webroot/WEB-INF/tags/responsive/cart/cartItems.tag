@@ -173,7 +173,6 @@
                                             <form:input cssClass="form-control update-entry-quantity-input" disabled="${not entry.updateable}" type="text" size="1" id="quantity_${loop.index}" path="quantity" />
                                         </ycommerce:testId>
                                     </form:form>
-                                    <button id="updatecartcount" type="button">Add 10</button>
                                 </c:when>
                                 <c:otherwise>
                                     <c:url value="/cart/updateMultiD" var="cartUpdateMultiDFormAction" />
@@ -188,8 +187,6 @@
                                         <ycommerce:testId code="cart_product_updateQuantity">
                                             <div id="QuantityProduct${loop.index}" class="updateQuantityProduct"></div>
                                         </ycommerce:testId>
-                                         
-                                        
                                     </form:form>
                                 </c:otherwise>
                             </c:choose>

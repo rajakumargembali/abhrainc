@@ -13,7 +13,8 @@
 --><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
 	<extension abstractclassprefix="Generated" classprefix="AbhraincStorefront" name="abhraincstorefront">
-		<requires-extension name="promotionenginesamplesaddon"/>
+		<requires-extension name="captchaaddon"/>
+<requires-extension name="promotionenginesamplesaddon"/>
 <requires-extension name="liveeditaddon"/>
 <requires-extension name="btg"/>
 		<requires-extension name="acceleratorstorefrontcommons"/>

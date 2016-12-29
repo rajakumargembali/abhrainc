@@ -16,8 +16,7 @@ ACC.cart = {
                 html: $(".js-help-popup-content").html(),
                 width: "300px"
             });
-        });
-        $('#updatecart').
+        })
     },
 
     cartRestoration: function () {
@@ -35,8 +34,7 @@ ACC.cart = {
     },
 
     bindMultiDEntryRemoval: function () {
-        $('#updatecart').on("click", '.submitRemoveProductMultiD', function () {
-        	alert("ghjj");
+        $(document).on("click", '.submitRemoveProductMultiD', function () {
             var itemIndex = $(this).data("index");
             var $form = $('#updateCartForm' + itemIndex);
             var initialCartQuantity = $form.find('input[name=initialQuantity]');
