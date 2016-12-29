@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 29, 2016 5:00:12 PM                     ---
+ * --- Generated at 29 Dec, 2016 5:36:44 PM                     ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.constants;
@@ -17,10 +17,12 @@ public class GeneratedAbhraincCoreConstants
 	public static class TC
 	{
 		public static final String ABHRAINCORDER = "AbhraincOrder".intern();
+		public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
 		public static final String APPARELPRODUCT = "ApparelProduct".intern();
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
+		public static final String ORDERTRACKINGEMAILPROCESS = "OrderTrackingEmailProcess".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}
 	public static class Attributes
@@ -29,6 +31,14 @@ public class GeneratedAbhraincCoreConstants
 	}
 	public static class Enumerations
 	{
+		public static class AbhraincOrderStatus
+		{
+			public static final String ACCEPTED = "ACCEPTED".intern();
+			public static final String READYFORDISPATCH = "READYFORDISPATCH".intern();
+			public static final String PICKED = "PICKED".intern();
+			public static final String DISPATCHED = "DISPATCHED".intern();
+			public static final String DELIVERED = "DELIVERED".intern();
+		}
 		public static class SwatchColorEnum
 		{
 			public static final String BLACK = "BLACK".intern();

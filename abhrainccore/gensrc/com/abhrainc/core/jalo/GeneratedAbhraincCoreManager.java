@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Dec 29, 2016 5:00:12 PM                     ---
+ * --- Generated at 29 Dec, 2016 5:36:44 PM                     ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.jalo;
@@ -12,6 +12,7 @@ import com.abhrainc.core.jalo.ApparelProduct;
 import com.abhrainc.core.jalo.ApparelSizeVariantProduct;
 import com.abhrainc.core.jalo.ApparelStyleVariantProduct;
 import com.abhrainc.core.jalo.ElectronicsColorVariantProduct;
+import com.abhrainc.core.jalo.OrderTrackingEmailProcess;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
@@ -175,6 +176,32 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public OrderTrackingEmailProcess createOrderTrackingEmailProcess(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ORDERTRACKINGEMAILPROCESS );
+			return (OrderTrackingEmailProcess)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating OrderTrackingEmailProcess : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public OrderTrackingEmailProcess createOrderTrackingEmailProcess(final Map attributeValues)
+	{
+		return createOrderTrackingEmailProcess( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override
