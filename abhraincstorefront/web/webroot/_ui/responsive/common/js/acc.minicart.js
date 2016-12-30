@@ -32,7 +32,8 @@ ACC.minicart = {
             url: miniCartRefreshUrl,
             cache: false,
             type: 'GET',
-            success: function(jsonData){
+            success: function(data){
+                var jsonData = $.parseJSON(data);
                 $(".js-mini-cart-link .js-mini-cart-count").html('<span class="nav-items-total">' + jsonData.miniCartCount + '<span class="items-desktop hidden-xs hidden-sm">' + ' ' + cartItems + '</span>' + '</span>' );
                 $(".js-mini-cart-link .js-mini-cart-price").html(jsonData.miniCartPrice);
             }

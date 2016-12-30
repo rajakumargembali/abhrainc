@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <application xmlns="http://www.zeroturnaround.com">
   <classpath>
     <dir name="C:\works1\hybris-6.0\hybris\bin\custom\abhrainc\abhrainccore/hmc/classes" />
   </classpath>
 </application>
+=======
+<application xmlns="http://www.zeroturnaround.com">
+  <classpath>
+    <dir name="C:\hyb_demo\hybris\bin\custom\abhrainc\abhrainccore/hmc/classes" />
+  </classpath>
+</application>
+>>>>>>> 089315389deecf9afb53abf8569d7a28af63f92f
