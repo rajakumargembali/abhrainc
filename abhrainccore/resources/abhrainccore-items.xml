@@ -125,8 +125,7 @@
 					</attribute>
 				</attributes>
 			</itemtype>
-<<<<<<< HEAD
-=======
+
 			
 			<itemtype code = "Order" autocreate="false"  generate="false">
 			<attributes>
@@ -145,7 +144,7 @@
 			</attribute>
 		</attributes>
 			</itemtype> 
->>>>>>> sujan
+
 		</typegroup>
 
 	</itemtypes>
