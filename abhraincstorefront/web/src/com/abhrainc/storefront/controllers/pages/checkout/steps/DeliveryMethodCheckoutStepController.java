@@ -88,22 +88,28 @@ public class DeliveryMethodCheckoutStepController extends AbstractCheckoutStepCo
 		{
 
 			BigDecimal value = null;
+			String price = "$0.00";
+
 
 			if (cartData.getTotalPrice().getValue().intValue() <= 50)
 			{
 				value = new BigDecimal(5);
+				price = "$5.00";
 			}
 			else if (cartData.getTotalPrice().getValue().intValue() > 50 && cartData.getTotalPrice().getValue().intValue() <= 100)
 			{
 				value = new BigDecimal(2);
+				price = "$2.00";
 			}
 			else
 			{
 				value = new BigDecimal(0);
+				price = "$0.00";
 			}
 			final PriceData pd = cartData.getDeliveryCost();
 			pd.setValue(value);
-
+			getCartFacade().getSessionCart().setDeliveryCost(pd);
+			pd.setFormattedValue(price);
 			cartData.setDeliveryCost(pd);
 		}
 
