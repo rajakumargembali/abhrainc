@@ -1,7 +1,11 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
+=======
+ * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
+>>>>>>> sujan
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.constants;
@@ -16,6 +20,11 @@ public class GeneratedAbhraincCoreConstants
 	public static final String EXTENSIONNAME = "abhrainccore";
 	public static class TC
 	{
+<<<<<<< HEAD
+=======
+		public static final String ABHRAINCORDER = "AbhraincOrder".intern();
+		public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
+>>>>>>> sujan
 		public static final String APPARELPRODUCT = "ApparelProduct".intern();
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
@@ -26,11 +35,27 @@ public class GeneratedAbhraincCoreConstants
 	{
 		public static class Order
 		{
+<<<<<<< HEAD
 			public static final String EXPECTEDDELIVERYDATE = "expectedDeliveryDate".intern();
+=======
+			public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
+		}
+		public static class User
+		{
+			public static final String ISEMAILACTIVATED = "isEmailActivated".intern();
+>>>>>>> sujan
 		}
 	}
 	public static class Enumerations
 	{
+		public static class AbhraincOrderStatus
+		{
+			public static final String ACCEPTED = "ACCEPTED".intern();
+			public static final String READYFORDISPATCH = "READYFORDISPATCH".intern();
+			public static final String PICKED = "PICKED".intern();
+			public static final String DISPATCHED = "DISPATCHED".intern();
+			public static final String DELIVERED = "DELIVERED".intern();
+		}
 		public static class SwatchColorEnum
 		{
 			public static final String BLACK = "BLACK".intern();

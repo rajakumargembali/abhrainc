@@ -360,4 +360,12 @@
 	<bean id="mapMergeBeanPostProcessor"
 	      class="de.hybris.platform.commerceservices.spring.config.MapMergeDirectiveBeanPostProcessor"/>
 
+<bean id="emailActiveController" class="com.abhrainc.storefront.controllers.pages.EmailActiveController">
+<!-- <property name="abhraIncFacadeService" ref="abhraIncFacadeServiceImpl"></property> -->
+</bean>
+<alias name="abhraIncFacadeServiceImpl" alias="abhraIncFacadeService"/>
+<bean id="abhraIncFacadeServiceImpl" class="com.abhrainc.facades.service.impl.AbhraIncFacadeServiceImpl"></bean>
+<bean id ="sendingEmails" class="com.abhrainc.storefront.controllers.pages.SendingEmails">
+</bean>
+
 </beans>

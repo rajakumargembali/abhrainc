@@ -19,7 +19,6 @@
 <requires-extension name="btg"/>
 		<requires-extension name="acceleratorstorefrontcommons"/>
 		<requires-extension name="abhraincfacades"/>
-
 		<webmodule jspcompile="false" webroot="/abhraincstorefront"/>
 			
 		

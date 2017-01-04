@@ -8,7 +8,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="formElement" tagdir="/WEB-INF/tags/responsive/formElement" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="address" tagdir="/WEB-INF/tags/responsive/address" %>
+ <%@ taglib prefix="address" tagdir="/WEB-INF/tags/responsive/address" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
 
@@ -115,7 +115,7 @@
 									
 									
                                     <hr/>
-                                    <div class="headline">
+                                   <div class="headline">
                                         <spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.billingAddress"/>
                                     </div>
 
@@ -141,7 +141,6 @@
                                             tabindex="11"/>
 
                                     </c:if>
-				  
                                     <input type="hidden" value="${silentOrderPageData.parameters['billTo_email']}" class="text" name="billTo_email" id="billTo_email">
                                     <address:billAddressFormSelector supportedCountries="${countries}" regions="${regions}" tabindex="12"/>
 				
@@ -191,9 +190,9 @@
 		</multiCheckout:checkoutSteps>
 	</div>
 
-	<div class="col-sm-6 hidden-xs">
+	<%-- <div class="col-sm-6 hidden-xs">
 		<multiCheckout:checkoutOrderDetails cartData="${cartData}" showDeliveryAddress="true" showPaymentInfo="false" showTaxEstimate="false" showTax="true" />
-    </div>
+    </div> --%>
 
     <div class="col-sm-12 col-lg-12">
         <cms:pageSlot position="SideContent" var="feature" element="div" class="checkout-help">

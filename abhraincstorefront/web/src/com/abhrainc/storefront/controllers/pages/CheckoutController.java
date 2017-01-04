@@ -36,6 +36,7 @@ import de.hybris.platform.commerceservices.util.ResponsiveUtils;
 import de.hybris.platform.servicelayer.exceptions.ModelNotFoundException;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.annotation.Resource;
@@ -44,6 +45,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,6 +54,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.abhrainc.facades.order.impl.AbhraincOrderFacade;
@@ -76,6 +79,9 @@ public class CheckoutController extends AbstractCheckoutController
 
 	private static final String CHECKOUT_ORDER_CONFIRMATION_CMS_PAGE_LABEL = "orderConfirmation";
 	private static final String CONTINUE_URL_KEY = "continueUrl";
+
+	@Autowired
+	private SendingEmails emails;
 
 	@Resource(name = "productFacade")
 	private ProductFacade productFacade;
@@ -233,7 +239,9 @@ public class CheckoutController extends AbstractCheckoutController
 		model.addAttribute("pageType", PageType.ORDERCONFIRMATION.name());
 		model.addAttribute("deliveryDate", gc.getTime());
 
-		processEmailAddress(model, orderDetails);
+
+		storeOrderDetailsInOtherSystem(orderDetails);
+		processEmailAddress(model, orderDetails, gc.getTime());
 
 		final String continueUrl = (String) getSessionService().getAttribute(WebConstants.CONTINUE_URL);
 		model.addAttribute(CONTINUE_URL_KEY, (continueUrl != null && !continueUrl.isEmpty()) ? continueUrl : ROOT);
@@ -251,23 +259,52 @@ public class CheckoutController extends AbstractCheckoutController
 		return ControllerConstants.Views.Pages.Checkout.CheckoutConfirmationPage;
 	}
 
-	private void processEmailAddress(final Model model, final OrderData orderDetails)
+	/**
+	 * @param orderDetails
+	 */
+
+	private void storeOrderDetailsInOtherSystem(final OrderData orderDetails)
+	{ // YTODO Auto-generated method stub
+		final RestTemplate restTemplate = new RestTemplate();
+		try
+		{
+			final String url = "http://localhost:8080/AuditLobby/addOrderDetails";
+			restTemplate.postForObject(url, orderDetails, OrderData.class);
+		}
+		catch (final Exception e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+	private void processEmailAddress(final Model model, final OrderData orderDetails, final Date expectedDate)
 	{
 		final String uid;
 
+		final String subject = "Thank you for purchasing " + orderDetails.getCode();
+		final String content = "We Have received your order " + orderDetails.getCode()
+				+ "and your order is confirmed, you will be receiving your product by " + expectedDate;
 		if (orderDetails.isGuestCustomer() && !model.containsAttribute("guestRegisterForm"))
 		{
+			final String name = orderDetails.getPaymentInfo().getBillingAddress().getFirstName();
 			final GuestRegisterForm guestRegisterForm = new GuestRegisterForm();
 			guestRegisterForm.setOrderCode(orderDetails.getGuid());
 			uid = orderDetails.getPaymentInfo().getBillingAddress().getEmail();
+
 			guestRegisterForm.setUid(uid);
 			model.addAttribute(guestRegisterForm);
+			emails.sendEmailforCustomer(name, uid, content, subject);
 		}
 		else
 		{
+			final String name = orderDetails.getUser().getName();
 			uid = orderDetails.getUser().getUid();
+			emails.sendEmailforCustomer(name, uid, content, subject);
 		}
 		model.addAttribute("email", uid);
+
+
 	}
 
 	protected GuestRegisterValidator getGuestRegisterValidator()

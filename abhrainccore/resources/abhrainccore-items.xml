@@ -125,6 +125,27 @@
 					</attribute>
 				</attributes>
 			</itemtype>
+<<<<<<< HEAD
+=======
+			
+			<itemtype code = "Order" autocreate="false"  generate="false">
+			<attributes>
+			<attribute qualifier="AbhraincOrderStatus" type="AbhraincOrderStatus">
+				<description>AbhraincOrderStatus</description>
+				<persistence type="property" />
+			</attribute>
+		</attributes>
+			</itemtype> 
+			<itemtype code = "User" autocreate="false"  generate="false">
+			<attributes>
+			<attribute qualifier="isEmailActivated" type="java.lang.Boolean">
+				<description>UserEmailSTATUS</description>
+				<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+				<persistence type="property" />
+			</attribute>
+		</attributes>
+			</itemtype> 
+>>>>>>> sujan
 		</typegroup>
 
 	</itemtypes>

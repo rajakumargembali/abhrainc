@@ -34,6 +34,10 @@
 	
 	<extension name='mediaconversion' />
 	
+	<extension name='acceleratorcms'/>
+	<extension name='acceleratorfacades'/>
+	<extension name='acceleratorservices'/>
+	
 	<!--<extension name='captchaaddon' />-->
 	
   </extensions>

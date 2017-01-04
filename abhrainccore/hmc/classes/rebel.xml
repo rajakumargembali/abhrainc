@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application xmlns="http://www.zeroturnaround.com">
   <classpath>
+<<<<<<< HEAD
     <dir name="C:\Users\anumu\WORKSPACEV\hyb60\hybris\bin\custom\abhrainc\abhrainccore/hmc/classes" />
+=======
+    <dir name="C:\hyb_demo\hybris\bin\custom\abhrainc\abhrainccore/hmc/classes" />
+>>>>>>> sujan
   </classpath>
 </application>

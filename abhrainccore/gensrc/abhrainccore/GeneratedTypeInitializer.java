@@ -47,6 +47,19 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 	
 		createItemType(
+<<<<<<< HEAD
+=======
+			"AbhraincOrder",
+			"Order",
+			com.abhrainc.core.jalo.AbhraincOrder.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
+		createItemType(
+>>>>>>> sujan
 			"ApparelProduct",
 			"Product",
 			com.abhrainc.core.jalo.ApparelProduct.class,
@@ -91,6 +104,14 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			null
 		);
 	
+<<<<<<< HEAD
+=======
+		createEnumerationType(
+			"AbhraincOrderStatus",
+			null
+		);
+	
+>>>>>>> sujan
 		createCollectionType(
 			"GenderList",
 			"Gender",
@@ -116,7 +137,11 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 	
 	
+<<<<<<< HEAD
 				single_createattr_Order_expectedDeliveryDate();
+=======
+				single_createattr_AbhraincOrder_expectedDeliveryDate();
+>>>>>>> sujan
 			
 				single_createattr_ApparelProduct_genders();
 			
@@ -128,17 +153,32 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_ElectronicsColorVariantProduct_color();
 			
+<<<<<<< HEAD
+=======
+				single_createattr_Order_AbhraincOrderStatus();
+			
+				single_createattr_User_isEmailActivated();
+			
+>>>>>>> sujan
 
 	}
 
 	
+<<<<<<< HEAD
 	public void single_createattr_Order_expectedDeliveryDate() throws JaloBusinessException
+=======
+	public void single_createattr_AbhraincOrder_expectedDeliveryDate() throws JaloBusinessException
+>>>>>>> sujan
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
+<<<<<<< HEAD
 					"Order", 
+=======
+					"AbhraincOrder", 
+>>>>>>> sujan
 					"expectedDeliveryDate",  
 					null,
 					"java.util.Date",
@@ -234,6 +274,43 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+<<<<<<< HEAD
+=======
+	public void single_createattr_Order_AbhraincOrderStatus() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Order", 
+					"AbhraincOrderStatus",  
+					null,
+					"AbhraincOrderStatus",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_User_isEmailActivated() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"User", 
+					"isEmailActivated",  
+					null,
+					"java.lang.Boolean",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+>>>>>>> sujan
 
 
 	/**
@@ -265,17 +342,45 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			} )
 		);
 	
+<<<<<<< HEAD
 				{
 				Map customPropsMap = new HashMap();
 				
 				changeMetaType(
 					"Order",
+=======
+		createEnumerationValues(
+			"AbhraincOrderStatus",
+			true,
+			Arrays.asList( new String[] {
+			
+				"ACCEPTED",
+				"READYFORDISPATCH",
+				"PICKED",
+				"DISPATCHED",
+				"DELIVERED"
+			} )
+		);
+	
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"AbhraincOrder",
+					false,
+					true,
+					true,
+>>>>>>> sujan
 					null,
 					customPropsMap
 				);
 				}
 			
+<<<<<<< HEAD
 			single_setAttributeProperties_Order_expectedDeliveryDate();
+=======
+			single_setAttributeProperties_AbhraincOrder_expectedDeliveryDate();
+>>>>>>> sujan
 		
 				{
 				Map customPropsMap = new HashMap();
@@ -339,6 +444,33 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 			single_setAttributeProperties_ElectronicsColorVariantProduct_color();
 		
+<<<<<<< HEAD
+=======
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"Order",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Order_AbhraincOrderStatus();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"User",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_User_isEmailActivated();
+		
+>>>>>>> sujan
 				setDefaultProperties(
 					"GenderList",
 					true,
@@ -360,11 +492,25 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					null
 				);
 			
+<<<<<<< HEAD
+=======
+				setDefaultProperties(
+					"AbhraincOrderStatus",
+					true,
+					true,
+					null
+				);
+			
+>>>>>>> sujan
 	}
 
 
 		
+<<<<<<< HEAD
 						public void single_setAttributeProperties_Order_expectedDeliveryDate() throws JaloBusinessException
+=======
+						public void single_setAttributeProperties_AbhraincOrder_expectedDeliveryDate() throws JaloBusinessException
+>>>>>>> sujan
 						{
 							
 							
@@ -372,7 +518,11 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
+<<<<<<< HEAD
 								"Order", 
+=======
+								"AbhraincOrder", 
+>>>>>>> sujan
 								"expectedDeliveryDate",
 								false, 
 								null,
@@ -431,6 +581,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 						}
 					
 						public void single_setAttributeProperties_ApparelStyleVariantProduct_swatchColors() throws JaloBusinessException
+<<<<<<< HEAD
+=======
 						{
 							
 							
@@ -491,6 +643,82 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								true,
 								true,
 								"VariantAttributeDescriptor",
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Order_AbhraincOrderStatus() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Order", 
+								"AbhraincOrderStatus",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_User_isEmailActivated() throws JaloBusinessException
+>>>>>>> sujan
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"User", 
+								"isEmailActivated",
+								false, 
+<<<<<<< HEAD
+								null,
+								null,
+								null,
+								true,
+								true,
+								"VariantAttributeDescriptor",
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_ElectronicsColorVariantProduct_color() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"ElectronicsColorVariantProduct", 
+								"color",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								"VariantAttributeDescriptor",
+=======
+								java.lang.Boolean.FALSE,
+								"java.lang.Boolean.FALSE",
+								null,
+								true,
+								true,
+								null,
+>>>>>>> sujan
 								customPropsMap,
 								null
 							);
