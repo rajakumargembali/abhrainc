@@ -33,11 +33,15 @@ import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.commerceservices.customer.DuplicateUidException;
 import de.hybris.platform.commerceservices.util.ResponsiveUtils;
+import de.hybris.platform.core.model.order.OrderModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.servicelayer.exceptions.ModelNotFoundException;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -45,7 +49,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,9 +82,6 @@ public class CheckoutController extends AbstractCheckoutController
 
 	private static final String CHECKOUT_ORDER_CONFIRMATION_CMS_PAGE_LABEL = "orderConfirmation";
 	private static final String CONTINUE_URL_KEY = "continueUrl";
-
-	@Autowired
-	private SendingEmails emails;
 
 	@Resource(name = "productFacade")
 	private ProductFacade productFacade;
@@ -142,6 +142,7 @@ public class CheckoutController extends AbstractCheckoutController
 			final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel)
 			throws CMSItemNotFoundException
 	{
+
 		getGuestRegisterValidator().validate(form, bindingResult);
 		return processRegisterGuestUserRequest(form, bindingResult, model, request, response, redirectModel);
 	}
@@ -194,8 +195,8 @@ public class CheckoutController extends AbstractCheckoutController
 	protected String processOrderCode(final String orderCode, final Model model, final HttpServletRequest request)
 			throws CMSItemNotFoundException
 	{
-		final OrderData orderDetails = orderFacade.getOrderDetailsForCode(orderCode);
 
+		final OrderData orderDetails = orderFacade.getOrderDetailsForCode(orderCode);
 
 
 		if (orderDetails.isGuestCustomer() && !StringUtils.substringBefore(orderDetails.getUser().getUid(), "|")
@@ -216,6 +217,8 @@ public class CheckoutController extends AbstractCheckoutController
 		}
 
 
+
+
 		final GregorianCalendar gc = new GregorianCalendar();
 
 		final int year = randBetween(2017, 2018);
@@ -226,9 +229,13 @@ public class CheckoutController extends AbstractCheckoutController
 
 		gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
+<<<<<<< HEAD
 
 
 
+=======
+		saveExpectedDeliveryDate(orderCode, gc.getTime());
+>>>>>>> sujan
 
 		model.addAttribute("orderCode", orderCode);
 		model.addAttribute("orderData", orderDetails);
@@ -240,8 +247,10 @@ public class CheckoutController extends AbstractCheckoutController
 		model.addAttribute("deliveryDate", gc.getTime());
 
 
-		storeOrderDetailsInOtherSystem(orderDetails);
-		processEmailAddress(model, orderDetails, gc.getTime());
+		final OrderModel orderDetail = orderFacade.getOrderDetailForCode(orderDetails.getCode());
+
+		storeOrderDetailsInOtherSystem(orderDetail);
+		processEmailAddress(model, orderDetails);
 
 		final String continueUrl = (String) getSessionService().getAttribute(WebConstants.CONTINUE_URL);
 		model.addAttribute(CONTINUE_URL_KEY, (continueUrl != null && !continueUrl.isEmpty()) ? continueUrl : ROOT);
@@ -260,16 +269,83 @@ public class CheckoutController extends AbstractCheckoutController
 	}
 
 	/**
-	 * @param orderDetails
+	 * @param string
+	 * @param time
+	 */
+	private void saveExpectedDeliveryDate(final String string, final Date time)
+	{
+		// YTODO Auto-generated method stub
+		orderFacade.saveExpectedDeliveryDate(string, time);
+
+	}
+
+	/**
+	 * @param orderDetail
 	 */
 
-	private void storeOrderDetailsInOtherSystem(final OrderData orderDetails)
+	private void storeOrderDetailsInOtherSystem(final OrderModel orderDetail)
 	{ // YTODO Auto-generated method stub
 		final RestTemplate restTemplate = new RestTemplate();
 		try
 		{
 			final String url = "http://localhost:8080/AuditLobby/addOrderDetails";
-			restTemplate.postForObject(url, orderDetails, OrderData.class);
+
+			final HashMap orderData = new HashMap();
+			orderData.put("OrderID", orderDetail.getCode());
+
+			final Set<ConsignmentModel> consignmentModels = orderDetail.getConsignments();
+			for (final ConsignmentModel consignmentModel : consignmentModels)
+			{
+				orderData.put("ConsignmentData", consignmentModel.getStatus());
+
+			}
+
+			if (orderDetail.getDeliveryAddress() != null)
+			{
+				orderData.put("AddressData", orderDetail.getDeliveryAddress());
+			}
+			else
+			{
+				orderData.put("AddressData", orderDetail.getDeliveryAddress());
+			}
+
+			if (orderDetail.getDeliveryCost() != null)
+			{
+				orderData.put("PriceData", orderDetail.getDeliveryCost());
+			}
+			else
+			{
+				orderData.put("PriceData", orderDetail.getDeliveryCost());
+			}
+
+			if (orderDetail.getDeliveryStatus() != null)
+			{
+				orderData.put("DeliveryStatus", orderDetail.getDeliveryStatus());
+			}
+			else
+			{
+				orderData.put("DeliveryStatus", orderDetail.getDeliveryAddress());
+			}
+
+			if (orderDetail.getStatus() != null)
+			{
+				orderData.put("orderStatus", orderDetail.getStatus());
+			}
+			else
+			{
+				orderData.put("orderStatus", orderDetail.getStatus());
+			}
+
+			if (orderDetail.getUser() != null)
+			{
+				orderData.put("PrincipleData", orderDetail.getUser());
+			}
+			else
+			{
+				orderData.put("PrincipleData", orderDetail.getUser());
+			}
+
+			restTemplate.postForObject(url, orderData, HashMap.class);
 		}
 		catch (final Exception e)
 		{
@@ -278,29 +354,31 @@ public class CheckoutController extends AbstractCheckoutController
 
 	}
 
-	private void processEmailAddress(final Model model, final OrderData orderDetails, final Date expectedDate)
+	private void processEmailAddress(final Model model, final OrderData orderDetails)
 	{
 		final String uid;
 
-		final String subject = "Thank you for purchasing " + orderDetails.getCode();
-		final String content = "We Have received your order " + orderDetails.getCode()
-				+ "and your order is confirmed, you will be receiving your product by " + expectedDate;
+		/*
+		 * final String subject = "Thank you for purchasing " + orderDetails.getCode(); final String content =
+		 * "We Have received your order " + orderDetails.getCode() +
+		 * "and your order is confirmed, you will be receiving your product by " + expectedDate;
+		 */
 		if (orderDetails.isGuestCustomer() && !model.containsAttribute("guestRegisterForm"))
 		{
-			final String name = orderDetails.getPaymentInfo().getBillingAddress().getFirstName();
+			//final String name = orderDetails.getPaymentInfo().getBillingAddress().getFirstName();
 			final GuestRegisterForm guestRegisterForm = new GuestRegisterForm();
 			guestRegisterForm.setOrderCode(orderDetails.getGuid());
 			uid = orderDetails.getPaymentInfo().getBillingAddress().getEmail();
 
 			guestRegisterForm.setUid(uid);
 			model.addAttribute(guestRegisterForm);
-			emails.sendEmailforCustomer(name, uid, content, subject);
+			//	emails.sendEmailforCustomer(name, uid, content, subject);
 		}
 		else
 		{
-			final String name = orderDetails.getUser().getName();
+			//final String name = orderDetails.getUser().getName();
 			uid = orderDetails.getUser().getUid();
-			emails.sendEmailforCustomer(name, uid, content, subject);
+			//emails.sendEmailforCustomer(name, uid, content, subject);
 		}
 		model.addAttribute("email", uid);
 

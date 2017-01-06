@@ -3,6 +3,7 @@
  */
 package com.abhrainc.facades.dao.impl;
 
+import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
@@ -43,6 +44,21 @@ public class AbhraIncFacadeDAOimpl implements AbhraIncFacadeDAO
 		 */
 		logger.info("search query" + flexibleSearchService.<UserModel> search(searchQuery).getResult());
 		final List<UserModel> model = flexibleSearchService.<UserModel> search(searchQuery).getResult();
+		return model.get(0);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.abhrainc.facades.dao.AbhraIncFacadeDAO#getOrderDetails(java.lang.String)
+	 */
+	@Override
+	public OrderModel getOrderDetails(final String code)
+	{
+		// YTODO Auto-generated method stub
+		final String query = "select {pk} from {order} where P_CODE = " + "'" + code + "'";
+		final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(query);
+		final List<OrderModel> model = flexibleSearchService.<OrderModel> search(flexibleSearchQuery).getResult();
 		return model.get(0);
 	}
 

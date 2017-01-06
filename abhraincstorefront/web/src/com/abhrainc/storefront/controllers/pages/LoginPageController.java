@@ -29,7 +29,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
@@ -52,9 +51,6 @@ import com.abhrainc.storefront.controllers.ControllerConstants;
 @RequestMapping(value = "/login")
 public class LoginPageController extends AbstractLoginPageController
 {
-
-	@Autowired
-	private SendingEmails emails;
 
 	private static final String FORM_GLOBAL_ERROR = "form.global.error";
 
@@ -158,12 +154,14 @@ public class LoginPageController extends AbstractLoginPageController
 			GlobalMessages.addErrorMessage(model, FORM_GLOBAL_ERROR);
 			return handleRegistrationError(model);
 		}
-		final String content = "<html><body><p>You have signed up to the site, to continue login to our site, "
-				+ "please activate your account by following below link</p>" + "<a href="
-				+ "https://localhost:9002/abhraincstorefront/electronics/en/activateEmail?email=" + form.getEmail()
-				+ "&site=electronics ><h3>Click here</h3></a>" + "</body></html>";
-		final String subject = "Thank you for Interest in the Site";
-		emails.sendEmailforCustomer(form.getFirstName(), form.getEmail(), content, subject);
+		/*
+		 * final String content = "<html><body><p>You have signed up to the site, to continue login to our site, " +
+		 * "please activate your account by following below link</p>" + "<a href=" +
+		 * "https://localhost:9002/abhraincstorefront/electronics/en/activateEmail?email=" + form.getEmail() +
+		 * "&site=electronics ><h3>Click here</h3></a>" + "</body></html>"; final String subject =
+		 * "Thank you for Interest in the Site"; emails.sendEmailforCustomer(form.getFirstName(), form.getEmail(),
+		 * content, subject);
+		 */
 
 		return REDIRECT_PREFIX + getSuccessRedirect(request, response);
 	}

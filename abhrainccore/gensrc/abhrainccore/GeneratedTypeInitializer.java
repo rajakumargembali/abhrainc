@@ -99,15 +99,20 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
-		createEnumerationType(
-			"SwatchColorEnum",
-			null
+		createItemType(
+			"OrderThresholdPercentageDiscount",
+			"OrderPromotion",
+			com.abhrainc.core.jalo.OrderThresholdPercentageDiscount.class,
+			null,
+			false,
+			null,
+			false
 		);
 	
 <<<<<<< HEAD
 =======
 		createEnumerationType(
-			"AbhraincOrderStatus",
+			"SwatchColorEnum",
 			null
 		);
 	
@@ -154,10 +159,29 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_ElectronicsColorVariantProduct_color();
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				single_createattr_Order_AbhraincOrderStatus();
 			
 				single_createattr_User_isEmailActivated();
+			
+>>>>>>> sujan
+=======
+				single_createattr_Consignment_trackingEmailSent();
+			
+				single_createattr_OrderThresholdPercentageDiscount_thresholdTotals();
+			
+				single_createattr_OrderThresholdPercentageDiscount_qualifyingCount();
+			
+				single_createattr_OrderThresholdPercentageDiscount_percentageDiscount();
+			
+				single_createattr_OrderThresholdPercentageDiscount_messageFired();
+			
+				single_createattr_OrderThresholdPercentageDiscount_messageCouldHaveFired();
+			
+				single_createattr_User_isEmailActivated();
+			
+				single_createattr_Order_orderExpectedDeliveryDate();
 			
 >>>>>>> sujan
 
@@ -275,17 +299,156 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	public void single_createattr_Order_AbhraincOrderStatus() throws JaloBusinessException
+=======
+	public void single_createattr_Consignment_trackingEmailSent() throws JaloBusinessException
+>>>>>>> sujan
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
-					"Order", 
-					"AbhraincOrderStatus",  
+					"Consignment", 
+					"trackingEmailSent",  
 					null,
-					"AbhraincOrderStatus",
+					"java.lang.Boolean",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.PRIMITIVE_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_OrderThresholdPercentageDiscount_thresholdTotals() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"OrderThresholdPercentageDiscount", 
+					"thresholdTotals",  
+					null,
+					"PromotionPriceRowCollectionType",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.PARTOF_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_OrderThresholdPercentageDiscount_qualifyingCount() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"OrderThresholdPercentageDiscount", 
+					"qualifyingCount",  
+					null,
+					"java.lang.Integer",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_OrderThresholdPercentageDiscount_percentageDiscount() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"OrderThresholdPercentageDiscount", 
+					"percentageDiscount",  
+					null,
+					"java.lang.Double",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_OrderThresholdPercentageDiscount_messageFired() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = new HashMap();
+						
+							sqlColumnDefinitions.put(
+								"oracle",
+								"varchar2(4000)"
+							);
+						
+							sqlColumnDefinitions.put(
+								"mysql",
+								"text"
+							);
+						
+							sqlColumnDefinitions.put(
+								"sqlserver",
+								"nvarchar(max)"
+							);
+						
+							sqlColumnDefinitions.put(
+								"hsqldb",
+								"LONGVARCHAR"
+							);
+						
+							sqlColumnDefinitions.put(
+								de.hybris.platform.persistence.property.PersistenceManager.NO_DATABASE,
+								"varchar"
+							);
+						
+				createPropertyAttribute(
+					"OrderThresholdPercentageDiscount", 
+					"messageFired",  
+					null,
+					"localized:java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_OrderThresholdPercentageDiscount_messageCouldHaveFired() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = new HashMap();
+						
+							sqlColumnDefinitions.put(
+								"oracle",
+								"varchar2(4000)"
+							);
+						
+							sqlColumnDefinitions.put(
+								"mysql",
+								"text"
+							);
+						
+							sqlColumnDefinitions.put(
+								"sqlserver",
+								"nvarchar(max)"
+							);
+						
+							sqlColumnDefinitions.put(
+								"hsqldb",
+								"LONGVARCHAR"
+							);
+						
+							sqlColumnDefinitions.put(
+								de.hybris.platform.persistence.property.PersistenceManager.NO_DATABASE,
+								"varchar"
+							);
+						
+				createPropertyAttribute(
+					"OrderThresholdPercentageDiscount", 
+					"messageCouldHaveFired",  
+					null,
+					"localized:java.lang.String",
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
@@ -303,6 +466,26 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					"isEmailActivated",  
 					null,
 					"java.lang.Boolean",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+<<<<<<< HEAD
+>>>>>>> sujan
+=======
+	public void single_createattr_Order_orderExpectedDeliveryDate() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Order", 
+					"orderExpectedDeliveryDate",  
+					null,
+					"java.util.Date",
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
@@ -350,7 +533,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					"Order",
 =======
 		createEnumerationValues(
-			"AbhraincOrderStatus",
+			"ConsignmentStatus",
 			true,
 			Arrays.asList( new String[] {
 			
@@ -450,13 +633,36 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				Map customPropsMap = new HashMap();
 				
 				changeMetaType(
-					"Order",
+					"Consignment",
 					null,
 					customPropsMap
 				);
 				}
 			
-			single_setAttributeProperties_Order_AbhraincOrderStatus();
+			single_setAttributeProperties_Consignment_trackingEmailSent();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"OrderThresholdPercentageDiscount",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_OrderThresholdPercentageDiscount_thresholdTotals();
+		
+			single_setAttributeProperties_OrderThresholdPercentageDiscount_qualifyingCount();
+		
+			single_setAttributeProperties_OrderThresholdPercentageDiscount_percentageDiscount();
+		
+			single_setAttributeProperties_OrderThresholdPercentageDiscount_messageFired();
+		
+			single_setAttributeProperties_OrderThresholdPercentageDiscount_messageCouldHaveFired();
 		
 				{
 				Map customPropsMap = new HashMap();
@@ -469,6 +675,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				}
 			
 			single_setAttributeProperties_User_isEmailActivated();
+		
+<<<<<<< HEAD
+>>>>>>> sujan
+=======
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"Order",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Order_orderExpectedDeliveryDate();
 		
 >>>>>>> sujan
 				setDefaultProperties(
@@ -493,11 +714,17 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				);
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				setDefaultProperties(
 					"AbhraincOrderStatus",
 					true,
 					true,
+=======
+				changeMetaType(
+					"ConsignmentStatus",
+					null,
+>>>>>>> sujan
 					null
 				);
 			
@@ -648,7 +875,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
-						public void single_setAttributeProperties_Order_AbhraincOrderStatus() throws JaloBusinessException
+						public void single_setAttributeProperties_Consignment_trackingEmailSent() throws JaloBusinessException
 						{
 							
 							
@@ -656,8 +883,118 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
-								"Order", 
-								"AbhraincOrderStatus",
+								"Consignment", 
+								"trackingEmailSent",
+								false, 
+								false,
+								"false",
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_OrderThresholdPercentageDiscount_thresholdTotals() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"OrderThresholdPercentageDiscount", 
+								"thresholdTotals",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_OrderThresholdPercentageDiscount_qualifyingCount() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"OrderThresholdPercentageDiscount", 
+								"qualifyingCount",
+								false, 
+								Integer.valueOf(2),
+								"Integer.valueOf(2)",
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_OrderThresholdPercentageDiscount_percentageDiscount() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"OrderThresholdPercentageDiscount", 
+								"percentageDiscount",
+								false, 
+								Double.valueOf(10.0D),
+								"Double.valueOf(10.0D)",
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_OrderThresholdPercentageDiscount_messageFired() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"OrderThresholdPercentageDiscount", 
+								"messageFired",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_OrderThresholdPercentageDiscount_messageCouldHaveFired() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"OrderThresholdPercentageDiscount", 
+								"messageCouldHaveFired",
 								false, 
 								null,
 								null,
@@ -719,6 +1056,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								true,
 								null,
 >>>>>>> sujan
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Order_orderExpectedDeliveryDate() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Order", 
+								"orderExpectedDeliveryDate",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
 								customPropsMap,
 								null
 							);

@@ -2,9 +2,13 @@
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
+>>>>>>> sujan
+=======
+ * --- Generated at 6 Jan, 2017 5:29:56 PM                      ---
 >>>>>>> sujan
  * ----------------------------------------------------------------
  */
@@ -23,22 +27,34 @@ public class GeneratedAbhraincCoreConstants
 <<<<<<< HEAD
 =======
 		public static final String ABHRAINCORDER = "AbhraincOrder".intern();
+<<<<<<< HEAD
 		public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
+>>>>>>> sujan
+=======
 >>>>>>> sujan
 		public static final String APPARELPRODUCT = "ApparelProduct".intern();
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
+		public static final String ORDERTHRESHOLDPERCENTAGEDISCOUNT = "OrderThresholdPercentageDiscount".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}
 	public static class Attributes
 	{
+		public static class Consignment
+		{
+			public static final String TRACKINGEMAILSENT = "trackingEmailSent".intern();
+		}
 		public static class Order
 		{
+<<<<<<< HEAD
 <<<<<<< HEAD
 			public static final String EXPECTEDDELIVERYDATE = "expectedDeliveryDate".intern();
 =======
 			public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
+=======
+			public static final String ORDEREXPECTEDDELIVERYDATE = "orderExpectedDeliveryDate".intern();
+>>>>>>> sujan
 		}
 		public static class User
 		{
@@ -48,7 +64,7 @@ public class GeneratedAbhraincCoreConstants
 	}
 	public static class Enumerations
 	{
-		public static class AbhraincOrderStatus
+		public static class ConsignmentStatus
 		{
 			public static final String ACCEPTED = "ACCEPTED".intern();
 			public static final String READYFORDISPATCH = "READYFORDISPATCH".intern();

@@ -1,12 +1,13 @@
 # ImpEx for Promotions
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
-$defaultPromoGrp=__DEFAULT_PROMO_GRP__
+$productCatalog= electronicsProductCatalog
+$defaultPromoGrp=electronicsPromoGrp
 
 $favCustomers=favoriteCustomers
 $bigSpenders=bigSpenders
-$catalogVersion=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$productCatalog]),CatalogVersion.version[default=Online])[default=$productCatalog:Online]
+$catalogVersion=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$productCatalog]),CatalogVersion.version[default=Staged])[default=$productCatalog:Staged]
+$regulargroup=regulargroup
 
 INSERT PromotionPriceRow;&tresholdId;Currency(isocode);price
 
@@ -19,8 +20,22 @@ INSERT_UPDATE PromotionUserRestriction;positive;promotion(code)[unique=true];use
 INSERT PromotionPriceRow;&tresholdId;Currency(isocode);price
 
 INSERT_UPDATE ProductPercentageDiscountPromotion;PromotionGroup(Identifier[default=$defaultPromoGrp]);enabled[default=true][unique=true];code[unique=true];title;description;percentageDiscount;priority;products(code,$catalogVersion)
+;;;10DiscountOnRefridgerators_GL-Q292SHAM;10% discount on All Refridferators;10% discount on All Refridferators;10;500;GL-Q292SHAM;
+;;;10DiscountOnRefridgerators_RT34K3983RZ;10% discount on All Refridferators;10% discount on All Refridferators;10;500;RT34K3983RZ;
+;;;10DiscountOnRefridgerators_GL-F282RGFL;10% discount on All Refridferators;10% discount on All Refridferators;10;500;GL-F282RGFL;
+;;;10DiscountOnRefridgerators_GL-I292RSFL;10% discount on All Refridferators;10% discount on All Refridferators;10;500;GL-I292RSFL;
+;;;10DiscountOnRefridgerators_KP202PHG;10% discount on All Refridferators;10% discount on All Refridferators;10;500;KP202PHG;
+;;;10DiscountOnRefridgerators_NR-BW465VNX4;10% discount on All Refridferators;10% discount on All Refridferators;10;500;NR-BW465VNX4;
+;;;10DiscountOnRefridgerators_NR-CX789WYA5;10% discount on All Refridferators;10% discount on All Refridferators;10;500;NR-CX789WYA5;
+;;;10DiscountOnRefridgerators_KP203QIH;10% discount on All Refridferators;10% discount on All Refridferators;10;500;KP203QIH;
+;;;10DiscountOnRefridgerators_RT35L4094SA;10% discount on All Refridferators;10% discount on All Refridferators;10;500;RT35L4094SA;
+
 
 INSERT PromotionPriceRow;&priceId;Currency(isocode);price
+;1;GBP;500;
+;2;USD;613.44;
+;3;JPY;72024.66;
+;4;EUR;586.97;
 
 INSERT_UPDATE AcceleratorProductMultiBuyPromotion;PromotionGroup(Identifier[default=$defaultPromoGrp]);enabled[default=true][unique=true];code[unique=true];title;description;priority;categories(code,$catalogVersion);qualifyingCount;bundlePrices(&priceId)
 
@@ -33,3 +48,93 @@ INSERT_UPDATE ProductPerfectPartnerPromotion;PromotionGroup(Identifier[default=$
 INSERT PromotionPriceRow;&priceId;Currency(isocode);price
 
 INSERT_UPDATE ProductBundlePromotion;PromotionGroup(Identifier[default=$defaultPromoGrp]);enabled[default=true,unique=true];code[unique=true];title;description;priority;products(code,$catalogVersion);bundlePrices(&priceId)
+;;;PerfectPartnerOnFridgeandTv1;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-Q292SHAM,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv2;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-Q292SHAM,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv3;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-Q292SHAM,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv4;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-Q292SHAM,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv5;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-Q292SHAM,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv6;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-Q292SHAM,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv7;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-Q292SHAM,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv8;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-Q292SHAM,PSC888642;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv9;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT34K3983RZ,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv10;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT34K3983RZ,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv11;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT34K3983RZ,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv12;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT34K3983RZ,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv13;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT34K3983RZ,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv14;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT34K3983RZ,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv15;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT34K3983RZ,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv16;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT34K3983RZ,PSC888642;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv17;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-F282RGFL,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv18;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-F282RGFL,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv19;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-F282RGFL,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv20;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-F282RGFL,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv21;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-F282RGFL,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv22;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-F282RGFL,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv23;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-F282RGFL,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv24;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-F282RGFL,PSC888642;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv25;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-I292RSFL,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv26;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-I292RSFL,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv27;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-I292RSFL,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv28;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-I292RSFL,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv29;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-I292RSFL,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv30;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-I292RSFL,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv31;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-I292RSFL,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv32;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;GL-I292RSFL,PSC888642;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv33;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP202PHG,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv34;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP202PHG,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv35;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP202PHG,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv36;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP202PHG,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv37;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP202PHG,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv38;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP202PHG,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv39;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP202PHG,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv40;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP202PHG,PSC888642;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv41;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-BW465VNX4,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv42;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-BW465VNX4,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv43;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-BW465VNX4,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv44;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-BW465VNX4,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv45;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-BW465VNX4,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv46;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-BW465VNX4,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv47;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-BW465VNX4,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv48;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-BW465VNX4,PSC888642;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv49;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-CX789WYA5,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv50;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-CX789WYA5,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv51;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-CX789WYA5,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv52;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-CX789WYA5,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv53;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-CX789WYA5,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv54;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-CX789WYA5,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv55;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-CX789WYA5,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv56;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;NR-CX789WYA5,PSC888642;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv57;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP203QIH,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv58;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP203QIH,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv59;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP203QIH,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv60;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP203QIH,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv61;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP203QIH,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv62;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP203QIH,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv63;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP203QIH,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv64;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;KP203QIH,PSC888642;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv65;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT35L4094SA,KLV-49W752D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv66;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT35L4094SA,KLV-40W562D;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv67;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT35L4094SA,43LH576T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv68;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT35L4094SA,2LH604T;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv69;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT35L4094SA,SMG60897;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv70;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT35L4094SA,SMG79806;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv71;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT35L4094SA,PSC80464;1,2,3,4;
+;;;PerfectPartnerOnFridgeandTv72;Buy Fridge and Tv together for Less price;Buy Fridge and Tv together for Less price;800;RT35L4094SA,PSC888642;1,2,3,4;
+
+
+####     Price threshold - free gift promotion
+INSERT PromotionPriceRow;&priceId;Currency(isocode);price
+;5;GBP;600;
+;6;USD;734.34;
+;7;JPY;86416.40
+;8;EUR;703.41;
+
+
+################  ORDER PROMOTIONS  ################
+#### FREE GIFT ORDER PROMOTION
+INSERT_UPDATE OrderThresholdFreeGiftPromotion;PromotionGroup(Identifier[default=$defaultPromoGrp]);enabled[default=true][unique=true];code[unique=true];title;description;priority;thresholdTotals(&priceId);giftProduct(code,$catalogVersion)
+;;;free_gift of PowerShot A480_1934793;Free Gift Promotion for PowerShot A480;Free Gift on Order;1500;5,6,7,8;1934793
+;;;free_gift of PowerShot A480_1934794;Free Gift Promotion for PowerShot A480;Free Gift on Order;1500;5,6,7,8;1934794
+;;;free_gift of PowerShot A480_1934795;Free Gift Promotion for PowerShot A480;Free Gift on Order;1500;5,6,7,8;1934795
+;;;free_gift of PowerShot A480_1934796;Free Gift Promotion for PowerShot A480;Free Gift on Order;1500;5,6,7,8;1934796
+

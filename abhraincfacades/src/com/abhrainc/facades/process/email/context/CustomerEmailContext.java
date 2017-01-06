@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.facades.process.email.context;
 
@@ -39,6 +39,7 @@ public class CustomerEmailContext extends AbstractEmailContext<StoreFrontCustome
 	{
 		super.init(storeFrontCustomerProcessModel, emailPageModel);
 		customerData = getCustomerConverter().convert(getCustomer(storeFrontCustomerProcessModel));
+		put("email", customerData.getUid());
 	}
 
 	@Override

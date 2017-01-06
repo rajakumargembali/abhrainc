@@ -89,7 +89,8 @@
 									#if($ctx.order.deliveryAddress.line2.line2 && $ctx.order.deliveryAddress.line2 != '')${ctx.order.deliveryAddress.line2}<br/>#end
 									${ctx.order.deliveryAddress.town}<br/>
 									${ctx.order.deliveryAddress.postalCode}<br/>
-									${ctx.order.deliveryAddress.country.name}
+									${ctx.order.deliveryAddress.country.name}<br/>
+									${ctx.messages.expectedDeliveryDate} {ctx.Expected_Delivery_Date}
 								</font>
 							</p>
 						#else

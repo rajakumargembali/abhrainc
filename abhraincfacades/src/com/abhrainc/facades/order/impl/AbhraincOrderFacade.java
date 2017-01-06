@@ -7,11 +7,24 @@ import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.exceptions.ModelNotFoundException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
+import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.store.BaseStoreModel;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.abhrainc.facades.dao.AbhraIncFacadeDAO;
 
 
 public class AbhraincOrderFacade extends DefaultOrderFacade
 {
+
+	@Autowired
+	AbhraIncFacadeDAO abhraIncDao;
+
+	@Autowired
+	ModelService modelService;
 
 	private static final String ORDER_NOT_FOUND_FOR_USER_AND_BASE_STORE = "Order with guid %s not found for current user in current BaseStore";
 
@@ -44,5 +57,30 @@ public class AbhraincOrderFacade extends DefaultOrderFacade
 		}
 		return getOrderConverter().convert(orderModel);
 
+	}
+
+	/**
+	 * @param string
+	 * @param time
+	 */
+	public void saveExpectedDeliveryDate(final String string, final Date time)
+	{
+		// YTODO Auto-generated method stub
+		final OrderModel model = abhraIncDao.getOrderDetails(string);
+		model.setOrderExpectedDeliveryDate(time);
+		modelService.save(model);
+
+
+	}
+
+	/**
+	 * @param code
+	 * @return
+	 */
+	public OrderModel getOrderDetailForCode(final String code)
+	{
+		// YTODO Auto-generated method stub
+		final OrderModel model = abhraIncDao.getOrderDetails(code);
+		return model;
 	}
 }

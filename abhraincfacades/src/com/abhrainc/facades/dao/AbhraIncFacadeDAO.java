@@ -3,6 +3,7 @@
  */
 package com.abhrainc.facades.dao;
 
+import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.user.UserModel;
 
 
@@ -18,5 +19,11 @@ public interface AbhraIncFacadeDAO
 	 * @return
 	 */
 	UserModel getUserDetails(String email);
+
+	/**
+	 * @param code
+	 * @return
+	 */
+	OrderModel getOrderDetails(String code);
 
 }

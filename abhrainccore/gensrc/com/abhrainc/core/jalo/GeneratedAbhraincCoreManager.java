@@ -2,9 +2,13 @@
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
+>>>>>>> sujan
+=======
+ * --- Generated at 6 Jan, 2017 5:29:56 PM                      ---
 >>>>>>> sujan
  * ----------------------------------------------------------------
  */
@@ -15,12 +19,13 @@ import com.abhrainc.core.jalo.ApparelProduct;
 import com.abhrainc.core.jalo.ApparelSizeVariantProduct;
 import com.abhrainc.core.jalo.ApparelStyleVariantProduct;
 import com.abhrainc.core.jalo.ElectronicsColorVariantProduct;
+import com.abhrainc.core.jalo.OrderThresholdPercentageDiscount;
+import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
-import de.hybris.platform.jalo.enumeration.EnumerationValue;
 import de.hybris.platform.jalo.extension.Extension;
 import de.hybris.platform.jalo.order.AbstractOrder;
 import de.hybris.platform.jalo.order.Order;
@@ -34,7 +39,12 @@ import de.hybris.platform.jalo.security.Principal;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import de.hybris.platform.jalo.user.User;
+import de.hybris.platform.ordersplitting.jalo.Consignment;
 import java.util.Collections;
+<<<<<<< HEAD
+>>>>>>> sujan
+=======
+import java.util.Date;
 >>>>>>> sujan
 import java.util.HashMap;
 import java.util.Map;
@@ -51,6 +61,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
 		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		tmp.put("expectedDeliveryDate", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
 =======
@@ -59,6 +70,16 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("isEmailActivated", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.user.User", Collections.unmodifiableMap(tmp));
+>>>>>>> sujan
+=======
+		tmp.put("trackingEmailSent", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.ordersplitting.jalo.Consignment", Collections.unmodifiableMap(tmp));
+		tmp = new HashMap<String, AttributeMode>();
+		tmp.put("isEmailActivated", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.user.User", Collections.unmodifiableMap(tmp));
+		tmp = new HashMap<String, AttributeMode>();
+		tmp.put("orderExpectedDeliveryDate", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
 >>>>>>> sujan
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
@@ -74,6 +95,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		return ret;
 	}
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	/**
@@ -112,6 +134,8 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		setAbhraincOrderStatus( getSession().getSessionContext(), item, value );
 	}
 	
+=======
+>>>>>>> sujan
 	public AbhraincOrder createAbhraincOrder(final SessionContext ctx, final Map attributeValues)
 	{
 		try
@@ -243,6 +267,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.expectedDeliveryDate</code> attribute.
 	 * @return the expectedDeliveryDate - Used to display the Expected Delivery Date
@@ -277,6 +302,32 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	public void setExpectedDeliveryDate(final Order item, final Date value)
 	{
 		setExpectedDeliveryDate( getSession().getSessionContext(), item, value );
+=======
+	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ORDERTHRESHOLDPERCENTAGEDISCOUNT );
+			return (OrderThresholdPercentageDiscount)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating OrderThresholdPercentageDiscount : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final Map attributeValues)
+	{
+		return createOrderThresholdPercentageDiscount( getSession().getSessionContext(), attributeValues );
+>>>>>>> sujan
 	}
 	
 	@Override
@@ -356,6 +407,115 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	public void setIsEmailActivated(final User item, final boolean value)
 	{
 		setIsEmailActivated( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
+	 * @return the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
+	 */
+	public Date getOrderExpectedDeliveryDate(final SessionContext ctx, final Order item)
+	{
+		return (Date)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Order.ORDEREXPECTEDDELIVERYDATE);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
+	 * @return the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
+	 */
+	public Date getOrderExpectedDeliveryDate(final Order item)
+	{
+		return getOrderExpectedDeliveryDate( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Order.orderExpectedDeliveryDate</code> attribute. 
+	 * @param value the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
+	 */
+	public void setOrderExpectedDeliveryDate(final SessionContext ctx, final Order item, final Date value)
+	{
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Order.ORDEREXPECTEDDELIVERYDATE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Order.orderExpectedDeliveryDate</code> attribute. 
+	 * @param value the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
+	 */
+	public void setOrderExpectedDeliveryDate(final Order item, final Date value)
+	{
+		setOrderExpectedDeliveryDate( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
+	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 */
+	public Boolean isTrackingEmailSent(final SessionContext ctx, final Consignment item)
+	{
+		return (Boolean)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Consignment.TRACKINGEMAILSENT);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
+	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 */
+	public Boolean isTrackingEmailSent(final Consignment item)
+	{
+		return isTrackingEmailSent( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 */
+	public boolean isTrackingEmailSentAsPrimitive(final SessionContext ctx, final Consignment item)
+	{
+		Boolean value = isTrackingEmailSent( ctx,item );
+		return value != null ? value.booleanValue() : false;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 */
+	public boolean isTrackingEmailSentAsPrimitive(final Consignment item)
+	{
+		return isTrackingEmailSentAsPrimitive( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @param value the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 */
+	public void setTrackingEmailSent(final SessionContext ctx, final Consignment item, final Boolean value)
+	{
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.TRACKINGEMAILSENT,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @param value the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 */
+	public void setTrackingEmailSent(final Consignment item, final Boolean value)
+	{
+		setTrackingEmailSent( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @param value the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 */
+	public void setTrackingEmailSent(final SessionContext ctx, final Consignment item, final boolean value)
+	{
+		setTrackingEmailSent( ctx, item, Boolean.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @param value the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 */
+	public void setTrackingEmailSent(final Consignment item, final boolean value)
+	{
+		setTrackingEmailSent( getSession().getSessionContext(), item, value );
 	}
 	
 }
