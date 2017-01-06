@@ -447,9 +447,7 @@
 		<property name="commerceCategoryService" ref="commerceCategoryService"/>
 		<property name="rootCategoryCode" value="categories"/>
 	</bean>
-	
-<<<<<<< HEAD
-=======
+
 	
 	<bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController" autowire="byName"/>
 	
@@ -465,7 +463,5 @@
 	<alias name="abhraProductService" alias="productAbhraService"/>
 	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
 		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>
-		
-		
->>>>>>> sujan
+
 </beans>
