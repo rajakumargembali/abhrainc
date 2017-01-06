@@ -35,8 +35,7 @@
 			<value code="WHITE"/>
 			<value code="YELLOW"/>
 		</enumtype>
-<<<<<<< HEAD
-=======
+
 		
 			 <enumtype generate="false" code="ConsignmentStatus" autocreate="false" dynamic="true">
 			<value code="ACCEPTED"/>
@@ -46,7 +45,7 @@
 			<value code="DELIVERED"/>
 		</enumtype> 
 		
->>>>>>> sujan
+
 	</enumtypes>
 
 	<itemtypes>
@@ -137,13 +136,13 @@
 					</attribute>
 				</attributes>
 			</itemtype>
-<<<<<<< HEAD
+
 
 			
-			<itemtype code = "Order" autocreate="false"  generate="false">
-=======
+			
+
 			<itemtype code="Consignment" autocreate="false" generate="false">
->>>>>>> sujan
+
 			<attributes>
 				<attribute qualifier="trackingEmailSent" type="boolean">
 					<defaultvalue>false</defaultvalue>
@@ -165,7 +164,7 @@
 					<modifiers read="true" write="true" search="false"
 						initial="false" optional="true" partof="true" />
 				</attribute>
- <attribute
+                <attribute
                     qualifier="qualifyingCount"
                     autocreate="true"
                     type="java.lang.Integer">
@@ -237,9 +236,7 @@
 			</attribute>
 		</attributes>
 			</itemtype> 
-<<<<<<< HEAD
 
-=======
 			 <itemtype code = "Order" autocreate="false"  generate="false">
 			<attributes>
 					<attribute qualifier="orderExpectedDeliveryDate" type="java.util.Date">
@@ -249,8 +246,7 @@
 					</attribute>
 				</attributes>
 			</itemtype>  
->>>>>>> sujan
-		</typegroup>
 
+		</typegroup>
 	</itemtypes>
 </items>

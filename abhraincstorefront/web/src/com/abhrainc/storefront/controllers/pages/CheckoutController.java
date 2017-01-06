@@ -229,13 +229,12 @@ public class CheckoutController extends AbstractCheckoutController
 
 		gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
-<<<<<<< HEAD
 
 
 
-=======
+
 		saveExpectedDeliveryDate(orderCode, gc.getTime());
->>>>>>> sujan
+
 
 		model.addAttribute("orderCode", orderCode);
 		model.addAttribute("orderData", orderDetails);
