@@ -541,42 +541,6 @@
 	</bean>
 
 	
-	<!-- <bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController" autowire="byName"/>
-	
-	<bean id="cronJobForPriceConversion" class="com.abhrainc.core.jobs.CronJobForPriceConversion" autowire="byName"/>
-	
-	<bean id="cronJobToUpdateStock" class="com.abhrainc.core.jobs.CronJobToUpdateStocks" autowire="byName"/>
-	
-	<alias name="abhraProductDAO" alias="productAbhraDao"/>
-	<bean id="abhraProductDAO" class="com.abhrainc.core.dao.impl.ProductAbhraDaoImpl">
-	</bean>
-	
-	
-	<alias name="abhraProductService" alias="productAbhraService"/>
-	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
-		<property name="productAbhraDao" ref="abhraProductDAO"></property></bean>
-
-
-	<bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController"
-		autowire="byName" />
-
-	<bean id="cronJobForPriceConversion" class="com.abhrainc.core.jobs.CronJobForPriceConversion"
-		autowire="byName" />
-
-	<bean id="cronJobToUpdateStock" class="com.abhrainc.core.jobs.CronJobToUpdateStocks"
-		autowire="byName" />
-
-	<alias name="abhraProductDAO" alias="productAbhraDao" />
-	<bean id="abhraProductDAO" class="com.abhrainc.core.dao.impl.ProductAbhraDaoImpl">
-	</bean>
-
-
-	<alias name="abhraProductService" alias="productAbhraService" />
-	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl">
-		<property name="productAbhraDao" ref="abhraProductDAO"></property>
-	</bean>
-
- -->
 	
 	<bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController" autowire="byName"/>
 	
