@@ -3,12 +3,16 @@
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
 >>>>>>> sujan
 =======
  * --- Generated at 6 Jan, 2017 5:29:56 PM                      ---
+>>>>>>> sujan
+=======
+ * --- Generated at 16 Jan, 2017 5:45:40 PM                     ---
 >>>>>>> sujan
  * ----------------------------------------------------------------
  */
@@ -43,6 +47,7 @@ public class GeneratedAbhraincCoreConstants
 	{
 		public static class Consignment
 		{
+			public static final String ISDELIVERYEMAILSENT = "isDeliveryEmailSent".intern();
 			public static final String TRACKINGEMAILSENT = "trackingEmailSent".intern();
 		}
 		public static class Order

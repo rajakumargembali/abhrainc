@@ -3,12 +3,16 @@
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
 >>>>>>> sujan
 =======
  * --- Generated at 6 Jan, 2017 5:29:56 PM                      ---
+>>>>>>> sujan
+=======
+ * --- Generated at 16 Jan, 2017 5:45:40 PM                     ---
 >>>>>>> sujan
  * ----------------------------------------------------------------
  */
@@ -73,6 +77,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 >>>>>>> sujan
 =======
 		tmp.put("trackingEmailSent", AttributeMode.INITIAL);
+		tmp.put("isDeliveryEmailSent", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.ordersplitting.jalo.Consignment", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("isEmailActivated", AttributeMode.INITIAL);
@@ -334,6 +339,79 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	public String getName()
 	{
 		return AbhraincCoreConstants.EXTENSIONNAME;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public Boolean isIsDeliveryEmailSent(final SessionContext ctx, final Consignment item)
+	{
+		return (Boolean)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Consignment.ISDELIVERYEMAILSENT);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public Boolean isIsDeliveryEmailSent(final Consignment item)
+	{
+		return isIsDeliveryEmailSent( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public boolean isIsDeliveryEmailSentAsPrimitive(final SessionContext ctx, final Consignment item)
+	{
+		Boolean value = isIsDeliveryEmailSent( ctx,item );
+		return value != null ? value.booleanValue() : false;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public boolean isIsDeliveryEmailSentAsPrimitive(final Consignment item)
+	{
+		return isIsDeliveryEmailSentAsPrimitive( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @param value the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public void setIsDeliveryEmailSent(final SessionContext ctx, final Consignment item, final Boolean value)
+	{
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.ISDELIVERYEMAILSENT,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @param value the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public void setIsDeliveryEmailSent(final Consignment item, final Boolean value)
+	{
+		setIsDeliveryEmailSent( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @param value the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public void setIsDeliveryEmailSent(final SessionContext ctx, final Consignment item, final boolean value)
+	{
+		setIsDeliveryEmailSent( ctx, item, Boolean.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @param value the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public void setIsDeliveryEmailSent(final Consignment item, final boolean value)
+	{
+		setIsDeliveryEmailSent( getSession().getSessionContext(), item, value );
 	}
 	
 	/**

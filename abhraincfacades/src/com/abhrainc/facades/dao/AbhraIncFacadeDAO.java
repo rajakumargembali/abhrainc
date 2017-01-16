@@ -3,8 +3,10 @@
  */
 package com.abhrainc.facades.dao;
 
+import de.hybris.platform.core.PK;
 import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.user.UserModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 
 
 /**
@@ -21,9 +23,15 @@ public interface AbhraIncFacadeDAO
 	UserModel getUserDetails(String email);
 
 	/**
-	 * @param code
+	 * @param pk
 	 * @return
 	 */
-	OrderModel getOrderDetails(String code);
+	ConsignmentModel getConsignmentDetails(PK pk);
+
+	/**
+	 * @param string
+	 * @return
+	 */
+	OrderModel getOrderDetailsForOrder(String string);
 
 }

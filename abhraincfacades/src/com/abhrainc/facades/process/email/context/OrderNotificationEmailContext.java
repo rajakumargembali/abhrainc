@@ -51,7 +51,7 @@ public class OrderNotificationEmailContext extends AbstractEmailContext<OrderPro
 		}
 		else
 		{
-			final OrderModel model = abhraIncDao.getOrderDetails(orderData.getCode());
+			final OrderModel model = abhraIncDao.getOrderDetailsForOrder(orderData.getCode());
 			if (model.getOrderExpectedDeliveryDate() != null)
 			{
 				put("Expected_Delivery_Date", model.getOrderExpectedDeliveryDate());

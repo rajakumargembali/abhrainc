@@ -245,7 +245,21 @@
 						<persistence type="property"/>
 					</attribute>
 				</attributes>
+			</itemtype>
+			<itemtype code = "Consignment" autocreate="false"  generate="false">
+			<attributes>
+					<attribute qualifier="isDeliveryEmailSent" type="java.lang.Boolean">
+						<description>Used to know whether the delivery status email sent or not</description>
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
 			</itemtype>  
+<<<<<<< HEAD
+=======
+			  
+		</typegroup>
+>>>>>>> sujan
 
 		</typegroup>
 	</itemtypes>

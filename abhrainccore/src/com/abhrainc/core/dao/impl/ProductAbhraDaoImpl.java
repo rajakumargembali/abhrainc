@@ -1,8 +1,10 @@
 package com.abhrainc.core.dao.impl;
 
 import de.hybris.platform.core.model.product.ProductModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
+import de.hybris.platform.servicelayer.search.SearchResult;
 
 import java.util.List;
 
@@ -52,6 +54,36 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		logger.info("search query" + flexibleSearchService.<ProductModel> search(searchQuery).getResult());
 		final List<ProductModel> model = flexibleSearchService.<ProductModel> search(searchQuery).getResult();
 		return model;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.abhrainc.core.dao.ProductAbhraDao#getConsignmentsForOrderTrackingEmail()
+	 */
+	@Override
+	public List<ConsignmentModel> getConsignmentsForOrderTrackingEmail()
+	{
+		// YTODO Auto-generated method stub
+		final String search_query = "select {PK} from {consignment}";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(search_query);
+		final SearchResult<ConsignmentModel> searchResult = flexibleSearchService.search(query);
+		return searchResult.getResult();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.abhrainc.core.dao.ProductAbhraDao#getConsignmentDetailsbyCode(java.lang.String)
+	 */
+	@Override
+	public ConsignmentModel getConsignmentDetailsbyCode(final String code)
+	{
+		// YTODO Auto-generated method stub
+		final String search_query = "select {PK} from {consignment} where P_CODE = " + "'" + code + "'";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(search_query);
+		final SearchResult<ConsignmentModel> searchResult = flexibleSearchService.search(query);
+		return searchResult.getResult().get(0);
 	}
 
 }

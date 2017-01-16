@@ -183,6 +183,11 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_Order_orderExpectedDeliveryDate();
 			
+<<<<<<< HEAD
+>>>>>>> sujan
+=======
+				single_createattr_Consignment_isDeliveryEmailSent();
+			
 >>>>>>> sujan
 
 	}
@@ -493,6 +498,26 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+<<<<<<< HEAD
+>>>>>>> sujan
+=======
+	public void single_createattr_Consignment_isDeliveryEmailSent() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Consignment", 
+					"isDeliveryEmailSent",  
+					null,
+					"java.lang.Boolean",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 >>>>>>> sujan
 
 
@@ -690,6 +715,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				}
 			
 			single_setAttributeProperties_Order_orderExpectedDeliveryDate();
+		
+<<<<<<< HEAD
+>>>>>>> sujan
+=======
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"Consignment",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Consignment_isDeliveryEmailSent();
 		
 >>>>>>> sujan
 				setDefaultProperties(
@@ -1074,6 +1114,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								false, 
 								null,
 								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Consignment_isDeliveryEmailSent() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Consignment", 
+								"isDeliveryEmailSent",
+								false, 
+								java.lang.Boolean.FALSE,
+								"java.lang.Boolean.FALSE",
 								null,
 								true,
 								true,

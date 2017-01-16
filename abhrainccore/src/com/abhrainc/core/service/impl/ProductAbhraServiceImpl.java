@@ -1,19 +1,37 @@
 package com.abhrainc.core.service.impl;
 
+import de.hybris.platform.acceleratorservices.model.email.EmailAddressModel;
+import de.hybris.platform.acceleratorservices.model.email.EmailMessageModel;
+import de.hybris.platform.basecommerce.enums.ConsignmentStatus;
+import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.europe1.model.PriceRowModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentProcessModel;
 import de.hybris.platform.ordersplitting.model.StockLevelModel;
+import de.hybris.platform.processengine.BusinessProcessService;
+import de.hybris.platform.servicelayer.event.EventService;
 import de.hybris.platform.servicelayer.model.ModelService;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 import com.abhrainc.core.dao.ProductAbhraDao;
+import com.abhrainc.core.event.OrderTrackingEmailEvent;
 import com.abhrainc.core.service.ProductAbhraService;
 
 
@@ -21,6 +39,12 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 {
 
 	final Logger logger = Logger.getLogger(ProductAbhraServiceImpl.class);
+
+	@Autowired
+	BusinessProcessService businessProcessService;
+
+	@Autowired
+	private EventService eventService;
 
 	@Autowired
 	ProductAbhraDao productAbhraDao;
@@ -121,6 +145,107 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 		//System.out.println(model.getCode() + "" + model.getDescription());
 		return "Success";
 
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.abhrainc.core.service.ProductAbhraService#sendOrderTrackingEmail()
+	 */
+	@Override
+	public void sendOrderTrackingEmail()
+	{
+		// YTODO Auto-generated method stub
+		final List<ConsignmentModel> consignments = productAbhraDao.getConsignmentsForOrderTrackingEmail();
+		if (consignments == null || consignments.size() == 0)
+		{
+			return;
+		}
+		final OrderTrackingEmailEvent<BaseSiteModel> event = new OrderTrackingEmailEvent<BaseSiteModel>(consignments);
+		logger.debug("Publishing Order Tracking Email Event");
+		logger.debug("No of Consignments for Order Tracking Event =  " + consignments.size());
+		eventService.publishEvent(event);
+		logger.debug("Successfully Published Events for Order Tracking");
+
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.abhrainc.core.service.ProductAbhraService#sendOrderConsignmentStatusEmail()
+	 */
+	@Override
+	public void sendOrderConsignmentStatusEmail()
+	{
+		// YTODO Auto-generated method stub
+		final RestTemplate restTemplate = new RestTemplate();
+		final HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		final HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
+		final String url = "http://localhost:8080/AuditLobby/getConsignmentStatuses";
+		final ResponseEntity<Map[]> result = restTemplate.exchange(url, HttpMethod.GET, entity, Map[].class);
+		final Map[] products = result.getBody();
+		for (int i = 0; i < products.length; i++)
+		{
+			logger.info(products[i].get("hybris_consignmentid"));
+			final String code = products[i].get("hybris_consignmentid").toString();
+			final ConsignmentModel consignmentModel = productAbhraDao.getConsignmentDetailsbyCode(code);
+			final boolean status = consignmentModel.getIsDeliveryEmailSent().booleanValue();
+			if (consignmentModel.getStatus().equals(ConsignmentStatus.READY))
+			{
+				consignmentModel.setStatus(ConsignmentStatus.SHIPPED);
+			}
+			if (consignmentModel.getStatus().equals(ConsignmentStatus.SHIPPED))
+			{
+				consignmentModel.setStatus(ConsignmentStatus.ACCEPTED);
+			}
+			else if (consignmentModel.getStatus().equals(ConsignmentStatus.ACCEPTED))
+			{
+				consignmentModel.setStatus(ConsignmentStatus.DISPATCHED);
+			}
+			else if (consignmentModel.getStatus().equals(ConsignmentStatus.DISPATCHED))
+			{
+				consignmentModel.setStatus(ConsignmentStatus.DELIVERED);
+				consignmentModel.setIsDeliveryEmailSent(java.lang.Boolean.TRUE);
+			}
+
+			modelService.save(consignmentModel);
+			if (!consignmentModel.getStatus().equals(ConsignmentStatus.SHIPPED) || !status)
+			{
+				sendEmail(consignmentModel);
+			}
+
+			final String updateUrl = "http://localhost:8080/AuditLobby/update_Consignemnt";
+			final HashMap orderData = new HashMap();
+			orderData.put("orderid", products[i].get("orderid"));
+			orderData.put("consignment_status", consignmentModel.getStatus().getCode());
+			restTemplate.put(updateUrl, orderData, HashMap.class);
+
+
+		}
+	}
+
+	/**
+	 * @param consignmentModel
+	 *
+	 */
+	private void sendEmail(final ConsignmentModel consignmentModel)
+	{
+		// YTODO Auto-generated method stub
+
+		final ConsignmentProcessModel consignmentProcessModel = businessProcessService
+				.createProcess("sendDeliveryEmailProcess" + System.currentTimeMillis(), "sendDeliveryEmailProcess");
+
+		consignmentProcessModel.setCode(consignmentModel.getCode());
+		consignmentProcessModel.setConsignment(consignmentModel);
+		final List<EmailAddressModel> addressModels = new ArrayList<>();
+		final EmailAddressModel addressModel = new EmailAddressModel();
+		addressModel.setEmailAddress(consignmentModel.getOrder().getUser().getUid());
+		addressModels.add(addressModel);
+		final EmailMessageModel emailMessageModel = new EmailMessageModel();
+		emailMessageModel.setToAddresses(addressModels);
+		businessProcessService.startProcess(consignmentProcessModel);
 	}
 }
 

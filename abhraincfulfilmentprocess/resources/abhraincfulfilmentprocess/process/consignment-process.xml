@@ -20,14 +20,19 @@
 	</wait>
 
 	<action id="receiveConsignmentStatus" bean="receiveConsignmentStatusAction">
-		<transition name="OK" to="allowShipment" />
+		<transition name="OK" to="orderAccepted" />
+		<!-- <transition name="OK" to="allowShipment" /> -->
 		<transition name="CANCEL" to="cancelConsignment" />
 		<transition name="ERROR" to="error" />
+	</action>
+	
+	<action id ="orderAccepted" bean="orderAcceptedAction">
+	<transition name="OK" to="sendReadyForPickupMessage"></transition>
 	</action>
 
 	<action id="allowShipment" bean="allowShipmentAction">
 		<transition name="DELIVERY" to="sendDeliveryMessage" />
-		<transition name="PICKUP" to="sendReadyForPickupMessage" />
+		<!-- <transition name="PICKUP" to="sendReadyForPickupMessage" /> -->
 		<transition name="ERROR" to="error" />
 		<transition name="CANCEL" to="cancelConsignment" />
 	</action>
@@ -37,7 +42,11 @@
 	</action>
 
 	<action id="sendReadyForPickupMessage" bean="sendReadyForPickupMessageAction">
-		<transition name="OK" to="waitForPickup" />
+		<transition name="OK" to="orderDispatched" />
+	</action>
+	
+	<action id="orderDispatched" bean="orderDispatchedAction" >
+		<transition name="OK" to="allowShipment"></transition>
 	</action>
 
 	<action id="cancelConsignment" bean="cancelConsignmentAction">

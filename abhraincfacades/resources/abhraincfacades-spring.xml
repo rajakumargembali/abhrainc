@@ -158,6 +158,26 @@
 		<property name="consignmentConverter" ref="consignmentConverter" />
 	</bean>
 
+	<bean id="orderAccepted"
+		class="com.abhrainc.facades.process.email.context.OrderAcceptedEmail"
+		parent="abstractEmailContext" scope="prototype">
+		<property name="consignmentConverter" ref="consignmentConverter" />
+	</bean>
+
+	<bean id="orderDispatched"
+		class="com.abhrainc.facades.process.email.context.OrderDispatchEmailContext"
+		parent="abstractEmailContext" scope="prototype">
+		<property name="consignmentConverter" ref="consignmentConverter" />
+	</bean>
+
+	<bean id="orderDelivered"
+		class="com.abhrainc.facades.process.email.context.OrderDeliveredEmailContext"
+		parent="abstractEmailContext" scope="prototype">
+		<property name="consignmentConverter" ref="consignmentConverter" />
+	</bean>
+
+
+
 	<bean id="readyForPickupEmailContext"
 		class="com.abhrainc.facades.process.email.context.ReadyForPickupEmailContext"
 		parent="abstractEmailContext" scope="prototype">

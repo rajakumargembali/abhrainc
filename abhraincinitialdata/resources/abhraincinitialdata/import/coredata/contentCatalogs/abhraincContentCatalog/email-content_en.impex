@@ -42,6 +42,14 @@ UPDATE RendererTemplate;code[unique=true];description[lang=$lang];templateScript
  ;electronics_Email_Order_Refund_Subject;"Order Refund Email Subject";$emailResource/email-orderRefundSubject.vm
  ;electronics_Email_Ready_For_Pickup_Body;"Ready For Pickup Email Body";$emailResource/email-readyForPickupBody.vm
  ;electronics_Email_Ready_For_Pickup_Subject;"Ready For Pickup Email Subject";$emailResource/email-readyForPickupSubject.vm
+ ;electronics_Email_Accepted_Sent_Body;"Delivery Accpted Email Body";$emailResource/email-acceptedBody.vm
+ ;electronics_Email_Accepted_Sent_Subject;"Delivery Accepted Email Subject";$emailResource/email-acceptedSubject.vm
+ ;electronics_Email_Dispatched_Sent_Body;"Delivery Dispatched Email Body";$emailResource/email-dispatchedBody.vm
+ ;electronics_Email_Dispatched_Sent_Subject;"Delivery Dispatched Email Subject";$emailResource/email-dispatchedSubject.vm
+ ;electronics_Email_Delivered_Sent_Body;"Delivery Delivered Email Body";$emailResource/email-deliveredBody.vm
+ ;electronics_Email_Delivered_Sent_Subject;"Delivery Delivered Email Subject";$emailResource/email-deliveredSubject.vm
+ ;electronics_Email_Order_Tracking_Body;Order Tracking Email Body;$emailResource/email-orderTrackingEmailBody.vm;
+ ;electronics_Email_Order_Tracking_Subject;Order Tracking Email Subject;$emailResource/email-orderTrackingEmailSubject.vm;
  
 # Email Pages
 UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];fromEmail[lang=$lang];fromName[lang=$lang]
@@ -56,3 +64,6 @@ UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];fromEmail[lang=$lang];
  ;;OrderPartiallyRefundedEmail;"customerservices@hybris.com";"Customer Services Team"
  ;;OrderRefundEmail;"customerservices@hybris.com";"Customer Services Team"
  ;;ReadyForPickupEmail;"customerservices@hybris.com";"Customer Services Team"
+ ;;OrderAccepted;"customerservices@hybris.com";"Customer Services Team"
+ ;;OrderDispatched;"customerservices@hybris.com";"Customer Services Team"
+ ;;OrderDelivered;"customerservices@hybris.com";"Customer Services Team"

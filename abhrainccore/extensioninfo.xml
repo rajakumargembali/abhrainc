@@ -18,7 +18,9 @@
 			extensions which are automatically required -->
 		<requires-extension name="acceleratorcms"/>
 		<requires-extension name="hmc"/>
+		<requires-extension name="basecommerce"/>
 		<requires-extension name="solrserver"/>
+		<requires-extension name="abhraincfulfilmentprocess"/>
 
 		<coremodule generated="true" manager="com.abhrainc.core.jalo.AbhraincCoreManager" packageroot="com.abhrainc.core"/>
 

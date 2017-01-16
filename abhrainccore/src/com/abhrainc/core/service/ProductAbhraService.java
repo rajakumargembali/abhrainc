@@ -17,4 +17,14 @@ public interface ProductAbhraService
 	 */
 	String updateProductPricesByConversion(float pound, float euro);
 
+	/**
+	 *
+	 */
+	void sendOrderTrackingEmail();
+
+	/**
+	 *
+	 */
+	void sendOrderConsignmentStatusEmail();
+
 }

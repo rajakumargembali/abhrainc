@@ -9,11 +9,11 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.fulfilmentprocess.actions.consignment;
 
-import de.hybris.platform.commerceservices.model.PickUpDeliveryModeModel;
+import de.hybris.platform.basecommerce.enums.ConsignmentStatus;
 import de.hybris.platform.core.enums.OrderStatus;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentProcessModel;
@@ -35,7 +35,7 @@ public class AllowShipmentAction extends AbstractAction<ConsignmentProcessModel>
 
 	public enum Transition
 	{
-		DELIVERY, PICKUP, CANCEL, ERROR;
+		DELIVERY, CANCEL, ERROR;
 
 		public static Set<String> getStringValues()
 		{
@@ -81,15 +81,13 @@ public class AllowShipmentAction extends AbstractAction<ConsignmentProcessModel>
 		return Transition.ERROR.toString();
 	}
 
-	protected String getTransitionForConsignment(final ConsignmentModel consignment) {
-		if (consignment.getDeliveryMode() instanceof PickUpDeliveryModeModel)
-		{
-			return Transition.PICKUP.toString();
-		}
-		else
+	protected String getTransitionForConsignment(final ConsignmentModel consignment)
+	{
+		if (consignment.getStatus().getCode().equals(ConsignmentStatus.DELIVERED))
 		{
 			return Transition.DELIVERY.toString();
 		}
+		return Transition.ERROR.toString();
 	}
 
 	protected Process2WarehouseAdapter getProcess2WarehouseAdapter()

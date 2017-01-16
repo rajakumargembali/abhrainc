@@ -3,8 +3,10 @@
  */
 package com.abhrainc.facades.dao.impl;
 
+import de.hybris.platform.core.PK;
 import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.user.UserModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 
@@ -52,14 +54,37 @@ public class AbhraIncFacadeDAOimpl implements AbhraIncFacadeDAO
 	 *
 	 * @see com.abhrainc.facades.dao.AbhraIncFacadeDAO#getOrderDetails(java.lang.String)
 	 */
+	// YTODO Auto-generated method stub
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.abhrainc.facades.dao.AbhraIncFacadeDAO#getOrderDetailsForOrder(java.lang.String)
+	 */
 	@Override
-	public OrderModel getOrderDetails(final String code)
+	public OrderModel getOrderDetailsForOrder(final String code)
 	{
 		// YTODO Auto-generated method stub
 		final String query = "select {pk} from {order} where P_CODE = " + "'" + code + "'";
 		final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(query);
 		final List<OrderModel> model = flexibleSearchService.<OrderModel> search(flexibleSearchQuery).getResult();
 		return model.get(0);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.abhrainc.facades.dao.AbhraIncFacadeDAO#getConsignmentDetails(de.hybris.platform.core.PK)
+	 */
+	@Override
+	public ConsignmentModel getConsignmentDetails(final PK pk)
+	{
+		// YTODO Auto-generated method stub
+		final String query = "select {pk} from {consignment} where P_ORDER = " + "'" + pk + "'";
+		final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(query);
+		final List<ConsignmentModel> model = flexibleSearchService.<ConsignmentModel> search(flexibleSearchQuery).getResult();
+		return model.get(0);
+
 	}
 
 }

@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.storefront.controllers;
 
@@ -111,6 +111,7 @@ public interface ControllerConstants
 				String HostedOrderPageErrorPage = "pages/checkout/multi/hostedOrderPageErrorPage"; // NOSONAR
 				String HostedOrderPostPage = "pages/checkout/multi/hostedOrderPostPage"; // NOSONAR
 				String SilentOrderPostPage = "pages/checkout/multi/silentOrderPostPage"; // NOSONAR
+				String BillingAddressPage = "pages/checkout/multi/billingAddress.jsp";
 				String GiftWrapPage = "pages/checkout/multi/giftWrapPage"; // NOSONAR
 			}
 

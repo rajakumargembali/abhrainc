@@ -3,8 +3,10 @@ package com.abhrainc.facades.order.impl;
 
 import de.hybris.platform.commercefacades.order.data.OrderData;
 import de.hybris.platform.commercefacades.order.impl.DefaultOrderFacade;
+import de.hybris.platform.core.PK;
 import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.servicelayer.exceptions.ModelNotFoundException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.servicelayer.model.ModelService;
@@ -66,7 +68,7 @@ public class AbhraincOrderFacade extends DefaultOrderFacade
 	public void saveExpectedDeliveryDate(final String string, final Date time)
 	{
 		// YTODO Auto-generated method stub
-		final OrderModel model = abhraIncDao.getOrderDetails(string);
+		final OrderModel model = abhraIncDao.getOrderDetailsForOrder(string);
 		model.setOrderExpectedDeliveryDate(time);
 		modelService.save(model);
 
@@ -77,10 +79,20 @@ public class AbhraincOrderFacade extends DefaultOrderFacade
 	 * @param code
 	 * @return
 	 */
+	public ConsignmentModel getConsignmentDetailForCode(final PK pk)
+	{
+		// YTODO Auto-generated method stub
+
+		return abhraIncDao.getConsignmentDetails(pk);
+	}
+
+	/**
+	 * @param code
+	 * @return
+	 */
 	public OrderModel getOrderDetailForCode(final String code)
 	{
 		// YTODO Auto-generated method stub
-		final OrderModel model = abhraIncDao.getOrderDetails(code);
-		return model;
+		return abhraIncDao.getOrderDetailsForOrder(code);
 	}
 }
