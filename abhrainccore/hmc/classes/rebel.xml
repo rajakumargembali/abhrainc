@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://www.zeroturnaround.com">
+  <classpath>
+    <dir name="C:\WORK\hybris-commerce-suite-6.0.0.3\hybris\bin\custom\abhrainc\abhrainccore/hmc/classes" />
+  </classpath>
+</application>
