@@ -1,7 +1,6 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template"%>
-<<<<<<< HEAD
 <%@ taglib prefix="theme" tagdir="/WEB-INF/tags/shared/theme" %>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -23,7 +22,6 @@
 			<formElement:formInputBox idKey="register.email" labelKey="register.email" path="email" inputCSS="text" mandatory="true"/>
 			<formElement:formPasswordBox idKey="password" labelKey="register.pwd" path="pwd" inputCSS="text password strength" mandatory="true"/>
 			<formElement:formPasswordBox idKey="register.checkPwd" labelKey="register.checkPwd" path="checkPwd" inputCSS="text password" mandatory="true"/>
-=======
 <%@ taglib prefix="theme" tagdir="/WEB-INF/tags/shared/theme"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -69,7 +67,6 @@ ${thanks}
 			<%-- <formElement:formPasswordBox idKey="register.checkPwd"
 				labelKey="register.checkPwd" path="checkPwd"
 				inputCSS="text password" mandatory="true" />--%>
->>>>>>> naresh
 
 		</div>
 		<div class="form-actions clearfix">
@@ -78,11 +75,8 @@ ${thanks}
 			</ycommerce:testId>
 		</div>
 	</form:form>
-<<<<<<< HEAD
-=======
 </c:otherwise>
 </c:choose>
 	
->>>>>>> naresh
 
 </template:page>

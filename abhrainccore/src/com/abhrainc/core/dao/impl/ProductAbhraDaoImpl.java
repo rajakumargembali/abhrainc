@@ -1,22 +1,16 @@
 package com.abhrainc.core.dao.impl;
 
-<<<<<<< HEAD
 import de.hybris.platform.core.model.product.ProductModel;
-<<<<<<< HEAD
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
-=======
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
->>>>>>> praneeth
-=======
 import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
->>>>>>> naresh
 
 import java.util.List;
 
@@ -49,7 +43,6 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		return model;
 	}
 
-<<<<<<< HEAD
 	/*
 	 * (non-Javadoc)
 	 *
@@ -65,7 +58,6 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		 * final SearchResult searchResult = search(searchQuery); logger.info(""+searchResult.getResult());
 		 */
 		logger.info("search query" + flexibleSearchService.<ProductModel> search(searchQuery).getResult());
-=======
 
 
 	@Override
@@ -78,13 +70,10 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		/*
 		 * final SearchResult searchResult = search(searchQuery); logger.info(""+searchResult.getResult());
 		 */
->>>>>>> naresh
 		final List<ProductModel> model = flexibleSearchService.<ProductModel> search(searchQuery).getResult();
 		return model;
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	/*
 	 * (non-Javadoc)
 	 *
@@ -115,10 +104,4 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		return searchResult.getResult().get(0);
 	}
 
-=======
->>>>>>> praneeth
-=======
-
-
->>>>>>> naresh
 }

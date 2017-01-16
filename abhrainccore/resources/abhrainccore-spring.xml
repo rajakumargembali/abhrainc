@@ -27,7 +27,6 @@
 		parent="abstractCoreSystemSetup" />
 
 	<!-- Solr field value providers -->
-<<<<<<< HEAD
 	<!-- <bean id="abhraincCCEmailGenerationService" class="com.abhrainc.core.email.AbhraIncCCEmailGenerationService" 
 		parent="defaultEmailGenerationService"> </bean> <bean id="generateCCOrderConfirmationEmail" 
 		class="com.abhrainc.core.service.impl.AbhraIncGenerateEmailAction" parent="abstractAction"> 
@@ -59,7 +58,6 @@
 		<property name="priceService" ref="priceService" />
 	</bean>
 
-=======
 	<!-- <bean id="abhraincCCEmailGenerationService" class="com.abhrainc.core.email.AbhraIncCCEmailGenerationService" parent="defaultEmailGenerationService">
 	</bean>
 	
@@ -90,7 +88,6 @@
         <property name="priceService" ref="priceService"/>
     </bean>
 	
->>>>>>> praneeth
 
 	<bean id="electronicsCategorySource" parent="abstractCategorySource">
 		<property name="rootCategory" value="1" />
@@ -538,14 +535,13 @@
 	</bean>
 
 	<bean id="apparelSizeProductReferenceTargetStrategy"
-<<<<<<< HEAD
 	      class="com.abhrainc.core.strategies.impl.ApparelSizeProductReferenceTargetStrategy">
 		<property name="commerceCategoryService" ref="commerceCategoryService"/>
 		<property name="rootCategoryCode" value="categories"/>
 	</bean>
 
 	
-	<bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController" autowire="byName"/>
+	<!-- <bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController" autowire="byName"/>
 	
 	<bean id="cronJobForPriceConversion" class="com.abhrainc.core.jobs.CronJobForPriceConversion" autowire="byName"/>
 	
@@ -556,15 +552,9 @@
 	</bean>
 	
 	
-<<<<<<< HEAD
 	<alias name="abhraProductService" alias="productAbhraService"/>
 	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
-		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>
-=======
-		class="com.abhrainc.core.strategies.impl.ApparelSizeProductReferenceTargetStrategy">
-		<property name="commerceCategoryService" ref="commerceCategoryService" />
-		<property name="rootCategoryCode" value="categories" />
-	</bean>
+		<property name="productAbhraDao" ref="abhraProductDAO"></property></bean>
 
 
 	<bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController"
@@ -583,12 +573,10 @@
 
 	<alias name="abhraProductService" alias="productAbhraService" />
 	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl">
-		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> -->
+		<property name="productAbhraDao" ref="abhraProductDAO"></property>
 	</bean>
 
->>>>>>> sujan
-=======
-
+ -->
 	
 	<bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController" autowire="byName"/>
 	
@@ -605,10 +593,5 @@
 	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
 		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>
 		
-<<<<<<< HEAD
->>>>>>> praneeth
-
-=======
 		<bean id="seoController" class="com.abhrainc.core.jobs.SeoController" autowire="byName"/>
->>>>>>> naresh
 </beans>

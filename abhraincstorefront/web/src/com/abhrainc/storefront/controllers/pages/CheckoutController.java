@@ -41,10 +41,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
-<<<<<<< HEAD
-=======
 import java.util.Set;
->>>>>>> praneeth
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -198,7 +195,6 @@ public class CheckoutController extends AbstractCheckoutController
 	protected String processOrderCode(final String orderCode, final Model model, final HttpServletRequest request)
 			throws CMSItemNotFoundException
 	{
-<<<<<<< HEAD
 		final GregorianCalendar gc = new GregorianCalendar();
 
 		final int year = randBetween(2017, 2018);
@@ -211,9 +207,6 @@ public class CheckoutController extends AbstractCheckoutController
 
 		saveExpectedDeliveryDate(orderCode, gc.getTime());
 
-=======
-
->>>>>>> praneeth
 		final OrderData orderDetails = orderFacade.getOrderDetailsForCode(orderCode);
 
 
@@ -234,7 +227,6 @@ public class CheckoutController extends AbstractCheckoutController
 			}
 		}
 
-<<<<<<< HEAD
 
 
 
@@ -256,8 +248,6 @@ public class CheckoutController extends AbstractCheckoutController
 		saveExpectedDeliveryDate(orderCode, gc.getTime());
 
 
-=======
->>>>>>> sujan
 		model.addAttribute("orderCode", orderCode);
 		model.addAttribute("orderData", orderDetails);
 		model.addAttribute("allItems", orderDetails.getEntries());
@@ -267,14 +257,11 @@ public class CheckoutController extends AbstractCheckoutController
 		model.addAttribute("pageType", PageType.ORDERCONFIRMATION.name());
 		model.addAttribute("deliveryDate", gc.getTime());
 
-<<<<<<< HEAD
 		storeOrderDetailsInOtherSystem(orderDetails);
-=======
 
 		final OrderModel orderDetail = orderFacade.getOrderDetailForCode(orderDetails.getCode());
 
 		storeOrderDetailsInOtherSystem(orderDetail);
->>>>>>> praneeth
 		processEmailAddress(model, orderDetails);
 
 		final String continueUrl = (String) getSessionService().getAttribute(WebConstants.CONTINUE_URL);
@@ -304,68 +291,13 @@ public class CheckoutController extends AbstractCheckoutController
 
 	}
 
-	/**
-<<<<<<< HEAD
-	 * @param orderDetails
-	 */
-	private void storeOrderDetailsInOtherSystem(final OrderData orderDetails)
-=======
-	 * @param orderDetail
-	 */
 
 	private void storeOrderDetailsInOtherSystem(final OrderModel orderDetail)
->>>>>>> praneeth
 	{ // YTODO Auto-generated method stub
 		final RestTemplate restTemplate = new RestTemplate();
 		try
 		{
 			final String url = "http://localhost:8080/AuditLobby/addOrderDetails";
-<<<<<<< HEAD
-			final HashMap orderData = new HashMap();
-			final OrderModel model = orderFacade.getOrderDetailForCode(orderDetails.getCode());
-			orderData.put("OrderID", model.getPk().getLongValue());
-			orderData.put("OrderCode", orderDetails.getCode());
-			final ConsignmentModel consignmentDetail = orderFacade.getConsignmentDetailForCode(model.getPk());
-
-			orderData.put("ConsignmentId", consignmentDetail.getPk().getLongValue());
-			orderData.put("ConsignmentData", consignmentDetail.getStatus().getCode());
-
-			if (orderDetails.getDeliveryAddress() != null)
-			{
-				orderData.put("AddressData", orderDetails.getDeliveryAddress());
-			}
-			else
-			{
-				orderData.put("AddressData", "");
-			}
-
-			if (orderDetails.getDeliveryCost() != null)
-			{
-				orderData.put("PriceData", orderDetails.getDeliveryCost().getFormattedValue());
-			}
-			else
-			{
-				orderData.put("PriceData", "");
-			}
-
-			if (orderDetails.getStatus() != null)
-			{
-				orderData.put("orderStatus", orderDetails.getStatus().getCode());
-			}
-			else
-			{
-				orderData.put("orderStatus", "");
-			}
-
-			if (orderDetails.getUser() != null)
-			{
-				orderData.put("PrincipleData", orderDetails.getUser().getUid());
-			}
-			else
-			{
-				orderData.put("PrincipleData", "");
-			}
-=======
 
 			final HashMap orderData = new HashMap();
 			orderData.put("OrderID", orderDetail.getCode());
@@ -422,31 +354,24 @@ public class CheckoutController extends AbstractCheckoutController
 				orderData.put("PrincipleData", orderDetail.getUser());
 			}
 
->>>>>>> praneeth
 			restTemplate.postForObject(url, orderData, HashMap.class);
 		}
 		catch (final Exception e)
 		{
 			e.printStackTrace();
 		}
-<<<<<<< HEAD
-=======
 
->>>>>>> praneeth
 	}
 
 	private void processEmailAddress(final Model model, final OrderData orderDetails)
 	{
 		final String uid;
-<<<<<<< HEAD
-=======
 
 		/*
 		 * final String subject = "Thank you for purchasing " + orderDetails.getCode(); final String content =
 		 * "We Have received your order " + orderDetails.getCode() +
 		 * "and your order is confirmed, you will be receiving your product by " + expectedDate;
 		 */
->>>>>>> praneeth
 		if (orderDetails.isGuestCustomer() && !model.containsAttribute("guestRegisterForm"))
 		{
 			//final String name = orderDetails.getPaymentInfo().getBillingAddress().getFirstName();

@@ -24,15 +24,12 @@ INSERT_UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];name;ac
 ;;OrderPartiallyCanceledEmailTemplate;Order Partially Canceled Email Template;true;orderPartiallyCanceledEmail;electronics_Email_Order_Partially_Canceled_Subject;electronics_Email_Order_Partially_Canceled_Body;EmailPage
 ;;OrderPartiallyRefundedEmailTemplate;Order Partially Refunded Email Template;true;orderPartiallyRefundedEmail;electronics_Email_Order_Partially_Refunded_Subject;electronics_Email_Order_Partially_Refunded_Body;EmailPage
 ;;NotPickedUpConsignmentCanceledEmailTemplate;Not Picked Up Consignment Canceled Email Template;true;notPickedUpConsignmentCanceledEmail;electronics_Email_NotPickedUpConsignment_Canceled_Subject;electronics_Email_NotPickedUpConsignment_Canceled_Body;EmailPage
-<<<<<<< HEAD
 ;;OrderAcceptedEmailTemplate;Order Accepted Email Template;true;OrderAcceptedEmail;electronics_Order_Accepted_Subject;electronics_Order_Accepted_Body;EmailPage
 ;;OrderDispatchedEmailTemplate;Order Dispatched Email Template;true;OrderDispatchedEmail;electronics_Order_Dispatched_Subject;electronics_Order_Dispatched_Body;EmailPage
 ;;OrderDeliveredEmailTemplate;Order Delivered Email Template;true;OrderDeliveredEmail;electronics_Order_Delivered_Subject;electronics_Order_Delivered_Body;EmailPage
 #Order Tracking email
 ;;OrderTrackingEmailTemplate;Order Tracking Email Template;true;orderTrackingEmail;elverys_Email_Order_Tracking_Subject;elverys_Email_Order_Tracking_Body;EmailPage
 
-=======
->>>>>>> praneeth
 
 # Templates for CMS Cockpit Page Edit
 UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
@@ -48,11 +45,8 @@ UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];velocityTempla
 ;;OrderPartiallyCanceledEmailTemplate;$jarResourceCms/structure-view/structure_orderPartiallyCanceledEmailTemplate.vm
 ;;OrderPartiallyRefundedEmailTemplate;$jarResourceCms/structure-view/structure_orderPartiallyRefundedEmailTemplate.vm
 ;;NotPickedUpConsignmentCanceledEmailTemplate;$jarResourceCms/structure-view/structure_notPickedUpConsignmentCanceledEmailTemplate.vm
-<<<<<<< HEAD
 #Order Tracking
 ;;OrderTrackingEmailTemplate;$jarResourceCms/structure-view/structure_customerRegistrationEmailTemplate.vm
-=======
->>>>>>> praneeth
 
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CustomerRegistrationEmailTemplate'];validComponentTypes(code)
 ;SiteLogo;;;logo
@@ -190,15 +184,11 @@ INSERT_UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];name;masterTemp
 ;;OrderPartiallyCanceledEmail;Order Partially Canceled Email;OrderPartiallyCanceledEmailTemplate;true;
 ;;OrderPartiallyRefundedEmail;Order Partially Refunded Email;OrderPartiallyRefundedEmailTemplate;true;
 ;;NotPickedUpConsignmentCanceledEmail;Not Picked Up Consignment Canceled Email;NotPickedUpConsignmentCanceledEmailTemplate;true;
-<<<<<<< HEAD
 ;;OrderAcceptedEmail;Order Accepted Email;OrderAcceptedTemplate;true;
 ;;OrderDispatchedEmail;Order Dispatched Email;OrderDispatchedTemplate;true;
 ;;OrderDeliveredEmail;Order Delivered Email;OrderDeliveredTemplate;true;
 #Order Tracking Email
 ;;OrderTrackingEmail;Order Tracking Email;OrderTrackingEmailTemplate;true;
-=======
-
->>>>>>> praneeth
 
 # CMS components velocity templates
 INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)[default='velocity']
@@ -234,7 +224,6 @@ INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)
 ;electronics_Email_Order_Partially_Canceled_Subject;$emailPackageName.OrderPartiallyCanceledEmailContext
 ;electronics_Email_Order_Partially_Refunded_Subject;$emailPackageName.OrderPartiallyRefundedEmailContext
 ;electronics_Email_NotPickedUpConsignment_Canceled_Subject;$emailPackageName.NotPickedUpConsignmentCanceledEmailContext
-<<<<<<< HEAD
 ;electronics_Email_Order_Accepted_Body;$emailPackageName.OrderAcceptedEmail
 ;electronics_Email_Order_Dispatched_Body;$emailPackageName.OrderDispatchedEmailContext
 ;electronics_Email_Order_Delivered_Body;$emailPackageName.OrderDeliveredEmailContext
@@ -243,8 +232,6 @@ INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)
 ;elverys_Email_Order_Tracking_Body;$emailPackageName.OrderTrackingEmailContext
 ;elverys_Email_Order_Tracking_Subject;$emailPackageName.OrderTrackingEmailContext
 
-=======
->>>>>>> praneeth
 
 # Preview Image for use in the CMS Cockpit
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]
@@ -262,12 +249,9 @@ UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $co
 ;;OrderMoveToCsEmail;EmailPageModel_preview
 ;;OrderPartiallyCanceledEmail;EmailPageModel_preview
 ;;OrderPartiallyRefundedEmail;EmailPageModel_preview
-<<<<<<< HEAD
 ;;NotPickedUpConsignmentCanceledEmail;EmailPageModel_preview
 ;;OrderAcceptedEmail;EmailPageModel_preview
 ;;OrderDispatchedEmail;EmailPageModel_preview
 ;;OrderDeliveredEmail;EmailPageModel_preview
 ;;OrderTrackingEmail;EmailPageModel_preview
-=======
 ;;NotPickedUpConsignmentCanceledEmail;EmailPageModel_preview
->>>>>>> praneeth

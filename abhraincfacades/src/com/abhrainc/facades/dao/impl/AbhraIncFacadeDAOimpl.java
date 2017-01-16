@@ -3,23 +3,9 @@
  */
 package com.abhrainc.facades.dao.impl;
 
-<<<<<<< HEAD
-import de.hybris.platform.core.PK;
-import de.hybris.platform.core.model.order.OrderModel;
-import de.hybris.platform.core.model.user.UserModel;
-import de.hybris.platform.ordersplitting.model.ConsignmentModel;
-=======
-import de.hybris.platform.core.model.order.OrderModel;
-import de.hybris.platform.core.model.user.UserModel;
->>>>>>> praneeth
-import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
-import de.hybris.platform.servicelayer.search.FlexibleSearchService;
-
 import java.util.List;
 
 import javax.annotation.Resource;
-
-import org.apache.log4j.Logger;
 
 import com.abhrainc.facades.dao.AbhraIncFacadeDAO;
 
@@ -59,7 +45,6 @@ public class AbhraIncFacadeDAOimpl implements AbhraIncFacadeDAO
 	 *
 	 * @see com.abhrainc.facades.dao.AbhraIncFacadeDAO#getOrderDetails(java.lang.String)
 	 */
-<<<<<<< HEAD
 	// YTODO Auto-generated method stub
 
 	/*
@@ -69,10 +54,6 @@ public class AbhraIncFacadeDAOimpl implements AbhraIncFacadeDAO
 	 */
 	@Override
 	public OrderModel getOrderDetailsForOrder(final String code)
-=======
-	@Override
-	public OrderModel getOrderDetails(final String code)
->>>>>>> praneeth
 	{
 		// YTODO Auto-generated method stub
 		final String query = "select {pk} from {order} where P_CODE = " + "'" + code + "'";
@@ -81,7 +62,6 @@ public class AbhraIncFacadeDAOimpl implements AbhraIncFacadeDAO
 		return model.get(0);
 	}
 
-<<<<<<< HEAD
 	/*
 	 * (non-Javadoc)
 	 *
@@ -98,6 +78,5 @@ public class AbhraIncFacadeDAOimpl implements AbhraIncFacadeDAO
 
 	}
 
-=======
->>>>>>> praneeth
+
 }

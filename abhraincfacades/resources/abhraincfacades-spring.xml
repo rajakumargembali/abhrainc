@@ -158,18 +158,13 @@
 		<property name="consignmentConverter" ref="consignmentConverter" />
 	</bean>
 
-<<<<<<< HEAD
 	<bean id="orderAccepted"
-		class="com.abhrainc.facades.process.email.context.OrderAcceptedEmail"
-=======
+		class="com.abhrainc.facades.process.email.context.OrderAcceptedEmail"/>
 	<bean id="readyForPickupEmailContext"
-		class="com.abhrainc.facades.process.email.context.ReadyForPickupEmailContext"
->>>>>>> praneeth
-		parent="abstractEmailContext" scope="prototype">
+		class="com.abhrainc.facades.process.email.context.ReadyForPickupEmailContext">
 		<property name="consignmentConverter" ref="consignmentConverter" />
 	</bean>
 
-<<<<<<< HEAD
 	<bean id="orderDispatched"
 		class="com.abhrainc.facades.process.email.context.OrderDispatchEmailContext"
 		parent="abstractEmailContext" scope="prototype">
@@ -236,7 +231,6 @@
 		<property name="priceDataFactory" ref="priceDataFactory" />
 	</bean>
 
-=======
 	<bean id="orderCancelledEmailContext"
 		class="com.abhrainc.facades.process.email.context.OrderCancelledEmailContext"
 		parent="abstractEmailContext" scope="prototype">
@@ -283,7 +277,6 @@
 		<property name="priceDataFactory" ref="priceDataFactory" />
 	</bean>
 
->>>>>>> praneeth
 	<alias name="yacceleratorSearchPagePointOfServiceDistancePopulator"
 		alias="searchPagePointOfServiceDistancePopulator" />
 	<bean id="yacceleratorSearchPagePointOfServiceDistancePopulator"
