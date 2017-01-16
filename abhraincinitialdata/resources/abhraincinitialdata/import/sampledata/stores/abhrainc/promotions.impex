@@ -6,7 +6,7 @@ $defaultPromoGrp=electronicsPromoGrp
 
 $favCustomers=favoriteCustomers
 $bigSpenders=bigSpenders
-$catalogVersion=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$productCatalog]),CatalogVersion.version[default=Staged])[default=$productCatalog:Staged]
+$catalogVersion=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$productCatalog]),CatalogVersion.version[default=Online])[default=$productCatalog:Online]
 $regulargroup=regulargroup
 
 INSERT PromotionPriceRow;&tresholdId;Currency(isocode);price

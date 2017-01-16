@@ -1,15 +1,15 @@
 # ImpEx for Importing CMS Content
 
 # Macros / Replacement Parameter definitions
-$contentCatalog=__CONTENT_CATALOG_NAME__
+$contentCatalog=electronicsContentCatalog
 $contentCatalogName=__CONTENT_CATALOG_FULL_NAME__
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog=electronicsProductCatalog
 $productCatalogName=__PRODUCT_CATALOG_FULL_NAME__
 
 $picture=media(code, $contentCV);
 $lang=en
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
 $picture=media(code, $contentCV);
 $image=image(code, $contentCV);
 $media=media(code, $contentCV);
@@ -19,7 +19,7 @@ $siteResource=jar:com.abhrainc.initialdata.setup.InitialDataSystemSetup&/abhrain
 $productResource=jar:com.abhrainc.initialdata.setup.InitialDataSystemSetup&/abhraincinitialdata/import/productCatalogs/$productCatalog
 $jarResourceCms=jar:com.abhrainc.initialdata.setup.InitialDataSystemSetup&/abhraincinitialdata/import/cockpits/cmscockpit
 #naresh
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
 $productCatalog=electronicsProductCatalog
 $siteResource=jar:de.hybris.platform.electronicsstore.constants.ElectronicsstoreConstants&/electronicsstore/import/sampledata/productCatalogs/$productCatalog
 
