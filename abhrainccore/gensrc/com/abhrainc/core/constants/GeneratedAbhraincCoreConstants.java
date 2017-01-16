@@ -1,12 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
- * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
- * --- Generated at 6 Jan, 2017 5:29:56 PM                      ---
- * --- Generated at 16 Jan, 2017 5:45:40 PM                     ---
- * --- Generated at Jan 16, 2017 5:32:46 PM                     ---
- * --- Generated at 15 Jan, 2017 7:00:48 PM                     ---
+ * --- Generated at 17 Jan, 2017 12:41:29 AM                    ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.constants;
@@ -15,27 +10,20 @@ package com.abhrainc.core.constants;
  * @deprecated use constants in Model classes instead
  */
 @Deprecated
-@SuppressWarnings(
-{ "unused", "cast", "PMD" })
+@SuppressWarnings({"unused","cast","PMD"})
 public class GeneratedAbhraincCoreConstants
 {
 	public static final String EXTENSIONNAME = "abhrainccore";
-
 	public static class TC
 	{
-		public static final String ABHRAINCORDER = "AbhraincOrder".intern();
-		public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
-		public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
 		public static final String APPARELPRODUCT = "ApparelProduct".intern();
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
-		public static final String ORDERTHRESHOLDPERCENTAGEDISCOUNT = "OrderThresholdPercentageDiscount".intern();
 		public static final String GOOGLEPRODUCTSEARCH = "GoogleProductSearch".intern();
-		public static final String ORDERTRACKINGEMAILPROCESS = "OrderTrackingEmailProcess".intern();
+		public static final String ORDERTHRESHOLDPERCENTAGEDISCOUNT = "OrderThresholdPercentageDiscount".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}
-
 	public static class Attributes
 	{
 		public static class Consignment
@@ -43,25 +31,19 @@ public class GeneratedAbhraincCoreConstants
 			public static final String ISDELIVERYEMAILSENT = "isDeliveryEmailSent".intern();
 			public static final String TRACKINGEMAILSENT = "trackingEmailSent".intern();
 		}
-
 		public static class Order
 		{
 			public static final String EXPECTEDDELIVERYDATE = "expectedDeliveryDate".intern();
-			public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
-			public static final String ORDEREXPECTEDDELIVERYDATE = "orderExpectedDeliveryDate".intern();
 			public static final String ORDEREXPECTEDDELIVERYDATE = "orderExpectedDeliveryDate".intern();
 		}
-
 		public static class User
 		{
 			public static final String ISEMAILACTIVATED = "isEmailActivated".intern();
 		}
 	}
-
 	public static class Enumerations
 	{
 		public static class ConsignmentStatus
-		public static class AbhraincOrderStatus
 		{
 			public static final String ACCEPTED = "ACCEPTED".intern();
 			public static final String READYFORDISPATCH = "READYFORDISPATCH".intern();
@@ -85,11 +67,11 @@ public class GeneratedAbhraincCoreConstants
 			public static final String YELLOW = "YELLOW".intern();
 		}
 	}
-
+	
 	protected GeneratedAbhraincCoreConstants()
 	{
 		// private constructor
 	}
-
-
+	
+	
 }

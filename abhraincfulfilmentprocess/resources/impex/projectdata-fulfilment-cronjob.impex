@@ -1,5 +1,8 @@
 INSERT_UPDATE CronJob; code[unique=true];job(code);singleExecutable;sessionLanguage(isocode)
 ;cleanUpFraudOrderCronJob;cleanUpFraudOrderJob;false;de
+;cronJobToUpdatePrice;cronJobController;false;de
+;cronJobForAPriceConversion;cronJobForPriceConversion;false;de
+;cronJobToUpdateStocks;cronJobToUpdateStock;false;de
 #seocronjobnaresh
 $productCatalog=electronicsProductCatalog
 $productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]

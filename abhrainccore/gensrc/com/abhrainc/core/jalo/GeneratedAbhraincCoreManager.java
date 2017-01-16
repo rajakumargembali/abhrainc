@@ -1,12 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
- * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
- * --- Generated at 6 Jan, 2017 5:29:56 PM                      ---
- * --- Generated at 16 Jan, 2017 5:45:40 PM                     ---
- * --- Generated at Jan 16, 2017 5:32:46 PM                     ---
- * --- Generated at 15 Jan, 2017 7:00:48 PM                     ---
+ * --- Generated at 17 Jan, 2017 12:41:29 AM                    ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.jalo;
@@ -16,10 +11,9 @@ import com.abhrainc.core.jalo.ApparelProduct;
 import com.abhrainc.core.jalo.ApparelSizeVariantProduct;
 import com.abhrainc.core.jalo.ApparelStyleVariantProduct;
 import com.abhrainc.core.jalo.ElectronicsColorVariantProduct;
+import com.abhrainc.core.jalo.GoogleProductSearch;
 import com.abhrainc.core.jalo.OrderThresholdPercentageDiscount;
 import de.hybris.platform.jalo.GenericItem;
-import com.abhrainc.core.jalo.GoogleProductSearch;
-import com.abhrainc.core.jalo.OrderTrackingEmailProcess;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
@@ -35,22 +29,13 @@ import de.hybris.platform.jalo.user.User;
 import de.hybris.platform.ordersplitting.jalo.Consignment;
 import java.util.Collections;
 import java.util.Date;
-import de.hybris.platform.jalo.security.Principal;
-import de.hybris.platform.jalo.type.ComposedType;
-import de.hybris.platform.jalo.type.JaloGenericCreationException;
-import de.hybris.platform.jalo.user.User;
-import de.hybris.platform.ordersplitting.jalo.Consignment;
-import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
 
 /**
  * Generated class for type <code>AbhraincCoreManager</code>.
  */
-@SuppressWarnings(
-{ "deprecation", "unused", "cast", "PMD" })
+@SuppressWarnings({"deprecation","unused","cast","PMD"})
 public abstract class GeneratedAbhraincCoreManager extends Extension
 {
 	protected static final Map<String, Map<String, AttributeMode>> DEFAULT_INITIAL_ATTRIBUTES;
@@ -61,29 +46,19 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		tmp.put("expectedDeliveryDate", AttributeMode.INITIAL);
 		tmp.put("orderExpectedDeliveryDate", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
-		tmp.put("AbhraincOrderStatus", AttributeMode.INITIAL);
-		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
-		tmp.put("isEmailActivated", AttributeMode.INITIAL);
-		ttmp.put("de.hybris.platform.jalo.user.User", Collections.unmodifiableMap(tmp));
 		tmp.put("trackingEmailSent", AttributeMode.INITIAL);
 		tmp.put("isDeliveryEmailSent", AttributeMode.INITIAL);
-		tmp = new HashMap<String, AttributeMode>();
-		tmp.put("trackingEmailSent", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.ordersplitting.jalo.Consignment", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("isEmailActivated", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.user.User", Collections.unmodifiableMap(tmp));
-		tmp = new HashMap<String, AttributeMode>();
-		tmp.put("orderExpectedDeliveryDate", AttributeMode.INITIAL);
-		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
-
 	@Override
 	public Map<String, AttributeMode> getDefaultAttributeModes(final Class<? extends Item> itemClass)
 	{
-		final Map<String, AttributeMode> ret = new HashMap<>();
+		Map<String, AttributeMode> ret = new HashMap<>();
 		final Map<String, AttributeMode> attr = DEFAULT_INITIAL_ATTRIBUTES.get(itemClass.getName());
 		if (attr != null)
 		{
@@ -91,594 +66,458 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		}
 		return ret;
 	}
-
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Order.AbhraincOrderStatus</code> attribute.
-	 *
-	 * @return the AbhraincOrderStatus - AbhraincOrderStatus
-	 */
-	public EnumerationValue getAbhraincOrderStatus(final SessionContext ctx, final Order item)
-	{
-		return (EnumerationValue) item.getProperty(ctx, AbhraincCoreConstants.Attributes.Order.ABHRAINCORDERSTATUS);
-	}
-
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Order.AbhraincOrderStatus</code> attribute.
-	 *
-	 * @return the AbhraincOrderStatus - AbhraincOrderStatus
-	 */
-	public EnumerationValue getAbhraincOrderStatus(final Order item)
-	{
-		return getAbhraincOrderStatus(getSession().getSessionContext(), item);
-	}
-
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.AbhraincOrderStatus</code> attribute.
-	 *
-	 * @param value
-	 *           the AbhraincOrderStatus - AbhraincOrderStatus
-	 */
-	public void setAbhraincOrderStatus(final SessionContext ctx, final Order item, final EnumerationValue value)
-	{
-		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Order.ABHRAINCORDERSTATUS, value);
-	}
-
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.AbhraincOrderStatus</code> attribute.
-	 *
-	 * @param value
-	 *           the AbhraincOrderStatus - AbhraincOrderStatus
-	 */
-	public void setAbhraincOrderStatus(final Order item, final EnumerationValue value)
-	{
-		setAbhraincOrderStatus(getSession().getSessionContext(), item, value);
-	}
-
-	public AbhraincOrder createAbhraincOrder(final SessionContext ctx, final Map attributeValues)
-	{
-		try
-		{
-			final ComposedType type = getTenant().getJaloConnection().getTypeManager()
-					.getComposedType(AbhraincCoreConstants.TC.ABHRAINCORDER);
-			return (AbhraincOrder) type.newInstance(ctx, attributeValues);
-		}
-		catch (final JaloGenericCreationException e)
-		{
-			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ? (RuntimeException) cause
-					: new JaloSystemException(cause, cause.getMessage(), e.getErrorCode()));
-		}
-		catch (final JaloBusinessException e)
-		{
-			throw new JaloSystemException(e, "error creating AbhraincOrder : " + e.getMessage(), 0);
-		}
-	}
-
-	public AbhraincOrder createAbhraincOrder(final Map attributeValues)
-	{
-		return createAbhraincOrder(getSession().getSessionContext(), attributeValues);
-	}
-
+	
 	public ApparelProduct createApparelProduct(final SessionContext ctx, final Map attributeValues)
 	{
 		try
 		{
-			final ComposedType type = getTenant().getJaloConnection().getTypeManager()
-					.getComposedType(AbhraincCoreConstants.TC.APPARELPRODUCT);
-			return (ApparelProduct) type.newInstance(ctx, attributeValues);
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.APPARELPRODUCT );
+			return (ApparelProduct)type.newInstance( ctx, attributeValues );
 		}
-		catch (final JaloGenericCreationException e)
+		catch( JaloGenericCreationException e)
 		{
 			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ? (RuntimeException) cause
-					: new JaloSystemException(cause, cause.getMessage(), e.getErrorCode()));
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
 		}
-		catch (final JaloBusinessException e)
+		catch( JaloBusinessException e )
 		{
-			throw new JaloSystemException(e, "error creating ApparelProduct : " + e.getMessage(), 0);
+			throw new JaloSystemException( e ,"error creating ApparelProduct : "+e.getMessage(), 0 );
 		}
 	}
-
+	
 	public ApparelProduct createApparelProduct(final Map attributeValues)
 	{
-		return createApparelProduct(getSession().getSessionContext(), attributeValues);
+		return createApparelProduct( getSession().getSessionContext(), attributeValues );
 	}
-
+	
 	public ApparelSizeVariantProduct createApparelSizeVariantProduct(final SessionContext ctx, final Map attributeValues)
 	{
 		try
 		{
-			final ComposedType type = getTenant().getJaloConnection().getTypeManager()
-					.getComposedType(AbhraincCoreConstants.TC.APPARELSIZEVARIANTPRODUCT);
-			return (ApparelSizeVariantProduct) type.newInstance(ctx, attributeValues);
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.APPARELSIZEVARIANTPRODUCT );
+			return (ApparelSizeVariantProduct)type.newInstance( ctx, attributeValues );
 		}
-		catch (final JaloGenericCreationException e)
+		catch( JaloGenericCreationException e)
 		{
 			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ? (RuntimeException) cause
-					: new JaloSystemException(cause, cause.getMessage(), e.getErrorCode()));
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
 		}
-		catch (final JaloBusinessException e)
+		catch( JaloBusinessException e )
 		{
-			throw new JaloSystemException(e, "error creating ApparelSizeVariantProduct : " + e.getMessage(), 0);
+			throw new JaloSystemException( e ,"error creating ApparelSizeVariantProduct : "+e.getMessage(), 0 );
 		}
 	}
-
+	
 	public ApparelSizeVariantProduct createApparelSizeVariantProduct(final Map attributeValues)
 	{
-		return createApparelSizeVariantProduct(getSession().getSessionContext(), attributeValues);
+		return createApparelSizeVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
-
+	
 	public ApparelStyleVariantProduct createApparelStyleVariantProduct(final SessionContext ctx, final Map attributeValues)
 	{
 		try
 		{
-			final ComposedType type = getTenant().getJaloConnection().getTypeManager()
-					.getComposedType(AbhraincCoreConstants.TC.APPARELSTYLEVARIANTPRODUCT);
-			return (ApparelStyleVariantProduct) type.newInstance(ctx, attributeValues);
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.APPARELSTYLEVARIANTPRODUCT );
+			return (ApparelStyleVariantProduct)type.newInstance( ctx, attributeValues );
 		}
-		catch (final JaloGenericCreationException e)
+		catch( JaloGenericCreationException e)
 		{
 			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ? (RuntimeException) cause
-					: new JaloSystemException(cause, cause.getMessage(), e.getErrorCode()));
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
 		}
-		catch (final JaloBusinessException e)
+		catch( JaloBusinessException e )
 		{
-			throw new JaloSystemException(e, "error creating ApparelStyleVariantProduct : " + e.getMessage(), 0);
+			throw new JaloSystemException( e ,"error creating ApparelStyleVariantProduct : "+e.getMessage(), 0 );
 		}
 	}
-
+	
 	public ApparelStyleVariantProduct createApparelStyleVariantProduct(final Map attributeValues)
 	{
-		return createApparelStyleVariantProduct(getSession().getSessionContext(), attributeValues);
+		return createApparelStyleVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
-
+	
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final SessionContext ctx, final Map attributeValues)
 	{
 		try
 		{
-			final ComposedType type = getTenant().getJaloConnection().getTypeManager()
-					.getComposedType(AbhraincCoreConstants.TC.ELECTRONICSCOLORVARIANTPRODUCT);
-			return (ElectronicsColorVariantProduct) type.newInstance(ctx, attributeValues);
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ELECTRONICSCOLORVARIANTPRODUCT );
+			return (ElectronicsColorVariantProduct)type.newInstance( ctx, attributeValues );
 		}
-		catch (final JaloGenericCreationException e)
+		catch( JaloGenericCreationException e)
 		{
 			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ? (RuntimeException) cause
-					: new JaloSystemException(cause, cause.getMessage(), e.getErrorCode()));
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
 		}
-		catch (final JaloBusinessException e)
+		catch( JaloBusinessException e )
 		{
-			throw new JaloSystemException(e, "error creating ElectronicsColorVariantProduct : " + e.getMessage(), 0);
+			throw new JaloSystemException( e ,"error creating ElectronicsColorVariantProduct : "+e.getMessage(), 0 );
 		}
 	}
-
+	
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
-		return createElectronicsColorVariantProduct(getSession().getSessionContext(), attributeValues);
+		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
-
+	
+	public GoogleProductSearch createGoogleProductSearch(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.GOOGLEPRODUCTSEARCH );
+			return (GoogleProductSearch)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating GoogleProductSearch : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public GoogleProductSearch createGoogleProductSearch(final Map attributeValues)
+	{
+		return createGoogleProductSearch( getSession().getSessionContext(), attributeValues );
+	}
+	
 	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final SessionContext ctx, final Map attributeValues)
 	{
 		try
 		{
 			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ORDERTHRESHOLDPERCENTAGEDISCOUNT );
 			return (OrderThresholdPercentageDiscount)type.newInstance( ctx, attributeValues );
-
-	public GoogleProductSearch createGoogleProductSearch(final SessionContext ctx, final Map attributeValues)
-	{
-		try
-		{
-			final ComposedType type = getTenant().getJaloConnection().getTypeManager()
-					.getComposedType(AbhraincCoreConstants.TC.GOOGLEPRODUCTSEARCH);
-			return (GoogleProductSearch) type.newInstance(ctx, attributeValues);
 		}
-		catch (final JaloGenericCreationException e)
+		catch( JaloGenericCreationException e)
 		{
 			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ? (RuntimeException) cause
-					: new JaloSystemException(cause, cause.getMessage(), e.getErrorCode()));
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
 		}
-		catch (final JaloBusinessException e)
+		catch( JaloBusinessException e )
 		{
-			throw new JaloSystemException(e, "error creating OrderThresholdPercentageDiscount : " + e.getMessage(), 0);
+			throw new JaloSystemException( e ,"error creating OrderThresholdPercentageDiscount : "+e.getMessage(), 0 );
 		}
 	}
-
+	
 	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final Map attributeValues)
 	{
-		return createOrderThresholdPercentageDiscount(getSession().getSessionContext(), attributeValues);
+		return createOrderThresholdPercentageDiscount( getSession().getSessionContext(), attributeValues );
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.expectedDeliveryDate</code> attribute.
-	 *
 	 * @return the expectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public Date getExpectedDeliveryDate(final SessionContext ctx, final Order item)
 	{
-		return (Date) item.getProperty(ctx, AbhraincCoreConstants.Attributes.Order.EXPECTEDDELIVERYDATE);
+		return (Date)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Order.EXPECTEDDELIVERYDATE);
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.expectedDeliveryDate</code> attribute.
-	 *
 	 * @return the expectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public Date getExpectedDeliveryDate(final Order item)
 	{
-		return getExpectedDeliveryDate(getSession().getSessionContext(), item);
+		return getExpectedDeliveryDate( getSession().getSessionContext(), item );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.expectedDeliveryDate</code> attribute.
-	 *
-	 * @param value
-	 *           the expectedDeliveryDate - Used to display the Expected Delivery Date
+	 * <i>Generated method</i> - Setter of the <code>Order.expectedDeliveryDate</code> attribute. 
+	 * @param value the expectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public void setExpectedDeliveryDate(final SessionContext ctx, final Order item, final Date value)
 	{
-		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Order.EXPECTEDDELIVERYDATE, value);
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Order.EXPECTEDDELIVERYDATE,value);
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.expectedDeliveryDate</code> attribute.
+	 * <i>Generated method</i> - Setter of the <code>Order.expectedDeliveryDate</code> attribute. 
 	 * @param value the expectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public void setExpectedDeliveryDate(final Order item, final Date value)
 	{
 		setExpectedDeliveryDate( getSession().getSessionContext(), item, value );
-
-	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final SessionContext ctx, final Map attributeValues)
-	{
-		try
-		{
-			final ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ORDERTHRESHOLDPERCENTAGEDISCOUNT );
-			return (OrderThresholdPercentageDiscount)type.newInstance( ctx, attributeValues );
-			throw new JaloSystemException( e ,"error creating GoogleProductSearch : "+e.getMessage(), 0 );
-		}
 	}
-
-	public GoogleProductSearch createGoogleProductSearch(final Map attributeValues)
-	{
-		return createGoogleProductSearch(getSession().getSessionContext(), attributeValues);
-	}
-
-	public OrderTrackingEmailProcess createOrderTrackingEmailProcess(final SessionContext ctx, final Map attributeValues)
-	{
-		try
-		{
-			final ComposedType type = getTenant().getJaloConnection().getTypeManager()
-					.getComposedType(AbhraincCoreConstants.TC.ORDERTRACKINGEMAILPROCESS);
-			return (OrderTrackingEmailProcess) type.newInstance(ctx, attributeValues);
-		}
-		catch (final JaloGenericCreationException e)
-		{
-			final Throwable cause = e.getCause();
-			throw (cause instanceof RuntimeException ? (RuntimeException) cause
-					: new JaloSystemException(cause, cause.getMessage(), e.getErrorCode()));
-		}
-		catch (final JaloBusinessException e)
-		{
-			throw new JaloSystemException(e, "error creating OrderThresholdPercentageDiscount : " + e.getMessage(), 0);
-		}
-	}
-
-	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final Map attributeValues)
-	{
-		return createOrderThresholdPercentageDiscount(getSession().getSessionContext(), attributeValues);
-		throw new JaloSystemException(e, "error creating OrderTrackingEmailProcess : " + e.getMessage(), 0);
-	}
-
-	}
-
-	public OrderTrackingEmailProcess createOrderTrackingEmailProcess(final Map attributeValues)
-	{
-		return createOrderTrackingEmailProcess(getSession().getSessionContext(), attributeValues);
-	}
-
+	
 	@Override
 	public String getName()
 	{
 		return AbhraincCoreConstants.EXTENSIONNAME;
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
-	 *
 	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
 	public Boolean isIsDeliveryEmailSent(final SessionContext ctx, final Consignment item)
 	{
-		return (Boolean) item.getProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.ISDELIVERYEMAILSENT);
+		return (Boolean)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Consignment.ISDELIVERYEMAILSENT);
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
-	 *
 	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
 	public Boolean isIsDeliveryEmailSent(final Consignment item)
 	{
-		return isIsDeliveryEmailSent(getSession().getSessionContext(), item);
+		return isIsDeliveryEmailSent( getSession().getSessionContext(), item );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
-	 *
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
 	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
 	public boolean isIsDeliveryEmailSentAsPrimitive(final SessionContext ctx, final Consignment item)
 	{
-		final Boolean value = isIsDeliveryEmailSent(ctx, item);
+		Boolean value = isIsDeliveryEmailSent( ctx,item );
 		return value != null ? value.booleanValue() : false;
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
-	 *
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
 	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
 	public boolean isIsDeliveryEmailSentAsPrimitive(final Consignment item)
 	{
-		return isIsDeliveryEmailSentAsPrimitive(getSession().getSessionContext(), item);
+		return isIsDeliveryEmailSentAsPrimitive( getSession().getSessionContext(), item );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
-	 *
-	 * @param value
-	 *           the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @param value the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
 	public void setIsDeliveryEmailSent(final SessionContext ctx, final Consignment item, final Boolean value)
 	{
-		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.ISDELIVERYEMAILSENT, value);
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.ISDELIVERYEMAILSENT,value);
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
-	 *
-	 * @param value
-	 *           the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @param value the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
 	public void setIsDeliveryEmailSent(final Consignment item, final Boolean value)
 	{
-		setIsDeliveryEmailSent(getSession().getSessionContext(), item, value);
+		setIsDeliveryEmailSent( getSession().getSessionContext(), item, value );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
-	 *
-	 * @param value
-	 *           the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @param value the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
 	public void setIsDeliveryEmailSent(final SessionContext ctx, final Consignment item, final boolean value)
 	{
-		setIsDeliveryEmailSent(ctx, item, Boolean.valueOf(value));
+		setIsDeliveryEmailSent( ctx, item, Boolean.valueOf( value ) );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
-	 *
-	 * @param value
-	 *           the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute. 
+	 * @param value the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
 	public void setIsDeliveryEmailSent(final Consignment item, final boolean value)
 	{
-		setIsDeliveryEmailSent(getSession().getSessionContext(), item, value);
+		setIsDeliveryEmailSent( getSession().getSessionContext(), item, value );
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
-	 *
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */
 	public Boolean isIsEmailActivated(final SessionContext ctx, final User item)
 	{
-		return (Boolean) item.getProperty(ctx, AbhraincCoreConstants.Attributes.User.ISEMAILACTIVATED);
+		return (Boolean)item.getProperty( ctx, AbhraincCoreConstants.Attributes.User.ISEMAILACTIVATED);
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
-	 *
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */
 	public Boolean isIsEmailActivated(final User item)
 	{
-		return isIsEmailActivated(getSession().getSessionContext(), item);
+		return isIsEmailActivated( getSession().getSessionContext(), item );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
-	 *
+	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute. 
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */
 	public boolean isIsEmailActivatedAsPrimitive(final SessionContext ctx, final User item)
 	{
-		final Boolean value = isIsEmailActivated(ctx, item);
+		Boolean value = isIsEmailActivated( ctx,item );
 		return value != null ? value.booleanValue() : false;
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
-	 *
+	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute. 
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */
 	public boolean isIsEmailActivatedAsPrimitive(final User item)
 	{
-		return isIsEmailActivatedAsPrimitive(getSession().getSessionContext(), item);
+		return isIsEmailActivatedAsPrimitive( getSession().getSessionContext(), item );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute.
-	 *
-	 * @param value
-	 *           the isEmailActivated - UserEmailSTATUS
+	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute. 
+	 * @param value the isEmailActivated - UserEmailSTATUS
 	 */
 	public void setIsEmailActivated(final SessionContext ctx, final User item, final Boolean value)
 	{
-		item.setProperty(ctx, AbhraincCoreConstants.Attributes.User.ISEMAILACTIVATED, value);
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.User.ISEMAILACTIVATED,value);
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute.
-	 *
-	 * @param value
-	 *           the isEmailActivated - UserEmailSTATUS
+	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute. 
+	 * @param value the isEmailActivated - UserEmailSTATUS
 	 */
 	public void setIsEmailActivated(final User item, final Boolean value)
 	{
-		setIsEmailActivated(getSession().getSessionContext(), item, value);
+		setIsEmailActivated( getSession().getSessionContext(), item, value );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute.
-	 *
-	 * @param value
-	 *           the isEmailActivated - UserEmailSTATUS
+	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute. 
+	 * @param value the isEmailActivated - UserEmailSTATUS
 	 */
 	public void setIsEmailActivated(final SessionContext ctx, final User item, final boolean value)
 	{
-		setIsEmailActivated(ctx, item, Boolean.valueOf(value));
+		setIsEmailActivated( ctx, item, Boolean.valueOf( value ) );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute.
-	 *
-	 * @param value
-	 *           the isEmailActivated - UserEmailSTATUS
+	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute. 
+	 * @param value the isEmailActivated - UserEmailSTATUS
 	 */
 	public void setIsEmailActivated(final User item, final boolean value)
 	{
-		setIsEmailActivated(getSession().getSessionContext(), item, value);
+		setIsEmailActivated( getSession().getSessionContext(), item, value );
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
-	 *
 	 * @return the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public Date getOrderExpectedDeliveryDate(final SessionContext ctx, final Order item)
 	{
-		return (Date) item.getProperty(ctx, AbhraincCoreConstants.Attributes.Order.ORDEREXPECTEDDELIVERYDATE);
+		return (Date)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Order.ORDEREXPECTEDDELIVERYDATE);
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
-	 *
 	 * @return the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public Date getOrderExpectedDeliveryDate(final Order item)
 	{
-		return getOrderExpectedDeliveryDate(getSession().getSessionContext(), item);
+		return getOrderExpectedDeliveryDate( getSession().getSessionContext(), item );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
-	 *
-	 * @param value
-	 *           the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
+	 * <i>Generated method</i> - Setter of the <code>Order.orderExpectedDeliveryDate</code> attribute. 
+	 * @param value the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public void setOrderExpectedDeliveryDate(final SessionContext ctx, final Order item, final Date value)
 	{
-		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Order.ORDEREXPECTEDDELIVERYDATE, value);
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Order.ORDEREXPECTEDDELIVERYDATE,value);
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
-	 *
-	 * @param value
-	 *           the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
+	 * <i>Generated method</i> - Setter of the <code>Order.orderExpectedDeliveryDate</code> attribute. 
+	 * @param value the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public void setOrderExpectedDeliveryDate(final Order item, final Date value)
 	{
-		setOrderExpectedDeliveryDate(getSession().getSessionContext(), item, value);
+		setOrderExpectedDeliveryDate( getSession().getSessionContext(), item, value );
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 *
 	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public Boolean isTrackingEmailSent(final SessionContext ctx, final Consignment item)
 	{
-		return (Boolean) item.getProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.TRACKINGEMAILSENT);
+		return (Boolean)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Consignment.TRACKINGEMAILSENT);
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 *
 	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public Boolean isTrackingEmailSent(final Consignment item)
 	{
-		return isTrackingEmailSent(getSession().getSessionContext(), item);
+		return isTrackingEmailSent( getSession().getSessionContext(), item );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 *
+	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute. 
 	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public boolean isTrackingEmailSentAsPrimitive(final SessionContext ctx, final Consignment item)
 	{
-		final Boolean value = isTrackingEmailSent(ctx, item);
+		Boolean value = isTrackingEmailSent( ctx,item );
 		return value != null ? value.booleanValue() : false;
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 *
+	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute. 
 	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public boolean isTrackingEmailSentAsPrimitive(final Consignment item)
 	{
-		return isTrackingEmailSentAsPrimitive(getSession().getSessionContext(), item);
+		return isTrackingEmailSentAsPrimitive( getSession().getSessionContext(), item );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 *
-	 * @param value
-	 *           the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @param value the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public void setTrackingEmailSent(final SessionContext ctx, final Consignment item, final Boolean value)
 	{
-		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.TRACKINGEMAILSENT, value);
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.TRACKINGEMAILSENT,value);
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 *
-	 * @param value
-	 *           the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @param value the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public void setTrackingEmailSent(final Consignment item, final Boolean value)
 	{
-		setTrackingEmailSent(getSession().getSessionContext(), item, value);
+		setTrackingEmailSent( getSession().getSessionContext(), item, value );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 *
-	 * @param value
-	 *           the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @param value the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public void setTrackingEmailSent(final SessionContext ctx, final Consignment item, final boolean value)
 	{
-		setTrackingEmailSent(ctx, item, Boolean.valueOf(value));
+		setTrackingEmailSent( ctx, item, Boolean.valueOf( value ) );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 *
-	 * @param value
-	 *           the trackingEmailSent - Specifies whether order tracking email is sent or not.
+	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute. 
+	 * @param value the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public void setTrackingEmailSent(final Consignment item, final boolean value)
 	{
-		setTrackingEmailSent(getSession().getSessionContext(), item, value);
+		setTrackingEmailSent( getSession().getSessionContext(), item, value );
 	}
-
+	
 }
