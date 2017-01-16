@@ -159,12 +159,9 @@
 	</bean>
 
 	<bean id="orderAccepted"
-		class="com.abhrainc.facades.process.email.context.OrderAcceptedEmail"/>
-	<bean id="readyForPickupEmailContext"
-		class="com.abhrainc.facades.process.email.context.ReadyForPickupEmailContext">
+		class="com.abhrainc.facades.process.email.context.OrderAcceptedEmail" parent="abstractEmailContext" scope="prototype">
 		<property name="consignmentConverter" ref="consignmentConverter" />
 	</bean>
-
 	<bean id="orderDispatched"
 		class="com.abhrainc.facades.process.email.context.OrderDispatchEmailContext"
 		parent="abstractEmailContext" scope="prototype">
@@ -185,18 +182,18 @@
 		<property name="consignmentConverter" ref="consignmentConverter" />
 	</bean>
 
-	<bean id="orderCancelledEmailContext"
+	<!-- <bean id="orderCancelledEmailContext"
 		class="com.abhrainc.facades.process.email.context.OrderCancelledEmailContext"
 		parent="abstractEmailContext" scope="prototype">
 		<property name="orderConverter" ref="orderConverter" />
 	</bean>
 
-	<bean id="orderRefundEmailContext"
+ 	<bean id="orderRefundEmailContext"
 		class="com.abhrainc.facades.process.email.context.OrderRefundEmailContext"
 		parent="abstractEmailContext" scope="prototype">
 		<property name="orderConverter" ref="orderConverter" />
-	</bean>
-	<bean id="consignmentCollectionReminderEmailContext"
+	</bean>-->
+<!-- 	<bean id="consignmentCollectionReminderEmailContext"
 		class="com.abhrainc.facades.process.email.context.ConsignmentCollectionReminderEmailContext"
 		parent="abstractEmailContext" scope="prototype">
 		<property name="consignmentConverter" ref="consignmentConverter" />
@@ -230,7 +227,7 @@
 		<property name="consignmentConverter" ref="consignmentConverter" />
 		<property name="priceDataFactory" ref="priceDataFactory" />
 	</bean>
-
+ -->
 	<bean id="orderCancelledEmailContext"
 		class="com.abhrainc.facades.process.email.context.OrderCancelledEmailContext"
 		parent="abstractEmailContext" scope="prototype">

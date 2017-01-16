@@ -8,9 +8,6 @@ import de.hybris.platform.promotions.result.PromotionEvaluationContext;
 import de.hybris.platform.promotions.util.Helper;
 
 import java.util.ArrayList;
-import de.hybris.platform.promotions.jalo.PromotionResult;
-import de.hybris.platform.promotions.result.PromotionEvaluationContext;
-
 import java.util.List;
 import java.util.Locale;
 
@@ -77,7 +74,6 @@ public class OrderThresholdPercentageDiscount extends GeneratedOrderThresholdPer
 		return promotionResults;
 
 
-		return null;
 	}
 
 	@Override

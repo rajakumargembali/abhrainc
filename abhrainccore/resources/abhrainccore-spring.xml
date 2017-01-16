@@ -71,7 +71,7 @@
 		
 	</bean>
 	 -->
-	<bean id="volumeAwareProductPriceValueProvider" class="com.abhrainc.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider"  parent="abstractPropertyFieldValueProvider">
+<!-- 	<bean id="volumeAwareProductPriceValueProvider" class="com.abhrainc.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider"  parent="abstractPropertyFieldValueProvider">
         <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
         <property name="priceService" ref="priceService"/>
         <property name="commonI18NService" ref="commonI18NService"/>
@@ -87,7 +87,7 @@
         <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
         <property name="priceService" ref="priceService"/>
     </bean>
-	
+	 -->
 
 	<bean id="electronicsCategorySource" parent="abstractCategorySource">
 		<property name="rootCategory" value="1" />
