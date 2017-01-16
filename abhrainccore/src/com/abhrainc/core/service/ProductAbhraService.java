@@ -2,14 +2,19 @@ package com.abhrainc.core.service;
 
 import java.util.Map;
 
+<<<<<<< HEAD
 
 public interface ProductAbhraService
 {
+=======
+public interface ProductAbhraService {
+>>>>>>> naresh
 
 	String updateProductBYCode(Map products);
 
 	String updateStockBYCode(Map map);
 
+<<<<<<< HEAD
 	/**
 	 * @param pound
 	 * @param euro
@@ -30,4 +35,6 @@ public interface ProductAbhraService
 
 =======
 >>>>>>> praneeth
+=======
+>>>>>>> naresh
 }

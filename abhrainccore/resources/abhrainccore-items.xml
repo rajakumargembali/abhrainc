@@ -64,6 +64,20 @@
 					</attribute>
 				</attributes>
 			</itemtype>
+			<!-- seo items definition -->
+			
+			<itemtype code="GoogleProductSearch" extends="CronJob"
+						autocreate="true" generate="true"
+			          jaloclass="com.abhrainc.core.jalo.GoogleProductSearch">
+				<description>Base apparel product extension that contains additional attributes.</description>
+				<attributes>
+					<attribute qualifier="catalogVersion" type="catalogVersion">
+						<description>Used to get seo urls</description>
+						<modifiers/>
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
+			</itemtype>
 		
 
 		<typegroup name="Apparel">

@@ -1,6 +1,7 @@
 package com.abhrainc.core.service.impl;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import de.hybris.platform.acceleratorservices.model.email.EmailAddressModel;
 import de.hybris.platform.acceleratorservices.model.email.EmailMessageModel;
 import de.hybris.platform.basecommerce.enums.ConsignmentStatus;
@@ -46,6 +47,21 @@ import com.abhrainc.core.event.OrderTrackingEmailEvent;
 
 import com.abhrainc.core.dao.ProductAbhraDao;
 >>>>>>> praneeth
+=======
+import de.hybris.platform.catalog.model.CatalogVersionModel;
+import de.hybris.platform.core.model.product.ProductModel;
+import de.hybris.platform.europe1.model.PriceRowModel;
+import de.hybris.platform.servicelayer.model.ModelService;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.abhrainc.core.dao.ProductAbhraDao;
+>>>>>>> naresh
 import com.abhrainc.core.service.ProductAbhraService;
 
 
@@ -56,6 +72,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 
 	@Autowired
 <<<<<<< HEAD
+<<<<<<< HEAD
 	BusinessProcessService businessProcessService;
 
 	@Autowired
@@ -64,6 +81,8 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 	@Autowired
 =======
 >>>>>>> praneeth
+=======
+>>>>>>> naresh
 	ProductAbhraDao productAbhraDao;
 
 	@Autowired
@@ -79,6 +98,12 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 		for (int j = 0; j < productModel.size(); j++)
 		{
 			final ProductModel model = productModel.get(j);
+<<<<<<< HEAD
+=======
+			final CatalogVersionModel catalogModel = model.getCatalogVersion();
+			logger.info("this is the catalog" + catalogModel);
+			logger.info("version of catalog" + catalogModel.getCatalog().getVersion());
+>>>>>>> naresh
 			final Collection<PriceRowModel> priceRowModel = model.getEurope1Prices();
 			for (final PriceRowModel priceRowModel2 : priceRowModel)
 			{
@@ -103,6 +128,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 		logger.info(productModel);
 		for (int j = 0; j < productModel.size(); j++)
 		{
+<<<<<<< HEAD
 			final ProductModel model = productModel.get(j);
 			final Set<StockLevelModel> stockLevelModel = model.getStockLevels();
 			for (final StockLevelModel stockLevelModel2 : stockLevelModel)
@@ -157,10 +183,16 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 				}
 
 			}
+=======
+			//	ProductModel model = productModel.get(j);
+
+
+>>>>>>> naresh
 		}
 		//final ProductModel model = productService.getProductForCode(products.get("product_code").toString());
 		//System.out.println(model.getCode() + "" + model.getDescription());
 		return "Success";
+<<<<<<< HEAD
 
 	}
 <<<<<<< HEAD
@@ -269,3 +301,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 >>>>>>> praneeth
 }
 
+=======
+	}
+}
+>>>>>>> naresh

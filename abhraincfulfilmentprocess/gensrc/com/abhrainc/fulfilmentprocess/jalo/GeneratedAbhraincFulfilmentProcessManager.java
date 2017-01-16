@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
@@ -18,6 +19,9 @@
 =======
  * --- Generated at Jan 16, 2017 5:32:46 PM                     ---
 >>>>>>> praneeth
+=======
+ * --- Generated at 15 Jan, 2017 6:49:53 PM                     ---
+>>>>>>> naresh
  * ----------------------------------------------------------------
  */
 package com.abhrainc.fulfilmentprocess.jalo;

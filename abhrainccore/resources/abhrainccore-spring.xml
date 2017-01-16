@@ -605,6 +605,10 @@
 	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
 		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>
 		
+<<<<<<< HEAD
 >>>>>>> praneeth
 
+=======
+		<bean id="seoController" class="com.abhrainc.core.jobs.SeoController" autowire="byName"/>
+>>>>>>> naresh
 </beans>

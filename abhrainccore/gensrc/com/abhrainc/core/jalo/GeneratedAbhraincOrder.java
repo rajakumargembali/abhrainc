@@ -1,7 +1,11 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+<<<<<<< HEAD
  * --- Generated at 16 Jan, 2017 5:45:40 PM                     ---
+=======
+ * --- Generated at 15 Jan, 2017 7:00:48 PM                     ---
+>>>>>>> naresh
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.jalo;

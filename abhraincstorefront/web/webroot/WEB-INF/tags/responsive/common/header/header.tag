@@ -20,7 +20,7 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-4">
 					<div class="site-logo js-site-logo clearfix">
-						<cms:pageSlot position="SiteLogo" var="logo" limit="1">
+						<cms:pageSlot position="SiteLogo" var="logo" limit="2">
 							<cms:component component="${logo}" element="div" class="col-xs-12 no-space yComponentWrapper"/>
 						</cms:pageSlot>
 					</div>

@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
@@ -18,6 +19,9 @@
 =======
  * --- Generated at Jan 16, 2017 5:32:46 PM                     ---
 >>>>>>> praneeth
+=======
+ * --- Generated at 15 Jan, 2017 7:00:48 PM                     ---
+>>>>>>> naresh
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.jalo;
@@ -27,8 +31,13 @@ import com.abhrainc.core.jalo.ApparelProduct;
 import com.abhrainc.core.jalo.ApparelSizeVariantProduct;
 import com.abhrainc.core.jalo.ApparelStyleVariantProduct;
 import com.abhrainc.core.jalo.ElectronicsColorVariantProduct;
+<<<<<<< HEAD
 import com.abhrainc.core.jalo.OrderThresholdPercentageDiscount;
 import de.hybris.platform.jalo.GenericItem;
+=======
+import com.abhrainc.core.jalo.GoogleProductSearch;
+import com.abhrainc.core.jalo.OrderTrackingEmailProcess;
+>>>>>>> naresh
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
@@ -293,6 +302,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final SessionContext ctx, final Map attributeValues)
 	{
@@ -300,6 +310,14 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		{
 			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ORDERTHRESHOLDPERCENTAGEDISCOUNT );
 			return (OrderThresholdPercentageDiscount)type.newInstance( ctx, attributeValues );
+=======
+	public GoogleProductSearch createGoogleProductSearch(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.GOOGLEPRODUCTSEARCH );
+			return (GoogleProductSearch)type.newInstance( ctx, attributeValues );
+>>>>>>> naresh
 		}
 		catch( JaloGenericCreationException e)
 		{
@@ -311,6 +329,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		}
 		catch( JaloBusinessException e )
 		{
+<<<<<<< HEAD
 			throw new JaloSystemException( e ,"error creating OrderThresholdPercentageDiscount : "+e.getMessage(), 0 );
 		}
 	}
@@ -362,6 +381,23 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		{
 			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ORDERTHRESHOLDPERCENTAGEDISCOUNT );
 			return (OrderThresholdPercentageDiscount)type.newInstance( ctx, attributeValues );
+=======
+			throw new JaloSystemException( e ,"error creating GoogleProductSearch : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public GoogleProductSearch createGoogleProductSearch(final Map attributeValues)
+	{
+		return createGoogleProductSearch( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public OrderTrackingEmailProcess createOrderTrackingEmailProcess(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ORDERTRACKINGEMAILPROCESS );
+			return (OrderTrackingEmailProcess)type.newInstance( ctx, attributeValues );
+>>>>>>> naresh
 		}
 		catch( JaloGenericCreationException e)
 		{
@@ -373,6 +409,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		}
 		catch( JaloBusinessException e )
 		{
+<<<<<<< HEAD
 			throw new JaloSystemException( e ,"error creating OrderThresholdPercentageDiscount : "+e.getMessage(), 0 );
 		}
 	}
@@ -381,6 +418,15 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	{
 		return createOrderThresholdPercentageDiscount( getSession().getSessionContext(), attributeValues );
 >>>>>>> sujan
+=======
+			throw new JaloSystemException( e ,"error creating OrderTrackingEmailProcess : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public OrderTrackingEmailProcess createOrderTrackingEmailProcess(final Map attributeValues)
+	{
+		return createOrderTrackingEmailProcess( getSession().getSessionContext(), attributeValues );
+>>>>>>> naresh
 	}
 	
 	@Override

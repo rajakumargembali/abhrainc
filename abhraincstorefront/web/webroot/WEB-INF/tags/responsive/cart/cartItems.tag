@@ -170,8 +170,10 @@
                                         <input type="hidden" name="initialQuantity" value="${entry.quantity}"/>
                                         <ycommerce:testId code="cart_product_quantity">
                                             <form:label cssClass="" path="quantity" for="quantity${entry.entryNumber}"><spring:theme code="basket.page.qty"/>:</form:label>
-                                            <form:input cssClass="form-control update-entry-quantity-input" disabled="${not entry.updateable}" type="text" size="1" id="quantity_${loop.index}" path="quantity" />
+                                            <form:input cssClass="form-control update-entry-quantity-input" id="quantity_${loop.index}" disabled="${not entry.updateable}" type="text" size="1"  path="quantity" />
                                         </ycommerce:testId>
+                                    <button id="quantity_${loop.index}" class="updatecartcount" type="button">Add 10</button>
+                                    <button id="quantity_${loop.index}" class="updatecart" type="button">Update</button>
                                     </form:form>
                                 </c:when>
                                 <c:otherwise>
@@ -187,6 +189,8 @@
                                         <ycommerce:testId code="cart_product_updateQuantity">
                                             <div id="QuantityProduct${loop.index}" class="updateQuantityProduct"></div>
                                         </ycommerce:testId>
+                                         
+                                        
                                     </form:form>
                                 </c:otherwise>
                             </c:choose>

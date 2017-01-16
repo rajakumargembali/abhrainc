@@ -59,7 +59,20 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 		createItemType(
+<<<<<<< HEAD
 >>>>>>> sujan
+=======
+			"GoogleProductSearch",
+			"CronJob",
+			com.abhrainc.core.jalo.GoogleProductSearch.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
+		createItemType(
+>>>>>>> naresh
 			"ApparelProduct",
 			"Product",
 			com.abhrainc.core.jalo.ApparelProduct.class,
@@ -151,6 +164,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_AbhraincOrder_expectedDeliveryDate();
 >>>>>>> sujan
 			
+				single_createattr_GoogleProductSearch_catalogVersion();
+			
 				single_createattr_ApparelProduct_genders();
 			
 				single_createattr_ApparelStyleVariantProduct_style();
@@ -220,6 +235,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					"expectedDeliveryDate",  
 					null,
 					"java.util.Date",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_GoogleProductSearch_catalogVersion() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"GoogleProductSearch", 
+					"catalogVersion",  
+					null,
+					"catalogVersion",
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
@@ -629,6 +661,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				Map customPropsMap = new HashMap();
 				
 				setItemTypeProperties(
+					"GoogleProductSearch",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_GoogleProductSearch_catalogVersion();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
 					"ApparelProduct",
 					false,
 					true,
@@ -856,6 +903,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
+<<<<<<< HEAD
 						public void single_setAttributeProperties_ApparelProduct_genders() throws JaloBusinessException
 						{
 							
@@ -969,6 +1017,9 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 						}
 					
 						public void single_setAttributeProperties_Consignment_trackingEmailSent() throws JaloBusinessException
+=======
+						public void single_setAttributeProperties_GoogleProductSearch_catalogVersion() throws JaloBusinessException
+>>>>>>> naresh
 						{
 							
 							
@@ -976,6 +1027,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
+<<<<<<< HEAD
 								"Consignment", 
 								"trackingEmailSent",
 								false, 
@@ -1000,6 +1052,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"OrderThresholdPercentageDiscount", 
 								"thresholdTotals",
+=======
+								"GoogleProductSearch", 
+								"catalogVersion",
+>>>>>>> naresh
 								false, 
 								null,
 								null,

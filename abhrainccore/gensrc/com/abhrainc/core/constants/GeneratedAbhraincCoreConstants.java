@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
@@ -18,6 +19,9 @@
 =======
  * --- Generated at Jan 16, 2017 5:32:46 PM                     ---
 >>>>>>> praneeth
+=======
+ * --- Generated at 15 Jan, 2017 7:00:48 PM                     ---
+>>>>>>> naresh
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.constants;
@@ -36,15 +40,24 @@ public class GeneratedAbhraincCoreConstants
 =======
 		public static final String ABHRAINCORDER = "AbhraincOrder".intern();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
 >>>>>>> sujan
 =======
 >>>>>>> sujan
+=======
+		public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
+>>>>>>> naresh
 		public static final String APPARELPRODUCT = "ApparelProduct".intern();
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
+<<<<<<< HEAD
 		public static final String ORDERTHRESHOLDPERCENTAGEDISCOUNT = "OrderThresholdPercentageDiscount".intern();
+=======
+		public static final String GOOGLEPRODUCTSEARCH = "GoogleProductSearch".intern();
+		public static final String ORDERTRACKINGEMAILPROCESS = "OrderTrackingEmailProcess".intern();
+>>>>>>> naresh
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}
 	public static class Attributes
@@ -83,7 +96,11 @@ public class GeneratedAbhraincCoreConstants
 	}
 	public static class Enumerations
 	{
+<<<<<<< HEAD
 		public static class ConsignmentStatus
+=======
+		public static class AbhraincOrderStatus
+>>>>>>> naresh
 		{
 			public static final String ACCEPTED = "ACCEPTED".intern();
 			public static final String READYFORDISPATCH = "READYFORDISPATCH".intern();

@@ -1,5 +1,10 @@
 INSERT_UPDATE CronJob; code[unique=true];job(code);singleExecutable;sessionLanguage(isocode)
 ;cleanUpFraudOrderCronJob;cleanUpFraudOrderJob;false;de
+#seocronjobnaresh
+$productCatalog=electronicsProductCatalog
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
+INSERT_UPDATE GoogleProductSearch; code[unique=true];job(code);singleExecutable;$productCV[unique=true];sessionLanguage(isocode)
+;SeoControllerCronJob;seoController;false;;en
  
 INSERT_UPDATE Trigger;cronjob(code)[unique=true];cronExpression
 # Run the cleanUpFraudOrderCronJob at 0:00 on Sunday

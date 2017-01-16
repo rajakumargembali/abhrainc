@@ -32,7 +32,7 @@
 }
 
 .main-header {
-	background: @header-background-color;
+	/*background: @header-background-color;*/
 	margin-bottom: @grid-gutter-width;
 
   .page-cartPage &,
@@ -60,13 +60,21 @@
 	}
 
 	.nav-top {
-		border-bottom: 1px solid @nav-border-color;
+		border-bottom: 2px solid #000000;
+		background-color: white;
+		.md-secondary-navigation{
+			ul{
+				li{
+					color:#000000;
+				}
+			}
+		}
 	}
 }
 
 
 .site-search {
-	background-color: @header-background-color;
+	/*background-color: @header-background-color;*/
 	> .ui-front {
 		padding: (@grid-gutter-width/2) 0px;
 	}
@@ -343,13 +351,14 @@
 		}
 
 		.nav-location {
-			border-left: 1px solid @nav-border-color;
-			border-right: 1px solid @nav-border-color;
+			/*border-left: 1px solid @nav-border-color;
+			border-right: 1px solid @nav-border-color;*/
 
 			span {
 				font-size: 30px;
 				top: 27%;
-				color: @nav-icon-color;
+				/*color: @nav-icon-color;*/
+				color: #000000;
 			}
 
 			+ .miniCartSlot .nav-form {
@@ -373,6 +382,7 @@
 	}
 
 	.mini-cart-link {
+	color:#000000;
 		line-height: 55px;
 		white-space: nowrap;
 

@@ -14,3 +14,5 @@ INSERT_UPDATE Media;mediaFormat(qualifier);;code[unique=true];$media;mime[defaul
 
 # Create Media Containers
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+#naresh
+;abhra-logo;/300Wx300H/abhra-logo.png;

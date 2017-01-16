@@ -8616,7 +8616,7 @@ output {
   background-color: #f4f4f4;
 }
 .main-header {
-  background: #f4f4f4;
+  /*background: @header-background-color;*/
   margin-bottom: 20px;
 }
 .page-cartPage .main-header,
@@ -8639,10 +8639,14 @@ output {
   width: auto;
 }
 .main-header .nav-top {
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 2px solid #000000;
+  background-color: white;
+}
+.main-header .nav-top .md-secondary-navigation ul li {
+  color: #000000;
 }
 .site-search {
-  background-color: #f4f4f4;
+  /*background-color: @header-background-color;*/
 }
 .site-search > .ui-front {
   padding: 10px 0px;
@@ -8880,13 +8884,14 @@ output {
     top: 27%;
   }
   .sm-navigation .nav-location {
-    border-left: 1px solid #d9d9d9;
-    border-right: 1px solid #d9d9d9;
+    /*border-left: 1px solid @nav-border-color;
+			border-right: 1px solid @nav-border-color;*/
   }
   .sm-navigation .nav-location span {
     font-size: 30px;
     top: 27%;
-    color: #0068b3;
+    /*color: @nav-icon-color;*/
+    color: #000000;
   }
   .sm-navigation .nav-location + .miniCartSlot .nav-form {
     border-left: 0;
@@ -8903,6 +8908,7 @@ output {
     float: right;
   }
   .mini-cart-link {
+    color: #000000;
     line-height: 55px;
     white-space: nowrap;
   }
