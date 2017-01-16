@@ -92,7 +92,6 @@ public class Contactuscontroller extends AbstractPageController
 		modelService.save(customer);
 
 		model.addAttribute("form", form);
-		return "/pages/contactus/contactusview";
 		model.addAttribute("thanks", "Thanks for contacting us");
 		storeCmsPageInModel(model, getContentPageForLabelOrId("contactus1"));
 		//return new ModelAndView("/pages/contactus/contactus", "command", new RegisterForm());

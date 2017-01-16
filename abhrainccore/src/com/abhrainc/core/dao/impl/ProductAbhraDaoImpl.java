@@ -1,16 +1,11 @@
 package com.abhrainc.core.dao.impl;
 
+import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
-import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
-import de.hybris.platform.servicelayer.search.FlexibleSearchService;
-import de.hybris.platform.catalog.model.CatalogVersionModel;
-import de.hybris.platform.core.model.product.ProductModel;
-import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
-import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 
 import java.util.List;
 
@@ -58,7 +53,9 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		 * final SearchResult searchResult = search(searchQuery); logger.info(""+searchResult.getResult());
 		 */
 		logger.info("search query" + flexibleSearchService.<ProductModel> search(searchQuery).getResult());
-
+		final List<ProductModel> model = flexibleSearchService.<ProductModel> search(searchQuery).getResult();
+		return model;
+	}
 
 	@Override
 	public List<ProductModel> getListOfProducts(final CatalogVersionModel catalogVersionModel)

@@ -5,7 +5,6 @@ import java.util.Map;
 
 public interface ProductAbhraService
 {
-public interface ProductAbhraService {
 
 	String updateProductBYCode(Map products);
 

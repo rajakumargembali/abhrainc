@@ -13,7 +13,20 @@
  */
 package com.abhrainc.facades.process.email.context;
 
+import de.hybris.platform.acceleratorservices.model.cms2.pages.EmailPageModel;
+import de.hybris.platform.acceleratorservices.process.email.context.AbstractEmailContext;
+import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
+import de.hybris.platform.commercefacades.order.data.OrderData;
+import de.hybris.platform.core.model.c2l.LanguageModel;
+import de.hybris.platform.core.model.order.OrderModel;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.orderprocessing.model.OrderProcessModel;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
+
 import com.abhrainc.facades.dao.AbhraIncFacadeDAO;
+import com.fasterxml.jackson.databind.util.Converter;
 
 
 /**
@@ -39,7 +52,7 @@ public class OrderNotificationEmailContext extends AbstractEmailContext<OrderPro
 		else
 		{
 			final OrderModel model = abhraIncDao.getOrderDetailsForOrder(orderData.getCode());
-			final OrderModel model = abhraIncDao.getOrderDetails(orderData.getCode());
+			//final OrderModel model = abhraIncDao.getOrderDetails(orderData.getCode());
 			if (model.getOrderExpectedDeliveryDate() != null)
 			{
 				put("Expected_Delivery_Date", model.getOrderExpectedDeliveryDate());

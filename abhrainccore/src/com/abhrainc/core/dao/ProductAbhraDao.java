@@ -1,5 +1,9 @@
 package com.abhrainc.core.dao;
 
+import de.hybris.platform.catalog.model.CatalogVersionModel;
+import de.hybris.platform.core.model.product.ProductModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentModel;
+
 import java.util.List;
 
 
