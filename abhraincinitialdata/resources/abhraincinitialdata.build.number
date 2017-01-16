@@ -1,9 +1,0 @@
-#Ant properties
-#Wed Jun 22 10:44:27 CEST 2016
-builddate=20160622 1043
-description=abhraincinitialdata
-name=abhraincinitialdata
-releasedate=20160407 1737
-vendor=hybris
-version=6.0.0.2
-version.api=6.0.0
