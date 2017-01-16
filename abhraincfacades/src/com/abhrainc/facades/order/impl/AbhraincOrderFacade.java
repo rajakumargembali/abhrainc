@@ -68,7 +68,11 @@ public class AbhraincOrderFacade extends DefaultOrderFacade
 	public void saveExpectedDeliveryDate(final String string, final Date time)
 	{
 		// YTODO Auto-generated method stub
+<<<<<<< HEAD
 		final OrderModel model = abhraIncDao.getOrderDetailsForOrder(string);
+=======
+		final OrderModel model = abhraIncDao.getOrderDetails(string);
+>>>>>>> praneeth
 		model.setOrderExpectedDeliveryDate(time);
 		modelService.save(model);
 
@@ -79,6 +83,7 @@ public class AbhraincOrderFacade extends DefaultOrderFacade
 	 * @param code
 	 * @return
 	 */
+<<<<<<< HEAD
 	public ConsignmentModel getConsignmentDetailForCode(final PK pk)
 	{
 		// YTODO Auto-generated method stub
@@ -94,5 +99,12 @@ public class AbhraincOrderFacade extends DefaultOrderFacade
 	{
 		// YTODO Auto-generated method stub
 		return abhraIncDao.getOrderDetailsForOrder(code);
+=======
+	public OrderModel getOrderDetailForCode(final String code)
+	{
+		// YTODO Auto-generated method stub
+		final OrderModel model = abhraIncDao.getOrderDetails(code);
+		return model;
+>>>>>>> praneeth
 	}
 }

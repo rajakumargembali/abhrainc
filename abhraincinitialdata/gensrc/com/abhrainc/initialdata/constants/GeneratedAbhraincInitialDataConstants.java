@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
@@ -14,6 +15,9 @@
 =======
  * --- Generated at 16 Jan, 2017 5:45:40 PM                     ---
 >>>>>>> sujan
+=======
+ * --- Generated at Jan 16, 2017 5:32:46 PM                     ---
+>>>>>>> praneeth
  * ----------------------------------------------------------------
  */
 package com.abhrainc.initialdata.constants;

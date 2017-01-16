@@ -1,5 +1,6 @@
 package com.abhrainc.core.service.impl;
 
+<<<<<<< HEAD
 import de.hybris.platform.acceleratorservices.model.email.EmailAddressModel;
 import de.hybris.platform.acceleratorservices.model.email.EmailMessageModel;
 import de.hybris.platform.basecommerce.enums.ConsignmentStatus;
@@ -17,12 +18,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+=======
+import de.hybris.platform.core.model.product.ProductModel;
+import de.hybris.platform.europe1.model.PriceRowModel;
+import de.hybris.platform.ordersplitting.model.StockLevelModel;
+import de.hybris.platform.servicelayer.model.ModelService;
+
+import java.util.Collection;
+>>>>>>> praneeth
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -32,6 +42,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.abhrainc.core.dao.ProductAbhraDao;
 import com.abhrainc.core.event.OrderTrackingEmailEvent;
+=======
+
+import com.abhrainc.core.dao.ProductAbhraDao;
+>>>>>>> praneeth
 import com.abhrainc.core.service.ProductAbhraService;
 
 
@@ -41,12 +55,15 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 	final Logger logger = Logger.getLogger(ProductAbhraServiceImpl.class);
 
 	@Autowired
+<<<<<<< HEAD
 	BusinessProcessService businessProcessService;
 
 	@Autowired
 	private EventService eventService;
 
 	@Autowired
+=======
+>>>>>>> praneeth
 	ProductAbhraDao productAbhraDao;
 
 	@Autowired
@@ -146,6 +163,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 		return "Success";
 
 	}
+<<<<<<< HEAD
 
 	/*
 	 * (non-Javadoc)
@@ -247,5 +265,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 		emailMessageModel.setToAddresses(addressModels);
 		businessProcessService.startProcess(consignmentProcessModel);
 	}
+=======
+>>>>>>> praneeth
 }
 

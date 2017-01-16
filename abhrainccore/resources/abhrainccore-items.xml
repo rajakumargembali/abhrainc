@@ -36,15 +36,13 @@
 			<value code="YELLOW"/>
 		</enumtype>
 
-		
-			 <enumtype generate="false" code="ConsignmentStatus" autocreate="false" dynamic="true">
+		<enumtype generate="false" code="ConsignmentStatus" autocreate="false" dynamic="true">
 			<value code="ACCEPTED"/>
 			<value code="READYFORDISPATCH"/>
 			<value code="PICKED"/>
 			<value code="DISPATCHED"/>
 			<value code="DELIVERED"/>
 		</enumtype> 
-		
 
 	</enumtypes>
 
@@ -137,108 +135,105 @@
 				</attributes>
 			</itemtype>
 
-
-			
-			
-
 			<itemtype code="Consignment" autocreate="false" generate="false">
-
-			<attributes>
-				<attribute qualifier="trackingEmailSent" type="boolean">
-					<defaultvalue>false</defaultvalue>
-					<description>
-						Specifies whether order tracking email is sent or not.
-					</description>
-					<persistence type="property" />
-				</attribute>
-			</attributes>
-		</itemtype>
+				<attributes>
+					<attribute qualifier="trackingEmailSent" type="boolean">
+						<defaultvalue>false</defaultvalue>
+						<description>
+							Specifies whether order tracking email is sent or not.
+						</description>
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
 			<itemtype code="OrderThresholdPercentageDiscount" extends="OrderPromotion"
 			jaloclass="com.abhrainc.core.jalo.OrderThresholdPercentageDiscount"
 			autocreate="true" generate="true">
-			<attributes>
-				<attribute qualifier="thresholdTotals" autocreate="true"
-					type="PromotionPriceRowCollectionType">
-					<description>The cart total value threshold in specific currencies.</description>
-					<persistence type="property" />
-					<modifiers read="true" write="true" search="false"
-						initial="false" optional="true" partof="true" />
-				</attribute>
-                <attribute
-                    qualifier="qualifyingCount"
-                    autocreate="true"
-                    type="java.lang.Integer">
-                    <defaultvalue>Integer.valueOf(2)</defaultvalue>
-                    <description>The number of base products required to qualify for the free gift.</description>
-                    <modifiers read="true" write="true" search="true" optional="true"/>
-                    <persistence type="property"/>
-                </attribute>
- 
-				<attribute qualifier="percentageDiscount" autocreate="true"
-					type="java.lang.Double">
-					<defaultvalue>Double.valueOf(10.0D)</defaultvalue>
-					<description>Percentage discount.</description>
-					<modifiers read="true" write="true" search="true"
-						optional="true" />
-					<persistence type="property" />
-				</attribute>
-				<attribute qualifier="messageFired" type="localized:java.lang.String">
-					<description>The message to show when the promotion has fired.</description>
-					<modifiers read="true" write="true" optional="true" />
-					<persistence type="property">
-						<columntype database="oracle">
-							<value>varchar2(4000)</value>
-						</columntype>
-						<columntype database="mysql">
-							<value>text</value>
-						</columntype>
-						<columntype database="sqlserver">
-							<value>nvarchar(max)</value>
-						</columntype>
-						<columntype database="hsqldb">
-							<value>LONGVARCHAR</value>
-						</columntype>
-						<columntype>
-							<value>varchar</value>
-						</columntype>
-					</persistence>
-				</attribute>
-				<attribute qualifier="messageCouldHaveFired" type="localized:java.lang.String">
-					<description>The message to show when the promotion could have potentially fire.</description>
-					<modifiers read="true" write="true" optional="true" />
-					<persistence type="property">
-						<columntype database="oracle">
-							<value>varchar2(4000)</value>
-						</columntype>
-						<columntype database="mysql">
-							<value>text</value>
-						</columntype>
-						<columntype database="sqlserver">
-							<value>nvarchar(max)</value>
-						</columntype>
-						<columntype database="hsqldb">
-							<value>LONGVARCHAR</value>
-						</columntype>
-						<columntype>
-							<value>varchar</value>
-						</columntype>
-					</persistence>
-				</attribute>
-			</attributes>
-		</itemtype>
+				<attributes>
+					<attribute qualifier="thresholdTotals" autocreate="true"
+						type="PromotionPriceRowCollectionType">
+						<description>The cart total value threshold in specific currencies.</description>
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="false"
+							initial="false" optional="true" partof="true" />
+					</attribute>
+
+					<attribute
+
+						qualifier="qualifyingCount"
+						autocreate="true"
+						type="java.lang.Integer">
+						<defaultvalue>Integer.valueOf(2)</defaultvalue>
+						<description>The number of base products required to qualify for the free gift.</description>
+						<modifiers read="true" write="true" search="true" optional="true"/>
+						<persistence type="property"/>
+					</attribute>
+	 
+					<attribute qualifier="percentageDiscount" autocreate="true"
+						type="java.lang.Double">
+						<defaultvalue>Double.valueOf(10.0D)</defaultvalue>
+						<description>Percentage discount.</description>
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="messageFired" type="localized:java.lang.String">
+						<description>The message to show when the promotion has fired.</description>
+						<modifiers read="true" write="true" optional="true" />
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>varchar2(4000)</value>
+							</columntype>
+							<columntype database="mysql">
+								<value>text</value>
+							</columntype>
+							<columntype database="sqlserver">
+								<value>nvarchar(max)</value>
+							</columntype>
+							<columntype database="hsqldb">
+								<value>LONGVARCHAR</value>
+							</columntype>
+							<columntype>
+								<value>varchar</value>
+							</columntype>
+						</persistence>
+					</attribute>
+					<attribute qualifier="messageCouldHaveFired" type="localized:java.lang.String">
+						<description>The message to show when the promotion could have potentially fire.</description>
+						<modifiers read="true" write="true" optional="true" />
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>varchar2(4000)</value>
+							</columntype>
+							<columntype database="mysql">
+								<value>text</value>
+							</columntype>
+							<columntype database="sqlserver">
+								<value>nvarchar(max)</value>
+							</columntype>
+							<columntype database="hsqldb">
+								<value>LONGVARCHAR</value>
+							</columntype>
+							<columntype>
+								<value>varchar</value>
+							</columntype>
+						</persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
 			
 			<itemtype code = "User" autocreate="false"  generate="false">
-			<attributes>
-			<attribute qualifier="isEmailActivated" type="java.lang.Boolean">
-				<description>UserEmailSTATUS</description>
-				<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
-				<persistence type="property" />
-			</attribute>
-		</attributes>
+				<attributes>
+					<attribute qualifier="isEmailActivated" type="java.lang.Boolean">
+						<description>UserEmailSTATUS</description>
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+						<persistence type="property" />
+					</attribute>
+				</attributes>
 			</itemtype> 
 
 			 <itemtype code = "Order" autocreate="false"  generate="false">
-			<attributes>
+				<attributes>
 					<attribute qualifier="orderExpectedDeliveryDate" type="java.util.Date">
 						<description>Used to display the Expected Delivery Date</description>
 						<modifiers/>
@@ -246,8 +241,9 @@
 					</attribute>
 				</attributes>
 			</itemtype>
+			
 			<itemtype code = "Consignment" autocreate="false"  generate="false">
-			<attributes>
+				<attributes>
 					<attribute qualifier="isDeliveryEmailSent" type="java.lang.Boolean">
 						<description>Used to know whether the delivery status email sent or not</description>
 						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
@@ -255,12 +251,6 @@
 					</attribute>
 				</attributes>
 			</itemtype>  
-<<<<<<< HEAD
-=======
-			  
-		</typegroup>
->>>>>>> sujan
-
 		</typegroup>
 	</itemtypes>
 </items>

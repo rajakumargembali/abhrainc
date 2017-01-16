@@ -1,10 +1,15 @@
 package com.abhrainc.core.dao.impl;
 
 import de.hybris.platform.core.model.product.ProductModel;
+<<<<<<< HEAD
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import de.hybris.platform.servicelayer.search.SearchResult;
+=======
+import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
+import de.hybris.platform.servicelayer.search.FlexibleSearchService;
+>>>>>>> praneeth
 
 import java.util.List;
 
@@ -56,6 +61,7 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		return model;
 	}
 
+<<<<<<< HEAD
 	/*
 	 * (non-Javadoc)
 	 *
@@ -86,4 +92,6 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		return searchResult.getResult().get(0);
 	}
 
+=======
+>>>>>>> praneeth
 }

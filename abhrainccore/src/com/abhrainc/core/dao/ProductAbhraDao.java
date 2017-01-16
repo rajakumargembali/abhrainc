@@ -1,7 +1,10 @@
 package com.abhrainc.core.dao;
 
 import de.hybris.platform.core.model.product.ProductModel;
+<<<<<<< HEAD
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
+=======
+>>>>>>> praneeth
 
 import java.util.List;
 
@@ -16,6 +19,7 @@ public interface ProductAbhraDao
 	 */
 	List<ProductModel> findListOfProducts();
 
+<<<<<<< HEAD
 	/**
 	 * @return
 	 */
@@ -27,4 +31,6 @@ public interface ProductAbhraDao
 	 */
 	ConsignmentModel getConsignmentDetailsbyCode(String code);
 
+=======
+>>>>>>> praneeth
 }

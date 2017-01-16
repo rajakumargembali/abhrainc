@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
@@ -14,6 +15,9 @@
 =======
  * --- Generated at 16 Jan, 2017 5:45:40 PM                     ---
 >>>>>>> sujan
+=======
+ * --- Generated at Jan 16, 2017 5:32:46 PM                     ---
+>>>>>>> praneeth
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.constants;
@@ -47,7 +51,10 @@ public class GeneratedAbhraincCoreConstants
 	{
 		public static class Consignment
 		{
+<<<<<<< HEAD
 			public static final String ISDELIVERYEMAILSENT = "isDeliveryEmailSent".intern();
+=======
+>>>>>>> praneeth
 			public static final String TRACKINGEMAILSENT = "trackingEmailSent".intern();
 		}
 		public static class Order
@@ -55,16 +62,23 @@ public class GeneratedAbhraincCoreConstants
 <<<<<<< HEAD
 <<<<<<< HEAD
 			public static final String EXPECTEDDELIVERYDATE = "expectedDeliveryDate".intern();
+<<<<<<< HEAD
 =======
 			public static final String ABHRAINCORDERSTATUS = "AbhraincOrderStatus".intern();
 =======
 			public static final String ORDEREXPECTEDDELIVERYDATE = "orderExpectedDeliveryDate".intern();
 >>>>>>> sujan
+=======
+			public static final String ORDEREXPECTEDDELIVERYDATE = "orderExpectedDeliveryDate".intern();
+>>>>>>> praneeth
 		}
 		public static class User
 		{
 			public static final String ISEMAILACTIVATED = "isEmailActivated".intern();
+<<<<<<< HEAD
 >>>>>>> sujan
+=======
+>>>>>>> praneeth
 		}
 	}
 	public static class Enumerations

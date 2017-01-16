@@ -27,6 +27,7 @@
 		parent="abstractCoreSystemSetup" />
 
 	<!-- Solr field value providers -->
+<<<<<<< HEAD
 	<!-- <bean id="abhraincCCEmailGenerationService" class="com.abhrainc.core.email.AbhraIncCCEmailGenerationService" 
 		parent="defaultEmailGenerationService"> </bean> <bean id="generateCCOrderConfirmationEmail" 
 		class="com.abhrainc.core.service.impl.AbhraIncGenerateEmailAction" parent="abstractAction"> 
@@ -58,6 +59,38 @@
 		<property name="priceService" ref="priceService" />
 	</bean>
 
+=======
+	<!-- <bean id="abhraincCCEmailGenerationService" class="com.abhrainc.core.email.AbhraIncCCEmailGenerationService" parent="defaultEmailGenerationService">
+	</bean>
+	
+	
+	<bean id="generateCCOrderConfirmationEmail" class="com.abhrainc.core.service.impl.AbhraIncGenerateEmailAction" parent="abstractAction">
+		<property name="frontendTemplateName" value="CCOrderConfirmationEmailTemplate" />
+		<property name="modelService" ref="modelService" />
+		<property name="cmsEmailPageService" ref="cmsEmailPageService" />
+		<property name="contextResolutionStrategy" ref="processContextResolutionStrategy" />
+		<property name="emailGenerationService" ref="elversysCCEmailGenerationService" />
+		
+	</bean>
+	 -->
+	<bean id="volumeAwareProductPriceValueProvider" class="com.abhrainc.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider"  parent="abstractPropertyFieldValueProvider">
+        <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+        <property name="priceService" ref="priceService"/>
+        <property name="commonI18NService" ref="commonI18NService"/>
+        <property name="sessionService" ref="sessionService"/>
+        <property name="userService" ref="userService"/>
+        <property name="priceComparator" ref="volumePriceComparator"/>
+        <property name="catalogVersionService" ref="catalogVersionService"/>
+    </bean>
+
+    <bean id="volumePriceComparator" class="com.abhrainc.core.comparators.VolumeAwarePriceInformationComparator" scope="singleton"/>
+
+    <bean id="productVolumePricesProvider" class="com.abhrainc.core.search.solrfacetsearch.provider.impl.ProductVolumePricesProvider"  parent="abstractPropertyFieldValueProvider">
+        <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+        <property name="priceService" ref="priceService"/>
+    </bean>
+	
+>>>>>>> praneeth
 
 	<bean id="electronicsCategorySource" parent="abstractCategorySource">
 		<property name="rootCategory" value="1" />
@@ -523,6 +556,7 @@
 	</bean>
 	
 	
+<<<<<<< HEAD
 	<alias name="abhraProductService" alias="productAbhraService"/>
 	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
 		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>
@@ -553,5 +587,24 @@
 	</bean>
 
 >>>>>>> sujan
+=======
+
+	
+	<bean id="cronJobController" class="com.abhrainc.core.jobs.CronJobController" autowire="byName"/>
+	
+	<bean id="cronJobForPriceConversion" class="com.abhrainc.core.jobs.CronJobForPriceConversion" autowire="byName"/>
+	
+	<bean id="cronJobToUpdateStock" class="com.abhrainc.core.jobs.CronJobToUpdateStocks" autowire="byName"/>
+	
+	<alias name="abhraProductDAO" alias="productAbhraDao"/>
+	<bean id="abhraProductDAO" class="com.abhrainc.core.dao.impl.ProductAbhraDaoImpl">
+	</bean>
+	
+	
+	<alias name="abhraProductService" alias="productAbhraService"/>
+	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
+		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>
+		
+>>>>>>> praneeth
 
 </beans>

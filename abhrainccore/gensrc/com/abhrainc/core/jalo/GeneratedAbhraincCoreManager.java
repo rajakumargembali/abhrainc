@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * --- Generated at Jan 4, 2017 3:08:38 PM                      ---
 =======
  * --- Generated at 3 Jan, 2017 4:37:52 PM                      ---
@@ -14,6 +15,9 @@
 =======
  * --- Generated at 16 Jan, 2017 5:45:40 PM                     ---
 >>>>>>> sujan
+=======
+ * --- Generated at Jan 16, 2017 5:32:46 PM                     ---
+>>>>>>> praneeth
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.jalo;
@@ -34,8 +38,14 @@ import de.hybris.platform.jalo.extension.Extension;
 import de.hybris.platform.jalo.order.AbstractOrder;
 import de.hybris.platform.jalo.order.Order;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import de.hybris.platform.jalo.security.Principal;
+>>>>>>> praneeth
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
+import de.hybris.platform.jalo.user.User;
+import de.hybris.platform.ordersplitting.jalo.Consignment;
 import java.util.Collections;
 import java.util.Date;
 =======
@@ -67,7 +77,9 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 <<<<<<< HEAD
 <<<<<<< HEAD
 		tmp.put("expectedDeliveryDate", AttributeMode.INITIAL);
+		tmp.put("orderExpectedDeliveryDate", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
+<<<<<<< HEAD
 =======
 		tmp.put("AbhraincOrderStatus", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
@@ -78,14 +90,21 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 =======
 		tmp.put("trackingEmailSent", AttributeMode.INITIAL);
 		tmp.put("isDeliveryEmailSent", AttributeMode.INITIAL);
+=======
+		tmp = new HashMap<String, AttributeMode>();
+		tmp.put("trackingEmailSent", AttributeMode.INITIAL);
+>>>>>>> praneeth
 		ttmp.put("de.hybris.platform.ordersplitting.jalo.Consignment", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("isEmailActivated", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.user.User", Collections.unmodifiableMap(tmp));
+<<<<<<< HEAD
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("orderExpectedDeliveryDate", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
 >>>>>>> sujan
+=======
+>>>>>>> praneeth
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -273,6 +292,35 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.ORDERTHRESHOLDPERCENTAGEDISCOUNT );
+			return (OrderThresholdPercentageDiscount)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating OrderThresholdPercentageDiscount : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public OrderThresholdPercentageDiscount createOrderThresholdPercentageDiscount(final Map attributeValues)
+	{
+		return createOrderThresholdPercentageDiscount( getSession().getSessionContext(), attributeValues );
+	}
+	
+>>>>>>> praneeth
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.expectedDeliveryDate</code> attribute.
 	 * @return the expectedDeliveryDate - Used to display the Expected Delivery Date
@@ -342,6 +390,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
 	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
 	 */
@@ -415,6 +464,8 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	}
 	
 	/**
+=======
+>>>>>>> praneeth
 	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */

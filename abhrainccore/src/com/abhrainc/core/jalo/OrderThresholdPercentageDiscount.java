@@ -1,6 +1,7 @@
 package com.abhrainc.core.jalo;
 
 import de.hybris.platform.jalo.SessionContext;
+<<<<<<< HEAD
 import de.hybris.platform.jalo.order.AbstractOrder;
 import de.hybris.platform.promotions.jalo.PromotionResult;
 import de.hybris.platform.promotions.jalo.PromotionsManager;
@@ -8,6 +9,11 @@ import de.hybris.platform.promotions.result.PromotionEvaluationContext;
 import de.hybris.platform.promotions.util.Helper;
 
 import java.util.ArrayList;
+=======
+import de.hybris.platform.promotions.jalo.PromotionResult;
+import de.hybris.platform.promotions.result.PromotionEvaluationContext;
+
+>>>>>>> praneeth
 import java.util.List;
 import java.util.Locale;
 
@@ -17,11 +23,16 @@ import org.apache.log4j.Logger;
 public class OrderThresholdPercentageDiscount extends GeneratedOrderThresholdPercentageDiscount
 {
 	@SuppressWarnings("unused")
+<<<<<<< HEAD
 	private final static Logger log = Logger.getLogger(OrderThresholdPercentageDiscount.class.getName());
+=======
+	private final static Logger LOG = Logger.getLogger(OrderThresholdPercentageDiscount.class.getName());
+>>>>>>> praneeth
 
 	@Override
 	public List<PromotionResult> evaluate(final SessionContext ctx, final PromotionEvaluationContext promoContext)
 	{
+<<<<<<< HEAD
 		final List<PromotionResult> promotionResults = new ArrayList<PromotionResult>();
 
 		if (checkRestrictions(ctx, promoContext))
@@ -72,12 +83,17 @@ public class OrderThresholdPercentageDiscount extends GeneratedOrderThresholdPer
 
 		return promotionResults;
 
+=======
+
+		return null;
+>>>>>>> praneeth
 	}
 
 	@Override
 	public String getResultDescription(final SessionContext ctx, final PromotionResult promotionResult, final Locale locale)
 	{
 
+<<<<<<< HEAD
 		log.debug("Inside the OrderThresholdPercentageDiscount.getResultDescription()");
 		final AbstractOrder order = promotionResult.getOrder(ctx);
 		if (order != null)
@@ -122,6 +138,8 @@ public class OrderThresholdPercentageDiscount extends GeneratedOrderThresholdPer
 
 			}
 		}
+=======
+>>>>>>> praneeth
 		return "";
 	}
 }

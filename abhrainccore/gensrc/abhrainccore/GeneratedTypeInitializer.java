@@ -110,7 +110,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> praneeth
 		createEnumerationType(
 			"SwatchColorEnum",
 			null
@@ -160,6 +163,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				single_createattr_Order_AbhraincOrderStatus();
 			
@@ -167,6 +171,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 >>>>>>> sujan
 =======
+=======
+>>>>>>> praneeth
 				single_createattr_Consignment_trackingEmailSent();
 			
 				single_createattr_OrderThresholdPercentageDiscount_thresholdTotals();
@@ -184,11 +190,14 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_Order_orderExpectedDeliveryDate();
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> sujan
 =======
 				single_createattr_Consignment_isDeliveryEmailSent();
 			
 >>>>>>> sujan
+=======
+>>>>>>> praneeth
 
 	}
 
@@ -305,11 +314,15 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	public void single_createattr_Order_AbhraincOrderStatus() throws JaloBusinessException
 =======
 	public void single_createattr_Consignment_trackingEmailSent() throws JaloBusinessException
 >>>>>>> sujan
+=======
+	public void single_createattr_Consignment_trackingEmailSent() throws JaloBusinessException
+>>>>>>> praneeth
 	{
 		
 						Map sqlColumnDefinitions = null;
@@ -479,8 +492,11 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> sujan
 =======
+=======
+>>>>>>> praneeth
 	public void single_createattr_Order_orderExpectedDeliveryDate() throws JaloBusinessException
 	{
 		
@@ -498,6 +514,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> sujan
 =======
@@ -519,6 +536,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	}
 	
 >>>>>>> sujan
+=======
+>>>>>>> praneeth
 
 
 	/**
@@ -551,6 +570,22 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		createEnumerationValues(
+			"ConsignmentStatus",
+			true,
+			Arrays.asList( new String[] {
+			
+				"ACCEPTED",
+				"READYFORDISPATCH",
+				"PICKED",
+				"DISPATCHED",
+				"DELIVERED"
+			} )
+		);
+	
+>>>>>>> praneeth
 				{
 				Map customPropsMap = new HashMap();
 				
@@ -653,7 +688,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			single_setAttributeProperties_ElectronicsColorVariantProduct_color();
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> praneeth
 				{
 				Map customPropsMap = new HashMap();
 				
@@ -702,8 +740,11 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			single_setAttributeProperties_User_isEmailActivated();
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> sujan
 =======
+=======
+>>>>>>> praneeth
 				{
 				Map customPropsMap = new HashMap();
 				
@@ -716,6 +757,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 			single_setAttributeProperties_Order_orderExpectedDeliveryDate();
 		
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> sujan
 =======
@@ -732,6 +774,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			single_setAttributeProperties_Consignment_isDeliveryEmailSent();
 		
 >>>>>>> sujan
+=======
+>>>>>>> praneeth
 				setDefaultProperties(
 					"GenderList",
 					true,
@@ -755,6 +799,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				setDefaultProperties(
 					"AbhraincOrderStatus",
@@ -769,6 +814,14 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				);
 			
 >>>>>>> sujan
+=======
+				changeMetaType(
+					"ConsignmentStatus",
+					null,
+					null
+				);
+			
+>>>>>>> praneeth
 	}
 
 
@@ -1048,7 +1101,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 						}
 					
 						public void single_setAttributeProperties_User_isEmailActivated() throws JaloBusinessException
+<<<<<<< HEAD
 >>>>>>> sujan
+=======
+>>>>>>> praneeth
 						{
 							
 							
@@ -1059,6 +1115,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								"User", 
 								"isEmailActivated",
 								false, 
+<<<<<<< HEAD
 <<<<<<< HEAD
 								null,
 								null,
@@ -1089,13 +1146,18 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								true,
 								"VariantAttributeDescriptor",
 =======
+=======
+>>>>>>> praneeth
 								java.lang.Boolean.FALSE,
 								"java.lang.Boolean.FALSE",
 								null,
 								true,
 								true,
 								null,
+<<<<<<< HEAD
 >>>>>>> sujan
+=======
+>>>>>>> praneeth
 								customPropsMap,
 								null
 							);
@@ -1123,6 +1185,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
+<<<<<<< HEAD
 						public void single_setAttributeProperties_Consignment_isDeliveryEmailSent() throws JaloBusinessException
 						{
 							
@@ -1145,6 +1208,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
+=======
+>>>>>>> praneeth
 }
 
 	

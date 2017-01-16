@@ -17,6 +17,7 @@ public interface ProductAbhraService
 	 */
 	String updateProductPricesByConversion(float pound, float euro);
 
+<<<<<<< HEAD
 	/**
 	 *
 	 */
@@ -27,4 +28,6 @@ public interface ProductAbhraService
 	 */
 	void sendOrderConsignmentStatusEmail();
 
+=======
+>>>>>>> praneeth
 }

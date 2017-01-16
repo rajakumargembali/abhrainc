@@ -6,7 +6,7 @@
 # ApparelProducts may have no variations, only style variations or both style and size variations.
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog=electronicsProductCatalog
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $prices=europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
@@ -22,3 +22,5 @@ INSERT_UPDATE ApparelStyleVariantProduct;code[unique=true];$baseProduct;ean;unit
 INSERT_UPDATE ApparelSizeVariantProduct;code[unique=true];$baseProduct;ean;unit(code);swatchColour;supercategories(code,$catalogVersion);$approved;$catalogVersion
 
 INSERT_UPDATE ElectronicsColorVariantProduct;code[unique=true];$baseProduct;ean;unit(code);swatchColour;supercategories(code,$catalogVersion);$approved;$catalogVersion
+;GL-F282RGFL_green;GL-F282RGFL;GL11;pieces;Green;
+;GL-F282RGFL_red;GL-F282RGFL;GL11;pieces;Red;

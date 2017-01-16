@@ -1,7 +1,7 @@
 # ImpEx for Importing Prices
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog=electronicsProductCatalog
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
 $prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
@@ -10,3 +10,40 @@ $prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1Pr
 $approved=approvalstatus(code)[default='approved']
 
 UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;Europe1PriceFactory_PTG(code)
+;GL-Q292SHAM
+;RT34K3983RZ
+;GL-F282RGFL
+;GL-I292RSFL
+;KP202PHG
+;NR-BW465VNX4
+;NR-CX789WYA5
+;KP203QIH
+;RT35L4094SA
+;KLV-49W752D
+;KLV-40W562D
+;43LH576T
+;2LH604T
+;SMG60897
+;SMG79806
+;PSC80464
+;PSC888642
+
+INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+
+;GL-Q292SHAM;pieces;USD;99.99;1;1;false
+;RT34K3983RZ;pieces;USD;89.99;1;1;false
+;GL-F282RGFL;pieces;USD;79.99;1;1;false
+;GL-I292RSFL;pieces;USD;69.99;1;1;false
+;KP202PHG;pieces;USD;59.99;1;1;false
+;NR-BW465VNX4;pieces;USD;49.99;1;1;false
+;NR-CX789WYA5;pieces;USD;39.99;1;1;false
+;KP203QIH;pieces;USD;29.99;1;1;false
+;RT35L4094SA;pieces;USD;19.99;1;1;false
+;KLV-49W752D;pieces;USD;09.99;1;1;false
+;KLV-40W562D;pieces;USD;68.99;1;1;false
+;43LH576T;pieces;USD;97.99;1;1;false
+;2LH604T;pieces;USD;54.99;1;1;false
+;SMG60897;pieces;USD;66.99;1;1;false
+;SMG79806;pieces;USD;34.99;1;1;false
+;PSC80464;pieces;USD;43.99;1;1;false
+;PSC888642;pieces;USD;71.99;1;1;false
