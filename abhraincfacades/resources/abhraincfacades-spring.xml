@@ -159,9 +159,11 @@
 	</bean>
 
 	<bean id="orderAccepted"
-		class="com.abhrainc.facades.process.email.context.OrderAcceptedEmail" parent="abstractEmailContext" scope="prototype">
+		class="com.abhrainc.facades.process.email.context.OrderAcceptedEmail"
+		parent="abstractEmailContext" scope="prototype">
 		<property name="consignmentConverter" ref="consignmentConverter" />
 	</bean>
+
 	<bean id="orderDispatched"
 		class="com.abhrainc.facades.process.email.context.OrderDispatchEmailContext"
 		parent="abstractEmailContext" scope="prototype">
@@ -182,52 +184,6 @@
 		<property name="consignmentConverter" ref="consignmentConverter" />
 	</bean>
 
-	<!-- <bean id="orderCancelledEmailContext"
-		class="com.abhrainc.facades.process.email.context.OrderCancelledEmailContext"
-		parent="abstractEmailContext" scope="prototype">
-		<property name="orderConverter" ref="orderConverter" />
-	</bean>
-
- 	<bean id="orderRefundEmailContext"
-		class="com.abhrainc.facades.process.email.context.OrderRefundEmailContext"
-		parent="abstractEmailContext" scope="prototype">
-		<property name="orderConverter" ref="orderConverter" />
-	</bean>-->
-<!-- 	<bean id="consignmentCollectionReminderEmailContext"
-		class="com.abhrainc.facades.process.email.context.ConsignmentCollectionReminderEmailContext"
-		parent="abstractEmailContext" scope="prototype">
-		<property name="consignmentConverter" ref="consignmentConverter" />
-		<property name="formatFactory" ref="formatFactory" />
-		<property name="customerServiceUncollectedConsignmentStrategy"
-			ref="customerServiceUncollectedConsignmentStrategy" />
-		<property name="orderConverter" ref="orderConverter" />
-	</bean>
-
-	<bean id="orderPartiallyModifiedEmailContext"
-		class="com.abhrainc.facades.process.email.context.OrderPartiallyModifiedEmailContext"
-		parent="abstractEmailContext" scope="prototype">
-		<property name="orderConverter" ref="orderConverter" />
-		<property name="orderEntryConverter" ref="orderEntryConverter" />
-		<property name="priceDataFactory" ref="priceDataFactory" />
-	</bean>
-
-	<bean id="orderPartiallyCanceledEmailContext"
-		class="com.abhrainc.facades.process.email.context.OrderPartiallyCanceledEmailContext"
-		parent="orderPartiallyModifiedEmailContext" scope="prototype">
-	</bean>
-
-	<bean id="orderPartiallyRefundedEmailContext"
-		class="com.abhrainc.facades.process.email.context.OrderPartiallyRefundedEmailContext"
-		parent="orderPartiallyModifiedEmailContext" scope="prototype">
-	</bean>
-
-	<bean id="notPickedUpConsignmentCanceledEmailContext"
-		class="com.abhrainc.facades.process.email.context.NotPickedUpConsignmentCanceledEmailContext"
-		parent="abstractEmailContext" scope="prototype">
-		<property name="consignmentConverter" ref="consignmentConverter" />
-		<property name="priceDataFactory" ref="priceDataFactory" />
-	</bean>
- -->
 	<bean id="orderCancelledEmailContext"
 		class="com.abhrainc.facades.process.email.context.OrderCancelledEmailContext"
 		parent="abstractEmailContext" scope="prototype">

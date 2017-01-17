@@ -1,10 +1,6 @@
-# ImPex for Importing Product Media
 
-# Macros / Replacement Parameter definitions
 $productCatalog=electronicsProductCatalog
-
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog]
-$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $thumbnail=thumbnail(code, $catalogVersion)
 $picture=picture(code, $catalogVersion)
 $thumbnails=thumbnails(code, $catalogVersion)
@@ -14,10 +10,10 @@ $others=others(code, $catalogVersion)
 $data_sheet=data_sheet(code, $catalogVersion)
 $medias=medias(code, $catalogVersion)
 $galleryImages=galleryImages(qualifier, $catalogVersion)
-$siteResource=jar:com.abhrainc.initialdata.setup.InitialDataSystemSetup&/abhraincinitialdata/import/sampledata/productCatalogs/$productCatalog
+$siteResource=jar:com.abhrainc.initialdata.constants.AbhraincInitialDataConstants&/abhraincinitialdata/import/sampledata/productCatalogs/abhraincProductCatalog
 
-# Create Media
-INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+
 ;300Wx300H;/300Wx300H/lg-gl-f282rgfl.jpeg;$siteResource/images/300Wx300H/lg-gl-f282rgfl.jpeg;;;images
 ;96Wx96H;/96Wx96H/lg-gl-f282rgfl.jpeg;$siteResource/images/96Wx96H/lg-gl-f282rgfl.jpeg;;;images
 
@@ -88,8 +84,9 @@ INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default
 ;300Wx300H;/300Wx300H/sony-klv-40r352d-Copy.jpeg;$siteResource/images/300Wx300H/sony-klv-40r352d-Copy.jpeg;;;images
 ;96Wx96H;/96Wx96H/sony-klv-40r352d-Copy.jpeg;$siteResource/images/96Wx96H/sony-klv-40r352d-Copy.jpeg;;;images
 
-# Create Media Containers
+
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+
 ;lg-gl-f282rgfl;/300Wx300H/lg-gl-f282rgfl.jpeg,/96Wx96H/lg-gl-f282rgfl.jpeg;
 ;lg-gl-f282rgfl-Copy;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg,/96Wx96H/lg-gl-f282rgfl-Copy.jpeg;
 ;lg-gl-i322rpzl;/300Wx300H/lg-gl-i322rpzl.jpeg,/96Wx96H/lg-gl-i322rpzl.jpeg;
@@ -114,8 +111,9 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
 ;sony-klv-40r352d;/300Wx300H/sony-klv-40r352d.jpeg,/96Wx96H/sony-klv-40r352d.jpeg;
 ;sony-klv-40r352d-Copy;/300Wx300H/sony-klv-40r352d-Copy.jpeg,/96Wx96H/sony-klv-40r352d-Copy.jpeg;
 
-# Update Products with Media and Media Containers
+
 UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+
 ;GL-Q292SHAM;/300Wx300H/lg-gl-f282rgfl.jpeg;/96Wx96H/lg-gl-f282rgfl.jpeg;;;/300Wx300H/lg-gl-f282rgfl.jpeg;/96Wx96H/lg-gl-f282rgfl.jpeg;lg-gl-f282rgfl;
 
 ;RT34K3983RZ;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg;/96Wx96H/lg-gl-f282rgfl-Copy.jpeg;;;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg;/96Wx96H/lg-gl-f282rgfl-Copy.jpeg;lg-gl-f282rgfl-Copy;
