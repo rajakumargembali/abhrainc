@@ -21,6 +21,7 @@
 		<requires-extension name="basecommerce"/>
 		<requires-extension name="solrserver"/>
 		<requires-extension name="abhraincfulfilmentprocess"/>
+		<requires-extension name="acceleratorfacades"/>
 
 		<coremodule generated="true" manager="com.abhrainc.core.jalo.AbhraincCoreManager" packageroot="com.abhrainc.core"/>
 
