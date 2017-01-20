@@ -107,6 +107,7 @@ public class DeliveryMethodCheckoutStepController extends AbstractCheckoutStepCo
 				price = "$0.00";
 			}
 			final PriceData pd = cartData.getDeliveryCost();
+			deliveryMethods.get(2).setName(deliveryMethods.get(2).getName().replaceAll("$0.00", price));
 			pd.setValue(value);
 			getCartFacade().getSessionCart().setDeliveryCost(pd);
 			pd.setFormattedValue(price);

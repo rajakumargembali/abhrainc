@@ -1,18 +1,39 @@
-# ImpEx for Importing Category Classifications
+#******************************This file is generated - please do not edit it. It will be regenerated after every build.********************************#
+# ImpEx for Importing Classification Categories into Electronics Store 
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
-$productCatalogName=__PRODUCT_CATALOG_FULL_NAME__
-$classificationCatalog=__CLASSIFICATION_CATALOG_NAME__
-
-$classCatalogVersion=catalogversion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true,default='$classificationCatalog:1.0']
-$classSystemVersion=systemVersion(catalog(id[default='$classificationCatalog']),version[default='1.0'])[unique=true]
+$productCatalog=electronicsProductCatalog
+$productCatalogName=Electronics Product Catalog
+$classCatalogVersion=catalogversion(catalog(id[default='ElectronicsClassification']),version[default='1.0'])[unique=true,default='ElectronicsClassification:1.0']
+$classSystemVersion=systemVersion(catalog(id[default='ElectronicsClassification']),version[default='1.0'])[unique=true]
 
 # Language
 $lang=en
 
-# Insert Classifications
+
+# Create Categories
 UPDATE ClassificationClass;code[unique=true];$classCatalogVersion;name[lang=$lang]
 
-# Insert Classification Attributes
+ ;ClassifyingRefrigerator;;Refrigerator Features;
+ ;ClassifyingTelevision;;Television Features;
+
+
+# Create Categories
 UPDATE ClassificationAttribute;code[unique=true];$classSystemVersion;name[lang=$lang]
+
+ ;Capacity;;Capacity;
+ ;CompressorType;;Compressor Type;
+ ;Type, 31;;Type;
+ ;StarRating;;Star Rating;
+ ;BuiltinStabilizer;;Built-in Stabilizer;
+ ;Width, 1649;;Width;
+ ;Depth, 1650;;Depth;
+ ;Height, 1464;;Height;
+ ;Weight, 94;;Weight;
+ ;NumberOfSpeakers;;Number Of Speakers;
+ ;USBPorts;;USB Ports;
+ ;HDMIPorts;;HDMI Ports;
+ ;ScreenType;;Screen Type;
+ ;Touchscreen;;Touchscreen;
+ ;Builtinwifi;;Built-in Wi-Fi;
+ ;DisplaySize;;Display Size;

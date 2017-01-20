@@ -553,6 +553,15 @@
 	</bean>
 	
 	
+	
+	<alias name="defaultFindDeliveryCostStrategy" alias="findDeliveryCostStrategy"/>
+	<bean id="defaultFindDeliveryCostStrategy"
+			class="com.abhrainc.core.order.strategies.calculation.impl.AbhraincDeliveryCostStrategyCalculation"
+			parent="abstractBusinessService"/>
+	
+	
+	
+	
 	<alias name="abhraProductService" alias="productAbhraService"/>
 	<bean id="abhraProductService" class="com.abhrainc.core.service.impl.ProductAbhraServiceImpl" >
 		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>

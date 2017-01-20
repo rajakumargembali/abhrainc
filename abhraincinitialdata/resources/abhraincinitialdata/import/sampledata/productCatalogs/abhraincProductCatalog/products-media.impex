@@ -1,4 +1,3 @@
-
 $productCatalog=electronicsProductCatalog
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $thumbnail=thumbnail(code, $catalogVersion)
@@ -15,135 +14,135 @@ $siteResource=jar:com.abhrainc.initialdata.constants.AbhraincInitialDataConstant
 INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
 
 ;300Wx300H;/300Wx300H/lg-gl-f282rgfl.jpeg;$siteResource/images/300Wx300H/lg-gl-f282rgfl.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-gl-f282rgfl.jpeg;$siteResource/images/96Wx96H/lg-gl-f282rgfl.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-gl-f282rgfl.jpeg;$siteResource/images/96Wx96H/Optimized-lg-gl-f282rgfl.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg;$siteResource/images/300Wx300H/lg-gl-f282rgfl-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-gl-f282rgfl-Copy.jpeg;$siteResource/images/96Wx96H/lg-gl-f282rgfl-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-gl-f282rgfl-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-lg-gl-f282rgfl-Copy.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-gl-i322rpzl.jpeg;$siteResource/images/300Wx300H/lg-gl-i322rpzl.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-gl-i322rpzl.jpeg;$siteResource/images/96Wx96H/lg-gl-i322rpzl.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-gl-i322rpzl.jpeg;$siteResource/images/96Wx96H/Optimized-lg-gl-i322rpzl.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-gl-i322rpzl-Copy.jpeg;$siteResource/images/300Wx300H/lg-gl-i322rpzl-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-gl-i322rpzl-Copy.jpeg;$siteResource/images/96Wx96H/lg-gl-i322rpzl-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-gl-i322rpzl-Copy;$siteResource/images/96Wx96H/Optimized-lg-gl-i322rpzl-Copy;;;images
 
 ;300Wx300H;/300Wx300H/lg-gl-m542gphm.jpeg;$siteResource/images/300Wx300H/lg-gl-m542gphm.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-gl-m542gphm.jpeg;$siteResource/images/96Wx96H/lg-gl-m542gphm.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-gl-m542gphm.jpeg;$siteResource/images/96Wx96H/Optimized-lg-gl-m542gphm.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-gl-m542gphm-Copy.jpeg;$siteResource/images/300Wx300H/lg-gl-m542gphm-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-gl-m542gphm-Copy.jpeg;$siteResource/images/96Wx96H/lg-gl-m542gphm-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-gl-m542gphm-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-lg-gl-m542gphm-Copy.jpeg;;;images
 
 
 ;300Wx300H;/300Wx300H/lg-gl-t542gdwl.jpeg;$siteResource/images/300Wx300H/lg-gl-t542gdwl.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-gl-t542gdwl.jpeg;$siteResource/images/96Wx96H/lg-gl-t542gdwl.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-gl-t542gdwl.jpeg;$siteResource/images/96Wx96H/Optimized-lg-gl-t542gdwl.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-gl-t542gdwl-Copy.jpeg;$siteResource/images/300Wx300H/lg-gl-t542gdwl-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-gl-t542gdwl-Copy.jpeg;$siteResource/images/96Wx96H/lg-gl-t542gdwl-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-gl-t542gdwl-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-lg-gl-t542gdwl-Copy.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/samsung-rt34k3983rz-Copy.jpeg;$siteResource/images/300Wx300H/samsung-rt34k3983rz-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/samsung-rt34k3983rz-Copy.jpeg;$siteResource/images/96Wx96H/samsung-rt34k3983rz-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-samsung-rt34k3983rz-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-samsung-rt34k3983rz-Copy.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/samsung-rt34k3983rz.jpeg;$siteResource/images/300Wx300H/samsung-rt34k3983rz.jpeg;;;images
-;96Wx96H;/96Wx96H/samsung-rt34k3983rz.jpeg;$siteResource/images/96Wx96H/samsung-rt34k3983rz.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-samsung-rt34k3983rz.jpeg;$siteResource/images/96Wx96H/Optimized-samsung-rt34k3983rz.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-32lh516a.jpeg;$siteResource/images/300Wx300H/lg-32lh516a.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-32lh516a.jpeg;$siteResource/images/96Wx96H/lg-32lh516a.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-32lh516a.jpeg;$siteResource/images/96Wx96H/Optimized-lg-32lh516a.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-32lh516a-Copy.jpeg;$siteResource/images/300Wx300H/lg-32lh516a-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-32lh516a-Copy.jpeg;$siteResource/images/96Wx96H/lg-32lh516a-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-32lh516a-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-lg-32lh516a-Copy.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-43lh547a.jpeg;$siteResource/images/300Wx300H/lg-43lh547a.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-43lh547a.jpeg;$siteResource/images/96Wx96H/lg-43lh547a.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-43lh547a.jpeg;$siteResource/images/96Wx96H/Optimized-lg-43lh547a.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-43lh547a-Copy.jpeg;$siteResource/images/300Wx300H/lg-43lh547a-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-43lh547a-Copy.jpeg;$siteResource/images/96Wx96H/lg-43lh547a-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-43lh547a-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-lg-43lh547a-Copy.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-49lh576t.jpeg;$siteResource/images/300Wx300H/lg-49lh576t.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-49lh576t.jpeg;$siteResource/images/96Wx96H/lg-49lh576t.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-49lh576t.jpeg;$siteResource/images/96Wx96H/Optimized-lg-49lh576t.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-55lh600t.jpeg;$siteResource/images/300Wx300H/lg-55lh600t.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-55lh600t.jpeg;$siteResource/images/96Wx96H/lg-55lh600t.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-55lh600t.jpeg;$siteResource/images/96Wx96H/Optimized-lg-55lh600t.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/lg-55lh600t-Copy.jpeg;$siteResource/images/300Wx300H/lg-55lh600t-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/lg-55lh600t-Copy.jpeg;$siteResource/images/96Wx96H/lg-55lh600t-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-lg-55lh600t-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-lg-55lh600t-Copy.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/sony-kdl-48w700c.jpeg;$siteResource/images/300Wx300H/sony-kdl-48w700c.jpeg;;;images
-;96Wx96H;/96Wx96H/sony-kdl-48w700c.jpeg;$siteResource/images/96Wx96H/sony-kdl-48w700c.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-sony-kdl-48w700c.jpeg;$siteResource/images/96Wx96H/Optimized-sony-kdl-48w700c.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/sony-kdl-48w700c-Copy.jpeg;$siteResource/images/300Wx300H/sony-kdl-48w700c-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/sony-kdl-48w700c-Copy.jpeg;$siteResource/images/96Wx96H/sony-kdl-48w700c-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-sony-kdl-48w700c-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-sony-kdl-48w700c-Copy.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/sony-kdl-50w800d.jpeg;$siteResource/images/300Wx300H/sony-kdl-50w800d.jpeg;;;images
-;96Wx96H;/96Wx96H/sony-kdl-50w800d.jpeg;$siteResource/images/96Wx96H/sony-kdl-50w800d.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-sony-kdl-50w800d.jpeg;$siteResource/images/96Wx96H/Optimized-sony-kdl-50w800d.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/sony-kdl-50w950d.jpeg;$siteResource/images/300Wx300H/sony-kdl-50w950d.jpeg;;;images
-;96Wx96H;/96Wx96H/sony-kdl-50w950d.jpeg;$siteResource/images/96Wx96H/sony-kdl-50w950d.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-sony-kdl-50w950d.jpeg;$siteResource/images/96Wx96H/Optimized-sony-kdl-50w950d.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/sony-klv-40r352d.jpeg;$siteResource/images/300Wx300H/sony-klv-40r352d.jpeg;;;images
-;96Wx96H;/96Wx96H/sony-klv-40r352d.jpeg;$siteResource/images/96Wx96H/sony-klv-40r352d.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-sony-klv-40r352d.jpeg;$siteResource/images/96Wx96H/Optimized-sony-klv-40r352d.jpeg;;;images
 
 ;300Wx300H;/300Wx300H/sony-klv-40r352d-Copy.jpeg;$siteResource/images/300Wx300H/sony-klv-40r352d-Copy.jpeg;;;images
-;96Wx96H;/96Wx96H/sony-klv-40r352d-Copy.jpeg;$siteResource/images/96Wx96H/sony-klv-40r352d-Copy.jpeg;;;images
+;96Wx96H;/96Wx96H/Optimized-sony-klv-40r352d-Copy.jpeg;$siteResource/images/96Wx96H/Optimized-sony-klv-40r352d-Copy.jpeg;;;images
 
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
 
-;lg-gl-f282rgfl;/300Wx300H/lg-gl-f282rgfl.jpeg,/96Wx96H/lg-gl-f282rgfl.jpeg;
-;lg-gl-f282rgfl-Copy;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg,/96Wx96H/lg-gl-f282rgfl-Copy.jpeg;
-;lg-gl-i322rpzl;/300Wx300H/lg-gl-i322rpzl.jpeg,/96Wx96H/lg-gl-i322rpzl.jpeg;
-;lg-gl-i322rpzl-Copy;/300Wx300H/lg-gl-i322rpzl-Copy.jpeg,/96Wx96H/lg-gl-i322rpzl-Copy.jpeg;
-;lg-gl-m542gphm;/300Wx300H/lg-gl-m542gphm.jpeg,/96Wx96H/lg-gl-m542gphm.jpeg;
-;lg-gl-m542gphm-Copy;/300Wx300H/lg-gl-m542gphm-Copy.jpeg,/96Wx96H/lg-gl-m542gphm-Copy.jpeg;
-;lg-gl-t542gdwl;/300Wx300H/lg-gl-t542gdwl.jpeg,/96Wx96H/lg-gl-t542gdwl.jpeg;;
-;lg-gl-t542gdwl-Copy;/300Wx300H/lg-gl-t542gdwl-Copy.jpeg,/96Wx96H/lg-gl-m542gphm-Copy.jpeg;
-;samsung-rt34k3983rz-Copy;/300Wx300H/samsung-rt34k3983rz-Copy.jpeg,/96Wx96H/samsung-rt34k3983rz-Copy.jpeg;
-;samsung-rt34k3983rz;/300Wx300H/samsung-rt34k3983rz.jpeg,/96Wx96H/samsung-rt34k3983rz.jpeg;
-;lg-32lh516a;/300Wx300H/lg-32lh516a.jpeg,/96Wx96H/lg-32lh516a.jpeg;
-;lg-32lh516a-Copy;/300Wx300H/lg-32lh516a-Copy.jpeg,/96Wx96H/lg-32lh516a-Copy.jpeg;
-;lg-43lh547a;/300Wx300H/lg-43lh547a.jpeg,/96Wx96H/lg-43lh547a.jpeg;
-;lg-43lh547a-Copy;/300Wx300H/lg-43lh547a-Copy.jpeg,/96Wx96H/lg-43lh547a-Copy.jpeg;
-;lg-49lh576t;/300Wx300H/lg-49lh576t.jpeg,/96Wx96H/lg-49lh576t.jpeg;
-;lg-55lh600t;/300Wx300H/lg-55lh600t.jpeg,/96Wx96H/lg-55lh600t.jpeg;
-;lg-55lh600t-Copy;/300Wx300H/lg-55lh600t-Copy.jpeg,/96Wx96H/lg-55lh600t-Copy.jpeg;
-;sony-kdl-48w700c;/300Wx300H/sony-kdl-48w700c.jpeg,/96Wx96H/sony-kdl-48w700c.jpeg;
-;sony-kdl-48w700c-Copy;/300Wx300H/sony-kdl-48w700c-Copy.jpeg,/96Wx96H/sony-kdl-48w700c-Copy.jpeg;
-;sony-kdl-50w800d;/300Wx300H/sony-kdl-50w800d.jpeg,/96Wx96H/sony-kdl-50w800d.jpeg;
-;sony-kdl-50w950d;/300Wx300H/sony-kdl-50w950d.jpeg,/96Wx96H/sony-kdl-50w950d.jpeg;
-;sony-klv-40r352d;/300Wx300H/sony-klv-40r352d.jpeg,/96Wx96H/sony-klv-40r352d.jpeg;
-;sony-klv-40r352d-Copy;/300Wx300H/sony-klv-40r352d-Copy.jpeg,/96Wx96H/sony-klv-40r352d-Copy.jpeg;
+;lg-gl-f282rgfl;/300Wx300H/lg-gl-f282rgfl.jpeg,/96Wx96H/Optimized-lg-gl-f282rgfl.jpeg;
+;lg-gl-f282rgfl-Copy;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg,/96Wx96H/Optimized-lg-gl-f282rgfl-Copy.jpeg;
+;lg-gl-i322rpzl;/300Wx300H/lg-gl-i322rpzl.jpeg,/96Wx96H/Optimized-lg-gl-i322rpzl.jpeg;
+;lg-gl-i322rpzl-Copy;/300Wx300H/lg-gl-i322rpzl-Copy.jpeg,/96Wx96H/Optimized-lg-gl-i322rpzl-Copy.jpeg;
+;lg-gl-m542gphm;/300Wx300H/lg-gl-m542gphm.jpeg,/96Wx96H/Optimized-lg-gl-m542gphm.jpeg;
+;lg-gl-m542gphm-Copy;/300Wx300H/lg-gl-m542gphm-Copy.jpeg,/96Wx96H/Optimized-lg-gl-m542gphm-Copy.jpeg;
+;lg-gl-t542gdwl;/300Wx300H/lg-gl-t542gdwl.jpeg,/96Wx96H/Optimized-lg-gl-t542gdwl.jpeg;;
+;lg-gl-t542gdwl-Copy;/300Wx300H/lg-gl-t542gdwl-Copy.jpeg,/96Wx96H/Optimized-lg-gl-t542gdwl-Copy.jpeg;
+;samsung-rt34k3983rz-Copy;/300Wx300H/samsung-rt34k3983rz-Copy.jpeg,/96Wx96H/Optimized-samsung-rt34k3983rz-Copy.jpeg;
+;samsung-rt34k3983rz;/300Wx300H/samsung-rt34k3983rz.jpeg,/96Wx96H/Optimized-samsung-rt34k3983rz.jpeg;
+;lg-32lh516a;/300Wx300H/lg-32lh516a.jpeg,/96Wx96H/Optimized-lg-32lh516a.jpeg;
+;lg-32lh516a-Copy;/300Wx300H/lg-32lh516a-Copy.jpeg,/96Wx96H/Optimized-lg-32lh516a-Copy.jpeg;
+;lg-43lh547a;/300Wx300H/lg-43lh547a.jpeg,/96Wx96H/Optimized-lg-43lh547a.jpeg;
+;lg-43lh547a-Copy;/300Wx300H/lg-43lh547a-Copy.jpeg,/96Wx96H/Optimized-lg-43lh547a-Copy.jpeg;
+;lg-49lh576t;/300Wx300H/lg-49lh576t.jpeg,/96Wx96H/Optimized-lg-49lh576t.jpeg;
+;lg-55lh600t;/300Wx300H/lg-55lh600t.jpeg,/96Wx96H/Optimized-lg-55lh600t.jpeg;
+;lg-55lh600t-Copy;/300Wx300H/lg-55lh600t-Copy.jpeg,/96Wx96H/Optimized-lg-55lh600t-Copy.jpeg;
+;sony-kdl-48w700c;/300Wx300H/sony-kdl-48w700c.jpeg,/96Wx96H/Optimized-sony-kdl-48w700c.jpeg;
+;sony-kdl-48w700c-Copy;/300Wx300H/sony-kdl-48w700c-Copy.jpeg,/96Wx96H/Optimized-sony-kdl-48w700c-Copy.jpeg;
+;sony-kdl-50w800d;/300Wx300H/sony-kdl-50w800d.jpeg,/96Wx96H/Optimized-sony-kdl-50w800d.jpeg;
+;sony-kdl-50w950d;/300Wx300H/sony-kdl-50w950d.jpeg,/96Wx96H/Optimized-sony-kdl-50w950d.jpeg;
+;sony-klv-40r352d;/300Wx300H/sony-klv-40r352d.jpeg,/96Wx96H/Optimized-sony-klv-40r352d.jpeg;
+;sony-klv-40r352d-Copy;/300Wx300H/sony-klv-40r352d-Copy.jpeg,/96Wx96H/Optimized-sony-klv-40r352d-Copy.jpeg;
 
 
 UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
 
-;GL-Q292SHAM;/300Wx300H/lg-gl-f282rgfl.jpeg;/96Wx96H/lg-gl-f282rgfl.jpeg;;;/300Wx300H/lg-gl-f282rgfl.jpeg;/96Wx96H/lg-gl-f282rgfl.jpeg;lg-gl-f282rgfl;
+;GL-Q292SHAM;/300Wx300H/lg-gl-f282rgfl.jpeg;/96Wx96H/Optimized-lg-gl-f282rgfl.jpeg;;;/300Wx300H/lg-gl-f282rgfl.jpeg;/96Wx96H/Optimized-lg-gl-f282rgfl.jpeg;lg-gl-f282rgfl;
 
-;RT34K3983RZ;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg;/96Wx96H/lg-gl-f282rgfl-Copy.jpeg;;;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg;/96Wx96H/lg-gl-f282rgfl-Copy.jpeg;lg-gl-f282rgfl-Copy;
+;RT34K3983RZ;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg;/96Wx96H/Optimized-lg-gl-f282rgfl-Copy.jpeg;;;/300Wx300H/lg-gl-f282rgfl-Copy.jpeg;/96Wx96H/Optimized-lg-gl-f282rgfl-Copy.jpeg;lg-gl-f282rgfl-Copy;
 
-;GL-F282RGFL;/300Wx300H/lg-gl-i322rpzl.jpeg;/96Wx96H/lg-gl-i322rpzl.jpeg;;;/300Wx300H/lg-gl-i322rpzl.jpeg;/96Wx96H/lg-gl-i322rpzl.jpeg;lg-gl-i322rpzl;
+;GL-F282RGFL;/300Wx300H/lg-gl-i322rpzl.jpeg;/96Wx96H/Optimized-lg-gl-i322rpzl.jpeg;;;/300Wx300H/lg-gl-i322rpzl.jpeg;/96Wx96H/Optimized-lg-gl-i322rpzl.jpeg;lg-gl-i322rpzl;
 
-;GL-I292RSFL;/300Wx300H/lg-gl-i322rpzl-Copy.jpeg;/96Wx96H/lg-gl-i322rpzl-Copy.jpeg;;;/300Wx300H/lg-gl-i322rpzl-Copy.jpeg;/96Wx96H/lg-gl-i322rpzl-Copy.jpeg;lg-gl-i322rpzl-Copy;
+;GL-I292RSFL;/300Wx300H/lg-gl-i322rpzl-Copy.jpeg;/96Wx96H/Optimized-lg-gl-i322rpzl-Copy.jpeg;;;/300Wx300H/lg-gl-i322rpzl-Copy.jpeg;/96Wx96H/Optimized-lg-gl-i322rpzl-Copy.jpeg;lg-gl-i322rpzl-Copy;
 
-;KP202PHG;/300Wx300H/lg-gl-m542gphm.jpeg;/96Wx96H/lg-gl-m542gphm.jpeg;;;/300Wx300H/lg-gl-m542gphm.jpeg;/96Wx96H/lg-gl-m542gphm.jpeg;lg-gl-m542gphm;
+;KP202PHG;/300Wx300H/lg-gl-m542gphm.jpeg;/96Wx96H/Optimized-lg-gl-m542gphm.jpeg;;;/300Wx300H/lg-gl-m542gphm.jpeg;/96Wx96H/Optimized-lg-gl-m542gphm.jpeg;lg-gl-m542gphm;
 
-;NR-BW465VNX4;/300Wx300H/lg-gl-m542gphm-Copy.jpeg;/96Wx96H/lg-gl-m542gphm-Copy.jpeg;;;/300Wx300H/lg-gl-m542gphm-Copy.jpeg;/96Wx96H/lg-gl-m542gphm-Copy.jpeg;lg-gl-m542gphm-Copy;
+;NR-BW465VNX4;/300Wx300H/lg-gl-m542gphm-Copy.jpeg;/96Wx96H/Optimized-lg-gl-m542gphm-Copy.jpeg;;;/300Wx300H/lg-gl-m542gphm-Copy.jpeg;/96Wx96H/Optimized-lg-gl-m542gphm-Copy.jpeg;lg-gl-m542gphm-Copy;
 
-;NR-CX789WYA5;/300Wx300H/lg-gl-t542gdwl.jpeg;/96Wx96H/lg-gl-t542gdwl.jpeg;;;/300Wx300H/lg-gl-t542gdwl.jpeg;/96Wx96H/lg-gl-t542gdwl.jpeg;lg-gl-t542gdwl;
+;NR-CX789WYA5;/300Wx300H/lg-gl-t542gdwl.jpeg;/96Wx96H/Optimized-lg-gl-t542gdwl.jpeg;;;/300Wx300H/lg-gl-t542gdwl.jpeg;/96Wx96H/Optimized-lg-gl-t542gdwl.jpeg;lg-gl-t542gdwl;
 
-;KP203QIH;/300Wx300H/lg-gl-t542gdwl-Copy.jpeg;/96Wx96H/lg-gl-t542gdwl-Copy.jpeg;;;/300Wx300H/lg-gl-t542gdwl-Copy.jpeg;/96Wx96H/lg-gl-t542gdwl-Copy.jpeg;lg-gl-t542gdwl-Copy;
+;KP203QIH;/300Wx300H/lg-gl-t542gdwl-Copy.jpeg;/96Wx96H/Optimized-lg-gl-t542gdwl-Copy.jpeg;;;/300Wx300H/lg-gl-t542gdwl-Copy.jpeg;/96Wx96H/Optimized-lg-gl-t542gdwl-Copy.jpeg;lg-gl-t542gdwl-Copy;
 
-;RT35L4094SA;/300Wx300H/samsung-rt34k3983rz-Copy.jpeg;/96Wx96H/samsung-rt34k3983rz-Copy.jpeg;;;/300Wx300H/samsung-rt34k3983rz-Copy.jpeg;/96Wx96H/samsung-rt34k3983rz-Copy.jpeg;samsung-rt34k3983rz-Copy;
+;RT35L4094SA;/300Wx300H/samsung-rt34k3983rz-Copy.jpeg;/96Wx96H/Optimized-samsung-rt34k3983rz-Copy.jpeg;;;/300Wx300H/samsung-rt34k3983rz-Copy.jpeg;/96Wx96H/Optimized-samsung-rt34k3983rz-Copy.jpeg;samsung-rt34k3983rz-Copy;
 
-;KLV-49W752D;/300Wx300H/samsung-rt34k3983rz.jpeg;/96Wx96H/samsung-rt34k3983rz.jpeg;;;/300Wx300H/samsung-rt34k3983rz.jpeg;/96Wx96H/samsung-rt34k3983rz.jpeg;samsung-rt34k3983rz;
+;KLV-49W752D;/300Wx300H/samsung-rt34k3983rz.jpeg;/96Wx96H/Optimized-samsung-rt34k3983rz.jpeg;;;/300Wx300H/samsung-rt34k3983rz.jpeg;/96Wx96H/Optimized-samsung-rt34k3983rz.jpeg;samsung-rt34k3983rz;
 
-;KLV-40W562D;/300Wx300H/lg-32lh516a.jpeg;/96Wx96H/lg-32lh516a.jpeg;;;/300Wx300H/lg-32lh516a.jpeg;/96Wx96H/lg-32lh516a.jpeg;lg-32lh516a;
+;KLV-40W562D;/300Wx300H/lg-32lh516a.jpeg;/96Wx96H/Optimized-lg-32lh516a.jpeg;;;/300Wx300H/lg-32lh516a.jpeg;/96Wx96H/Optimized-lg-32lh516a.jpeg;lg-32lh516a;
 
-;43LH576T;/300Wx300H/lg-32lh516a-Copy.jpeg;/96Wx96H/lg-32lh516a-Copy.jpeg;;;/300Wx300H/lg-32lh516a-Copy.jpeg;/96Wx96H/lg-32lh516a-Copy.jpeg;lg-32lh516a-Copy;
+;43LH576T;/300Wx300H/lg-32lh516a-Copy.jpeg;/96Wx96H/Optimized-lg-32lh516a-Copy.jpeg;;;/300Wx300H/lg-32lh516a-Copy.jpeg;/96Wx96H/Optimized-lg-32lh516a-Copy.jpeg;lg-32lh516a-Copy;
 
-;2LH604T;/300Wx300H/lg-43lh547a.jpeg;/96Wx96H/lg-43lh547a.jpeg;;;/300Wx300H/lg-43lh547a.jpeg;/96Wx96H/lg-43lh547a.jpeg;lg-43lh547a;
+;2LH604T;/300Wx300H/lg-43lh547a.jpeg;/96Wx96H/Optimized-lg-43lh547a.jpeg;;;/300Wx300H/lg-43lh547a.jpeg;/96Wx96H/Optimized-lg-43lh547a.jpeg;lg-43lh547a;
 
-;SMG60897;/300Wx300H/lg-43lh547a-Copy.jpeg;/96Wx96H/lg-43lh547a-Copy.jpeg;;;/300Wx300H/lg-43lh547a-Copy.jpeg;/96Wx96H/lg-43lh547a-Copy.jpeg;lg-43lh547a-Copy;
+;SMG60897;/300Wx300H/lg-43lh547a-Copy.jpeg;/96Wx96H/Optimized-lg-43lh547a-Copy.jpeg;;;/300Wx300H/lg-43lh547a-Copy.jpeg;/96Wx96H/Optimized-lg-43lh547a-Copy.jpeg;lg-43lh547a-Copy;
 
-;SMG79806;/300Wx300H/lg-49lh576t.jpeg;/96Wx96H/lg-49lh576t.jpeg;;;/300Wx300H/lg-49lh576t.jpeg;/96Wx96H/lg-49lh576t.jpeg;lg-49lh576t;
+;SMG79806;/300Wx300H/lg-49lh576t.jpeg;/96Wx96H/Optimized-lg-49lh576t.jpeg;;;/300Wx300H/lg-49lh576t.jpeg;/96Wx96H/Optimized-lg-49lh576t.jpeg;lg-49lh576t;
 
-;PSC80464;/300Wx300H/lg-55lh600t.jpeg;/96Wx96H/lg-55lh600t.jpeg;;;/300Wx300H/lg-55lh600t.jpeg;/96Wx96H/lg-55lh600t.jpeg;lg-55lh600t;
+;PSC80464;/300Wx300H/lg-55lh600t.jpeg;/96Wx96H/Optimized-lg-55lh600t.jpeg;;;/300Wx300H/lg-55lh600t.jpeg;/96Wx96H/Optimized-lg-55lh600t.jpeg;lg-55lh600t;
 
-;PSC888642;/300Wx300H/lg-55lh600t-Copy.jpeg;/96Wx96H/lg-55lh600t-Copy.jpeg;;;/300Wx300H/lg-55lh600t-Copy.jpeg;/96Wx96H/lg-55lh600t-Copy.jpeg;lg-55lh600t-Copy;
+;PSC888642;/300Wx300H/lg-55lh600t-Copy.jpeg;/96Wx96H/Optimized-lg-55lh600t-Copy.jpeg;;;/300Wx300H/lg-55lh600t-Copy.jpeg;/96Wx96H/Optimized-lg-55lh600t-Copy.jpeg;lg-55lh600t-Copy;
