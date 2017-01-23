@@ -1,0 +1,44 @@
+<hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
+  <extensions>
+    <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
+    <extension name='mcc' />
+    <extension name='backoffice' />
+    <extension name='commercesearchbackoffice' />
+    <extension name='commerceservicesbackoffice' />
+    <extension name='solrfacetsearchbackoffice' />
+    <extension name='solrserver' />
+	<!--
+    <extension name='yacceleratorcockpits' />
+    <extension name='yacceleratorinitialdata' />
+    <extension name='yacceleratorfulfilmentprocess' />
+    <extension name='yacceleratorstorefront' />
+	-->
+    <extension name='yaddon' />
+    <extension name='ycommercewebservices' />
+    <extension name='electronicsstore' />
+    <extension name='apparelstore' />
+    <extension name='liveeditaddon' />
+    <extension name='acceleratorwebservicesaddon' />
+    <extension name='customersupportbackoffice' />
+    <extension name='rulebuilderbackoffice' />
+    <extension name='promotionenginebackoffice' />
+    <extension name='droolsruleengineservices' />
+    <extension name='promotionenginesamplesaddon' />
+	<extension name='abhrainccore' />
+	<extension name='abhraincfacades' />
+	<extension name='abhraincinitialdata' />
+	<extension name='abhraincstorefront' />
+	<extension name='abhraincfulfilmentprocess' />
+	<extension name='abhrainccockpits' />
+	<extension name='abhrainctest' />
+	
+	<extension name='mediaconversion' />
+	
+	<extension name='acceleratorcms'/>
+	<extension name='acceleratorfacades'/>
+	<extension name='acceleratorservices'/>
+	
+	<!--<extension name='captchaaddon' />-->
+	
+  </extensions>
+</hybrisconfig>
