@@ -73,8 +73,11 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 				for (final PriceRowModel priceRowModel2 : priceRowModel)
 				{
 					logger.info("\n\nThese are the prices" + priceRowModel2.getPrice());
-					priceRowModel2.setPrice(price);
-					modelService.save(priceRowModel2);
+					if (priceRowModel2.getCurrency().getIsocode().equals("USD"))
+					{
+						priceRowModel2.setPrice(price);
+						modelService.save(priceRowModel2);
+					}
 				}
 			}
 			else
@@ -166,16 +169,14 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 			for (final PriceRowModel priceRowModel2 : priceRowModel)
 			{
 
-				if (priceRowModel2.getCurrency().getIsocode().equals("USD")
-						|| priceRowModel2.getCurrency().getIsocode().equals("GBP"))
+				if (priceRowModel2.getCurrency().getIsocode().equals("USD"))
 				{
 					usdPrice = priceRowModel2.getPrice();
 				}
 				logger.info("currencynameoutsideJPY and isocode" + priceRowModel2.getCurrency().getName() + "-"
 						+ priceRowModel2.getCurrency().getIsocode());
 				logger.info("\n\nThese are the prices" + priceRowModel2.getPrice());
-				if (priceRowModel2.getCurrency().getIsocode().equals("EUR")
-						|| priceRowModel2.getCurrency().getIsocode().equals("JPY"))
+				if (priceRowModel2.getCurrency().getIsocode().equals("EUR"))
 				{
 					logger.info("currencynameinsideJPY" + priceRowModel2.getCurrency().getName());
 					if (usdPrice != null)
@@ -183,6 +184,25 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 						priceRowModel2.setPrice(usdPrice * euro);
 						modelService.save(priceRowModel2);
 					}
+				}
+				else if (usdPrice != null)
+				{
+					final PriceRowModel rowModel = new PriceRowModel();
+					rowModel.setPrice(usdPrice * euro);
+					rowModel.setProduct(model);
+					final List<UnitModel> unitModel = productAbhraDao.getunitModelDetails();
+					rowModel.setUnit(unitModel.get(0));
+					final List<CurrencyModel> currencyModel = productAbhraDao.getCurrencyModelDetaails();
+					for (int i = 0; i < currencyModel.size(); i++)
+					{
+						if (currencyModel.get(i).getIsocode().equals("EUR"))
+						{
+							rowModel.setCurrency(currencyModel.get(i));
+						}
+					}
+
+					modelService.save(rowModel);
+
 				}
 
 			}
