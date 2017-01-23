@@ -1,0 +1,30 @@
+# ImpEx for Importing Products
+
+# Macros / Replacement Parameter definitions
+$productCatalog=electronicsProductCatalog
+$productCatalogName=Electronics Product Catalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='check']
+
+# Insert Products
+INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
+;GL-Q292SHAM;"Refrigerator";LG;GL10;pieces;100010;
+;RT34K3983RZ;"Refrigerator";Samsung;RT10;pieces;100011;
+;GL-F282RGFL;"Refrigerator";LG;GL11;pieces;100012;VariantProduct;
+;GL-I292RSFL;"Refrigerator";LG;GL12;pieces;100013;
+;KP202PHG;"Refrigerator";Kelvinator;KP10;pieces;100014;
+;NR-BW465VNX4;"Refrigerator";Panasonic;NR10;pieces;100015;
+;NR-CX789WYA5;"Refrigerator";Panasonic;NR11;pieces;100016;
+;KP203QIH;"Refrigerator";Kelvinator;KP11;pieces;100017;
+;RT35L4094SA;"Refrigerator";Samsung;RT11;pieces;100018;
+;KLV-49W752D;"Television";Sony;KLV10;pieces;100019;
+;KLV-40W562D;"Television";Sony;KLV11;pieces;100020;
+;43LH576T;"Television";LG;LH10;pieces;100021;
+;2LH604T;"Television";LG;LH11;pieces;100022;
+;SMG60897;"Television";Samsung;SMG10;pieces;100023;
+;SMG79806;"Television";Samsung;SMG11;pieces;100024;
+;PSC80464;"Television";Panasonic;PSC10;pieces;100025;
+;PSC888642;"Television";Panasonic;PSC11;pieces;100026;
