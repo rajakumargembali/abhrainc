@@ -38,6 +38,12 @@ public interface ControllerConstants
 	 */
 	interface Actions
 	{
+		interface Abhra // NOSONAR
+		{
+			String SITE_ID = "abhra.site.id";
+			String SEO_ID = "abhra.seo.id";
+		}
+
 		interface Cms // NOSONAR
 		{
 			String _Prefix = "/view/"; // NOSONAR

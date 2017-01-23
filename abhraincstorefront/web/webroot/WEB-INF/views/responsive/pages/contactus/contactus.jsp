@@ -14,7 +14,7 @@
 
 <iframe width="100%" height="350px" frameborder="0" src="https://a.tiles.mapbox.com/v4/settu.p8de0lfo.html?access_token=pk.eyJ1Ijoic2V0dHUiLCJhIjoiY2lsMXhiNG8zM2E2aXV5a3NzZGQxdHZnciJ9._INN7xEP0ijCqOSKQuBh_A"></iframe>
 
-	<form:form method="post" commandName="registerForm" action="/abhraincstorefront/electronics/en/contactus">
+	<form:form method="post" commandName="registerForm" action="${abhraSpecificJirafeSiteId}/contactus">
 		<div class="form_field-elements js-recaptcha-captchaaddon">
 			<formElement:formSelectBox idKey="register.title" labelKey="register.title" path="titleCode" mandatory="true" skipBlank="false" skipBlankMessageKey="form.select.empty" items="${titles}"/>
 			<formElement:formInputBox idKey="register.firstName" labelKey="register.firstName" path="firstName" inputCSS="text" mandatory="true"/>

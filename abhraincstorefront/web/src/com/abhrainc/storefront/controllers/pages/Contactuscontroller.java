@@ -1,8 +1,6 @@
-/**
- *
- */
 package com.abhrainc.storefront.controllers.pages;
 
+import de.hybris.platform.acceleratorservices.config.HostConfigService;
 import de.hybris.platform.acceleratorservices.email.EmailService;
 import de.hybris.platform.acceleratorservices.model.email.EmailAddressModel;
 import de.hybris.platform.acceleratorservices.model.email.EmailMessageModel;
@@ -23,6 +21,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -32,6 +31,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.abhrainc.storefront.controllers.ControllerConstants;
 
 
 /**
@@ -44,8 +45,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @Scope("tenant")
 @RequestMapping(value = "/contactus")
+
+
 public class Contactuscontroller extends AbstractPageController
 {
+	final Logger logger = Logger.getLogger(Contactuscontroller.class);
+
+	@Resource(name = "hostConfigService")
+	private HostConfigService hostConfigService;
 	@Autowired
 	private EmailService emailService;
 	@Autowired
@@ -57,6 +64,8 @@ public class Contactuscontroller extends AbstractPageController
 		return userFacade.getTitles();
 	}
 
+	private static final String Abhra_SITE_ID = "abhraSiteId";
+
 	@Resource(name = "userFacade")
 	private UserFacade userFacade;
 
@@ -65,11 +74,22 @@ public class Contactuscontroller extends AbstractPageController
 	{
 		//		return "/pages/contactus/contactus";
 		model.addAttribute(new RegisterForm());
+		final String serverName = request.getServerName();
 		storeCmsPageInModel(model, getContentPageForLabelOrId("contactus1"));
 		//return new ModelAndView("/pages/contactus/contactus", "command", new RegisterForm());
+		final String abhraSpecificJirafeSiteId = hostConfigService.getProperty(ControllerConstants.Actions.Abhra.SITE_ID,
+				serverName);
+
+		model.addAttribute("abhraSpecificJirafeSiteId", abhraSpecificJirafeSiteId);
+
+		logger.info(abhraSpecificJirafeSiteId);
+
 		return getViewForPage(model);
 
+
+
 	}
+
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String doCheckoutRegister(final RegisterForm form, final BindingResult bindingResult, final Model model,
