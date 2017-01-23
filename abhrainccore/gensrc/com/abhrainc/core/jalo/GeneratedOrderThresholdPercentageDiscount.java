@@ -1,4 +1,11 @@
 
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at Jan 23, 2017 12:26:57 PM                    ---
+ * ----------------------------------------------------------------
+ */
+
 package com.abhrainc.core.jalo;
 
 import java.util.Collection;
@@ -48,7 +55,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.messageCouldHaveFired</code>
 	 * attribute.
-	 * 
+	 *
 	 * @return the messageCouldHaveFired - The message to show when the promotion could have potentially fire.
 	 */
 	public String getMessageCouldHaveFired(final SessionContext ctx)
@@ -64,7 +71,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.messageCouldHaveFired</code>
 	 * attribute.
-	 * 
+	 *
 	 * @return the messageCouldHaveFired - The message to show when the promotion could have potentially fire.
 	 */
 	public String getMessageCouldHaveFired()
@@ -75,7 +82,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.messageCouldHaveFired</code>
 	 * attribute.
-	 * 
+	 *
 	 * @return the localized messageCouldHaveFired - The message to show when the promotion could have potentially fire.
 	 */
 	public Map<Language, String> getAllMessageCouldHaveFired(final SessionContext ctx)
@@ -87,7 +94,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.messageCouldHaveFired</code>
 	 * attribute.
-	 * 
+	 *
 	 * @return the localized messageCouldHaveFired - The message to show when the promotion could have potentially fire.
 	 */
 	public Map<Language, String> getAllMessageCouldHaveFired()
@@ -98,7 +105,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.messageCouldHaveFired</code>
 	 * attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the messageCouldHaveFired - The message to show when the promotion could have potentially fire.
 	 */
@@ -115,7 +122,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.messageCouldHaveFired</code>
 	 * attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the messageCouldHaveFired - The message to show when the promotion could have potentially fire.
 	 */
@@ -127,7 +134,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.messageCouldHaveFired</code>
 	 * attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the messageCouldHaveFired - The message to show when the promotion could have potentially fire.
 	 */
@@ -139,7 +146,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.messageCouldHaveFired</code>
 	 * attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the messageCouldHaveFired - The message to show when the promotion could have potentially fire.
 	 */
@@ -150,7 +157,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.messageFired</code> attribute.
-	 * 
+	 *
 	 * @return the messageFired - The message to show when the promotion has fired.
 	 */
 	public String getMessageFired(final SessionContext ctx)
@@ -165,7 +172,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.messageFired</code> attribute.
-	 * 
+	 *
 	 * @return the messageFired - The message to show when the promotion has fired.
 	 */
 	public String getMessageFired()
@@ -175,7 +182,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.messageFired</code> attribute.
-	 * 
+	 *
 	 * @return the localized messageFired - The message to show when the promotion has fired.
 	 */
 	public Map<Language, String> getAllMessageFired(final SessionContext ctx)
@@ -185,7 +192,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.messageFired</code> attribute.
-	 * 
+	 *
 	 * @return the localized messageFired - The message to show when the promotion has fired.
 	 */
 	public Map<Language, String> getAllMessageFired()
@@ -195,7 +202,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.messageFired</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the messageFired - The message to show when the promotion has fired.
 	 */
@@ -211,7 +218,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.messageFired</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the messageFired - The message to show when the promotion has fired.
 	 */
@@ -222,7 +229,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.messageFired</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the messageFired - The message to show when the promotion has fired.
 	 */
@@ -233,7 +240,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.messageFired</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the messageFired - The message to show when the promotion has fired.
 	 */
@@ -245,7 +252,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.percentageDiscount</code>
 	 * attribute.
-	 * 
+	 *
 	 * @return the percentageDiscount - Percentage discount.
 	 */
 	public Double getPercentageDiscount(final SessionContext ctx)
@@ -256,7 +263,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.percentageDiscount</code>
 	 * attribute.
-	 * 
+	 *
 	 * @return the percentageDiscount - Percentage discount.
 	 */
 	public Double getPercentageDiscount()
@@ -267,7 +274,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.percentageDiscount</code>
 	 * attribute.
-	 * 
+	 *
 	 * @return the percentageDiscount - Percentage discount.
 	 */
 	public double getPercentageDiscountAsPrimitive(final SessionContext ctx)
@@ -279,7 +286,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.percentageDiscount</code>
 	 * attribute.
-	 * 
+	 *
 	 * @return the percentageDiscount - Percentage discount.
 	 */
 	public double getPercentageDiscountAsPrimitive()
@@ -290,7 +297,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.percentageDiscount</code>
 	 * attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the percentageDiscount - Percentage discount.
 	 */
@@ -302,7 +309,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.percentageDiscount</code>
 	 * attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the percentageDiscount - Percentage discount.
 	 */
@@ -314,7 +321,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.percentageDiscount</code>
 	 * attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the percentageDiscount - Percentage discount.
 	 */
@@ -326,7 +333,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.percentageDiscount</code>
 	 * attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the percentageDiscount - Percentage discount.
 	 */
@@ -337,7 +344,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.qualifyingCount</code> attribute.
-	 * 
+	 *
 	 * @return the qualifyingCount - The number of base products required to qualify for the free gift.
 	 */
 	public Integer getQualifyingCount(final SessionContext ctx)
@@ -347,7 +354,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.qualifyingCount</code> attribute.
-	 * 
+	 *
 	 * @return the qualifyingCount - The number of base products required to qualify for the free gift.
 	 */
 	public Integer getQualifyingCount()
@@ -357,7 +364,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.qualifyingCount</code> attribute.
-	 * 
+	 *
 	 * @return the qualifyingCount - The number of base products required to qualify for the free gift.
 	 */
 	public int getQualifyingCountAsPrimitive(final SessionContext ctx)
@@ -368,7 +375,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.qualifyingCount</code> attribute.
-	 * 
+	 *
 	 * @return the qualifyingCount - The number of base products required to qualify for the free gift.
 	 */
 	public int getQualifyingCountAsPrimitive()
@@ -378,7 +385,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.qualifyingCount</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the qualifyingCount - The number of base products required to qualify for the free gift.
 	 */
@@ -389,7 +396,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.qualifyingCount</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the qualifyingCount - The number of base products required to qualify for the free gift.
 	 */
@@ -400,7 +407,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.qualifyingCount</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the qualifyingCount - The number of base products required to qualify for the free gift.
 	 */
@@ -411,7 +418,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.qualifyingCount</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the qualifyingCount - The number of base products required to qualify for the free gift.
 	 */
@@ -422,7 +429,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.thresholdTotals</code> attribute.
-	 * 
+	 *
 	 * @return the thresholdTotals - The cart total value threshold in specific currencies.
 	 */
 	public Collection<PromotionPriceRow> getThresholdTotals(final SessionContext ctx)
@@ -433,7 +440,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>OrderThresholdPercentageDiscount.thresholdTotals</code> attribute.
-	 * 
+	 *
 	 * @return the thresholdTotals - The cart total value threshold in specific currencies.
 	 */
 	public Collection<PromotionPriceRow> getThresholdTotals()
@@ -443,7 +450,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.thresholdTotals</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the thresholdTotals - The cart total value threshold in specific currencies.
 	 */
@@ -468,7 +475,7 @@ public abstract class GeneratedOrderThresholdPercentageDiscount extends OrderPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>OrderThresholdPercentageDiscount.thresholdTotals</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the thresholdTotals - The cart total value threshold in specific currencies.
 	 */

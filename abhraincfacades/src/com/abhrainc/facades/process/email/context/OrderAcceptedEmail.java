@@ -3,21 +3,6 @@
  */
 package com.abhrainc.facades.process.email.context;
 
-import de.hybris.platform.acceleratorservices.model.cms2.pages.EmailPageModel;
-import de.hybris.platform.acceleratorservices.process.email.context.AbstractEmailContext;
-import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
-import de.hybris.platform.commercefacades.order.data.ConsignmentData;
-import de.hybris.platform.commerceservices.enums.CustomerType;
-import de.hybris.platform.core.model.c2l.LanguageModel;
-import de.hybris.platform.core.model.order.OrderModel;
-import de.hybris.platform.core.model.user.CustomerModel;
-import de.hybris.platform.ordersplitting.model.ConsignmentModel;
-import de.hybris.platform.ordersplitting.model.ConsignmentProcessModel;
-import de.hybris.platform.servicelayer.dto.converter.Converter;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
-
 import com.abhrainc.facades.dao.AbhraIncFacadeDAO;
 
 

@@ -1,4 +1,10 @@
 
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at Jan 23, 2017 12:26:57 PM                    ---
+ * ----------------------------------------------------------------
+ */
 package com.abhrainc.core.jalo;
 
 import java.util.Collections;
@@ -34,7 +40,7 @@ public abstract class GeneratedApparelSizeVariantProduct extends ApparelStyleVar
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ApparelSizeVariantProduct.size</code> attribute.
-	 * 
+	 *
 	 * @return the size - Size of the product.
 	 */
 	public String getSize(final SessionContext ctx)
@@ -48,7 +54,7 @@ public abstract class GeneratedApparelSizeVariantProduct extends ApparelStyleVar
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ApparelSizeVariantProduct.size</code> attribute.
-	 * 
+	 *
 	 * @return the size - Size of the product.
 	 */
 	public String getSize()
@@ -58,7 +64,7 @@ public abstract class GeneratedApparelSizeVariantProduct extends ApparelStyleVar
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ApparelSizeVariantProduct.size</code> attribute.
-	 * 
+	 *
 	 * @return the localized size - Size of the product.
 	 */
 	public Map<Language, String> getAllSize(final SessionContext ctx)
@@ -68,7 +74,7 @@ public abstract class GeneratedApparelSizeVariantProduct extends ApparelStyleVar
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ApparelSizeVariantProduct.size</code> attribute.
-	 * 
+	 *
 	 * @return the localized size - Size of the product.
 	 */
 	public Map<Language, String> getAllSize()
@@ -78,7 +84,7 @@ public abstract class GeneratedApparelSizeVariantProduct extends ApparelStyleVar
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ApparelSizeVariantProduct.size</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the size - Size of the product.
 	 */
@@ -93,7 +99,7 @@ public abstract class GeneratedApparelSizeVariantProduct extends ApparelStyleVar
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ApparelSizeVariantProduct.size</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the size - Size of the product.
 	 */
@@ -104,7 +110,7 @@ public abstract class GeneratedApparelSizeVariantProduct extends ApparelStyleVar
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ApparelSizeVariantProduct.size</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the size - Size of the product.
 	 */
@@ -115,7 +121,7 @@ public abstract class GeneratedApparelSizeVariantProduct extends ApparelStyleVar
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ApparelSizeVariantProduct.size</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the size - Size of the product.
 	 */

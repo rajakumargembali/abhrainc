@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 
+=======
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at Jan 23, 2017 12:26:57 PM                    ---
+ * ----------------------------------------------------------------
+ */
+>>>>>>> praneeth
 package com.abhrainc.cockpits.constants;
 
 /**

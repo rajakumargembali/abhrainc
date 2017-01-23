@@ -1,3 +1,9 @@
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at Jan 23, 2017 12:26:57 PM                    ---
+ * ----------------------------------------------------------------
+ */
 
 package com.abhrainc.core.jalo;
 
@@ -34,7 +40,7 @@ public abstract class GeneratedApparelProduct extends Product
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ApparelProduct.genders</code> attribute.
-	 * 
+	 *
 	 * @return the genders - List of genders that the ApparelProduct is designed for
 	 */
 	public List<EnumerationValue> getGenders(final SessionContext ctx)
@@ -45,7 +51,7 @@ public abstract class GeneratedApparelProduct extends Product
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ApparelProduct.genders</code> attribute.
-	 * 
+	 *
 	 * @return the genders - List of genders that the ApparelProduct is designed for
 	 */
 	public List<EnumerationValue> getGenders()
@@ -55,7 +61,7 @@ public abstract class GeneratedApparelProduct extends Product
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ApparelProduct.genders</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the genders - List of genders that the ApparelProduct is designed for
 	 */
@@ -66,7 +72,7 @@ public abstract class GeneratedApparelProduct extends Product
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ApparelProduct.genders</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the genders - List of genders that the ApparelProduct is designed for
 	 */

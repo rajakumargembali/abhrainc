@@ -1,6 +1,37 @@
 
+
 package com.abhrainc.core.jalo;
 
+
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at Jan 23, 2017 12:26:57 PM                    ---
+ * ----------------------------------------------------------------
+ */
+package com.abhrainc.core.jalo;
+
+import com.abhrainc.core.constants.AbhraincCoreConstants;
+import com.abhrainc.core.jalo.ApparelProduct;
+import com.abhrainc.core.jalo.ApparelSizeVariantProduct;
+import com.abhrainc.core.jalo.ApparelStyleVariantProduct;
+import com.abhrainc.core.jalo.ElectronicsColorVariantProduct;
+import com.abhrainc.core.jalo.GoogleProductSearch;
+import com.abhrainc.core.jalo.OrderThresholdPercentageDiscount;
+import de.hybris.platform.jalo.GenericItem;
+import de.hybris.platform.jalo.Item;
+import de.hybris.platform.jalo.Item.AttributeMode;
+import de.hybris.platform.jalo.JaloBusinessException;
+import de.hybris.platform.jalo.JaloSystemException;
+import de.hybris.platform.jalo.SessionContext;
+import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.order.AbstractOrder;
+import de.hybris.platform.jalo.order.Order;
+import de.hybris.platform.jalo.security.Principal;
+import de.hybris.platform.jalo.type.ComposedType;
+import de.hybris.platform.jalo.type.JaloGenericCreationException;
+import de.hybris.platform.jalo.user.User;
+import de.hybris.platform.ordersplitting.jalo.Consignment;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -205,7 +236,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.expectedDeliveryDate</code> attribute.
-	 * 
+	 *
 	 * @return the expectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public Date getExpectedDeliveryDate(final SessionContext ctx, final Order item)
@@ -215,7 +246,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.expectedDeliveryDate</code> attribute.
-	 * 
+	 *
 	 * @return the expectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public Date getExpectedDeliveryDate(final Order item)
@@ -225,7 +256,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Order.expectedDeliveryDate</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the expectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
@@ -236,7 +267,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Order.expectedDeliveryDate</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the expectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
@@ -249,6 +280,91 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	public String getName()
 	{
 		return AbhraincCoreConstants.EXTENSIONNAME;
+	}
+
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 *
+	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public Boolean isIsDeliveryEmailSent(final SessionContext ctx, final Consignment item)
+	{
+		return (Boolean) item.getProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.ISDELIVERYEMAILSENT);
+	}
+
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 *
+	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public Boolean isIsDeliveryEmailSent(final Consignment item)
+	{
+		return isIsDeliveryEmailSent(getSession().getSessionContext(), item);
+	}
+
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 *
+	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public boolean isIsDeliveryEmailSentAsPrimitive(final SessionContext ctx, final Consignment item)
+	{
+		final Boolean value = isIsDeliveryEmailSent(ctx, item);
+		return value != null ? value.booleanValue() : false;
+	}
+
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 *
+	 * @return the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public boolean isIsDeliveryEmailSentAsPrimitive(final Consignment item)
+	{
+		return isIsDeliveryEmailSentAsPrimitive(getSession().getSessionContext(), item);
+	}
+
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 *
+	 * @param value
+	 *           the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public void setIsDeliveryEmailSent(final SessionContext ctx, final Consignment item, final Boolean value)
+	{
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Consignment.ISDELIVERYEMAILSENT, value);
+	}
+
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 *
+	 * @param value
+	 *           the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public void setIsDeliveryEmailSent(final Consignment item, final Boolean value)
+	{
+		setIsDeliveryEmailSent(getSession().getSessionContext(), item, value);
+	}
+
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 *
+	 * @param value
+	 *           the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public void setIsDeliveryEmailSent(final SessionContext ctx, final Consignment item, final boolean value)
+	{
+		setIsDeliveryEmailSent(ctx, item, Boolean.valueOf(value));
+	}
+
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Consignment.isDeliveryEmailSent</code> attribute.
+	 *
+	 * @param value
+	 *           the isDeliveryEmailSent - Used to know whether the delivery status email sent or not
+	 */
+	public void setIsDeliveryEmailSent(final Consignment item, final boolean value)
+	{
+		setIsDeliveryEmailSent(getSession().getSessionContext(), item, value);
 	}
 
 	/**
@@ -338,7 +454,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
-	 * 
+	 *
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */
 	public Boolean isIsEmailActivated(final SessionContext ctx, final User item)
@@ -348,7 +464,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
-	 * 
+	 *
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */
 	public Boolean isIsEmailActivated(final User item)
@@ -358,7 +474,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
-	 * 
+	 *
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */
 	public boolean isIsEmailActivatedAsPrimitive(final SessionContext ctx, final User item)
@@ -369,7 +485,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>User.isEmailActivated</code> attribute.
-	 * 
+	 *
 	 * @return the isEmailActivated - UserEmailSTATUS
 	 */
 	public boolean isIsEmailActivatedAsPrimitive(final User item)
@@ -379,7 +495,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the isEmailActivated - UserEmailSTATUS
 	 */
@@ -390,7 +506,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the isEmailActivated - UserEmailSTATUS
 	 */
@@ -401,7 +517,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the isEmailActivated - UserEmailSTATUS
 	 */
@@ -412,7 +528,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>User.isEmailActivated</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the isEmailActivated - UserEmailSTATUS
 	 */
@@ -423,7 +539,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
-	 * 
+	 *
 	 * @return the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public Date getOrderExpectedDeliveryDate(final SessionContext ctx, final Order item)
@@ -433,7 +549,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
-	 * 
+	 *
 	 * @return the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
 	public Date getOrderExpectedDeliveryDate(final Order item)
@@ -443,7 +559,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
@@ -454,7 +570,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Order.orderExpectedDeliveryDate</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the orderExpectedDeliveryDate - Used to display the Expected Delivery Date
 	 */
@@ -465,7 +581,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 * 
+	 *
 	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public Boolean isTrackingEmailSent(final SessionContext ctx, final Consignment item)
@@ -475,7 +591,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 * 
+	 *
 	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public Boolean isTrackingEmailSent(final Consignment item)
@@ -485,7 +601,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 * 
+	 *
 	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public boolean isTrackingEmailSentAsPrimitive(final SessionContext ctx, final Consignment item)
@@ -496,7 +612,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 * 
+	 *
 	 * @return the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
 	public boolean isTrackingEmailSentAsPrimitive(final Consignment item)
@@ -506,7 +622,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
@@ -517,7 +633,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
@@ -528,7 +644,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */
@@ -539,7 +655,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>Consignment.trackingEmailSent</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the trackingEmailSent - Specifies whether order tracking email is sent or not.
 	 */

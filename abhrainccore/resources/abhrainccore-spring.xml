@@ -359,6 +359,7 @@
 			value="classpath:/abhrainccore/processes/orderDelieveredEmailProcess.xml" />
 	</bean> 
 
+
 	<bean id="sendReadyForPickupEmailProcessDefinitionResource"
 		class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
 		<property name="resource"

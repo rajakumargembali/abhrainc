@@ -25,9 +25,8 @@ ${thanks}
 </c:when>
 <c:otherwise>
 <form:form method="post" commandName="registerForm"
-
-		action="/store/electronics/en/contactus">
 		action="/abhraincstorefront/electronics/en/contactus">
+
 		<div class="form_field-elements js-recaptcha-captchaaddon">
 			<formElement:formSelectBox idKey="register.title"
 				labelKey="register.title" path="titleCode" mandatory="true"

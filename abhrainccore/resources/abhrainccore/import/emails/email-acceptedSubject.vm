@@ -1,1 +1,1 @@
-﻿${ctx.messages.getMessage('emailSubject', ${ctx.orderCode},${ctx.Order_Status})}
+${ctx.messages.getMessage('emailSubject', ${ctx.orderCode},${ctx.Order_Status})}

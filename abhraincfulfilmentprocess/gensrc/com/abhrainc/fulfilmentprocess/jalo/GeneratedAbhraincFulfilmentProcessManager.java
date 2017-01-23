@@ -1,4 +1,11 @@
 
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at Jan 23, 2017 12:26:57 PM                    ---
+ * ----------------------------------------------------------------
+ */
+
 package com.abhrainc.fulfilmentprocess.jalo;
 
 import java.util.Collections;
@@ -45,7 +52,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.done</code> attribute.
-	 * 
+	 *
 	 * @return the done - Mark process as done
 	 */
 	public Boolean isDone(final SessionContext ctx, final ConsignmentProcess item)
@@ -55,7 +62,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.done</code> attribute.
-	 * 
+	 *
 	 * @return the done - Mark process as done
 	 */
 	public Boolean isDone(final ConsignmentProcess item)
@@ -65,7 +72,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.done</code> attribute.
-	 * 
+	 *
 	 * @return the done - Mark process as done
 	 */
 	public boolean isDoneAsPrimitive(final SessionContext ctx, final ConsignmentProcess item)
@@ -76,7 +83,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.done</code> attribute.
-	 * 
+	 *
 	 * @return the done - Mark process as done
 	 */
 	public boolean isDoneAsPrimitive(final ConsignmentProcess item)
@@ -86,7 +93,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.done</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the done - Mark process as done
 	 */
@@ -97,7 +104,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.done</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the done - Mark process as done
 	 */
@@ -108,7 +115,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.done</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the done - Mark process as done
 	 */
@@ -119,7 +126,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.done</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the done - Mark process as done
 	 */
@@ -136,7 +143,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.waitingForConsignment</code> attribute.
-	 * 
+	 *
 	 * @return the waitingForConsignment - Mark that process is waiting for consignment
 	 */
 	public Boolean isWaitingForConsignment(final SessionContext ctx, final ConsignmentProcess item)
@@ -147,7 +154,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.waitingForConsignment</code> attribute.
-	 * 
+	 *
 	 * @return the waitingForConsignment - Mark that process is waiting for consignment
 	 */
 	public Boolean isWaitingForConsignment(final ConsignmentProcess item)
@@ -157,7 +164,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.waitingForConsignment</code> attribute.
-	 * 
+	 *
 	 * @return the waitingForConsignment - Mark that process is waiting for consignment
 	 */
 	public boolean isWaitingForConsignmentAsPrimitive(final SessionContext ctx, final ConsignmentProcess item)
@@ -168,7 +175,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.waitingForConsignment</code> attribute.
-	 * 
+	 *
 	 * @return the waitingForConsignment - Mark that process is waiting for consignment
 	 */
 	public boolean isWaitingForConsignmentAsPrimitive(final ConsignmentProcess item)
@@ -178,7 +185,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.waitingForConsignment</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the waitingForConsignment - Mark that process is waiting for consignment
 	 */
@@ -189,7 +196,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.waitingForConsignment</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the waitingForConsignment - Mark that process is waiting for consignment
 	 */
@@ -200,7 +207,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.waitingForConsignment</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the waitingForConsignment - Mark that process is waiting for consignment
 	 */
@@ -211,7 +218,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.waitingForConsignment</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the waitingForConsignment - Mark that process is waiting for consignment
 	 */
@@ -222,7 +229,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.warehouseConsignmentState</code> attribute.
-	 * 
+	 *
 	 * @return the warehouseConsignmentState - State of warehouse process.
 	 */
 	public EnumerationValue getWarehouseConsignmentState(final SessionContext ctx, final ConsignmentProcess item)
@@ -233,7 +240,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ConsignmentProcess.warehouseConsignmentState</code> attribute.
-	 * 
+	 *
 	 * @return the warehouseConsignmentState - State of warehouse process.
 	 */
 	public EnumerationValue getWarehouseConsignmentState(final ConsignmentProcess item)
@@ -243,7 +250,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.warehouseConsignmentState</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the warehouseConsignmentState - State of warehouse process.
 	 */
@@ -254,7 +261,7 @@ public abstract class GeneratedAbhraincFulfilmentProcessManager extends Extensio
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ConsignmentProcess.warehouseConsignmentState</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the warehouseConsignmentState - State of warehouse process.
 	 */

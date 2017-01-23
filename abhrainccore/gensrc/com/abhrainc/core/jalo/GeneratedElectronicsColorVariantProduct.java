@@ -1,4 +1,11 @@
 
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at Jan 23, 2017 12:26:57 PM                    ---
+ * ----------------------------------------------------------------
+ */
+
 package com.abhrainc.core.jalo;
 
 import java.util.Collections;
@@ -34,7 +41,7 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 *
 	 * @return the color - Color of the product.
 	 */
 	public String getColor(final SessionContext ctx)
@@ -49,7 +56,7 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 *
 	 * @return the color - Color of the product.
 	 */
 	public String getColor()
@@ -59,7 +66,7 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 *
 	 * @return the localized color - Color of the product.
 	 */
 	public Map<Language, String> getAllColor(final SessionContext ctx)
@@ -69,7 +76,7 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 *
 	 * @return the localized color - Color of the product.
 	 */
 	public Map<Language, String> getAllColor()
@@ -79,7 +86,7 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the color - Color of the product.
 	 */
@@ -95,7 +102,7 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the color - Color of the product.
 	 */
@@ -106,7 +113,7 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the color - Color of the product.
 	 */
@@ -117,7 +124,7 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 
 	/**
 	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 *
 	 * @param value
 	 *           the color - Color of the product.
 	 */
