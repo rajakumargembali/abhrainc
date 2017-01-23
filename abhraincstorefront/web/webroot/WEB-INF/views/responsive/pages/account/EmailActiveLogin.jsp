@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Thank you for your time, <p>please follow below URL to continue to site" + "</p><a href = "https://localhost:9002/abhraincstorefront/electronics/en/login">Click here</a> +
+Thank you for your time, <p>please follow below URL to continue to site" + "</p><a href = "https://192.168.1.191:9002/abhraincstorefront/electronics/en/login">Click here</a> +
 </body>
 </html>
