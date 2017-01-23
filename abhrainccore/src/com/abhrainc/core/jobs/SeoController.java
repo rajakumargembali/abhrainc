@@ -3,26 +3,12 @@
  */
 package com.abhrainc.core.jobs;
 
-import de.hybris.platform.commerceservices.url.UrlResolver;
-import de.hybris.platform.core.model.media.MediaContainerModel;
-import de.hybris.platform.core.model.media.MediaModel;
-import de.hybris.platform.core.model.product.ProductModel;
-import de.hybris.platform.cronjob.enums.CronJobResult;
-import de.hybris.platform.cronjob.enums.CronJobStatus;
-import de.hybris.platform.servicelayer.cronjob.AbstractJobPerformable;
-import de.hybris.platform.servicelayer.cronjob.PerformResult;
-
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-
 import com.abhrainc.core.dao.ProductAbhraDao;
-import com.abhrainc.core.model.GoogleProductSearchModel;
 
 
 /**
@@ -48,6 +34,7 @@ public class SeoController extends AbstractJobPerformable<GoogleProductSearchMod
 		try
 		{
 			final PrintWriter writer = new PrintWriter("C:/Users/Naresh Athukuri/Desktop/googlesearchurl/producturls.csv", "UTF-8");
+			final PrintWriter writer = new PrintWriter("C:/Users/sujan/Desktop/googlesearchurl/producturls.csv", "UTF-8");
 			for (final ProductModel product : products)
 			{
 

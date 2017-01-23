@@ -13,7 +13,7 @@
  */
 package com.abhrainc.fulfilmentprocess.actions.consignment;
 
-import de.hybris.platform.basecommerce.enums.ConsignmentStatus;
+import de.hybris.platform.commerceservices.model.PickUpDeliveryModeModel;
 import de.hybris.platform.core.enums.OrderStatus;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentProcessModel;
@@ -35,7 +35,7 @@ public class AllowShipmentAction extends AbstractAction<ConsignmentProcessModel>
 
 	public enum Transition
 	{
-		DELIVERY, CANCEL, ERROR;
+		DELIVERY, PICKUP, CANCEL, ERROR;
 
 		public static Set<String> getStringValues()
 		{
@@ -83,11 +83,14 @@ public class AllowShipmentAction extends AbstractAction<ConsignmentProcessModel>
 
 	protected String getTransitionForConsignment(final ConsignmentModel consignment)
 	{
-		if (consignment.getStatus().getCode().equals(ConsignmentStatus.DELIVERED))
+		if (consignment.getDeliveryMode() instanceof PickUpDeliveryModeModel)
+		{
+			return Transition.PICKUP.toString();
+		}
+		else
 		{
 			return Transition.DELIVERY.toString();
 		}
-		return Transition.ERROR.toString();
 	}
 
 	protected Process2WarehouseAdapter getProcess2WarehouseAdapter()

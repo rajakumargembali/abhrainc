@@ -15,7 +15,10 @@ import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentProcessModel;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+
+import com.abhrainc.facades.dao.AbhraIncFacadeDAO;
 
 
 /**
@@ -37,6 +40,8 @@ public class OrderDispatchEmailContext extends AbstractEmailContext<ConsignmentP
 	private String orderGuid;
 	private boolean guest;
 
+	@Autowired
+	AbhraIncFacadeDAO abhraIncDao;
 
 	@Override
 	public void init(final ConsignmentProcessModel consignmentProcessModel, final EmailPageModel emailPageModel)
@@ -46,6 +51,19 @@ public class OrderDispatchEmailContext extends AbstractEmailContext<ConsignmentP
 		orderGuid = consignmentProcessModel.getConsignment().getOrder().getGuid();
 		consignmentData = getConsignmentConverter().convert(consignmentProcessModel.getConsignment());
 		guest = CustomerType.GUEST.equals(getCustomer(consignmentProcessModel).getType());
+
+		put("Order_Status", consignmentData.getStatus().getCode());
+
+		final OrderModel model = abhraIncDao.getOrderDetailsForOrder(consignmentProcessModel.getConsignment().getOrder().getCode());
+		if (model.getOrderExpectedDeliveryDate() != null)
+		{
+			put("Expected_Delivery_Date", model.getOrderExpectedDeliveryDate());
+		}
+		else
+		{
+			put("Expected_Delivery_Date", "within a week");
+		}
+
 	}
 
 	@Override

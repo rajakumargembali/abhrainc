@@ -232,7 +232,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 		final HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		final HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-		final String url = "http://localhost:8080/AuditLobby/getConsignmentStatuses";
+		final String url = "http://192.168.1.236:8080/AuditLobby/getConsignmentStatuses";
 		final ResponseEntity<Map[]> result = restTemplate.exchange(url, HttpMethod.GET, entity, Map[].class);
 		final Map[] products = result.getBody();
 		for (int i = 0; i < products.length; i++)

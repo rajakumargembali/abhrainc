@@ -90,7 +90,7 @@
 									${ctx.order.deliveryAddress.town}<br/>
 									${ctx.order.deliveryAddress.postalCode}<br/>
 									${ctx.order.deliveryAddress.country.name}<br/>
-									${ctx.messages.expectedDeliveryDate} {ctx.Expected_Delivery_Date}
+									${ctx.messages.getMessage('expectedDeliveryDate', "#genHtmlBoldFont(${ctx.Expected_Delivery_Date})")}
 								</font>
 							</p>
 						#else

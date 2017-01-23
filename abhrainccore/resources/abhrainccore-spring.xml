@@ -353,6 +353,11 @@
 		<property name="resource"
 			value="classpath:/abhrainccore/processes/orderDispatchedEmailProcess.xml" />
 	</bean>
+	 <bean id="orderDeliveredEmailProcessDefinitionResource"
+		class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource"
+			value="classpath:/abhrainccore/processes/orderDelieveredEmailProcess.xml" />
+	</bean> 
 
 	<bean id="sendReadyForPickupEmailProcessDefinitionResource"
 		class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
@@ -428,11 +433,15 @@
 	</bean>
 
 	<bean id="orderIsAccpeted" parent="abstractGenerateEmailAction">
-		<property name="frontendTemplateName" value="DeliverySentEmailTemplate"></property>
+		<property name="frontendTemplateName" value="OrderAcceptedTemplate"></property>
 	</bean>
 
 	<bean id="orderIsDisptached" parent="abstractGenerateEmailAction">
-		<property name="frontendTemplateName" value="DeliverySentEmailTemplate"></property>
+		<property name="frontendTemplateName" value="OrderDispatchedTemplate"></property>
+	</bean>
+	
+	<bean id = "orderIsDelivered" parent="abstractGenerateEmailAction">
+	<property name="frontendTemplateName" value="DeliverySentEmailTemplate" />
 	</bean>
 
 	<bean id="generateReadyForPickupEmail" parent="abstractGenerateEmailAction">
