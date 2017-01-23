@@ -57,5 +57,4 @@ ${thanks}
 </c:otherwise>
 </c:choose>
 	
-
 </template:page>

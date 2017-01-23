@@ -1,19 +1,6 @@
 package com.abhrainc.core.service.impl;
 
-import de.hybris.platform.basecommerce.enums.ConsignmentStatus;
-import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
-import de.hybris.platform.catalog.model.CatalogVersionModel;
-import de.hybris.platform.core.model.c2l.CurrencyModel;
-import de.hybris.platform.core.model.product.ProductModel;
-import de.hybris.platform.core.model.product.UnitModel;
-import de.hybris.platform.europe1.model.PriceRowModel;
-import de.hybris.platform.ordersplitting.model.ConsignmentModel;
-import de.hybris.platform.ordersplitting.model.StockLevelModel;
-import de.hybris.platform.ordersplitting.model.WarehouseModel;
-import de.hybris.platform.processengine.BusinessProcessService;
-import de.hybris.platform.servicelayer.event.EventService;
-import de.hybris.platform.servicelayer.model.ModelService;
-
+import java.awt.PageAttributes.MediaType;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -21,15 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
-
+import com.abhrainc.core.constants.GeneratedAbhraincCoreConstants.Enumerations.ConsignmentStatus;
 import com.abhrainc.core.dao.ProductAbhraDao;
 import com.abhrainc.core.event.OrderTrackingEmailEvent;
 import com.abhrainc.core.service.ProductAbhraService;
