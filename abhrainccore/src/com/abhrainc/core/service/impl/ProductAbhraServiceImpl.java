@@ -185,23 +185,26 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 						modelService.save(priceRowModel2);
 					}
 				}
-				else if (usdPrice != null && priceRowModel2.getCurrency().getIsocode().equals("USD"))
+				else if (!priceRowModel2.getCurrency().getIsocode().equals("USD"))
 				{
 					final PriceRowModel rowModel = new PriceRowModel();
-					rowModel.setPrice(usdPrice * euro);
-					rowModel.setProduct(model);
-					final List<UnitModel> unitModel = productAbhraDao.getunitModelDetails();
-					rowModel.setUnit(unitModel.get(0));
-					final List<CurrencyModel> currencyModel = productAbhraDao.getCurrencyModelDetaails();
-					for (int i = 0; i < currencyModel.size(); i++)
+					if (usdPrice != null)
 					{
-						if (currencyModel.get(i).getIsocode().equals("EUR"))
+						rowModel.setPrice(usdPrice * euro);
+						rowModel.setProduct(model);
+						final List<UnitModel> unitModel = productAbhraDao.getunitModelDetails();
+						rowModel.setUnit(unitModel.get(0));
+						final List<CurrencyModel> currencyModel = productAbhraDao.getCurrencyModelDetaails();
+						for (int i = 0; i < currencyModel.size(); i++)
 						{
-							rowModel.setCurrency(currencyModel.get(i));
+							if (currencyModel.get(i).getIsocode().equals("EUR"))
+							{
+								rowModel.setCurrency(currencyModel.get(i));
+							}
 						}
-					}
 
-					modelService.save(rowModel);
+						modelService.save(rowModel);
+					}
 
 				}
 

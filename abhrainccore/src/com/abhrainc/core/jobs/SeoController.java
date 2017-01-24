@@ -47,7 +47,7 @@ public class SeoController extends AbstractJobPerformable<GoogleProductSearchMod
 		final List<ProductModel> products = productAbhraDao.getListOfProducts(model.getCatalogVersion());
 		try
 		{
-			final PrintWriter writer = new PrintWriter("C:/Users/Naresh Athukuri/Desktop/googlesearchurl/producturls.csv", "UTF-8");
+			final PrintWriter writer = new PrintWriter("C:/Users/sujan/Desktop/googlesearchurl/producturls.csv", "UTF-8");
 			for (final ProductModel product : products)
 			{
 
