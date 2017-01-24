@@ -1,9 +1,4 @@
-/*
- * ----------------------------------------------------------------
- * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 24 Jan, 2017 4:21:48 PM                     ---
- * ----------------------------------------------------------------
- */
+
 package com.abhrainc.cockpits.constants;
 
 /**

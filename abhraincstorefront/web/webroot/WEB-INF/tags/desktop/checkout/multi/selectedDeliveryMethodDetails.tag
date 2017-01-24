@@ -18,6 +18,7 @@
 			<li>${deliveryMethod.name}</li>
 			<li>${deliveryMethod.description}</li>
 			<li>${deliveryMethod.deliveryCost.formattedValue}</li>
+			
 		</ul>
 		<ycommerce:testId code="selectedDeliveryMethodDetails_change_button">
 			<a href="${changeDeliveryMethodUrl}" class="right"><spring:theme code="checkout.multi.deliveryMethod.edit"/></a>
