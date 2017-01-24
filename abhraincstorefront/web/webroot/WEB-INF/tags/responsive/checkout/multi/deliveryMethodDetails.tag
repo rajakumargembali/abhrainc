@@ -3,5 +3,5 @@
 <%@ attribute name="isSelected" required="false" type="java.lang.Boolean" %>
 
 <option value="${deliveryMethod.code}" ${isSelected ? 'selected="selected"' : ''}>
-	${deliveryMethod.name}&nbsp;-&nbsp;${deliveryMethod.description}&nbsp;-&nbsp;${deliveryMethod.deliveryCost.formattedValue}
+	${deliveryMethod.name}&nbsp;-&nbsp;${deliveryMethod.description}
 </option>
