@@ -15,6 +15,8 @@ import de.hybris.platform.ordersplitting.jalo.Consignment;
 import de.hybris.platform.ordersplitting.jalo.ConsignmentProcess;
 import de.hybris.platform.processengine.BusinessProcessService;
 
+import org.apache.log4j.Logger;
+
 
 /**
  * @author sujan
@@ -22,6 +24,7 @@ import de.hybris.platform.processengine.BusinessProcessService;
  */
 public class OrderAcceptedHMCAction extends ItemAction
 {
+	private static final Logger LOG = Logger.getLogger(OrderAcceptedHMCAction.class);
 
 	/*
 	 * (non-Javadoc)
@@ -33,12 +36,17 @@ public class OrderAcceptedHMCAction extends ItemAction
 	{
 		// YTODO Auto-generated method stub
 		final Item item = getItem(event);
+		LOG.info("event in order accpeted hmc" + event);
 		if (item instanceof Consignment)
 		{
+			LOG.info("item in order accpeted hmc" + item);
 			((Consignment) item).setStatus(EnumerationManager.getInstance().getEnumerationValue(ConsignmentStatus._TYPECODE,
 					ConsignmentStatus.ACCEPTED.getCode()));
+
 			for (final ConsignmentProcess process : ((Consignment) item).getConsignmentProcesses())
 			{
+				LOG.info("process in order accpeted hmc" + process);
+				LOG.info("process code in order accpeted hmc" + process.getCode());
 				getBusinessProcessService().triggerEvent(process.getCode() + "_ConsignmentOrderAccepted");
 			}
 			return new ActionResult(ActionResult.OK, true, false);

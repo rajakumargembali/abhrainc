@@ -26,7 +26,7 @@
 		<transition name="ERROR" to="error" />
 	</action>
 	
-	<wait  id="waitForOrderAccepted" then="orderAccepted" prependProcessCode="false">
+	<wait  id="waitForOrderAccepted" then="orderAccepted">
 		<event>${process.code}_ConsignmentOrderAccepted</event>
 	</wait>
 	
