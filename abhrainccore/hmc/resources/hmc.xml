@@ -24,6 +24,7 @@
 					<section name="consignment.details">
 						<listlayout mode="append">
 							 <action type="item" classname="com.abhrainc.core.hmc.PickupConfirmationHMCAction" name="btn.consignment.confirm.pickup"/>
+							  <action type="item" classname="com.abhrainc.core.hmc.OrderAcceptedHMCAction" name="btn.consignment.confirm.orderaccepted"/>
 						</listlayout>
 					</section>
 				</tab>

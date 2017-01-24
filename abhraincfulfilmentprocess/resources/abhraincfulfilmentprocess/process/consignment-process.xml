@@ -20,14 +20,26 @@
 	</wait>
 
 	<action id="receiveConsignmentStatus" bean="receiveConsignmentStatusAction">
-		<transition name="OK" to="orderAccepted" />
+		<transition name="OK" to="waitForOrderAccepted" />
 		<!-- <transition name="OK" to="allowShipment" /> -->
 		<transition name="CANCEL" to="cancelConsignment" />
 		<transition name="ERROR" to="error" />
 	</action>
 	
+	<wait  id="waitForOrderAccepted" then="orderAccepted" prependProcessCode="false">
+		<event>${process.code}_ConsignmentOrderAccepted</event>
+	</wait>
+	
+	<wait  id="waitForOrderDispatched" then="orderDispatched" prependProcessCode="false">
+		<event>${process.code}_ConsignmentOrderDispatched</event>
+	</wait>
+	
+	<wait  id="waitForOrderDelivery" then="orderDelivered" prependProcessCode="false">
+		<event>${process.code}_ConsignmentOrderDelivered</event>
+	</wait>
+	
 	<action id ="orderAccepted" bean="orderAcceptedAction">
-	<transition name="OK" to="sendReadyForPickupMessage"></transition>
+	<transition name="OK" to="waitForOrderDispatched"></transition>
 	</action>
 
 	<action id="allowShipment" bean="allowShipmentAction">
@@ -51,7 +63,7 @@
 	
 	<action id="orderDispatched" bean="orderDispatchedAction" >
 		<!-- <transition name="OK" to="allowShipment"></transition> -->
-		<transition name="OK" to="orderDelivered"></transition>
+		<transition name="OK" to="waitForOrderDelivery"></transition>
 	</action>
 
 	<action id="cancelConsignment" bean="cancelConsignmentAction">
