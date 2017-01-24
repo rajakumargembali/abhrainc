@@ -41,6 +41,23 @@ ${thanks}
 			<formElement:formInputBox idKey="register.email"
 				labelKey="register.email" path="email" inputCSS="text"
 				mandatory="true" />
+				
+				
+				
+			<div class="control-group">
+			<label class="control-label " for="register.email">
+		Message <span class="mandatory">
+				<img width="5" height="6" alt="Required" title="Required" src="/abhraincstorefront/_ui/responsive/common/images/mandatory.gif">
+			</span>
+		<span class="skip"></span>
+	</label>
+		
+	<div class="controls">
+		<textarea id="register.email" name="email" class="text" type="text" value=""></textarea></div>
+
+	</div>	
+				
+
 <%-- 			<formElement:formPasswordBox idKey="password" labelKey="register.pwd" --%>
 <%-- 				path="pwd" inputCSS="text password strength" mandatory="true" /> --%>
 			<%-- <formElement:formPasswordBox idKey="register.checkPwd"
@@ -57,4 +74,5 @@ ${thanks}
 </c:otherwise>
 </c:choose>
 	
+
 </template:page>

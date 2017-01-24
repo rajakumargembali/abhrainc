@@ -185,7 +185,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 						modelService.save(priceRowModel2);
 					}
 				}
-				else if (usdPrice != null)
+				else if (usdPrice != null && priceRowModel2.getCurrency().getIsocode().equals("USD"))
 				{
 					final PriceRowModel rowModel = new PriceRowModel();
 					rowModel.setPrice(usdPrice * euro);

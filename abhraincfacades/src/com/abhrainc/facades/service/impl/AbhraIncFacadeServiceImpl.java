@@ -28,11 +28,10 @@ public class AbhraIncFacadeServiceImpl implements AbhraIncFacadeService
 	@Override
 	public String activateEmailAccount(final String email)
 	{
-		final String msg = "/pages/account/EmailActiveLogin";
 		final UserModel userModel = abhraIncFacadeDAO.getUserDetails(email);
 		userModel.setIsEmailActivated(java.lang.Boolean.TRUE);
 		modelService.save(userModel);
-		return msg;
+		return "/EmailActiveLogin";
 
 	}
 
