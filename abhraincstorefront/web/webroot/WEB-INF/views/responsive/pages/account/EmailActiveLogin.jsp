@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-Thank you for your time, <p>please follow below URL to continue to site" + "</p><a href = "https://192.168.1.191:9002/abhraincstorefront/electronics/en/login">Click here</a> +
-</body>
-</html>
+<template:page pageTitle="${pageTitle}">
+Thank you for your time, <p>please Login to continue accessing our site" + "</p>+
+</template:page>
+

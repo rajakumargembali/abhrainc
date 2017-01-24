@@ -290,8 +290,6 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 			orderData.put("orderid", products[i].get("orderid"));
 			orderData.put("consignment_status", consignmentModel.getStatus().getCode());
 			restTemplate.put(updateUrl, orderData, HashMap.class);
-
-
 		}
 	}
 
