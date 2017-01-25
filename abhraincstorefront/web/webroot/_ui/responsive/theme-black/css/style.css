@@ -10219,7 +10219,7 @@ fieldset[disabled] .btn-primary.active {
   padding: 0;
 }
 .image-gallery .gallery-image .owl-item img {
-  width: 100%;
+  width: 65%;
   height: auto;
   max-width: none;
   max-height: none;
@@ -10236,7 +10236,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .image-gallery .gallery-carousel .owl-item img {
   width: 100%;
-  height: auto;
+  height: 100px;
   max-width: none;
   max-height: none;
 }

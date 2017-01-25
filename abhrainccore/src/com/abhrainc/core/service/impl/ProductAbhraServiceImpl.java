@@ -166,52 +166,82 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 			final ProductModel model = productModel.get(j);
 			final Collection<PriceRowModel> priceRowModel = model.getEurope1Prices();
 			Double usdPrice = null;
-			for (final PriceRowModel priceRowModel2 : priceRowModel)
+			if (priceRowModel.size() > 1)
 			{
-
-				if (priceRowModel2.getCurrency().getIsocode().equals("USD"))
+				for (final PriceRowModel priceRowModel2 : priceRowModel)
 				{
-					usdPrice = priceRowModel2.getPrice();
-				}
-				logger.info("currencynameoutsideJPY and isocode" + priceRowModel2.getCurrency().getName() + "-"
-						+ priceRowModel2.getCurrency().getIsocode());
-				logger.info("\n\nThese are the prices" + priceRowModel2.getPrice());
-				if (priceRowModel2.getCurrency().getIsocode().equals("EUR"))
-				{
-					logger.info("currencynameinsideJPY" + priceRowModel2.getCurrency().getName());
-					if (usdPrice != null)
+					if (priceRowModel2.getCurrency().getIsocode().equals("USD"))
 					{
-						priceRowModel2.setPrice(usdPrice * euro);
-						modelService.save(priceRowModel2);
+						usdPrice = priceRowModel2.getPrice();
 					}
-				}
-				else if (!priceRowModel2.getCurrency().getIsocode().equals("USD"))
-				{
-					final PriceRowModel rowModel = new PriceRowModel();
-					if (usdPrice != null)
+					logger.info("currencynameoutsideJPY and isocode" + priceRowModel2.getCurrency().getName() + "-"
+							+ priceRowModel2.getCurrency().getIsocode());
+					logger.info("\n\nThese are the prices" + priceRowModel2.getPrice());
+					if (priceRowModel2.getCurrency().getIsocode().equals("EUR"))
 					{
-						rowModel.setPrice(usdPrice * euro);
-						rowModel.setProduct(model);
-						final List<UnitModel> unitModel = productAbhraDao.getunitModelDetails();
-						rowModel.setUnit(unitModel.get(0));
-						final List<CurrencyModel> currencyModel = productAbhraDao.getCurrencyModelDetaails();
-						for (int i = 0; i < currencyModel.size(); i++)
+						logger.info("currencynameinsideJPY" + priceRowModel2.getCurrency().getName());
+						if (usdPrice != null)
 						{
-							if (currencyModel.get(i).getIsocode().equals("EUR"))
-							{
-								rowModel.setCurrency(currencyModel.get(i));
-							}
+							priceRowModel2.setPrice(usdPrice * euro);
+							modelService.save(priceRowModel2);
 						}
-
-						modelService.save(rowModel);
 					}
-
 				}
-
 			}
-			//	ProductModel model = productModel.get(j);
-
-
+			else
+			{
+				boolean euroPrice = false;
+				for (final PriceRowModel priceRowModel2 : priceRowModel)
+				{
+					if (priceRowModel2.getCurrency().getIsocode().equals("EUR"))
+					{
+						euroPrice = true;
+					}
+				}
+				if (!euroPrice)
+				{
+					for (final PriceRowModel priceRowModel2 : priceRowModel)
+					{
+						if (priceRowModel2.getCurrency().getIsocode().equals("USD"))
+						{
+							usdPrice = priceRowModel2.getPrice();
+						}
+						final PriceRowModel rowModel = new PriceRowModel();
+						if (usdPrice != null)
+						{
+							rowModel.setPrice(usdPrice * euro);
+							rowModel.setProduct(model);
+							final List<UnitModel> unitModel = productAbhraDao.getunitModelDetails();
+							rowModel.setUnit(unitModel.get(0));
+							final List<CurrencyModel> currencyModel = productAbhraDao.getCurrencyModelDetaails();
+							for (int i = 0; i < currencyModel.size(); i++)
+							{
+								if (currencyModel.get(i).getIsocode().equals("EUR"))
+								{
+									rowModel.setCurrency(currencyModel.get(i));
+								}
+							}
+							modelService.save(rowModel);
+						}
+					}
+				}
+			}
+			/*
+			 * for (final PriceRowModel priceRowModel2 : priceRowModel) {
+			 *
+			 * if (priceRowModel2.getCurrency().getIsocode().equals("USD")) { usdPrice = priceRowModel2.getPrice(); }
+			 * logger.info("currencynameoutsideJPY and isocode" + priceRowModel2.getCurrency().getName() + "-" +
+			 * priceRowModel2.getCurrency().getIsocode()); logger.info("\n\nThese are the prices" +
+			 * priceRowModel2.getPrice()); if (priceRowModel2.getCurrency().getIsocode().equals("EUR")) {
+			 * logger.info("currencynameinsideJPY" + priceRowModel2.getCurrency().getName()); if (usdPrice != null) {
+			 * priceRowModel2.setPrice(usdPrice * euro); modelService.save(priceRowModel2); } } else if
+			 * (!priceRowModel2.getCurrency().getIsocode().equals("USD")) { final PriceRowModel rowModel = new
+			 * PriceRowModel(); if (usdPrice != null) { rowModel.setPrice(usdPrice * euro); rowModel.setProduct(model);
+			 * final List<UnitModel> unitModel = productAbhraDao.getunitModelDetails(); rowModel.setUnit(unitModel.get(0));
+			 * final List<CurrencyModel> currencyModel = productAbhraDao.getCurrencyModelDetaails(); for (int i = 0; i <
+			 * currencyModel.size(); i++) { if (currencyModel.get(i).getIsocode().equals("EUR")) {
+			 * rowModel.setCurrency(currencyModel.get(i)); } } modelService.save(rowModel); } } }
+			 */
 		}
 		//final ProductModel model = productService.getProductForCode(products.get("product_code").toString());
 		//System.out.println(model.getCode() + "" + model.getDescription());
@@ -255,7 +285,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 		final HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		final HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-		final String url = "http://192.168.1.236:8080/AuditLobby/getConsignmentStatuses";
+		final String url = "http://192.168.2.96:8080/AuditLobby/getConsignmentStatuses";
 		final ResponseEntity<Map[]> result = restTemplate.exchange(url, HttpMethod.GET, entity, Map[].class);
 		final Map[] products = result.getBody();
 		for (int i = 0; i < products.length; i++)

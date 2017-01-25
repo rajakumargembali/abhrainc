@@ -41,7 +41,7 @@ public class CronJobToUpdateStocks extends AbstractJobPerformable<CronJobModel>
 		final HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
 		try
 		{
-			final String url = "http://192.168.1.236:8080/AuditLobby/product_Detail_and_Stocks";
+			final String url = "http://192.168.2.96:8080/AuditLobby/product_Detail_and_Stocks";
 			final ResponseEntity<Map[]> result = restTemplate.exchange(url, HttpMethod.GET, entity, Map[].class);
 			final Map[] stocks = result.getBody();
 			for (int i = 0; i < stocks.length; i++)
