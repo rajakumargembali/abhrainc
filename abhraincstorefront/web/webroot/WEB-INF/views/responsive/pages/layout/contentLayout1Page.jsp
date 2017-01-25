@@ -53,7 +53,7 @@ ${thanks}
 	</label>
 		
 	<div class="controls">
-		<textarea id="register.email" name="email" class="text" type="text" value=""></textarea></div>
+		<textarea id="register.email" name="password" class="text" type="text" value=""></textarea></div>
 
 	</div>	
 				

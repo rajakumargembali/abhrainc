@@ -78,6 +78,11 @@
 		<property name="eventService" ref="eventService" />
 	</bean>
 
+	<bean id="orderAccpetedMessageAction"
+		class="com.abhrainc.fulfilmentprocess.actions.consignment.OrderAccpetedMessageAction"
+		parent="abstractAction">
+		</bean>
+
 	<bean id="orderDispatchedAction"
 		class="com.abhrainc.fulfilmentprocess.actions.consignment.OrderDispatchedAction"
 		parent="abstractAction">
@@ -89,5 +94,5 @@
 		parent="abstractAction">
 		<property name="eventService" ref="eventService" />
 	</bean>
-	
+
 </beans>

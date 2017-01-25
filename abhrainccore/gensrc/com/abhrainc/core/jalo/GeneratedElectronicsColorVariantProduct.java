@@ -1,22 +1,26 @@
+/*
+ * ----------------------------------------------------------------
+ * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
+ * --- Generated at 25 Jan, 2017 12:12:25 PM                    ---
+ * ----------------------------------------------------------------
+ */
 package com.abhrainc.core.jalo;
 
+import com.abhrainc.core.constants.AbhraincCoreConstants;
+import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloInvalidParameterException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.c2l.C2LManager;
 import de.hybris.platform.jalo.c2l.Language;
 import de.hybris.platform.variants.jalo.VariantProduct;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
- * Generated class for type {@link com.abhrainc.core.jalo.ElectronicsColorVariantProduct ElectronicsColorVariantProduct}
- * .
+ * Generated class for type {@link com.abhrainc.core.jalo.ElectronicsColorVariantProduct ElectronicsColorVariantProduct}.
  */
-@SuppressWarnings(
-{ "deprecation", "unused", "cast", "PMD" })
+@SuppressWarnings({"deprecation","unused","cast","PMD"})
 public abstract class GeneratedElectronicsColorVariantProduct extends VariantProduct
 {
 	/** Qualifier of the <code>ElectronicsColorVariantProduct.color</code> attribute **/
@@ -28,105 +32,90 @@ public abstract class GeneratedElectronicsColorVariantProduct extends VariantPro
 		tmp.put(COLOR, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
-
 	@Override
 	protected Map<String, AttributeMode> getDefaultAttributeModes()
 	{
 		return DEFAULT_INITIAL_ATTRIBUTES;
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
 	 * @return the color - Color of the product.
 	 */
 	public String getColor(final SessionContext ctx)
 	{
-		if (ctx == null || ctx.getLanguage() == null)
+		if( ctx == null || ctx.getLanguage() == null )
 		{
-			throw new JaloInvalidParameterException("GeneratedElectronicsColorVariantProduct.getColor requires a session language",
-					0);
+			throw new JaloInvalidParameterException("GeneratedElectronicsColorVariantProduct.getColor requires a session language", 0 );
 		}
-		return (String) getLocalizedProperty(ctx, COLOR);
+		return (String)getLocalizedProperty( ctx, COLOR);
 	}
-
+	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
 	 * @return the color - Color of the product.
 	 */
 	public String getColor()
 	{
-		return getColor(getSession().getSessionContext());
+		return getColor( getSession().getSessionContext() );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute. 
 	 * @return the localized color - Color of the product.
 	 */
-	public Map<Language, String> getAllColor(final SessionContext ctx)
+	public Map<Language,String> getAllColor(final SessionContext ctx)
 	{
-		return (Map<Language, String>) getAllLocalizedProperties(ctx, COLOR, C2LManager.getInstance().getAllLanguages());
+		return (Map<Language,String>)getAllLocalizedProperties(ctx,COLOR,C2LManager.getInstance().getAllLanguages());
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
+	 * <i>Generated method</i> - Getter of the <code>ElectronicsColorVariantProduct.color</code> attribute. 
 	 * @return the localized color - Color of the product.
 	 */
-	public Map<Language, String> getAllColor()
+	public Map<Language,String> getAllColor()
 	{
-		return getAllColor(getSession().getSessionContext());
+		return getAllColor( getSession().getSessionContext() );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
-	 * @param value
-	 *           the color - Color of the product.
+	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute. 
+	 * @param value the color - Color of the product.
 	 */
 	public void setColor(final SessionContext ctx, final String value)
 	{
-		if (ctx == null || ctx.getLanguage() == null)
+		if( ctx == null || ctx.getLanguage() == null )
 		{
-			throw new JaloInvalidParameterException("GeneratedElectronicsColorVariantProduct.setColor requires a session language",
-					0);
+			throw new JaloInvalidParameterException("GeneratedElectronicsColorVariantProduct.setColor requires a session language", 0 );
 		}
-		setLocalizedProperty(ctx, COLOR, value);
+		setLocalizedProperty(ctx, COLOR,value);
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
-	 * @param value
-	 *           the color - Color of the product.
+	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute. 
+	 * @param value the color - Color of the product.
 	 */
 	public void setColor(final String value)
 	{
-		setColor(getSession().getSessionContext(), value);
+		setColor( getSession().getSessionContext(), value );
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
-	 * @param value
-	 *           the color - Color of the product.
+	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute. 
+	 * @param value the color - Color of the product.
 	 */
-	public void setAllColor(final SessionContext ctx, final Map<Language, String> value)
+	public void setAllColor(final SessionContext ctx, final Map<Language,String> value)
 	{
-		setAllLocalizedProperties(ctx, COLOR, value);
+		setAllLocalizedProperties(ctx,COLOR,value);
 	}
-
+	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute.
-	 * 
-	 * @param value
-	 *           the color - Color of the product.
+	 * <i>Generated method</i> - Setter of the <code>ElectronicsColorVariantProduct.color</code> attribute. 
+	 * @param value the color - Color of the product.
 	 */
-	public void setAllColor(final Map<Language, String> value)
+	public void setAllColor(final Map<Language,String> value)
 	{
-		setAllColor(getSession().getSessionContext(), value);
+		setAllColor( getSession().getSessionContext(), value );
 	}
-
+	
 }
