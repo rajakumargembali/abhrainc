@@ -54,7 +54,7 @@ public class CronJobForPriceConversion extends AbstractJobPerformable<CronJobMod
 
 		try
 		{
-			final String url = "http://192.168.1.3:8080/AuditLobby/pound_To_Euro_Conversion";
+			final String url = "http://192.168.1.236:8080/AuditLobby/pound_To_Euro_Conversion";
 			final ResponseEntity<Map> result = restTemplate.exchange(url, HttpMethod.GET, entity, Map.class);
 			final Map products = result.getBody();
 			logger.info(products);

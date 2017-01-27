@@ -44,7 +44,7 @@ public class CronJobController extends AbstractJobPerformable<CronJobModel>
 
 		try
 		{
-			final String url = "http://192.168.1.3:8080/AuditLobby/product_Detail_and_Price";
+			final String url = "http://192.168.1.236:8080/AuditLobby/product_Detail_and_Price";
 			final ResponseEntity<Map[]> result = restTemplate.exchange(url, HttpMethod.GET, entity, Map[].class);
 			final Map[] products = result.getBody();
 			for (int i = 0; i < products.length; i++)
