@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.core.constants;
 
@@ -19,6 +19,7 @@ package com.abhrainc.core.constants;
 public final class AbhraincCoreConstants extends GeneratedAbhraincCoreConstants
 {
 	public static final String EXTENSIONNAME = "abhrainccore";
+	public static final String THIRD_PARTY_APPLICATION_IP = "OtherApplicationIp";
 
 	private AbhraincCoreConstants()
 	{

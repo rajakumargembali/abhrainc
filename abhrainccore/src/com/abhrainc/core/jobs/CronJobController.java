@@ -5,6 +5,7 @@ import de.hybris.platform.cronjob.enums.CronJobStatus;
 import de.hybris.platform.cronjob.model.CronJobModel;
 import de.hybris.platform.servicelayer.cronjob.AbstractJobPerformable;
 import de.hybris.platform.servicelayer.cronjob.PerformResult;
+import de.hybris.platform.util.Config;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -19,6 +20,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import com.abhrainc.core.constants.AbhraincCoreConstants;
 import com.abhrainc.core.service.ProductAbhraService;
 
 
@@ -44,7 +46,8 @@ public class CronJobController extends AbstractJobPerformable<CronJobModel>
 
 		try
 		{
-			final String url = "http://192.168.1.236:8080/AuditLobby/product_Detail_and_Price";
+			final String url = Config.getString(AbhraincCoreConstants.THIRD_PARTY_APPLICATION_IP,
+					AbhraincCoreConstants.THIRD_PARTY_APPLICATION_IP) + "/product_Detail_and_Price";
 			final ResponseEntity<Map[]> result = restTemplate.exchange(url, HttpMethod.GET, entity, Map[].class);
 			final Map[] products = result.getBody();
 			for (int i = 0; i < products.length; i++)

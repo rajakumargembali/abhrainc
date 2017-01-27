@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.facades.constants;
 
@@ -20,6 +20,8 @@ package com.abhrainc.facades.constants;
 public class AbhraincFacadesConstants extends GeneratedAbhraincFacadesConstants
 {
 	public static final String EXTENSIONNAME = "abhraincfacades";
+	public static final String IPADDRESS = "IpAddress";
+	public static final String DEFAULTIP = "DefaultIp";
 
 	private AbhraincFacadesConstants()
 	{

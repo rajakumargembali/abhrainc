@@ -65,7 +65,7 @@
 										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">$instructionsContactUs</font></p>
 										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.complimentaryClosing}</font></p>
 										<p><font color="#666666" size="2" face="Arial, Helvetica, sans-serif">${ctx.messages.signature}</font></p>
-										<p>please activate your account by following below link: <a href = "${ctx.messages.getMessage('activationlink',${ctx.email})}">Click Here</a></p>
+										<p>please activate your account by following below link: <a href = "${ctx.messages.getMessage('activationlink',${ctx.ip},${ctx.email})}">Click Here</a></p>
 									</td>
 								</tr>
 								<tr>

@@ -294,24 +294,13 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 			final String code = products[i].get("hybris_consignmentid").toString();
 			final ConsignmentModel consignmentModel = productAbhraDao.getConsignmentDetailsbyCode(code);
 			final boolean status = consignmentModel.getIsDeliveryEmailSent().booleanValue();
-			if (consignmentModel.getStatus().equals(ConsignmentStatus.READY))
+			if (!status)
 			{
-				consignmentModel.setStatus(ConsignmentStatus.SHIPPED);
+				if (consignmentModel.getStatus().getCode().equals(ConsignmentStatus.READY))
+				{
+					//
+				}
 			}
-			if (consignmentModel.getStatus().equals(ConsignmentStatus.SHIPPED))
-			{
-				consignmentModel.setStatus(ConsignmentStatus.ACCEPTED);
-			}
-			else if (consignmentModel.getStatus().equals(ConsignmentStatus.ACCEPTED))
-			{
-				consignmentModel.setStatus(ConsignmentStatus.DISPATCHED);
-			}
-			else if (consignmentModel.getStatus().equals(ConsignmentStatus.DISPATCHED))
-			{
-				consignmentModel.setStatus(ConsignmentStatus.DELIVERED);
-				consignmentModel.setIsDeliveryEmailSent(java.lang.Boolean.TRUE);
-			}
-
 			modelService.save(consignmentModel);
 			if (!consignmentModel.getStatus().equals(ConsignmentStatus.SHIPPED) || !status)
 			{

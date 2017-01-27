@@ -22,8 +22,11 @@ import de.hybris.platform.core.model.c2l.LanguageModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
+import de.hybris.platform.util.Config;
 
 import org.springframework.beans.factory.annotation.Required;
+
+import com.abhrainc.facades.constants.AbhraincFacadesConstants;
 
 
 /**
@@ -39,6 +42,7 @@ public class CustomerEmailContext extends AbstractEmailContext<StoreFrontCustome
 	{
 		super.init(storeFrontCustomerProcessModel, emailPageModel);
 		customerData = getCustomerConverter().convert(getCustomer(storeFrontCustomerProcessModel));
+		put("ip", Config.getString(AbhraincFacadesConstants.IPADDRESS, AbhraincFacadesConstants.DEFAULTIP));
 		put("email", customerData.getUid());
 	}
 

@@ -81,8 +81,16 @@
 	<bean id="orderAccpetedMessageAction"
 		class="com.abhrainc.fulfilmentprocess.actions.consignment.OrderAccpetedMessageAction"
 		parent="abstractAction">
-		</bean>
+	</bean>
 
+	<bean id="orderDispatchedMessageAction"
+		class="com.abhrainc.fulfilmentprocess.actions.consignment.OrderDispatchedMessageAction"
+		parent="abstractAction"/>
+
+	<bean id="orderDeliveredMessageAction"
+		class="com.abhrainc.fulfilmentprocess.actions.consignment.OrderDeliveredMessageAction"
+		parent="abstractAction" />
+		
 	<bean id="orderDispatchedAction"
 		class="com.abhrainc.fulfilmentprocess.actions.consignment.OrderDispatchedAction"
 		parent="abstractAction">

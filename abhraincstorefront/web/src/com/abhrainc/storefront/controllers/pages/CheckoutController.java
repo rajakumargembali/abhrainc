@@ -36,6 +36,7 @@ import de.hybris.platform.commerceservices.util.ResponsiveUtils;
 import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.servicelayer.exceptions.ModelNotFoundException;
+import de.hybris.platform.util.Config;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -59,6 +60,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.abhrainc.core.constants.AbhraincCoreConstants;
 import com.abhrainc.facades.order.impl.AbhraincOrderFacade;
 import com.abhrainc.storefront.controllers.ControllerConstants;
 
@@ -273,7 +275,9 @@ public class CheckoutController extends AbstractCheckoutController
 		final RestTemplate restTemplate = new RestTemplate();
 		try
 		{
-			final String url = "http://192.168.1.236:8080/AuditLobby/addOrderDetails";
+			final String url = Config.getString(AbhraincCoreConstants.THIRD_PARTY_APPLICATION_IP,
+					AbhraincCoreConstants.THIRD_PARTY_APPLICATION_IP) + "/addOrderDetails";
+			//final String url = "http://192.168.1.236:8080/AuditLobby/addOrderDetails";
 			final HashMap orderData = new HashMap();
 			final OrderModel model = orderFacade.getOrderDetailForCode(orderDetails.getCode());
 			orderData.put("OrderID", model.getPk().getLongValue());
