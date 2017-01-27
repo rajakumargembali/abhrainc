@@ -41,17 +41,17 @@ public class OrderDeliveredHMCAction extends ItemAction
 	{
 		// YTODO Auto-generated method stub
 		final Item item = getItem(event);
-		LOG.info("event in order accpeted hmc" + event);
+		LOG.info("event in order delivered hmc" + event);
 		if (item instanceof Consignment)
 		{
-			LOG.info("item in order accpeted hmc" + item);
+			LOG.info("item in order delivered hmc" + item);
 			((Consignment) item).setStatus(EnumerationManager.getInstance().getEnumerationValue(ConsignmentStatus._TYPECODE,
 					ConsignmentStatus.DELIVERED.getCode()));
 
 			for (final ConsignmentProcess process : ((Consignment) item).getConsignmentProcesses())
 			{
-				LOG.info("process in order accpeted hmc" + process);
-				LOG.info("process code in order accpeted hmc" + process.getCode());
+				LOG.info("process in order delivered hmc" + process);
+				LOG.info("process code in order delivered hmc" + process.getCode());
 				getBusinessProcessService().triggerEvent(process.getCode() + "_ConsignmentOrderDelivered");
 			}
 			return new ActionResult(ActionResult.OK, true, false);
