@@ -273,7 +273,7 @@ public class CheckoutController extends AbstractCheckoutController
 		final RestTemplate restTemplate = new RestTemplate();
 		try
 		{
-			final String url = "http://192.168.2.96:8080/AuditLobby/addOrderDetails";
+			final String url = "http://192.168.1.3:8080/AuditLobby/addOrderDetails";
 			final HashMap orderData = new HashMap();
 			final OrderModel model = orderFacade.getOrderDetailForCode(orderDetails.getCode());
 			orderData.put("OrderID", model.getPk().getLongValue());
