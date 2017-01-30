@@ -26,7 +26,8 @@
 		<transition name="ERROR" to="error" />
 	</action>
 
-	<wait id="waitForOrderAccepted" then="orderAcceptedAction" prependProcessCode="false">
+	<wait id="waitForOrderAccepted" then="orderAcceptedAction"
+		prependProcessCode="false">
 		<event>${process.code}_ConsignmentOrderAccepted</event>
 	</wait>
 
@@ -35,7 +36,7 @@
 		<event>${process.code}_ConsignmentOrderDispatched</event>
 	</wait>
 
-<action id="orderDispatchedMessage" bean="orderDispatchedMessageAction">
+	<action id="orderDispatchedMessage" bean="orderDispatchedMessageAction">
 		<transition name="OK" to="orderDispatched" />
 		<transition name="CANCEL" to="cancelConsignment" />
 		<transition name="ERROR" to="error" />
@@ -46,7 +47,7 @@
 		<event>${process.code}_ConsignmentOrderDelivered</event>
 	</wait>
 
-<action id="orderDeliveredMessage" bean="orderDeliveredMessageAction">
+	<action id="orderDeliveredMessage" bean="orderDeliveredMessageAction">
 		<transition name="OK" to="orderDelivered" />
 		<transition name="CANCEL" to="cancelConsignment" />
 		<transition name="ERROR" to="error" />

@@ -290,6 +290,13 @@
 		<property name="businessProcessService" ref="businessProcessService" />
 	</bean>
 
+	<bean id="orderDeliveredEventListener" class="com.abhrainc.core.event.OrderDeliveredEventListener"
+		parent="abstractAcceleratorSiteEventListener">
+		<property name="modelService" ref="modelService" />
+		<property name="businessProcessService" ref="businessProcessService" />
+	</bean>
+
+
 	<bean id="sendOrderPartiallyCanceledMessageEventListener"
 		class="com.abhrainc.core.event.SendOrderPartiallyCanceledMessageEventListener"
 		parent="abstractAcceleratorSiteEventListener">
@@ -442,7 +449,7 @@
 	</bean>
 	
 	<bean id = "orderIsDelivered" parent="abstractGenerateEmailAction">
-	<property name="frontendTemplateName" value="DeliverySentEmailTemplate" />
+	<property name="frontendTemplateName" value="OrderDeliveredTemplate" />
 	</bean>
 
 	<bean id="generateReadyForPickupEmail" parent="abstractGenerateEmailAction">

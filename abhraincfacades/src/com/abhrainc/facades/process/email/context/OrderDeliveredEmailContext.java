@@ -53,7 +53,7 @@ public class OrderDeliveredEmailContext extends AbstractEmailContext<Consignment
 		consignmentData = getConsignmentConverter().convert(consignmentProcessModel.getConsignment());
 		guest = CustomerType.GUEST.equals(getCustomer(consignmentProcessModel).getType());
 
-		put("Order_Status", consignmentData.getStatus().getCode());
+		put("consignmentState", consignmentData.getStatus().getCode());
 	}
 
 	@Override

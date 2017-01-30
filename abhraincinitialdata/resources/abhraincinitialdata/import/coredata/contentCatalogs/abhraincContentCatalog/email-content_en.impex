@@ -46,8 +46,8 @@ UPDATE RendererTemplate;code[unique=true];description[lang=$lang];templateScript
  ;electronics_Order_Accepted_Subject;"Delivery Accepted Email Subject";$emailResource/email-acceptedSubject.vm
  ;electronics_Order_Dispatched_Body;"Delivery Dispatched Email Body";$emailResource/email-dispatchedBody.vm
  ;electronics_Order_Dispatched_Subject;"Delivery Dispatched Email Subject";$emailResource/email-dispatchedSubject.vm
- ;electronics_Order_Delivered_Body;"Delivery Sent Email Body";$emailResource/email-deliverySentBody.vm
- ;electronics_Order_Delivered_Subject;"Delivery Sent Email Subject";$emailResource/email-deliverySentSubject.vm
+ ;electronics_Order_Delivered_Body;"Delivery Sent Email Body";$emailResource/email-delieveredBody.vm
+ ;electronics_Order_Delivered_Subject;"Delivery Sent Email Subject";$emailResource/email-deliveredSubject.vm
 
  
 # Email Pages

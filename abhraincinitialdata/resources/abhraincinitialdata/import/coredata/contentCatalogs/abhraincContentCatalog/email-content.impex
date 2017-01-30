@@ -27,8 +27,6 @@ INSERT_UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];name;ac
 ;;OrderAcceptedTemplate;Order Accepted Email Template;true;OrderAcceptedEmail;electronics_Order_Accepted_Subject;electronics_Order_Accepted_Body;EmailPage
 ;;OrderDispatchedTemplate;Order Dispatched Email Template;true;OrderDispatchedEmail;electronics_Order_Dispatched_Subject;electronics_Order_Dispatched_Body;EmailPage
 ;;OrderDeliveredTemplate;Order Delivered Email Template;true;OrderDeliveredEmail;electronics_Order_Delivered_Subject;electronics_Order_Delivered_Body;EmailPage
-#Order Tracking email
-;;OrderTrackingEmailTemplate;Order Tracking Email Template;true;orderTrackingEmail;elverys_Email_Order_Tracking_Subject;elverys_Email_Order_Tracking_Body;EmailPage
 
 
 # Templates for CMS Cockpit Page Edit
@@ -47,7 +45,7 @@ UPDATE EmailPageTemplate;$contentCV[unique=true];uid[unique=true];velocityTempla
 ;;NotPickedUpConsignmentCanceledEmailTemplate;$jarResourceCms/structure-view/structure_notPickedUpConsignmentCanceledEmailTemplate.vm
 ;;OrderAcceptedTemplate;$jarResourceCms/structure-view/structure_orderAcceptedTemplate.vm
 ;;OrderDispatchedTemplate;$jarResourceCms/structure-view/structure_orderDispatchedTemplate.vm
-;;OrderDeliveredTemplate;$jarResourceCms/structure-view/structure_deliverySentEmailTemplate.vm
+;;OrderDeliveredTemplate;$jarResourceCms/structure-view/structure_orderDeliveredTemplate.vm
 
 
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='CustomerRegistrationEmailTemplate'];validComponentTypes(code)
@@ -228,10 +226,10 @@ INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)
 ;electronics_Email_NotPickedUpConsignment_Canceled_Subject;$emailPackageName.NotPickedUpConsignmentCanceledEmailContext
 ;electronics_Order_Accepted_Body;$emailPackageName.OrderAcceptedEmail
 ;electronics_Order_Dispatched_Body;$emailPackageName.OrderDispatchEmailContext
-;electronics_Order_Delivered_Body;$emailPackageName.DeliverySentEmailContext
+;electronics_Order_Delivered_Body;$emailPackageName.OrderDeliveredEmailContext
 ;electronics_Order_Accepted_Subject;$emailPackageName.OrderAcceptedEmail
 ;electronics_Order_Dispatched_Subject;$emailPackageName.OrderDispatchEmailContext
-;electronics_Order_Delivered_Subject;$emailPackageName.DeliverySentEmailContext
+;electronics_Order_Delivered_Subject;$emailPackageName.OrderDeliveredEmailContext
 
 
 
@@ -256,4 +254,4 @@ UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $co
 ;;OrderDispatchedEmail;EmailPageModel_preview
 ;;OrderDeliveredEmail;EmailPageModel_preview
 ;;OrderTrackingEmail;EmailPageModel_preview
-;;NotPickedUpConsignmentCanceledEmail;EmailPageModel_preview
+

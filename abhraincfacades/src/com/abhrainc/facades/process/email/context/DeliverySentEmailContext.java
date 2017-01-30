@@ -55,16 +55,12 @@ public class DeliverySentEmailContext extends AbstractEmailContext<ConsignmentPr
 		consignmentData = getConsignmentConverter().convert(consignmentProcessModel.getConsignment());
 		guest = CustomerType.GUEST.equals(getCustomer(consignmentProcessModel).getType());
 		put("consignmentState", consignmentData.getStatus());
-
-		final OrderModel model = abhraIncDao.getOrderDetailsForOrder(consignmentProcessModel.getConsignment().getOrder().getCode());
-		if (model.getOrderExpectedDeliveryDate() != null)
-		{
-			put("Expected_Delivery_Date", model.getOrderExpectedDeliveryDate());
-		}
-		else
-		{
-			put("Expected_Delivery_Date", "within a week");
-		}
+		/*
+		 * final OrderModel model =
+		 * abhraIncDao.getOrderDetailsForOrder(consignmentProcessModel.getConsignment().getOrder().getCode()); if
+		 * (model.getOrderExpectedDeliveryDate() != null) { put("Expected_Delivery_Date",
+		 * model.getOrderExpectedDeliveryDate()); } else { put("Expected_Delivery_Date", "within a week"); }
+		 */
 
 	}
 
