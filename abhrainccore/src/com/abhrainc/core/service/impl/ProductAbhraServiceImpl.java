@@ -8,6 +8,7 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.core.model.product.UnitModel;
 import de.hybris.platform.europe1.model.PriceRowModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
+import de.hybris.platform.ordersplitting.model.ConsignmentProcessModel;
 import de.hybris.platform.ordersplitting.model.StockLevelModel;
 import de.hybris.platform.ordersplitting.model.WarehouseModel;
 import de.hybris.platform.processengine.BusinessProcessService;
@@ -51,6 +52,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 
 	@Autowired
 	ModelService modelService;
+
 
 
 	@Override
@@ -296,16 +298,16 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 			final boolean status = consignmentModel.getIsDeliveryEmailSent().booleanValue();
 			if (!status)
 			{
-				if (consignmentModel.getStatus().getCode().equals(ConsignmentStatus.READY))
+				if (consignmentModel.getStatus().getCode().equals(ConsignmentStatus.ACCEPTED))
 				{
-					//
+					consignmentModel.setStatus(ConsignmentStatus.ACCEPTED);
+					for (final ConsignmentProcessModel process : consignmentModel.getConsignmentProcesses())
+					{
+						businessProcessService.triggerEvent(process.getCode() + "_ConsignmentOrderAccepted");
+					}
 				}
 			}
 			modelService.save(consignmentModel);
-			if (!consignmentModel.getStatus().equals(ConsignmentStatus.SHIPPED) || !status)
-			{
-				//sendEmail(consignmentModel);
-			}
 
 			final String updateUrl = "http://localhost:8080/AuditLobby/update_Consignemnt";
 			final HashMap orderData = new HashMap();

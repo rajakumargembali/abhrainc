@@ -565,6 +565,8 @@
 	
 	<bean id="cronJobToUpdateStock" class="com.abhrainc.core.jobs.CronJobToUpdateStocks" autowire="byName"/>
 	
+	<bean id="cronJobToTrackOrder" class="com.abhrainc.core.jobs.CronJobToTrackOrder" autowire="byName"/>
+	
 	<alias name="abhraProductDAO" alias="productAbhraDao"/>
 	<bean id="abhraProductDAO" class="com.abhrainc.core.dao.impl.ProductAbhraDaoImpl">
 	</bean>
