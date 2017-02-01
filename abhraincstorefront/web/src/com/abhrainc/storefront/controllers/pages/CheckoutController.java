@@ -210,7 +210,7 @@ public class CheckoutController extends AbstractCheckoutController
 
 		final OrderData orderDetails = orderFacade.getOrderDetailsForCode(orderCode);
 
-		storeOrderDetailsInOtherSystem(orderDetails);
+
 		if (orderDetails.isGuestCustomer() && !StringUtils.substringBefore(orderDetails.getUser().getUid(), "|")
 				.equals(getSessionService().getAttribute(WebConstants.ANONYMOUS_CHECKOUT_GUID)))
 		{
@@ -237,7 +237,7 @@ public class CheckoutController extends AbstractCheckoutController
 		model.addAttribute("pageType", PageType.ORDERCONFIRMATION.name());
 		model.addAttribute("deliveryDate", gc.getTime());
 
-
+		storeOrderDetailsInOtherSystem(orderDetails);
 		processEmailAddress(model, orderDetails);
 
 		final String continueUrl = (String) getSessionService().getAttribute(WebConstants.CONTINUE_URL);

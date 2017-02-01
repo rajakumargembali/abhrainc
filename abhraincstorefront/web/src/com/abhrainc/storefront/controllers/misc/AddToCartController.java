@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.storefront.controllers.misc;
 
@@ -23,8 +23,12 @@ import de.hybris.platform.commercefacades.order.data.OrderEntryData;
 import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commerceservices.order.CommerceCartModificationException;
+import de.hybris.platform.core.model.order.CartModel;
+import de.hybris.platform.order.CartService;
+import de.hybris.platform.promotions.PromotionsService;
+import de.hybris.platform.promotions.jalo.PromotionsManager.AutoApplyMode;
+import de.hybris.platform.promotions.model.PromotionGroupModel;
 import de.hybris.platform.util.Config;
-import com.abhrainc.storefront.controllers.ControllerConstants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,6 +53,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.abhrainc.storefront.controllers.ControllerConstants;
+
 
 /**
  * Controller for Add to Cart functionality which is not specific to a certain page.
@@ -68,8 +74,14 @@ public class AddToCartController extends AbstractController
 	@Resource(name = "cartFacade")
 	private CartFacade cartFacade;
 
+	@Resource
+	private CartService cartService;
+
 	@Resource(name = "accProductFacade")
 	private ProductFacade productFacade;
+
+	@Resource(name = "promotionsService")
+	private PromotionsService promotionsService;
 
 	@Resource(name = "groupCartModificationListPopulator")
 	private GroupCartModificationListPopulator groupCartModificationListPopulator;
@@ -116,6 +128,13 @@ public class AddToCartController extends AbstractController
 				model.addAttribute(QUANTITY_ATTR, Long.valueOf(0L));
 			}
 		}
+		final PromotionGroupModel promotionGroup = promotionsService.getPromotionGroup("electronicsPromoGrp");
+		final List<PromotionGroupModel> groups = new ArrayList<PromotionGroupModel>();
+		groups.add(promotionGroup);
+		final CartModel cartModel = cartService.getSessionCart();
+
+		promotionsService.updatePromotions(groups, cartModel, false, AutoApplyMode.APPLY_ALL, AutoApplyMode.APPLY_ALL,
+				new java.util.Date());
 
 		model.addAttribute("product", productFacade.getProductForCodeAndOptions(code, Arrays.asList(ProductOption.BASIC)));
 
