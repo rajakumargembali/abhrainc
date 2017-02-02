@@ -17,7 +17,6 @@ import de.hybris.platform.servicelayer.model.ModelService;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -298,22 +297,30 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 			final boolean status = consignmentModel.getIsDeliveryEmailSent().booleanValue();
 			if (!status)
 			{
-				if (consignmentModel.getStatus().getCode().equals(ConsignmentStatus.ACCEPTED))
+				if (products[i].get("consignment_status").toString().equals(ConsignmentStatus.ACCEPTED.getCode()))
 				{
-					consignmentModel.setStatus(ConsignmentStatus.ACCEPTED);
 					for (final ConsignmentProcessModel process : consignmentModel.getConsignmentProcesses())
 					{
 						businessProcessService.triggerEvent(process.getCode() + "_ConsignmentOrderAccepted");
 					}
 				}
+				else if (products[i].get("consignment_status").toString().equals(ConsignmentStatus.DISPATCHED.getCode()))
+				{
+					for (final ConsignmentProcessModel process : consignmentModel.getConsignmentProcesses())
+					{
+						businessProcessService.triggerEvent(process.getCode() + "_ConsignmentOrderDispatched");
+					}
+				}
+				else if (products[i].get("consignment_status").toString().equals(ConsignmentStatus.DELIVERED.getCode()))
+				{
+					for (final ConsignmentProcessModel process : consignmentModel.getConsignmentProcesses())
+					{
+						businessProcessService.triggerEvent(process.getCode() + "_ConsignmentOrderDelivered");
+						consignmentModel.setIsDeliveryEmailSent(true);
+						modelService.save(consignmentModel);
+					}
+				}
 			}
-			modelService.save(consignmentModel);
-
-			final String updateUrl = "http://localhost:8080/AuditLobby/update_Consignemnt";
-			final HashMap orderData = new HashMap();
-			orderData.put("orderid", products[i].get("orderid"));
-			orderData.put("consignment_status", consignmentModel.getStatus().getCode());
-			restTemplate.put(updateUrl, orderData, HashMap.class);
 		}
 	}
 

@@ -98,7 +98,7 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 	public ConsignmentModel getConsignmentDetailsbyCode(final String code)
 	{
 		// YTODO Auto-generated method stub
-		final String search_query = "select {PK} from {consignment} where P_CODE = " + "'" + code + "'";
+		final String search_query = "select {PK} from {consignment} where PK = " + "'" + code + "'";
 		final FlexibleSearchQuery query = new FlexibleSearchQuery(search_query);
 		final SearchResult<ConsignmentModel> searchResult = flexibleSearchService.search(query);
 		return searchResult.getResult().get(0);
