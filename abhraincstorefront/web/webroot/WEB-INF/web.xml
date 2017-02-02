@@ -41,6 +41,10 @@
 	    <filter-class>ro.isdc.wro.http.WroFilter</filter-class>
 	</filter>
 
+	<filter>
+		<filter-name>Redirecting_site</filter-name>
+		<filter-class>com.abhrainc.storefront.controllers.pages.GetIpAddressForUserController</filter-class>
+	</filter>
 	<filter-mapping>
 	    <filter-name>WebResourceOptimizer</filter-name>
 	    <url-pattern>/wro/*</url-pattern>

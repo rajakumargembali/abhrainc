@@ -128,13 +128,6 @@ public class AddToCartController extends AbstractController
 				model.addAttribute(QUANTITY_ATTR, Long.valueOf(0L));
 			}
 		}
-		final PromotionGroupModel promotionGroup = promotionsService.getPromotionGroup("electronicsPromoGrp");
-		final List<PromotionGroupModel> groups = new ArrayList<PromotionGroupModel>();
-		groups.add(promotionGroup);
-		final CartModel cartModel = cartService.getSessionCart();
-
-		promotionsService.updatePromotions(groups, cartModel, false, AutoApplyMode.APPLY_ALL, AutoApplyMode.APPLY_ALL,
-				new java.util.Date());
 
 		model.addAttribute("product", productFacade.getProductForCodeAndOptions(code, Arrays.asList(ProductOption.BASIC)));
 
