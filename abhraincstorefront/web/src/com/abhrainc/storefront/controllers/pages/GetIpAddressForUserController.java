@@ -3,20 +3,22 @@
  */
 package com.abhrainc.storefront.controllers.pages;
 
+import de.hybris.platform.util.Config;
+
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.URL;
+import java.util.Arrays;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletResponse;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
-import org.springframework.web.filter.GenericFilterBean;
-
+import com.abhrainc.core.constants.AbhraincCoreConstants;
 import com.maxmind.geoip2.WebServiceClient;
 import com.maxmind.geoip2.model.CountryResponse;
 import com.maxmind.geoip2.record.Country;
@@ -26,12 +28,9 @@ import com.maxmind.geoip2.record.Country;
  * @author sujan
  *
  */
-public class GetIpAddressForUserController extends GenericFilterBean
+public class GetIpAddressForUserController
 {
-	/**
-	 * @return
-	 */
-	private String getPublicIp()
+	public String getPublicIp()
 	{
 		// YTODO Auto-generated method stub
 		String systemipaddress = "";
@@ -59,84 +58,45 @@ public class GetIpAddressForUserController extends GenericFilterBean
 			systemipaddress = "Cannot Execute Properly";
 		}
 		System.out.println("\nYour IP Address: " + systemipaddress + "\n");
-
 		return systemipaddress;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse,
-	 * javax.servlet.FilterChain)
-	 */
-	@Override
-	public void doFilter(final ServletRequest req, final ServletResponse res, final FilterChain arg2)
-			throws IOException, ServletException
+	public String getISOCode(final String ipAddr)
 	{
 		// YTODO Auto-generated method stub
-		final String isocode = getISOCode(req.getRemoteAddr());
-		final HttpServletResponse response = (HttpServletResponse) res;
-		if (isocode != null)
-		{
-			//res.
+		final RestTemplate restTemplate = new RestTemplate();
+		final HttpHeaders headers = new HttpHeaders();
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		final HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
+		final String url = Config.getString(AbhraincCoreConstants.THIRD_PARTY_APPLICATION_IP,
+				AbhraincCoreConstants.THIRD_PARTY_APPLICATION_IP) + "/getIpAddress";
+		final ResponseEntity<String> result = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
 
-			if (isocode.equals("DE"))
-			{
-				response.sendRedirect("https://localhost:9002/abhraincstorefront/electronics/de/");
-			}
-			else if (isocode.equals("US") || isocode.equals("IN"))
-			{
-				response.sendRedirect("https://localhost:9002/abhraincstorefront/electronics/en/");
-			}
-		}
-		else
-		{
-			response.sendRedirect("https://localhost:9002/abhraincstorefront/electronics/en/");
-		}
-	}
-
-	/**
-	 * @param ipaddr
-	 * @return
-	 */
-	private String getISOCode(final String ipaddr)
-	{
-		// YTODO Auto-generated method stub
 		final WebServiceClient client = new WebServiceClient.Builder(119804, "c9fBzLEntM0E").build();
 		{
 			try
 			{
-				String localIp = null;
-				try
-				{
-					final InetAddress ipAddr = InetAddress.getByName(ipaddr);
-					localIp = ipAddr.getHostAddress();
-				}
-				catch (final Exception e)
-				{
-					e.printStackTrace();
-				}
-				if (localIp.equals(null))
-				{
-					localIp = getPublicIp();
-				}
+				/*
+				 * try { ipAddress = InetAddress.getByName(ipAddr); response = client.country(ipAddress); } catch (final
+				 * Exception e) { e.printStackTrace(); }
+				 *
+				 * if (response == null) {
+				 */
+				//final String localIp = getPublicIp();
+				final String localIp = result.getBody();
 				final InetAddress ipAddress = InetAddress.getByName(localIp);
-
-				// Do the lookup
 				final CountryResponse response = client.country(ipAddress);
 				final Country country = response.getCountry();
 				System.out.println(country.getIsoCode()); // 'US'
 				System.out.println(country.getName()); // 'United States'
 				return country.getIsoCode();
+				//}
 			}
 			catch (final Exception e)
 			{
 				e.printStackTrace();
 			}
 		}
-
 		return null;
 	}
-
-
 }

@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.storefront.filters;
 
@@ -17,10 +17,10 @@ import de.hybris.platform.acceleratorfacades.urlencoder.UrlEncoderFacade;
 import de.hybris.platform.acceleratorfacades.urlencoder.data.UrlEncoderData;
 import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
 import de.hybris.platform.servicelayer.session.SessionService;
-import com.abhrainc.storefront.web.wrappers.UrlEncodeHttpRequestWrapper;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -31,6 +31,9 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.abhrainc.storefront.controllers.pages.GetIpAddressForUserController;
+import com.abhrainc.storefront.web.wrappers.UrlEncodeHttpRequestWrapper;
 
 
 /**
@@ -56,9 +59,18 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 		if (currentUrlEncoderDatas != null && !currentUrlEncoderDatas.isEmpty())
 		{
 			final String currentPattern = getSessionService().getAttribute(WebConstants.URL_ENCODING_ATTRIBUTES);
-			final String newPattern = getUrlEncoderFacade().calculateAndUpdateUrlEncodingData(request.getRequestURI().toString(),
+			String newPattern = getUrlEncoderFacade().calculateAndUpdateUrlEncodingData(request.getRequestURI().toString(),
 					request.getContextPath());
+			System.out.println(request.getRemoteAddr());
+			String ipAddress = request.getHeader("X-FORWARDED-FOR");
+			if (ipAddress == null)
+			{
+				ipAddress = request.getRemoteAddr();
+			}
+			System.out.println("ipaddress using mykong" + ipAddress);
+			newPattern = getGeoLocationPattern(newPattern, ipAddress);
 			final String newPatternWithSlash = "/" + newPattern;
+
 			if (!StringUtils.equalsIgnoreCase(currentPattern, newPatternWithSlash))
 			{
 				getUrlEncoderFacade().updateSiteFromUrlEncodingData();
@@ -85,6 +97,51 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 			request.setAttribute(WebConstants.URL_ENCODING_ATTRIBUTES, "");
 			filterChain.doFilter(request, response);
 		}
+	}
+
+	/**
+	 * @param newPattern
+	 * @param ipAddress
+	 * @return
+	 */
+	private String getGeoLocationPattern(final String newPattern, final String ipAddress)
+	{
+		// YTODO Auto-generated method stub
+		final String defaultpattern = newPattern;
+		final StringTokenizer tokenizer = new StringTokenizer(newPattern, "/");
+		String storename = null;
+		String lang = null;
+		while (tokenizer.hasMoreElements())
+		{
+			storename = tokenizer.nextToken();
+			lang = tokenizer.nextToken();
+		}
+		final GetIpAddressForUserController controller = new GetIpAddressForUserController();
+		final String isocode = controller.getISOCode(ipAddress);
+		if (isocode != null)
+		{
+			if (isocode.equals("US") || isocode.equals("IN"))
+			{
+				lang = "en";
+			}
+			else if (isocode.equals("DE"))
+			{
+				lang = "de";
+			}
+			else if (isocode.equals("JP"))
+			{
+				lang = "ja";
+			}
+			else if (isocode.equals("CN"))
+			{
+				lang = "zh";
+			}
+		}
+		if (storename != null && lang != null)
+		{
+			return storename + "/" + lang;
+		}
+		return defaultpattern;
 	}
 
 	protected UrlEncoderFacade getUrlEncoderFacade()
