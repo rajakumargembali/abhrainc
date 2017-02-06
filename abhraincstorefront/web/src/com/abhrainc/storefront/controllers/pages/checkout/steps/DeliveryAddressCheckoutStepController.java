@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.storefront.controllers.pages.checkout.steps;
 
@@ -24,12 +24,9 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.AddressForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.commercefacades.address.data.AddressVerificationResult;
 import de.hybris.platform.commercefacades.order.data.CartData;
-import de.hybris.platform.commercefacades.user.data.AddressData;
-import de.hybris.platform.commercefacades.user.data.CountryData;
-import de.hybris.platform.commercefacades.user.data.RegionData;
 import de.hybris.platform.commerceservices.address.AddressVerificationDecision;
+import de.hybris.platform.storelocator.data.AddressData;
 import de.hybris.platform.util.Config;
-import com.abhrainc.storefront.controllers.ControllerConstants;
 
 import java.util.Set;
 
@@ -41,6 +38,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.abhrainc.storefront.controllers.ControllerConstants;
 
 
 @Controller
@@ -92,6 +91,11 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 		newAddress.setShippingAddress(true);
 		newAddress.setPhone(addressForm.getPhone());
 
+		/*
+		 * final AddressVerfication addressVerfication = new AddressVerfication(); if
+		 * (addressVerfication.addressVerfiy(addressForm) == null) { return
+		 * ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage; } else {
+		 */
 		processAddress(addressForm, newAddress);
 
 		// Verify the address data.
@@ -120,6 +124,7 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 		getCheckoutFacade().setDeliveryAddress(newAddress);
 
 		return getCheckoutStep().nextStep();
+		//		}
 	}
 
 	protected void processAddress(final AddressForm addressForm, final AddressData newAddress)
