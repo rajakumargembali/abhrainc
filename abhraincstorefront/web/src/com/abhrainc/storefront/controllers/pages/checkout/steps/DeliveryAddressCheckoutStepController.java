@@ -42,6 +42,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.abhrainc.storefront.controllers.ControllerConstants;
+import com.abhrainc.storefront.controllers.pages.AddressVerfication;
 
 
 @Controller
@@ -94,13 +95,13 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 		newAddress.setPhone(addressForm.getPhone());
 
 
-		/*final AddressVerfication addressVerfication = new AddressVerfication();
+		final AddressVerfication addressVerfication = new AddressVerfication();
 		if (addressVerfication.addressVerfiy(addressForm) == null)
 		{
 			return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
 		}
 		else
-		{*/
+		{
 
 			processAddress(addressForm, newAddress);
 
@@ -130,7 +131,7 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 			getCheckoutFacade().setDeliveryAddress(newAddress);
 
 			return getCheckoutStep().nextStep();
-		//}
+		}
 	}
 
 	protected void processAddress(final AddressForm addressForm, final AddressData newAddress)
