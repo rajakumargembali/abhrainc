@@ -1,6 +1,6 @@
 /**
  *
- */
+ *//*
 
 package com.abhrainc.storefront.controllers.pages;
 
@@ -14,10 +14,10 @@ import com.smartystreets.api.us_street.ClientBuilder;
 import com.smartystreets.api.us_street.Lookup;
 
 
-/*
+
 @author sujan
 
-   */
+   
 public class AddressVerfication
 {
 	public String addressVerfiy(final AddressForm addressData)
@@ -57,3 +57,4 @@ public class AddressVerfication
 		return "Success";
 	}
 }
+*/
