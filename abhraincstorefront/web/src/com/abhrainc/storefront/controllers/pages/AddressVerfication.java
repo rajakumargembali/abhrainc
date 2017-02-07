@@ -27,7 +27,7 @@ public class AddressVerfication
 		final Lookup lookup = new Lookup();
 		lookup.setStreet(addressData.getLine1());
 		lookup.setCity(addressData.getTownCity());
-		lookup.setState(addressData.getCountryIso());
+		lookup.setState(addressData.getRegionIso());
 
 		try
 		{
