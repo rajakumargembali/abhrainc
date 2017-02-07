@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.storefront.controllers.pages.checkout.steps;
 
@@ -29,7 +29,6 @@ import de.hybris.platform.commercefacades.user.data.CountryData;
 import de.hybris.platform.commercefacades.user.data.RegionData;
 import de.hybris.platform.commerceservices.address.AddressVerificationDecision;
 import de.hybris.platform.util.Config;
-import com.abhrainc.storefront.controllers.ControllerConstants;
 
 import java.util.Set;
 
@@ -41,6 +40,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.abhrainc.storefront.controllers.ControllerConstants;
+import com.abhrainc.storefront.controllers.pages.AddressVerfication;
 
 
 @Controller
@@ -92,34 +94,44 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 		newAddress.setShippingAddress(true);
 		newAddress.setPhone(addressForm.getPhone());
 
-		processAddress(addressForm, newAddress);
 
-		// Verify the address data.
-		final AddressVerificationResult<AddressVerificationDecision> verificationResult = getAddressVerificationFacade()
-				.verifyAddressData(newAddress);
-		final boolean addressRequiresReview = getAddressVerificationResultHandler().handleResult(verificationResult, newAddress,
-				model, redirectModel, bindingResult, getAddressVerificationFacade().isCustomerAllowedToIgnoreAddressSuggestions(),
-				"checkout.multi.address.updated");
-
-		if (addressRequiresReview)
+		final AddressVerfication addressVerfication = new AddressVerfication();
+		if (addressVerfication.addressVerfiy(addressForm) == null)
 		{
 			return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
 		}
+		else
+		{
 
-		getUserFacade().addAddress(newAddress);
+			processAddress(addressForm, newAddress);
 
-		final AddressData previousSelectedAddress = getCheckoutFacade().getCheckoutCart().getDeliveryAddress();
-		// Set the new address as the selected checkout delivery address
-		getCheckoutFacade().setDeliveryAddress(newAddress);
-		if (previousSelectedAddress != null && !previousSelectedAddress.isVisibleInAddressBook())
-		{ // temporary address should be removed
-			getUserFacade().removeAddress(previousSelectedAddress);
+			// Verify the address data.
+			final AddressVerificationResult<AddressVerificationDecision> verificationResult = getAddressVerificationFacade()
+					.verifyAddressData(newAddress);
+			final boolean addressRequiresReview = getAddressVerificationResultHandler().handleResult(verificationResult, newAddress,
+					model, redirectModel, bindingResult, getAddressVerificationFacade().isCustomerAllowedToIgnoreAddressSuggestions(),
+					"checkout.multi.address.updated");
+
+			if (addressRequiresReview)
+			{
+				return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
+			}
+
+			getUserFacade().addAddress(newAddress);
+
+			final AddressData previousSelectedAddress = getCheckoutFacade().getCheckoutCart().getDeliveryAddress();
+			// Set the new address as the selected checkout delivery address
+			getCheckoutFacade().setDeliveryAddress(newAddress);
+			if (previousSelectedAddress != null && !previousSelectedAddress.isVisibleInAddressBook())
+			{ // temporary address should be removed
+				getUserFacade().removeAddress(previousSelectedAddress);
+			}
+
+			// Set the new address as the selected checkout delivery address
+			getCheckoutFacade().setDeliveryAddress(newAddress);
+
+			return getCheckoutStep().nextStep();
 		}
-
-		// Set the new address as the selected checkout delivery address
-		getCheckoutFacade().setDeliveryAddress(newAddress);
-
-		return getCheckoutStep().nextStep();
 	}
 
 	protected void processAddress(final AddressForm addressForm, final AddressData newAddress)
