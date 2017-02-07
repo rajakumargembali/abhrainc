@@ -28,7 +28,7 @@ public class AddressVerfication
 		lookup.setStreet(addressData.getLine1());
 		lookup.setCity(addressData.getTownCity());
 		lookup.setState(addressData.getRegionIso());
-
+		lookup.setZipCode(addressData.getPostcode());
 		try
 		{
 			client.send(lookup);
