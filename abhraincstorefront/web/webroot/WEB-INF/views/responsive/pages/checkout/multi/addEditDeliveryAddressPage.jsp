@@ -29,8 +29,9 @@
 
                             <div class="checkout-indent">
                                 <div class="headline"><spring:theme code="checkout.summary.shippingAddress" text="Shipping Address"></spring:theme></div>
-
-
+							<c:if test="${DisplayError== true}">
+							<div style="color: red;"><h3>Please enter a valid Address</h3></div>
+							</c:if>
                                     <address:addressFormSelector supportedCountries="${countries}"
                                         regions="${regions}" cancelUrl="${currentStepUrl}"
                                         country="${country}" />
