@@ -422,7 +422,7 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 	@RequestMapping(value = "/select", method = RequestMethod.GET)
 	@RequireHardLogIn
 	public String doSelectDeliveryAddress(@RequestParam("selectedAddressCode") final String selectedAddressCode,
-			final RedirectAttributes redirectAttributes)
+			final RedirectAttributes redirectAttributes, final Model model)
 	{
 		final ValidationResults validationResults = getCheckoutStep().validate(redirectAttributes);
 		if (getCheckoutStep().checkIfValidationErrors(validationResults))
@@ -435,7 +435,21 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 			final boolean hasSelectedAddressData = selectedAddressData != null;
 			if (hasSelectedAddressData)
 			{
-				setDeliveryAddress(selectedAddressData);
+				final AddressForm addressForm = new AddressForm();
+				addressForm.setLine1(selectedAddressData.getLine1());
+				addressForm.setTownCity(selectedAddressData.getTown());
+				addressForm.setRegionIso(selectedAddressData.getRegion().getIsocode());
+				addressForm.setPostcode(selectedAddressData.getPostalCode());
+				if (verfiyAddress(addressForm) == null)
+				{
+					model.addAttribute("DisplayError", true);
+					return getCheckoutStep().currentStep();
+					//	return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
+				}
+				else
+				{
+					setDeliveryAddress(selectedAddressData);
+				}
 			}
 		}
 		return getCheckoutStep().nextStep();
