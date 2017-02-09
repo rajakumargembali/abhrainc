@@ -436,10 +436,22 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 			if (hasSelectedAddressData)
 			{
 				final AddressForm addressForm = new AddressForm();
-				addressForm.setLine1(selectedAddressData.getLine1());
-				addressForm.setTownCity(selectedAddressData.getTown());
-				addressForm.setRegionIso(selectedAddressData.getRegion().getIsocode());
-				addressForm.setPostcode(selectedAddressData.getPostalCode());
+				if (selectedAddressData.getLine1() != null)
+				{
+					addressForm.setLine1(selectedAddressData.getLine1());
+				}
+				if (selectedAddressData.getTown() != null)
+				{
+					addressForm.setTownCity(selectedAddressData.getTown());
+				}
+				if (selectedAddressData.getRegion().getIsocode() != null)
+				{
+					addressForm.setRegionIso(selectedAddressData.getRegion().getIsocode());
+				}
+				if (selectedAddressData.getPostalCode() != null)
+				{
+					addressForm.setPostcode(selectedAddressData.getPostalCode());
+				}
 				if (verfiyAddress(addressForm) == null)
 				{
 					model.addAttribute("DisplayError", true);
