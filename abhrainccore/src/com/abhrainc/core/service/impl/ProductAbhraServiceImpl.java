@@ -14,7 +14,6 @@ import de.hybris.platform.ordersplitting.model.WarehouseModel;
 import de.hybris.platform.processengine.BusinessProcessService;
 import de.hybris.platform.servicelayer.event.EventService;
 import de.hybris.platform.servicelayer.model.ModelService;
-import de.hybris.platform.util.Config;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -31,7 +30,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.abhrainc.core.constants.AbhraincCoreConstants;
 import com.abhrainc.core.dao.ProductAbhraDao;
 import com.abhrainc.core.event.OrderTrackingEmailEvent;
 import com.abhrainc.core.service.ProductAbhraService;
@@ -288,8 +286,7 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 		final HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		final HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-		final String url = Config.getString(AbhraincCoreConstants.THIRD_PARTY_APPLICATION_IP,
-				AbhraincCoreConstants.THIRD_PARTY_APPLICATION_IP) + "/getConsignmentStatuses";
+		final String url = "http://192.168.1.236:8001/AuditLobby/getConsignmentStatuses";
 		final ResponseEntity<Map[]> result = restTemplate.exchange(url, HttpMethod.GET, entity, Map[].class);
 		final Map[] products = result.getBody();
 		for (int i = 0; i < products.length; i++)
