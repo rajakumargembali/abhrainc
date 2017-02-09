@@ -444,7 +444,7 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 				{
 					addressForm.setTownCity(selectedAddressData.getTown());
 				}
-				if (selectedAddressData.getRegion().getIsocode() != null)
+				if (selectedAddressData.getRegion() != null)
 				{
 					addressForm.setRegionIso(selectedAddressData.getRegion().getIsocode());
 				}
