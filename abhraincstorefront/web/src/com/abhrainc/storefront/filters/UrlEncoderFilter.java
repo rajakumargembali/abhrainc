@@ -62,7 +62,7 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 			String newPattern = getUrlEncoderFacade().calculateAndUpdateUrlEncodingData(request.getRequestURI().toString(),
 					request.getContextPath());
 
-			System.out.println(request.getRemoteAddr());
+			System.out.println("remote addre" + request.getRemoteAddr());
 			newPattern = getGeoLocationPattern(newPattern, request.getRemoteAddr());
 			final String newPatternWithSlash = "/" + newPattern;
 
