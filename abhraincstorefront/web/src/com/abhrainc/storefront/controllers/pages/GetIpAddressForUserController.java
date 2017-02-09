@@ -82,7 +82,8 @@ public class GetIpAddressForUserController
 				 *
 				 * if (response == null) {
 				 */
-				//final String localIp = getPublicIp();
+				final String ipadrr = getPublicIp();
+				System.out.println(ipadrr);
 				final String localIp = result.getBody();
 				final InetAddress ipAddress = InetAddress.getByName(localIp);
 				final CountryResponse response = client.country(ipAddress);
