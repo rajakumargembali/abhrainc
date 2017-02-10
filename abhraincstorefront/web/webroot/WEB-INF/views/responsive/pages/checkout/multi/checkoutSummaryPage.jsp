@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<spring:url value="/checkout/multi/summary/placeOrder" var="placeOrderUrl"/>
+<spring:url value="/paypalpayment/pay" var="placeOrderUrl"/>
 <spring:url value="/checkout/multi/termsAndConditions" var="getTermsAndConditionsUrl"/>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
@@ -26,11 +26,11 @@
                 </div>
                 <div class="place-order-form hidden-xs">
                     <form:form action="${placeOrderUrl}" id="placeOrderForm1" commandName="placeOrderForm">
-                        <div class="checkbox">
-                            <label> <form:checkbox id="Terms1" path="termsCheck" />
+                        <%-- <div class="checkbox">
+                            <label> <form:checkbox id="Terms1" path="termsCheck" value='true'/>
                                 <spring:theme code="checkout.summary.placeOrder.readTermsAndConditions" arguments="${getTermsAndConditionsUrl}" text="Terms and Conditions"/>
                             </label>
-                        </div>
+                        </div> --%>
 
                         <button id="placeOrder" type="submit" class="btn btn-primary btn-place-order btn-block">
                             <spring:theme code="checkout.summary.placeOrder" text="Place Order"/>

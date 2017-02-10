@@ -25,13 +25,14 @@
                 <c:if test="${not empty paymentFormUrl}">
                     <div class="checkout-paymentmethod">
                         <div class="checkout-indent">
-
+							
                             <div class="headline"><spring:theme code="checkout.multi.paymentMethod"/></div>
-
+							
 
 							    <ycommerce:testId code="paymentDetailsForm">
 							
 								<form:form id="silentOrderPostForm" name="silentOrderPostForm" commandName="sopPaymentDetailsForm" action="${paymentFormUrl}" method="POST">
+									
 									<input type="hidden" name="orderPage_receiptResponseURL" value="${silentOrderPageData.parameters['orderPage_receiptResponseURL']}"/>
 									<input type="hidden" name="orderPage_declineResponseURL" value="${silentOrderPageData.parameters['orderPage_declineResponseURL']}"/>
 									<input type="hidden" name="orderPage_cancelResponseURL" value="${silentOrderPageData.parameters['orderPage_cancelResponseURL']}"/>
@@ -42,7 +43,7 @@
 										<input type="hidden" id="${entry.key}" name="${entry.key}" value="${entry.value}"/>
 									</c:forEach>
 									<input type="hidden" value="${silentOrderPageData.parameters['billTo_email']}" name="billTo_email" id="billTo_email">
-	
+						 
 						
 						
 									<div class="form-group">
@@ -113,8 +114,7 @@
 					                          inputCSS="" labelCSS="" mandatory="false" tabindex="10"/>
 									</sec:authorize>
 									
-									
-                                    <hr/>
+							        <hr/>
                                    <div class="headline">
                                         <spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.billingAddress"/>
                                     </div>
@@ -190,9 +190,9 @@
 		</multiCheckout:checkoutSteps>
 	</div>
 
-	<%-- <div class="col-sm-6 hidden-xs">
+	<div class="col-sm-6 hidden-xs">
 		<multiCheckout:checkoutOrderDetails cartData="${cartData}" showDeliveryAddress="true" showPaymentInfo="false" showTaxEstimate="false" showTax="true" />
-    </div> --%>
+    </div> 
 
     <div class="col-sm-12 col-lg-12">
         <cms:pageSlot position="SideContent" var="feature" element="div" class="checkout-help">

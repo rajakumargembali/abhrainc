@@ -59,11 +59,11 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 		if (currentUrlEncoderDatas != null && !currentUrlEncoderDatas.isEmpty())
 		{
 			final String currentPattern = getSessionService().getAttribute(WebConstants.URL_ENCODING_ATTRIBUTES);
-			final String newPattern = getUrlEncoderFacade().calculateAndUpdateUrlEncodingData(request.getRequestURI().toString(),
+			String newPattern = getUrlEncoderFacade().calculateAndUpdateUrlEncodingData(request.getRequestURI().toString(),
 					request.getContextPath());
 
 			System.out.println("remote addre" + request.getRemoteAddr());
-			/* newPattern = getGeoLocationPattern(newPattern, request.getRemoteAddr()); */
+			newPattern = getGeoLocationPattern(newPattern, request.getRemoteAddr());
 			final String newPatternWithSlash = "/" + newPattern;
 
 			if (!StringUtils.equalsIgnoreCase(currentPattern, newPatternWithSlash))
