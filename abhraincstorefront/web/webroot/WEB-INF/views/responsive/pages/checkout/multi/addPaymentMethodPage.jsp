@@ -27,13 +27,14 @@
                     <ycommerce:testId code="checkoutStepThree">
                         <div class="checkout-paymentmethod">
                             <div class="checkout-indent">
-
-                                <div class="headline"><spring:theme code="checkout.multi.paymentMethod"/></div>
+					
+                                <div class="headline"><spring:theme code="checkout.multi.paymentMethod"/></div>	
 
                                 <c:if test="${not empty paymentFormUrl}">
                                     <ycommerce:testId code="paymentDetailsForm">
 
                                         <form:form id="silentOrderPostForm" name="silentOrderPostForm" commandName="sopPaymentDetailsForm" action="${paymentFormUrl}" method="POST">
+                                        
                                             <input type="hidden" name="orderPage_receiptResponseURL" value="${silentOrderPageData.parameters['orderPage_receiptResponseURL']}"/>
                                             <input type="hidden" name="orderPage_declineResponseURL" value="${silentOrderPageData.parameters['orderPage_declineResponseURL']}"/>
                                             <input type="hidden" name="orderPage_cancelResponseURL" value="${silentOrderPageData.parameters['orderPage_cancelResponseURL']}"/>
@@ -45,7 +46,7 @@
                                             </c:forEach>
                                             <input type="hidden" value="${silentOrderPageData.parameters['billTo_email']}" name="billTo_email" id="billTo_email">
 
-
+							
 
                                             <div class="form-group">
                                                 <c:if test="${not empty paymentInfos}">
@@ -115,13 +116,12 @@
                                                 <formElement:formCheckbox idKey="savePaymentMethod" labelKey="checkout.multi.sop.savePaymentInfo" path="savePaymentInfo"
                                                       inputCSS="" labelCSS="" mandatory="false" tabindex="10"/>
                                             </sec:authorize>
-
-
+					
                             <hr/>
                             <div class="headline">
                             <spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.billingAddress"/>
                         </div>
-
+					
 
                         <c:if test="${cartData.deliveryItemsQuantity > 0}">
 
