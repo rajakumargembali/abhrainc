@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.storefront.controllers.pages.checkout.steps;
 
@@ -33,7 +33,6 @@ import de.hybris.platform.commercefacades.order.data.CardTypeData;
 import de.hybris.platform.commercefacades.order.data.CartData;
 import de.hybris.platform.commercefacades.user.data.AddressData;
 import de.hybris.platform.commercefacades.user.data.CountryData;
-import com.abhrainc.storefront.controllers.ControllerConstants;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -55,6 +54,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.abhrainc.storefront.controllers.ControllerConstants;
 
 
 @Controller
@@ -235,7 +236,8 @@ public class PaymentMethodCheckoutStepController extends AbstractCheckoutStepCon
 		paymentInfoData.setBillingAddress(addressData);
 
 		final CCPaymentInfoData newPaymentSubscription = getCheckoutFacade().createPaymentSubscription(paymentInfoData);
-		if (!checkPaymentSubscription(model, paymentDetailsForm, newPaymentSubscription)) {
+		if (!checkPaymentSubscription(model, paymentDetailsForm, newPaymentSubscription))
+		{
 			return ControllerConstants.Views.Pages.MultiStepCheckout.AddPaymentMethodPage;
 		}
 
@@ -246,7 +248,8 @@ public class PaymentMethodCheckoutStepController extends AbstractCheckoutStepCon
 	}
 
 	protected boolean checkPaymentSubscription(final Model model, @Valid final PaymentDetailsForm paymentDetailsForm,
-											 final CCPaymentInfoData newPaymentSubscription) {
+			final CCPaymentInfoData newPaymentSubscription)
+	{
 		if (newPaymentSubscription != null && StringUtils.isNotBlank(newPaymentSubscription.getSubscriptionId()))
 		{
 			if (Boolean.TRUE.equals(paymentDetailsForm.getSaveInAccount()) && getUserFacade().getCCPaymentInfos(true).size() <= 1)
@@ -263,8 +266,8 @@ public class PaymentMethodCheckoutStepController extends AbstractCheckoutStepCon
 		return true;
 	}
 
-	protected void fillInPaymentData(@Valid final PaymentDetailsForm paymentDetailsForm,
-								   final CCPaymentInfoData paymentInfoData) {
+	protected void fillInPaymentData(@Valid final PaymentDetailsForm paymentDetailsForm, final CCPaymentInfoData paymentInfoData)
+	{
 		paymentInfoData.setId(paymentDetailsForm.getPaymentId());
 		paymentInfoData.setCardType(paymentDetailsForm.getCardTypeCode());
 		paymentInfoData.setAccountHolderName(paymentDetailsForm.getNameOnCard());
@@ -280,26 +283,27 @@ public class PaymentMethodCheckoutStepController extends AbstractCheckoutStepCon
 		paymentInfoData.setIssueNumber(paymentDetailsForm.getIssueNumber());
 	}
 
-	protected void fillInAddressData(final AddressData addressData, final AddressForm addressForm) {
+	protected void fillInAddressData(final AddressData addressData, final AddressForm addressForm)
+	{
 		if (addressForm != null)
-        {
-            addressData.setId(addressForm.getAddressId());
-            addressData.setTitleCode(addressForm.getTitleCode());
-            addressData.setFirstName(addressForm.getFirstName());
-            addressData.setLastName(addressForm.getLastName());
-            addressData.setLine1(addressForm.getLine1());
-            addressData.setLine2(addressForm.getLine2());
-            addressData.setTown(addressForm.getTownCity());
-            addressData.setPostalCode(addressForm.getPostcode());
-            addressData.setCountry(getI18NFacade().getCountryForIsocode(addressForm.getCountryIso()));
-            if (addressForm.getRegionIso() != null)
-            {
-                addressData.setRegion(getI18NFacade().getRegion(addressForm.getCountryIso(), addressForm.getRegionIso()));
-            }
+		{
+			addressData.setId(addressForm.getAddressId());
+			addressData.setTitleCode(addressForm.getTitleCode());
+			addressData.setFirstName(addressForm.getFirstName());
+			addressData.setLastName(addressForm.getLastName());
+			addressData.setLine1(addressForm.getLine1());
+			addressData.setLine2(addressForm.getLine2());
+			addressData.setTown(addressForm.getTownCity());
+			addressData.setPostalCode(addressForm.getPostcode());
+			addressData.setCountry(getI18NFacade().getCountryForIsocode(addressForm.getCountryIso()));
+			if (addressForm.getRegionIso() != null)
+			{
+				addressData.setRegion(getI18NFacade().getRegion(addressForm.getCountryIso(), addressForm.getRegionIso()));
+			}
 
-            addressData.setShippingAddress(Boolean.TRUE.equals(addressForm.getShippingAddress()));
-            addressData.setBillingAddress(Boolean.TRUE.equals(addressForm.getBillingAddress()));
-        }
+			addressData.setShippingAddress(Boolean.TRUE.equals(addressForm.getShippingAddress()));
+			addressData.setBillingAddress(Boolean.TRUE.equals(addressForm.getBillingAddress()));
+		}
 	}
 
 
@@ -412,8 +416,8 @@ public class PaymentMethodCheckoutStepController extends AbstractCheckoutStepCon
 			// Add credit cards for all supported cards that have mappings for cybersource SOP
 			if (CYBERSOURCE_SOP_CARD_TYPES.containsKey(supportedCardType.getCode()))
 			{
-				sopCardTypes.add(createCardTypeData(CYBERSOURCE_SOP_CARD_TYPES.get(supportedCardType.getCode()),
-						supportedCardType.getName()));
+				sopCardTypes.add(
+						createCardTypeData(CYBERSOURCE_SOP_CARD_TYPES.get(supportedCardType.getCode()), supportedCardType.getName()));
 			}
 		}
 		return sopCardTypes;
