@@ -35,8 +35,8 @@ public class SecureTokenGenerator
 		final StringBuilder postBody = new StringBuilder();
 		postBody.append("PARTNER=").append("PayPal");
 		postBody.append("&VENDOR=").append("praneethanumula");
-		postBody.append("&USER=").append("praneethanumula");
-		postBody.append("&PWD=").append("sai$praneeth");
+		postBody.append("&USER=").append("saipraneethanumula");
+		postBody.append("&PWD=").append("05$praneeth");
 		postBody.append("&TRXTYPE=S");
 		postBody.append("&CREATESECURETOKEN=Y");
 		postBody.append("&CURRENCY=").append("USD");
