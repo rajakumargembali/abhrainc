@@ -18,7 +18,7 @@
   <body>
 
 	<iframe src='https://pilot-payflowlink.paypal.com?SECURETOKEN=${SECURETOKEN}&SECURETOKENID=${SECURETOKENID}'
-width='490' height='565'border='0' frameborder='0' scrolling='no' allowtransparency='true'></iframe>
+width='1290' height='1065'border='0' frameborder='0' scrolling='no' allowtransparency='true'></iframe>
 
   </body>
 </html>
