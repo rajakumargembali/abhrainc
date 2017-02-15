@@ -53,30 +53,32 @@ public class SopPaymentResponseController extends PaymentMethodCheckoutStepContr
 			throws CMSItemNotFoundException
 	{
 		final Map<String, String> resultMap = getRequestParameterMap(request);
-		resultMap.get("");
-		final boolean savePaymentInfo = sopPaymentDetailsForm.isSavePaymentInfo()
-				|| getCheckoutCustomerStrategy().isAnonymousCheckout();
-		final PaymentSubscriptionResultData paymentSubscriptionResultData = this.getPaymentFacade()
-				.completeSopCreateSubscription(resultMap, savePaymentInfo);
+		final String paymentMode = resultMap.get("yesno").toString();
+		if (paymentMode.equals("paypal"))
+		{
+			final boolean savePaymentInfo = sopPaymentDetailsForm.isSavePaymentInfo()
+					|| getCheckoutCustomerStrategy().isAnonymousCheckout();
+			final PaymentSubscriptionResultData paymentSubscriptionResultData = this.getPaymentFacade()
+					.completeSopCreateSubscription(resultMap, savePaymentInfo);
 
-		if (paymentSubscriptionResultData.isSuccess())
-		{
-			createNewPaymentSubscription(paymentSubscriptionResultData);
+			if (paymentSubscriptionResultData.isSuccess())
+			{
+				createNewPaymentSubscription(paymentSubscriptionResultData);
+			}
+			else if (paymentSubscriptionResultData.getDecision() != null
+					&& "error".equalsIgnoreCase(paymentSubscriptionResultData.getDecision())
+					|| paymentSubscriptionResultData.getErrors() != null && !paymentSubscriptionResultData.getErrors().isEmpty())
+			{
+				return processErrors(sopPaymentDetailsForm, bindingResult, model, redirectAttributes, paymentSubscriptionResultData);
+			}
+			else
+			{
+				// SOP ERROR!
+				LOGGER.error("Failed to create subscription.  Please check the log files for more information");
+				return REDIRECT_URL_ERROR + "/?decision=" + paymentSubscriptionResultData.getDecision() + "&reasonCode="
+						+ paymentSubscriptionResultData.getResultCode();
+			}
 		}
-		else if (paymentSubscriptionResultData.getDecision() != null
-				&& "error".equalsIgnoreCase(paymentSubscriptionResultData.getDecision())
-				|| paymentSubscriptionResultData.getErrors() != null && !paymentSubscriptionResultData.getErrors().isEmpty())
-		{
-			return processErrors(sopPaymentDetailsForm, bindingResult, model, redirectAttributes, paymentSubscriptionResultData);
-		}
-		else
-		{
-			// SOP ERROR!
-			LOGGER.error("Failed to create subscription.  Please check the log files for more information");
-			return REDIRECT_URL_ERROR + "/?decision=" + paymentSubscriptionResultData.getDecision() + "&reasonCode="
-					+ paymentSubscriptionResultData.getResultCode();
-		}
-
 		return getCheckoutStep().nextStep();
 	}
 
