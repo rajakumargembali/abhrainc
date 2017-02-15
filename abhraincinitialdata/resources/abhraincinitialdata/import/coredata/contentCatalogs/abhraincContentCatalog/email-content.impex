@@ -2,7 +2,7 @@
 # Import the CMS content for the site emails
 #
 $contentCatalog=electronicsContentCatalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $wideContent=CMSImageComponent,BannerComponent
 
 # Import config properties into impex macros

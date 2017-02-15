@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 14 Feb, 2017 1:32:44 PM                     ---
+ * --- Generated at 15 Feb, 2017 4:13:26 PM                     ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.constants;
@@ -34,6 +34,7 @@ public class GeneratedAbhraincCoreConstants
 		public static class Order
 		{
 			public static final String EXPECTEDDELIVERYDATE = "expectedDeliveryDate".intern();
+			public static final String ISCASHONDELIVERY = "isCashOnDelivery".intern();
 			public static final String ORDEREXPECTEDDELIVERYDATE = "orderExpectedDeliveryDate".intern();
 		}
 		public static class User

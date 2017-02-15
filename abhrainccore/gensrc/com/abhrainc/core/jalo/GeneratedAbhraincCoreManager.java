@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 14 Feb, 2017 1:32:44 PM                     ---
+ * --- Generated at 15 Feb, 2017 4:13:26 PM                     ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.jalo;
@@ -45,6 +45,7 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
 		tmp.put("expectedDeliveryDate", AttributeMode.INITIAL);
 		tmp.put("orderExpectedDeliveryDate", AttributeMode.INITIAL);
+		tmp.put("isCashOnDelivery", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("trackingEmailSent", AttributeMode.INITIAL);
@@ -263,6 +264,79 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	public String getName()
 	{
 		return AbhraincCoreConstants.EXTENSIONNAME;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Order.isCashOnDelivery</code> attribute.
+	 * @return the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
+	 */
+	public Boolean isIsCashOnDelivery(final SessionContext ctx, final Order item)
+	{
+		return (Boolean)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Order.ISCASHONDELIVERY);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Order.isCashOnDelivery</code> attribute.
+	 * @return the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
+	 */
+	public Boolean isIsCashOnDelivery(final Order item)
+	{
+		return isIsCashOnDelivery( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * @return the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
+	 */
+	public boolean isIsCashOnDeliveryAsPrimitive(final SessionContext ctx, final Order item)
+	{
+		Boolean value = isIsCashOnDelivery( ctx,item );
+		return value != null ? value.booleanValue() : false;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * @return the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
+	 */
+	public boolean isIsCashOnDeliveryAsPrimitive(final Order item)
+	{
+		return isIsCashOnDeliveryAsPrimitive( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * @param value the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
+	 */
+	public void setIsCashOnDelivery(final SessionContext ctx, final Order item, final Boolean value)
+	{
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Order.ISCASHONDELIVERY,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * @param value the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
+	 */
+	public void setIsCashOnDelivery(final Order item, final Boolean value)
+	{
+		setIsCashOnDelivery( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * @param value the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
+	 */
+	public void setIsCashOnDelivery(final SessionContext ctx, final Order item, final boolean value)
+	{
+		setIsCashOnDelivery( ctx, item, Boolean.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * @param value the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
+	 */
+	public void setIsCashOnDelivery(final Order item, final boolean value)
+	{
+		setIsCashOnDelivery( getSession().getSessionContext(), item, value );
 	}
 	
 	/**
