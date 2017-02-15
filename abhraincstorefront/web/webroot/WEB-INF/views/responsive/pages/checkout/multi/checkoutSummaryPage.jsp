@@ -26,12 +26,12 @@
                 </div>
                 <div class="place-order-form hidden-xs">
                     <form:form action="${placeOrderUrl}" id="placeOrderForm1" commandName="placeOrderForm">
-                        <%--  <div class="checkbox">
+                          <div class="checkbox">
                             <label> <form:checkbox id="Terms1" path="termsCheck" />
                                 <spring:theme code="checkout.summary.placeOrder.readTermsAndConditions" arguments="${getTermsAndConditionsUrl}" text="Terms and Conditions"/>
                             </label>
                         </div>
-  --%>
+  
                         <button id="placeOrder" type="submit" class="btn btn-primary btn-place-order btn-block">
                             <spring:theme code="checkout.summary.placeOrder" text="Place Order"/>
                         </button>

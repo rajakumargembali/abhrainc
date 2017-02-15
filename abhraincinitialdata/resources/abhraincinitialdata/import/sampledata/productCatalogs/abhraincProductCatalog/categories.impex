@@ -13,12 +13,9 @@ INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='custome
 ;"ConsumerDurables";"Consumer Durables";
 ;"Refrigerator";"Refrigerator";
 ;"Television";"Television";
-;"Amazon";"Amazon India";
-;"AmazonPrime";"Amazon Prime";
 
 
 # Insert Category Structure
 INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories
 ;"Refrigerator";"ConsumerDurables";
 ;"Television";"ConsumerDurables";
-;"AmazonPrime";"Amazon";

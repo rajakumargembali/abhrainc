@@ -4,9 +4,11 @@ import de.hybris.platform.basecommerce.enums.ConsignmentStatus;
 import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
 import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.c2l.CurrencyModel;
+import de.hybris.platform.core.model.order.price.TaxModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.core.model.product.UnitModel;
 import de.hybris.platform.europe1.model.PriceRowModel;
+import de.hybris.platform.europe1.model.TaxRowModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentProcessModel;
 import de.hybris.platform.ordersplitting.model.StockLevelModel;
@@ -86,6 +88,9 @@ public class ProductAbhraServiceImpl implements ProductAbhraService
 			else
 			{
 				//
+				final TaxRowModel taxRow = new TaxRowModel();
+				final List<TaxModel> taxModels = productAbhraDao.getTaxModelDetails();
+				taxRow.setTax(taxModels.get(0));
 				final PriceRowModel priceRow = new PriceRowModel();
 				priceRow.setPrice(price);
 				priceRow.setProduct(model);
