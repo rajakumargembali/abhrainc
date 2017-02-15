@@ -2,7 +2,7 @@
 # Import the CMS content for the site emails
 #
 $contentCatalog=electronicsContentCatalog
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Online])[default=$contentCatalog:Online]
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $wideContent=CMSImageComponent,BannerComponent
 
 # Import config properties into impex macros
@@ -187,8 +187,6 @@ INSERT_UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];name;masterTemp
 ;;OrderAcceptedEmail;Order Accepted Email Template;OrderAcceptedTemplate;true;
 ;;OrderDispatchedEmail;Order Dispatched Email Template;OrderDispatchedTemplate;true;
 ;;OrderDeliveredEmail;Order Delivered Email Template;OrderDeliveredTemplate;true;
-#Order Tracking Email
-;;OrderTrackingEmail;Order Tracking Email;OrderTrackingEmailTemplate;true;
 
 # CMS components velocity templates
 INSERT_UPDATE RendererTemplate;code[unique=true];contextClass;rendererType(code)[default='velocity']
@@ -253,5 +251,4 @@ UPDATE EmailPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $co
 ;;OrderAcceptedEmail;EmailPageModel_preview
 ;;OrderDispatchedEmail;EmailPageModel_preview
 ;;OrderDeliveredEmail;EmailPageModel_preview
-;;OrderTrackingEmail;EmailPageModel_preview
 

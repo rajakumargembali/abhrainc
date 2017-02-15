@@ -16,12 +16,15 @@ package com.abhrainc.storefront.filters;
 import de.hybris.platform.acceleratorfacades.urlencoder.UrlEncoderFacade;
 import de.hybris.platform.acceleratorfacades.urlencoder.data.UrlEncoderData;
 import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
+import de.hybris.platform.commercefacades.storesession.StoreSessionFacade;
+import de.hybris.platform.commercefacades.user.UserFacade;
 import de.hybris.platform.servicelayer.session.SessionService;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import javax.annotation.Resource;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -47,6 +50,14 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 	private UrlEncoderFacade urlEncoderFacade;
 	private SessionService sessionService;
 
+	@Resource(name = "storeSessionFacade")
+	private StoreSessionFacade storeSessionFacade;
+
+
+	@Resource(name = "userFacade")
+	private UserFacade userFacade;
+
+
 	@Override
 	protected void doFilterInternal(final HttpServletRequest request, final HttpServletResponse response,
 			final FilterChain filterChain) throws ServletException, IOException
@@ -62,7 +73,7 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 			final String newPattern = getUrlEncoderFacade().calculateAndUpdateUrlEncodingData(request.getRequestURI().toString(),
 					request.getContextPath());
 
-			System.out.println(request.getRemoteAddr());
+			System.out.println("remote addre" + request.getRemoteAddr());
 			//newPattern = getGeoLocationPattern(newPattern, request.getRemoteAddr());
 			final String newPatternWithSlash = "/" + newPattern;
 
@@ -106,6 +117,7 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 		final StringTokenizer tokenizer = new StringTokenizer(newPattern, "/");
 		String storename = null;
 		String lang = null;
+		String currency = null;
 		while (tokenizer.hasMoreElements())
 		{
 			storename = tokenizer.nextToken();
@@ -118,23 +130,30 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 			if (isocode.equals("US") || isocode.equals("IN"))
 			{
 				lang = "en";
+				currency = "USD";
 			}
 			else if (isocode.equals("DE"))
 			{
 				lang = "de";
+				currency = "EUR";
 			}
 			else if (isocode.equals("JP"))
 			{
 				lang = "ja";
+				currency = "JPY";
 			}
 			else if (isocode.equals("CN"))
 			{
 				lang = "zh";
+				currency = "CHN";
 			}
 		}
 		if (storename != null && lang != null)
 		{
+			storeSessionFacade.setCurrentCurrency(currency);
+			userFacade.syncSessionCurrency();
 			return storename + "/" + lang;
+
 		}
 		return defaultpattern;
 	}

@@ -3,9 +3,9 @@
 # Macros / Replacement Parameter definitions
 $productCatalog=electronicsProductCatalog
 
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default='$productCatalog:Online']
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
 $prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
-
+$taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
 # Set product approval status to Approved only for those products that have prices.
 $approved=approvalstatus(code)[default='approved']
 
@@ -28,8 +28,26 @@ UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;Europe1PriceF
 ;PSC80464
 ;PSC888642
 
-INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+UPDATE Product;code[unique=true];$approved;$catalogVersion;$taxGroup
+;GL-Q292SHAM
+;RT34K3983RZ
+;GL-F282RGFL
+;GL-I292RSFL
+;KP202PHG
+;NR-BW465VNX4
+;NR-CX789WYA5
+;KP203QIH
+;RT35L4094SA
+;KLV-49W752D
+;KLV-40W562D
+;43LH576T
+;2LH604T
+;SMG60897
+;SMG79806
+;PSC80464
+;PSC888642
 
+INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
 ;GL-Q292SHAM;pieces;USD;99.99;1;1;false
 ;RT34K3983RZ;pieces;USD;89.99;1;1;false
 ;GL-F282RGFL;pieces;USD;79.99;1;1;false
@@ -47,3 +65,37 @@ INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=piec
 ;SMG79806;pieces;USD;34.99;1;1;false
 ;PSC80464;pieces;USD;43.99;1;1;false
 ;PSC888642;pieces;USD;71.99;1;1;false
+;GL-Q292SHAM;pieces;JPY;99.99;1;1;false
+;RT34K3983RZ;pieces;JPY;89.99;1;1;false
+;GL-F282RGFL;pieces;JPY;79.99;1;1;false
+;GL-I292RSFL;pieces;JPY;69.99;1;1;false
+;KP202PHG;pieces;JPY;59.99;1;1;false
+;NR-BW465VNX4;pieces;JPY;49.99;1;1;false
+;NR-CX789WYA5;pieces;JPY;39.99;1;1;false
+;KP203QIH;pieces;JPY;29.99;1;1;false
+;RT35L4094SA;pieces;JPY;19.99;1;1;false
+;KLV-49W752D;pieces;JPY;09.99;1;1;false
+;KLV-40W562D;pieces;JPY;68.99;1;1;false
+;43LH576T;pieces;JPY;97.99;1;1;false
+;2LH604T;pieces;JPY;54.99;1;1;false
+;SMG60897;pieces;JPY;66.99;1;1;false
+;SMG79806;pieces;JPY;34.99;1;1;false
+;PSC80464;pieces;JPY;43.99;1;1;false
+;PSC888642;pieces;JPY;71.99;1;1;false
+;GL-Q292SHAM;pieces;CHN;99.99;1;1;false
+;RT34K3983RZ;pieces;CHN;89.99;1;1;false
+;GL-F282RGFL;pieces;CHN;79.99;1;1;false
+;GL-I292RSFL;pieces;CHN;69.99;1;1;false
+;KP202PHG;pieces;CHN;59.99;1;1;false
+;NR-BW465VNX4;pieces;CHN;49.99;1;1;false
+;NR-CX789WYA5;pieces;CHN;39.99;1;1;false
+;KP203QIH;pieces;CHN;29.99;1;1;false
+;RT35L4094SA;pieces;CHN;19.99;1;1;false
+;KLV-49W752D;pieces;CHN;09.99;1;1;false
+;KLV-40W562D;pieces;CHN;68.99;1;1;false
+;43LH576T;pieces;CHN;97.99;1;1;false
+;2LH604T;pieces;CHN;54.99;1;1;false
+;SMG60897;pieces;CHN;66.99;1;1;false
+;SMG79806;pieces;CHN;34.99;1;1;false
+;PSC80464;pieces;CHN;43.99;1;1;false
+;PSC888642;pieces;CHN;71.99;1;1;false

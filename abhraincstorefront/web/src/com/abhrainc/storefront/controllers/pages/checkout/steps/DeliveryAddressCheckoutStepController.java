@@ -95,9 +95,9 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 		newAddress.setPhone(addressForm.getPhone());
 
 
-		final AddressVerfication addressVerfication = new AddressVerfication();
-		if (addressVerfication.addressVerfiy(addressForm) == null)
+		if (verfiyAddress(addressForm) == null)
 		{
+			model.addAttribute("DisplayError", true);
 			return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
 		}
 		else
@@ -132,6 +132,25 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 
 			return getCheckoutStep().nextStep();
 		}
+	}
+
+	/**
+	 * @param addressForm
+	 */
+	private String verfiyAddress(final AddressForm addressForm)
+	{
+		// YTODO Auto-generated method stub
+		final AddressVerfication addressVerfication = new AddressVerfication();
+		if (addressVerfication.addressVerfiy(addressForm) == null)
+		{
+			return null;
+		}
+		else
+		{
+			return "Sucess";
+		}
+
+
 	}
 
 	protected void processAddress(final AddressForm addressForm, final AddressData newAddress)
@@ -242,39 +261,46 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 		newAddress.setBillingAddress(false);
 		newAddress.setShippingAddress(true);
 		newAddress.setPhone(addressForm.getPhone());
-
-		processNullableAddressValues(addressForm, newAddress);
-
-		newAddress.setDefaultAddress(getUserFacade().isAddressBookEmpty() || getUserFacade().getAddressBook().size() == 1
-				|| Boolean.TRUE.equals(addressForm.getDefaultAddress()));
-
-		// Verify the address data.
-		final AddressVerificationResult<AddressVerificationDecision> verificationResult = getAddressVerificationFacade()
-				.verifyAddressData(newAddress);
-		final boolean addressRequiresReview = getAddressVerificationResultHandler().handleResult(verificationResult, newAddress,
-				model, redirectModel, bindingResult, getAddressVerificationFacade().isCustomerAllowedToIgnoreAddressSuggestions(),
-				"checkout.multi.address.updated");
-
-		if (addressRequiresReview)
+		if (verfiyAddress(addressForm) == null)
 		{
-			if (StringUtils.isNotEmpty(addressForm.getAddressId()))
-			{
-				final AddressData addressData = getCheckoutFacade().getDeliveryAddressForCode(addressForm.getAddressId());
-				if (addressData != null)
-				{
-					model.addAttribute(SHOW_SAVE_TO_ADDRESS_BOOK_ATTR, Boolean.valueOf(!addressData.isVisibleInAddressBook()));
-					model.addAttribute("edit", Boolean.TRUE);
-				}
-			}
-
 			return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
 		}
+		else
+		{
 
-		getUserFacade().editAddress(newAddress);
-		getCheckoutFacade().setDeliveryModeIfAvailable();
-		getCheckoutFacade().setDeliveryAddress(newAddress);
+			processNullableAddressValues(addressForm, newAddress);
 
-		return getCheckoutStep().nextStep();
+			newAddress.setDefaultAddress(getUserFacade().isAddressBookEmpty() || getUserFacade().getAddressBook().size() == 1
+					|| Boolean.TRUE.equals(addressForm.getDefaultAddress()));
+
+			// Verify the address data.
+			final AddressVerificationResult<AddressVerificationDecision> verificationResult = getAddressVerificationFacade()
+					.verifyAddressData(newAddress);
+			final boolean addressRequiresReview = getAddressVerificationResultHandler().handleResult(verificationResult, newAddress,
+					model, redirectModel, bindingResult, getAddressVerificationFacade().isCustomerAllowedToIgnoreAddressSuggestions(),
+					"checkout.multi.address.updated");
+
+			if (addressRequiresReview)
+			{
+				if (StringUtils.isNotEmpty(addressForm.getAddressId()))
+				{
+					final AddressData addressData = getCheckoutFacade().getDeliveryAddressForCode(addressForm.getAddressId());
+					if (addressData != null)
+					{
+						model.addAttribute(SHOW_SAVE_TO_ADDRESS_BOOK_ATTR, Boolean.valueOf(!addressData.isVisibleInAddressBook()));
+						model.addAttribute("edit", Boolean.TRUE);
+					}
+				}
+
+				return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
+			}
+
+			getUserFacade().editAddress(newAddress);
+			getCheckoutFacade().setDeliveryModeIfAvailable();
+			getCheckoutFacade().setDeliveryAddress(newAddress);
+
+			return getCheckoutStep().nextStep();
+		}
 	}
 
 	protected void processNullableAddressValues(final AddressForm addressForm, final AddressData newAddress)
@@ -342,39 +368,45 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 		final CountryData countryData = getI18NFacade().getCountryForIsocode(addressForm.getCountryIso());
 		selectedAddress.setCountry(countryData);
 		selectedAddress.setPhone(addressForm.getPhone());
-
-		if (resolveCountryRegions.contains(countryData.getIsocode()) && addressForm.getRegionIso() != null
-				&& !StringUtils.isEmpty(addressForm.getRegionIso()))
+		if (verfiyAddress(addressForm) == null)
 		{
-			final RegionData regionData = getI18NFacade().getRegion(addressForm.getCountryIso(), addressForm.getRegionIso());
-			selectedAddress.setRegion(regionData);
-		}
-
-		if (addressForm.getSaveInAddressBook() != null)
-		{
-			selectedAddress.setVisibleInAddressBook(addressForm.getSaveInAddressBook().booleanValue());
-		}
-
-		if (Boolean.TRUE.equals(addressForm.getEditAddress()))
-		{
-			getUserFacade().editAddress(selectedAddress);
+			return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
 		}
 		else
 		{
-			getUserFacade().addAddress(selectedAddress);
+			if (resolveCountryRegions.contains(countryData.getIsocode()) && addressForm.getRegionIso() != null
+					&& !StringUtils.isEmpty(addressForm.getRegionIso()))
+			{
+				final RegionData regionData = getI18NFacade().getRegion(addressForm.getCountryIso(), addressForm.getRegionIso());
+				selectedAddress.setRegion(regionData);
+			}
+
+			if (addressForm.getSaveInAddressBook() != null)
+			{
+				selectedAddress.setVisibleInAddressBook(addressForm.getSaveInAddressBook().booleanValue());
+			}
+
+			if (Boolean.TRUE.equals(addressForm.getEditAddress()))
+			{
+				getUserFacade().editAddress(selectedAddress);
+			}
+			else
+			{
+				getUserFacade().addAddress(selectedAddress);
+			}
+
+			final AddressData previousSelectedAddress = getCheckoutFacade().getCheckoutCart().getDeliveryAddress();
+			// Set the new address as the selected checkout delivery address
+			getCheckoutFacade().setDeliveryAddress(selectedAddress);
+			if (previousSelectedAddress != null && !previousSelectedAddress.isVisibleInAddressBook())
+			{ // temporary address should be removed
+				getUserFacade().removeAddress(previousSelectedAddress);
+			}
+
+			GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER, "checkout.multi.address.added");
+
+			return getCheckoutStep().nextStep();
 		}
-
-		final AddressData previousSelectedAddress = getCheckoutFacade().getCheckoutCart().getDeliveryAddress();
-		// Set the new address as the selected checkout delivery address
-		getCheckoutFacade().setDeliveryAddress(selectedAddress);
-		if (previousSelectedAddress != null && !previousSelectedAddress.isVisibleInAddressBook())
-		{ // temporary address should be removed
-			getUserFacade().removeAddress(previousSelectedAddress);
-		}
-
-		GlobalMessages.addFlashMessage(redirectModel, GlobalMessages.CONF_MESSAGES_HOLDER, "checkout.multi.address.added");
-
-		return getCheckoutStep().nextStep();
 	}
 
 
@@ -390,7 +422,7 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 	@RequestMapping(value = "/select", method = RequestMethod.GET)
 	@RequireHardLogIn
 	public String doSelectDeliveryAddress(@RequestParam("selectedAddressCode") final String selectedAddressCode,
-			final RedirectAttributes redirectAttributes)
+			final RedirectAttributes redirectAttributes, final Model model)
 	{
 		final ValidationResults validationResults = getCheckoutStep().validate(redirectAttributes);
 		if (getCheckoutStep().checkIfValidationErrors(validationResults))
@@ -403,7 +435,33 @@ public class DeliveryAddressCheckoutStepController extends AbstractCheckoutStepC
 			final boolean hasSelectedAddressData = selectedAddressData != null;
 			if (hasSelectedAddressData)
 			{
-				setDeliveryAddress(selectedAddressData);
+				final AddressForm addressForm = new AddressForm();
+				if (selectedAddressData.getLine1() != null)
+				{
+					addressForm.setLine1(selectedAddressData.getLine1());
+				}
+				if (selectedAddressData.getTown() != null)
+				{
+					addressForm.setTownCity(selectedAddressData.getTown());
+				}
+				if (selectedAddressData.getRegion() != null)
+				{
+					addressForm.setRegionIso(selectedAddressData.getRegion().getIsocode());
+				}
+				if (selectedAddressData.getPostalCode() != null)
+				{
+					addressForm.setPostcode(selectedAddressData.getPostalCode());
+				}
+				if (verfiyAddress(addressForm) == null)
+				{
+					model.addAttribute("DisplayError", true);
+					return getCheckoutStep().currentStep();
+					//	return ControllerConstants.Views.Pages.MultiStepCheckout.AddEditDeliveryAddressPage;
+				}
+				else
+				{
+					setDeliveryAddress(selectedAddressData);
+				}
 			}
 		}
 		return getCheckoutStep().nextStep();

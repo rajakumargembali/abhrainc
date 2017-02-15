@@ -46,7 +46,18 @@
                                             </c:forEach>
                                             <input type="hidden" value="${silentOrderPageData.parameters['billTo_email']}" name="billTo_email" id="billTo_email">
 
-							
+<script type="text/javascript">
+						function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
+
+}
+			</script>
+  <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">Pay Using Paypal
+  <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck">Cash On Delivery<br>
+    <div id="ifYes" style="display:none">							
 
                                             <div class="form-group">
                                                 <c:if test="${not empty paymentInfos}">
@@ -118,6 +129,7 @@
                                             </sec:authorize>
 					
                             <hr/>
+                            </div>
                             <div class="headline">
                             <spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.billingAddress"/>
                         </div>

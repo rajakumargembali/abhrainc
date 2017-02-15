@@ -13,7 +13,7 @@
  */
 package com.abhrainc.storefront.controllers.pages.checkout.steps;
 
-import de.hybris.platform.acceleratorservices.constants.GeneratedAcceleratorServicesConstants.Enumerations.CheckoutPciOptionEnum;
+import de.hybris.platform.acceleratorservices.enums.CheckoutPciOptionEnum;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.PreValidateCheckoutStep;
 import de.hybris.platform.acceleratorstorefrontcommons.annotations.RequireHardLogIn;
 import de.hybris.platform.acceleratorstorefrontcommons.checkout.steps.CheckoutStep;
@@ -103,7 +103,6 @@ public class SummaryCheckoutStepController extends AbstractCheckoutStepControlle
 			final HttpServletRequest request, final RedirectAttributes redirectModel) throws CMSItemNotFoundException, // NOSONAR
 			InvalidCartException, CommerceCartModificationException
 	{
-		placeOrderForm.setTermsCheck(true);
 		if (validateOrderForm(placeOrderForm, model))
 		{
 			return enterStep(model, redirectModel);

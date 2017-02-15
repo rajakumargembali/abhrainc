@@ -168,6 +168,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_Consignment_isDeliveryEmailSent();
 			
+				single_createattr_Order_isCashOnDelivery();
+			
 
 	}
 
@@ -494,6 +496,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_Order_isCashOnDelivery() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Order", 
+					"isCashOnDelivery",  
+					null,
+					"java.lang.Boolean",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -697,6 +716,18 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				}
 			
 			single_setAttributeProperties_Consignment_isDeliveryEmailSent();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"Order",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Order_isCashOnDelivery();
 		
 				setDefaultProperties(
 					"GenderList",
@@ -1069,6 +1100,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"Consignment", 
 								"isDeliveryEmailSent",
+								false, 
+								java.lang.Boolean.FALSE,
+								"java.lang.Boolean.FALSE",
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Order_isCashOnDelivery() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Order", 
+								"isCashOnDelivery",
 								false, 
 								java.lang.Boolean.FALSE,
 								"java.lang.Boolean.FALSE",

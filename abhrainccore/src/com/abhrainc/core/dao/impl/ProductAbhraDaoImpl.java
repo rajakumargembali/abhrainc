@@ -2,6 +2,7 @@ package com.abhrainc.core.dao.impl;
 
 import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.c2l.CurrencyModel;
+import de.hybris.platform.core.model.order.price.TaxModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.core.model.product.UnitModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
@@ -148,6 +149,22 @@ public class ProductAbhraDaoImpl implements ProductAbhraDao
 		final String search_query = "select {PK} from {currency}";
 		final FlexibleSearchQuery query = new FlexibleSearchQuery(search_query);
 		final SearchResult<CurrencyModel> searchResult = flexibleSearchService.search(query);
+		return searchResult.getResult();
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.abhrainc.core.dao.ProductAbhraDao#getTaxModelDetails()
+	 */
+	@Override
+	public List<TaxModel> getTaxModelDetails()
+	{
+		// YTODO Auto-generated method stub
+		final String search_query = "select {PK} from {tax}";
+		final FlexibleSearchQuery query = new FlexibleSearchQuery(search_query);
+		final SearchResult<TaxModel> searchResult = flexibleSearchService.search(query);
 		return searchResult.getResult();
 
 	}

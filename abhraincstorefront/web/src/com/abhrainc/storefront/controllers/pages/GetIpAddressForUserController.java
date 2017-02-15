@@ -19,9 +19,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.abhrainc.core.constants.AbhraincCoreConstants;
-import com.maxmind.geoip2.WebServiceClient;
-import com.maxmind.geoip2.model.CountryResponse;
-import com.maxmind.geoip2.record.Country;
 
 
 /**
@@ -82,8 +79,10 @@ public class GetIpAddressForUserController
 				 *
 				 * if (response == null) {
 				 */
-				//final String localIp = getPublicIp();
+				final String ipadrr = getPublicIp();
+				System.out.println("publicip" + ipadrr);
 				final String localIp = result.getBody();
+				System.out.println("thirdpartyIp" + localIp);
 				final InetAddress ipAddress = InetAddress.getByName(localIp);
 				final CountryResponse response = client.country(ipAddress);
 				final Country country = response.getCountry();

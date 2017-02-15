@@ -2,6 +2,7 @@ package com.abhrainc.core.dao;
 
 import de.hybris.platform.catalog.model.CatalogVersionModel;
 import de.hybris.platform.core.model.c2l.CurrencyModel;
+import de.hybris.platform.core.model.order.price.TaxModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.core.model.product.UnitModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
@@ -47,5 +48,10 @@ public interface ProductAbhraDao
 	 * @return
 	 */
 	List<CurrencyModel> getCurrencyModelDetaails();
+
+	/**
+	 * @return
+	 */
+	List<TaxModel> getTaxModelDetails();
 
 }

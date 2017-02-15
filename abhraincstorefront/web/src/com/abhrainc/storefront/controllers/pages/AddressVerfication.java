@@ -25,10 +25,22 @@ public class AddressVerfication
 		final Client client = new ClientBuilder("9202acaf-1a99-1af3-902d-d8300d96ee34", "T3WHOzlNPDsqZ7hnPOrl").build();
 
 		final Lookup lookup = new Lookup();
-		lookup.setStreet(addressData.getLine1());
-		lookup.setCity(addressData.getTownCity());
-		lookup.setState(addressData.getRegionIso());
-
+		if (addressData.getLine1() != null)
+		{
+			lookup.setStreet(addressData.getLine1());
+		}
+		if (addressData.getTownCity() != null)
+		{
+			lookup.setCity(addressData.getTownCity());
+		}
+		if (addressData.getRegionIso() != null)
+		{
+			lookup.setState(addressData.getRegionIso());
+		}
+		if (addressData.getPostcode() != null)
+		{
+			lookup.setZipCode(addressData.getPostcode());
+		}
 		try
 		{
 			client.send(lookup);
