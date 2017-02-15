@@ -1,0 +1,51 @@
+# ImpEx for Importing Product Classifications into Electronics Store
+
+#% impex.setLocale(Locale.ENGLISH);
+
+# Macros / Replacement Parameter definitions
+$productCatalog=electronicsProductCatalog
+$productCatalogName=Electronics Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$clAttrModifiers=system='ElectronicsClassification',version='1.0',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+
+# Insert Product Classifications
+
+# Classification: Features (ClassifyingRefrigerator)
+$feature1=@Capacity[$clAttrModifiers];  # Capacity
+$feature2=@CompressorType[$clAttrModifiers];  # Compressor Type
+$feature3=@Type, 31[$clAttrModifiers];  # Type
+$feature4=@StarRating[$clAttrModifiers];  # Star Rating
+$feature5=@BuiltinStabilizer[$clAttrModifiers];  # Built-in Stabilizer
+$feature6=@Width, 1649[$clAttrModifiers];  # Width
+$feature7=@Depth, 1650[$clAttrModifiers];  # Depth
+$feature8=@Height, 1464[$clAttrModifiers];  # Height
+$feature9=@Weight, 94[$clAttrModifiers];  # Weight
+INSERT_UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$feature9;$catalogVersion;
+ ;GL-Q292SHAM;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+ ;RT34K3983RZ;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+ ;GL-F282RGFL;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+ ;GL-I292RSFL;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+ ;KP202PHG;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+ ;NR-BW465VNX4;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+ ;NR-CX789WYA5;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+ ;KP203QIH;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+ ;RT35L4094SA;295 L;Smart Inverter Compressor;Double Door;4;Yes;585 mm;703 mm;1570 mm;200 kg;
+
+# Classification: Features (ClassifyingTelevision)
+$feature1=@ScreenType[$clAttrModifiers];  # Screen Type
+$feature2=@DisplaySize[$clAttrModifiers];  # Display Size
+$feature3=@NumberOfSpeakers[$clAttrModifiers];  # Number Of Speakers
+$feature4=@USBPorts[$clAttrModifiers];  # USB Ports
+$feature5=@HDMIPorts[$clAttrModifiers];  # HDMI Ports
+$feature6=@Builtinwifi[$clAttrModifiers];  # Built-in Wi-Fi
+$feature7=@Touchscreen[$clAttrModifiers];  # Touchscreen
+$feature8=@Weight, 94[$clAttrModifiers];  # Weight
+INSERT_UPDATE Product;code[unique=true];$feature1;$feature2;$feature3;$feature4;$feature5;$feature6;$feature7;$feature8;$catalogVersion;
+ ;KLV-49W752D;LED;32 ";2;3;2;Yes;No;54 kg;
+ ;KLV-40W562D;LED;32 ";2;3;2;Yes;No;54 kg;
+ ;43LH576T;LED;32 ";2;3;2;Yes;No;54 kg;
+ ;2LH604T;LED;32 ";2;3;2;Yes;No;54 kg;
+ ;SMG60897;LED;32 ";2;3;2;Yes;No;54 kg;
+ ;SMG79806;LED;32 ";2;3;2;Yes;No;54 kg;
+ ;PSC80464;LED;32 ";2;3;2;Yes;No;54 kg;
+ ;PSC888642;LED;32 ";2;3;2;Yes;No;54 kg;

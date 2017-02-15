@@ -1,0 +1,27 @@
+## messageSource=classpath:/elveryscore/messages/email-orderTrackingEmail_$lang.properties
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+</head>
+
+<body style="width:100% !important; color:#808080; font-size:13px; line-height:1.4;" alink="#808080" vlink="#808080" text="#808080" yahoo="fix">
+
+This is an automated email - please do not reply to this address as replies are not monitored.<br>
+ 
+Just to let you know that your recent Elverys Sports item has now been despatched and will be delivered to you tomorrow or next working day by An Post. 
+<br>The tracking number for your item is CE 123456789 IE and you may track its progress here 
+<br>
+#if($ctx.status == 'ACCEPTED')
+	${ctx.trackingUrl}${ctx.trackingID}<br>
+#{else}
+#end
+
+<p style="color:red">${ctx.status}</p>
+If you have any questions about this service or any of our products and services please call Customer Services on Call Save 1850 57 58 59 or 01-705 7600 (Monday to Friday: 9am - 5:30pm), email us at customer.services@anpost.ie or visit our website www.anpost.ie
+             
+</body>
+</html>

@@ -1,0 +1,52 @@
+#
+# Import Access Rights for Product Cockpit
+# 
+#naresh
+INSERT_UPDATE Employee;UID[unique=true];writableCatalogVersions(catalog(id),version);readableCatalogVersions(catalog(id),version);description;name;groups(uid);sessionLanguage(isocode);sessionCurrency(isocode)
+;catageroizationmanager;electronicsContentCatalog:Staged;electronicsContentCatalog:Staged;who approves and keep the new products in to category.;catageroizationmanager;employeegroup;en;USD
+;localizationmanager;electronicsContentCatalog:Staged;electronicsContentCatalog:Staged;add data in German for all the newly added products;localizationmanager;employeegroup;en;USD
+
+#encrypted password
+
+INSERT_UPDATE employee;uid[unique=true];@password[translator=de.hybris.platform.impex.jalo.translators.ConvertPlaintextToEncodedUserPasswordTranslator];
+;catageroizationmanager;md5:cm1
+;localizationmanager;md5:lm1
+
+
+$START_USERRIGHTS;;;;;;;;;
+Type;UID;MemberOfGroups;Password;Target;read;change;create;remove;change_perm
+#naresh
+catageroizationmanager;employeegroup;cm1;
+;;;;Product;+;+;+;+;-
+;;;;Category;+;+;+;+;-
+localizationmanager;employeegroup;lm1;
+;;;;Product;+;+;+;+;-
+UserGroup;productmanagergroup;cockpitgroup;;;;;;;
+
+# Access Rights for Products & Catalog;;;;;;;;;
+;;;;ItemSyncTimestamp;+;;;
+;;;;SyncItemJob;+;;;
+;;;;Type;+;;;
+;;;;Product;+;+;+;+;+;
+;;;;Category;+;+;+;+;+;
+;;;;variantType;+;+;+;+;+;
+;;;;Catalog;+;;;
+;;;;CatalogVersion;+;+;+;+;+;
+;;;;ClassificationAttributeUnit;+;;;
+;;;;Media;+;+;+;+;+;
+;;;;MediaContainer;+;+;+;+;+;
+;;;;MediaFormat;+;+;+;+;+;
+;;;;MediaFolder;+;+;+;+;+;
+;;;;Vendor;+;+;+;+;+;
+;;;;StockLevel;+;+;+;+;+;
+;;;;Tax;+;+;+;+;+;
+;;;;TaxRow;+;+;+;+;+;
+;;;;PriceRow;+;+;+;+;+;
+;;;;ProductFeature;+;+;+;+;+;
+;;;;ProductReference;+;+;+;+;+;
+;;;;Warehouse;+;+;+;+;+;
+;;;;ProductTaxCode;+;+;+;+;+;
+;;;;ProductOrderLimit;+;+;+;+;+;
+
+
+$END_USERRIGHTS;;;;;

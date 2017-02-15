@@ -1,0 +1,39 @@
+#******************************This file is generated - please do not edit it. It will be regenerated after every build.********************************#
+# ImpEx for Importing Classification Categories into Electronics Store 
+
+# Macros / Replacement Parameter definitions
+$productCatalog=electronicsProductCatalog
+$productCatalogName=Electronics Product Catalog
+$classCatalogVersion=catalogversion(catalog(id[default='ElectronicsClassification']),version[default='1.0'])[unique=true,default='ElectronicsClassification:1.0']
+$classSystemVersion=systemVersion(catalog(id[default='ElectronicsClassification']),version[default='1.0'])[unique=true]
+
+# Language
+$lang=en
+
+
+# Create Categories
+UPDATE ClassificationClass;code[unique=true];$classCatalogVersion;name[lang=$lang]
+
+ ;ClassifyingRefrigerator;;Refrigerator Features;
+ ;ClassifyingTelevision;;Television Features;
+
+
+# Create Categories
+UPDATE ClassificationAttribute;code[unique=true];$classSystemVersion;name[lang=$lang]
+
+ ;Capacity;;Capacity;
+ ;CompressorType;;Compressor Type;
+ ;Type, 31;;Type;
+ ;StarRating;;Star Rating;
+ ;BuiltinStabilizer;;Built-in Stabilizer;
+ ;Width, 1649;;Width;
+ ;Depth, 1650;;Depth;
+ ;Height, 1464;;Height;
+ ;Weight, 94;;Weight;
+ ;NumberOfSpeakers;;Number Of Speakers;
+ ;USBPorts;;USB Ports;
+ ;HDMIPorts;;HDMI Ports;
+ ;ScreenType;;Screen Type;
+ ;Touchscreen;;Touchscreen;
+ ;Builtinwifi;;Built-in Wi-Fi;
+ ;DisplaySize;;Display Size;
