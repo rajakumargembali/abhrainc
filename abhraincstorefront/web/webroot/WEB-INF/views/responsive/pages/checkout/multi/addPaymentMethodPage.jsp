@@ -55,11 +55,14 @@
 
 }
 			</script>
+			${SECURETOKEN} test
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">Pay Using Paypal
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck">Cash On Delivery<br>
     <div id="ifYes" style="display:none">							
-
-                                            <div class="form-group">
+	<iframe src='https://pilot-payflowlink.paypal.com?SECURETOKEN=${SECURETOKEN}&SECURETOKENID=${SECURETOKENID}'
+width='1290' height='1065'border='0' frameborder='0' scrolling='no' allowtransparency='true'></iframe>
+${SECURETOKEN} test
+                                         <%--    <div class="form-group">
                                                 <c:if test="${not empty paymentInfos}">
                                                     <button type="button" class="btn btn-default btn-block js-saved-payments"><spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.useSavedCard"/></button>
                                                 </c:if>
@@ -127,7 +130,7 @@
                                                 <formElement:formCheckbox idKey="savePaymentMethod" labelKey="checkout.multi.sop.savePaymentInfo" path="savePaymentInfo"
                                                       inputCSS="" labelCSS="" mandatory="false" tabindex="10"/>
                                             </sec:authorize>
-					
+					 --%>
                             <hr/>
                             </div>
                             <div class="headline">

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 15 Feb, 2017 4:13:26 PM                     ---
+ * --- Generated at 16 Feb, 2017 1:46:18 AM                     ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.fulfilmentprocess.constants;
@@ -10,12 +10,10 @@ package com.abhrainc.fulfilmentprocess.constants;
  * @deprecated use constants in Model classes instead
  */
 @Deprecated
-@SuppressWarnings(
-{ "unused", "cast", "PMD" })
+@SuppressWarnings({"unused","cast","PMD"})
 public class GeneratedAbhraincFulfilmentProcessConstants
 {
 	public static final String EXTENSIONNAME = "abhraincfulfilmentprocess";
-
 	public static class Attributes
 	{
 		public static class ConsignmentProcess
@@ -25,11 +23,11 @@ public class GeneratedAbhraincFulfilmentProcessConstants
 			public static final String WAREHOUSECONSIGNMENTSTATE = "warehouseConsignmentState".intern();
 		}
 	}
-
+	
 	protected GeneratedAbhraincFulfilmentProcessConstants()
 	{
 		// private constructor
 	}
-
-
+	
+	
 }
