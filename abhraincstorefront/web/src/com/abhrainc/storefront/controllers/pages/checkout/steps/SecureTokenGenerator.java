@@ -14,6 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.abhrainc.storefront.controllers.ControllerConstants;
+
 
 /**
  * @author anumu
@@ -51,7 +53,7 @@ public class SecureTokenGenerator
 		final HashMap<String, String> getResponse = parseReponse(post.getResponseBodyAsString());
 		System.out.println("response" + getResponse);
 		model.addAttribute("SECURETOKEN", getResponse.get("SECURETOKEN"));
-		return "pages/payment/paypalpayment";
+		return ControllerConstants.Views.Pages.MultiStepCheckout.AddPaymentMethodPage;
 	}
 
 	public static HashMap<String, String> parseReponse(final String cad)

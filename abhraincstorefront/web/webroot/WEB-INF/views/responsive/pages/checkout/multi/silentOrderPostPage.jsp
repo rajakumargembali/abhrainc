@@ -80,9 +80,10 @@
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck" value="paypal">Pay Using Paypal
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck" value="cashondelivery">Cash On Delivery<br>
     <div id="ifYes" style="display:none">
-    
+    <iframe src='https://pilot-payflowlink.paypal.com?SECURETOKEN=${SECURETOKEN}&SECURETOKENID=${SECURETOKENID}'
+width='690' height='565'border='0' frameborder='0' scrolling='no' allowtransparency='true'></iframe>
 
-									<div class="form-group">
+								<%-- 	<div class="form-group">
 										<c:if test="${not empty paymentInfos}">
 											<button type="button"
 													class="btn btn-default btn-block js-saved-payments">
@@ -187,7 +188,7 @@
 												path="savePaymentInfo" inputCSS="" labelCSS=""
 												mandatory="false" tabindex="10" />
 									</sec:authorize>
-									</div>
+ --%>									</div>
 							        <hr />
                                    <div class="headline">
                                         <spring:theme

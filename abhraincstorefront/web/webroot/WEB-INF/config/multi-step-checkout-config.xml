@@ -67,7 +67,8 @@
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_DELIVERY_ADDRESS"/>
 				<entry key="current" value-ref="REDIRECT_TO_DELIVERY_METHOD"/>
-				<entry key="next" value-ref="REDIRECT_TO_PAYMENT_METHOD"/>
+				<!-- <entry key="next" value-ref="REDIRECT_TO_PAYMENT_METHOD"/> -->
+				<entry key="next" value-ref="REDIRECT_TO_SECURE_TOKEN"/>
 			</map>
 		</property>
 		<property name="progressBarId" value="deliveryMethod"/>
@@ -355,6 +356,10 @@
 
 	<bean id="REDIRECT_TO_PAYMENT_METHOD" class="java.lang.String">
 		<constructor-arg value="redirect:/checkout/multi/payment-method/add"/>
+	</bean>
+	
+	<bean id="REDIRECT_TO_SECURE_TOKEN" class="java.lang.String">
+		<constructor-arg value="redirect:/paypalpayment/pay"/>
 	</bean>
 
 	<bean id="REDIRECT_TO_SUMMARY" class="java.lang.String">
