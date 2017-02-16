@@ -67,6 +67,7 @@
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_DELIVERY_ADDRESS"/>
 				<entry key="current" value-ref="REDIRECT_TO_DELIVERY_METHOD"/>
+
 				<!-- <entry key="next" value-ref="REDIRECT_TO_PAYMENT_METHOD"/> -->
 				<entry key="next" value-ref="REDIRECT_TO_SECURE_TOKEN"/>
 			</map>
@@ -154,11 +155,25 @@
 			<map merge="true">
 				<entry key="previous" value-ref="REDIRECT_TO_DELIVERY_ADDRESS"/>
 				<entry key="current" value-ref="REDIRECT_TO_DELIVERY_METHOD"/>
-				<entry key="next" value-ref="REDIRECT_TO_PAYMENT_METHOD"/>
+				<entry key="next" value-ref="REDIRECT_TO_SECURE_TOKEN"/>
 			</map>
 		</property>
 		<property name="progressBarId" value="deliveryMethod"/>
 	</bean>
+
+	<alias name="secureTokenGenrator" alias="secureKeyTokenGenerator" /> 
+	<bean id="secureTokenGenrator"  parent="checkoutStep">
+		<property name="checkoutGroup" ref="responsiveCheckoutGroup"/>
+		<property name="transitions">
+			<map merge="true">
+				<entry key="previous" value-ref="REDIRECT_TO_DELIVERY_METHOD"/>
+				<entry key="current" value-ref="REDIRECT_TO_SECURE_TOKEN"/>
+				<entry key="next" value-ref="REDIRECT_TO_PAYMENT_METHOD"/>
+			</map>
+		</property>
+		<property name="progressBarId" value="secureToken"/>
+	</bean>
+
 
 	<alias name="defaultResponsivePaymentMethodCheckoutStep" alias="responsivePaymentMethodCheckoutStep" />
 	<bean id="defaultResponsivePaymentMethodCheckoutStep" parent="checkoutStep">
@@ -275,6 +290,7 @@
 				<entry key="multi" value-ref="responsiveMultiStepCheckout"/>
 				<entry key="delivery-address" value-ref="responsiveDeliveryAddressCheckoutStep"/>
 				<entry key="delivery-method" value-ref="responsiveDeliveryMethodCheckoutStep"/>
+				<entry key="secure-token" value-ref="secureKeyTokenGenerator"/>
 				<entry key="payment-method" value-ref="responsivePaymentMethodCheckoutStep"/>
 				<entry key="summary" value-ref="responsiveSummaryCheckoutStep"/>
 			</map>
@@ -286,6 +302,7 @@
 				<entry key="REDIRECT_TO_CART" value-ref="REDIRECT_TO_CART"/>
 				<entry key="REDIRECT_TO_PAYMENT_METHOD" value-ref="REDIRECT_TO_PAYMENT_METHOD"/>
 				<entry key="REDIRECT_TO_DELIVERY_METHOD" value-ref="REDIRECT_TO_DELIVERY_METHOD"/>
+				<!-- <entry key="REDIRECT_TO_SECURE_TOKEN" value-ref="REDIRECT_TO_SECURE_TOKEN"/> -->
 				<entry key="REDIRECT_TO_SUMMARY" value-ref="REDIRECT_TO_SUMMARY"/>
 			</map>
 		</property>
@@ -293,8 +310,9 @@
 			<map merge="true">
 				<entry key="1" value-ref="responsiveDeliveryAddressCheckoutStep"/>
 				<entry key="2" value-ref="responsiveDeliveryMethodCheckoutStep"/>
-				<entry key="3" value-ref="responsivePaymentMethodCheckoutStep"/>
-				<entry key="4" value-ref="responsiveSummaryCheckoutStep"/>
+				<!-- <entry key="3" value-ref="secureKeyTokenGenerator"/> -->
+				<entry key="4" value-ref="responsivePaymentMethodCheckoutStep"/>
+				<entry key="5" value-ref="responsiveSummaryCheckoutStep"/>
 			</map>
 		</property>
 	</bean>
@@ -320,7 +338,7 @@
 	<bean id="defaultResponsiveDeliveryMethodCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveDeliveryMethodCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
 	<bean id="defaultResponsivePaymentMethodCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.ResponsivePaymentCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
 	<bean id="defaultResponsiveSummaryCheckoutValidator" class="com.abhrainc.storefront.checkout.steps.validation.impl.ResponsiveSummaryCheckoutStepValidator" parent="abstractCheckoutStepValidator" />
-	
+	<bean id = "secureTokenGenerator" class="com.abhrainc.storefront.controllers.pages.checkout.steps.SecureTokenGenerator" parent="abstractCheckoutStepValidator" />
 	<!--Validation-->
 
 	<!--Checkout GroupMap-->
@@ -361,6 +379,11 @@
 	<bean id="REDIRECT_TO_SECURE_TOKEN" class="java.lang.String">
 		<constructor-arg value="redirect:/paypalpayment/pay"/>
 	</bean>
+
+	<bean id="REDIRECT_TO_SECURE_TOKEN" class="java.lang.String">
+		<constructor-arg value="redirect:/paypalpayment/pay"/>
+	</bean>
+
 
 	<bean id="REDIRECT_TO_SUMMARY" class="java.lang.String">
 		<constructor-arg value="redirect:/checkout/multi/summary/view"/>

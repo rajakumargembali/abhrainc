@@ -84,6 +84,9 @@
 width='690' height='565'border='0' frameborder='0' scrolling='no' allowtransparency='true'></iframe>
 
 								<%-- 	<div class="form-group">
+
+<%-- 
+									<div class="form-group">
 										<c:if test="${not empty paymentInfos}">
 											<button type="button"
 													class="btn btn-default btn-block js-saved-payments">

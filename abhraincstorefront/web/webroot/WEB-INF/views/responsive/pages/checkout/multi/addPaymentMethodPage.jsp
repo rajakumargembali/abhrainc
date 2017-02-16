@@ -55,6 +55,7 @@
 
 }
 			</script>
+			${SECURETOKEN} test
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">Pay Using Paypal
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck">Cash On Delivery<br>
     <div id="ifYes" style="display:none">
@@ -63,7 +64,7 @@
 width='1290' height='1065'border='0' frameborder='0' scrolling='no' allowtransparency='true'></iframe>
     							
 
-                                          <%--   <div class="form-group">
+                                         <%--    <div class="form-group">
                                                 <c:if test="${not empty paymentInfos}">
                                                     <button type="button" class="btn btn-default btn-block js-saved-payments"><spring:theme code="checkout.multi.paymentMethod.addPaymentDetails.useSavedCard"/></button>
                                                 </c:if>
@@ -132,6 +133,7 @@ width='1290' height='1065'border='0' frameborder='0' scrolling='no' allowtranspa
                                                       inputCSS="" labelCSS="" mandatory="false" tabindex="10"/>
                                             </sec:authorize>
  --%>					
+					 --%>
                             <hr/>
                             </div>
                             <div class="headline">
