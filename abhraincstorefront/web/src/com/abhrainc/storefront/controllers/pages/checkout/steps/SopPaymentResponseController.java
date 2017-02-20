@@ -19,6 +19,8 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.SopPaymentDetailsFo
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.commercefacades.order.data.CCPaymentInfoData;
 import de.hybris.platform.commercefacades.user.data.AddressData;
+import de.hybris.platform.core.model.order.CartModel;
+import de.hybris.platform.servicelayer.model.ModelService;
 
 import java.util.Map;
 
@@ -27,6 +29,7 @@ import javax.validation.Valid;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,6 +38,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.abhrainc.facades.service.AbhraIncFacadeService;
 import com.abhrainc.storefront.controllers.ControllerConstants;
 
 
@@ -43,6 +47,12 @@ import com.abhrainc.storefront.controllers.ControllerConstants;
 public class SopPaymentResponseController extends PaymentMethodCheckoutStepController
 {
 	private static final Logger LOGGER = Logger.getLogger(SopPaymentResponseController.class);
+
+	@Autowired
+	AbhraIncFacadeService abhraIncFacadeService;
+
+	@Autowired
+	private ModelService modelService;
 
 	@RequestMapping(value = "/response", method = RequestMethod.POST)
 	@RequireHardLogIn
@@ -76,6 +86,15 @@ public class SopPaymentResponseController extends PaymentMethodCheckoutStepContr
 				return REDIRECT_URL_ERROR + "/?decision=" + paymentSubscriptionResultData.getDecision() + "&reasonCode="
 						+ paymentSubscriptionResultData.getResultCode();
 			}
+		}
+		else
+		{
+			//
+
+			final CartModel cartmodel = abhraIncFacadeService.getCartDetails(getCartFacade().getSessionCart().getCode());
+			cartmodel.setIsCashOnDelivery(true);
+			modelService.save(cartmodel);
+
 		}
 		return getCheckoutStep().nextStep();
 	}

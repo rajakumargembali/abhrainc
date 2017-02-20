@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<spring:url value="/paypalpayment/pay" var="placeOrderUrl"/>
+<spring:url value="/checkout/multi/summary/placeOrder" var="placeOrderUrl"/>
 <spring:url value="/checkout/multi/termsAndConditions" var="getTermsAndConditionsUrl"/>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 

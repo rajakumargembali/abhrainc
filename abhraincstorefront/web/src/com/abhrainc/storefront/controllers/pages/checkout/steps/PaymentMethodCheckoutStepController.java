@@ -44,6 +44,10 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.methods.RequestEntity;
+import org.apache.commons.httpclient.methods.StringRequestEntity;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -129,6 +133,35 @@ public class PaymentMethodCheckoutStepController extends AbstractCheckoutStepCon
 		return expiryYears;
 	}
 
+/*	@RequestMapping(value = "/paypalresponse", method = RequestMethod.GET)
+	@RequireHardLogIn
+	@PreValidateCheckoutStep(checkoutStep = PAYMENT_METHOD)
+	public PaymentTransactionType getPaymentTransactionDetails(final Model model, final RedirectAttributes redirectAttributes)
+			throws CMSItemNotFoundException
+	{
+		  PaymentTransactionType result = null;
+        CallerServices caller = new CallerServices();
+        try {
+            caller.setAPIProfile(getProfile());
+
+            GetTransactionDetailsRequestType request = new GetTransactionDetailsRequestType();
+            request.setTransactionID(transactionId);
+            DetailLevelCodeType[] detail = new DetailLevelCodeType[1];
+            detail[0] = DetailLevelCodeType.ReturnAll;
+            request.setDetailLevel(detail);
+
+            GetTransactionDetailsResponseType res = (GetTransactionDetailsResponseType) caller.call("GetTransactionDetails", request);
+            if (res != null) result = res.getPaymentTransactionDetails();
+
+        } catch (PayPalException e) {
+            LOG.error(e.getMessage());
+        }
+
+        return result;
+	}*/
+
+
+
 	@Override
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	@RequireHardLogIn
@@ -188,7 +221,54 @@ public class PaymentMethodCheckoutStepController extends AbstractCheckoutStepCon
 		final CartData cartData = getCheckoutFacade().getCheckoutCart();
 		model.addAttribute(CART_DATA_ATTR, cartData);
 
+		final KeyGenerator random = new KeyGenerator();
+		final String key = random.randomString(32);
+		System.out.println(key);
+		model.addAttribute("SECURETOKENID", key);
+		final StringBuilder postBody = new StringBuilder();
+		postBody.append("PARTNER=").append("PayPal");
+		postBody.append("&VENDOR=").append("praneethanumula");
+		postBody.append("&USER=").append("saipraneethanumula");
+		postBody.append("&PWD=").append("05$praneeth");
+		postBody.append("&TRXTYPE=S");
+		postBody.append("&CREATESECURETOKEN=Y");
+		postBody.append("&CURRENCY=").append("USD");
+		postBody.append("&AMT=").append("40");
+		postBody.append("&SECURETOKENID=").append(key);
+		final String url = "https://pilot-payflowpro.paypal.com";
+		final PostMethod post = new PostMethod(url);
+		final RequestEntity entity1 = new StringRequestEntity(postBody.toString());
+		post.setRequestEntity(entity1);
+		final HttpClient httpclient = new HttpClient();
+		try
+		{
+			httpclient.executeMethod(post);
+			final HashMap<String, String> getResponse = parseReponse(post.getResponseBodyAsString());
+			System.out.println("response" + getResponse);
+			model.addAttribute("SECURETOKEN", getResponse.get("SECURETOKEN"));
+			setCheckoutStepLinksForModel(model, getCheckoutStep());
+		}
+		catch (final Exception e)
+		{
+			e.printStackTrace();
+		}
+
 		return ControllerConstants.Views.Pages.MultiStepCheckout.AddPaymentMethodPage;
+	}
+
+	public static HashMap<String, String> parseReponse(final String cad)
+	{
+		final HashMap<String, String> result = new HashMap<String, String>();
+		final String[] arr = cad.split("&");
+		for (final String e : arr)
+		{
+			final String[] arr1 = e.split("=");
+			if ((arr1.length > 0) && (StringUtils.isNotEmpty(arr1[0])))
+			{
+				result.put(arr1[0], (arr1.length > 1) && (StringUtils.isNotEmpty(arr1[1])) ? arr1[1] : "");
+			}
+		}
+		return result;
 	}
 
 	@RequestMapping(value =

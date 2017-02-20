@@ -157,6 +157,7 @@ public class SecureTokenGenerator extends AbstractCheckoutStepController
 			final HashMap<String, String> getResponse = parseReponse(post.getResponseBodyAsString());
 			System.out.println("response" + getResponse);
 			model.addAttribute("SECURETOKEN", getResponse.get("SECURETOKEN"));
+			setCheckoutStepLinksForModel(model, getCheckoutStep());
 			return getCheckoutStep().nextStep();
 		}
 		catch (final Exception e)

@@ -264,8 +264,8 @@
 						<persistence type="property"/>
 					</attribute>
 				</attributes>
-			</itemtype>
-			<itemtype code = "Order" autocreate="false"  generate="false">
+			</itemtype>  
+			<itemtype code = "AbstractOrder" autocreate="false"  generate="false">
 				<attributes>
 					<attribute qualifier="isCashOnDelivery" type="java.lang.Boolean">
 						<description>Used to know whether the payment is made using cash on delivery</description>
@@ -275,5 +275,8 @@
 				</attributes>
 			</itemtype>  
 		</typegroup>
+		<typegroup  name="BTG">
+            <itemtype code="BTGViewed3ProductsOperand" extends="BTGAbstractWCMSOperand" autocreate="true" generate="true" jaloclass="com.abhrainc.core.jalo.BTGViewed3ProductsOperand" />		
+        </typegroup>
 	</itemtypes>
 </items>

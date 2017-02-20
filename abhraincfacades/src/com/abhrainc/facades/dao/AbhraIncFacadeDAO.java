@@ -4,6 +4,9 @@
 package com.abhrainc.facades.dao;
 
 import de.hybris.platform.core.PK;
+import de.hybris.platform.core.model.order.AbstractOrderEntryModel;
+import de.hybris.platform.core.model.order.AbstractOrderModel;
+import de.hybris.platform.core.model.order.CartModel;
 import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.ordersplitting.model.ConsignmentModel;
@@ -34,6 +37,24 @@ public interface AbhraIncFacadeDAO
 	 * @return
 	 */
 	OrderModel getOrderDetailsForOrder(String string);
+
+	/**
+	 * @param code
+	 * @return
+	 */
+	CartModel getCartDetails(String code);
+
+	/**
+	 * @param code
+	 * @return
+	 */
+	AbstractOrderModel getAbstractOrderDetails(String code);
+
+	/**
+	 * @param pk
+	 * @return
+	 */
+	AbstractOrderEntryModel getOrderEntryModels(PK pk);
 
 	//	OrderModel getOrderDetails(String code);
 }

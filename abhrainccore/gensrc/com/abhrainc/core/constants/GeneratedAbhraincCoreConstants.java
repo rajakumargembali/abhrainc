@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 16 Feb, 2017 1:46:18 AM                     ---
+ * --- Generated at 17 Feb, 2017 6:18:06 PM                     ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.constants;
@@ -19,6 +19,7 @@ public class GeneratedAbhraincCoreConstants
 		public static final String APPARELPRODUCT = "ApparelProduct".intern();
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
+		public static final String BTGVIEWED3PRODUCTSOPERAND = "BTGViewed3ProductsOperand".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
 		public static final String GOOGLEPRODUCTSEARCH = "GoogleProductSearch".intern();
 		public static final String ORDERTHRESHOLDPERCENTAGEDISCOUNT = "OrderThresholdPercentageDiscount".intern();
@@ -26,6 +27,10 @@ public class GeneratedAbhraincCoreConstants
 	}
 	public static class Attributes
 	{
+		public static class AbstractOrder
+		{
+			public static final String ISCASHONDELIVERY = "isCashOnDelivery".intern();
+		}
 		public static class Consignment
 		{
 			public static final String ISDELIVERYEMAILSENT = "isDeliveryEmailSent".intern();
@@ -34,7 +39,6 @@ public class GeneratedAbhraincCoreConstants
 		public static class Order
 		{
 			public static final String EXPECTEDDELIVERYDATE = "expectedDeliveryDate".intern();
-			public static final String ISCASHONDELIVERY = "isCashOnDelivery".intern();
 			public static final String ORDEREXPECTEDDELIVERYDATE = "orderExpectedDeliveryDate".intern();
 		}
 		public static class User

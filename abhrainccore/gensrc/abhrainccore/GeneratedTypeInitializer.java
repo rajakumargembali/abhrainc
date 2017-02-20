@@ -106,6 +106,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
+		createItemType(
+			"BTGViewed3ProductsOperand",
+			"BTGAbstractWCMSOperand",
+			com.abhrainc.core.jalo.BTGViewed3ProductsOperand.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
 		createEnumerationType(
 			"SwatchColorEnum",
 			null
@@ -168,7 +178,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_Consignment_isDeliveryEmailSent();
 			
-				single_createattr_Order_isCashOnDelivery();
+				single_createattr_AbstractOrder_isCashOnDelivery();
 			
 
 	}
@@ -496,13 +506,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
-	public void single_createattr_Order_isCashOnDelivery() throws JaloBusinessException
+	public void single_createattr_AbstractOrder_isCashOnDelivery() throws JaloBusinessException
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
-					"Order", 
+					"AbstractOrder", 
 					"isCashOnDelivery",  
 					null,
 					"java.lang.Boolean",
@@ -721,14 +731,27 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				Map customPropsMap = new HashMap();
 				
 				changeMetaType(
-					"Order",
+					"AbstractOrder",
 					null,
 					customPropsMap
 				);
 				}
 			
-			single_setAttributeProperties_Order_isCashOnDelivery();
+			single_setAttributeProperties_AbstractOrder_isCashOnDelivery();
 		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"BTGViewed3ProductsOperand",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
 				setDefaultProperties(
 					"GenderList",
 					true,
@@ -1112,7 +1135,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
-						public void single_setAttributeProperties_Order_isCashOnDelivery() throws JaloBusinessException
+						public void single_setAttributeProperties_AbstractOrder_isCashOnDelivery() throws JaloBusinessException
 						{
 							
 							
@@ -1120,7 +1143,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							Map customPropsMap = new HashMap();
 							
 							setAttributeProperties(
-								"Order", 
+								"AbstractOrder", 
 								"isCashOnDelivery",
 								false, 
 								java.lang.Boolean.FALSE,

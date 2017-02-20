@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 16 Feb, 2017 1:46:18 AM                     ---
+ * --- Generated at 17 Feb, 2017 6:18:06 PM                     ---
  * ----------------------------------------------------------------
  */
 package com.abhrainc.core.jalo;
@@ -10,6 +10,7 @@ import com.abhrainc.core.constants.AbhraincCoreConstants;
 import com.abhrainc.core.jalo.ApparelProduct;
 import com.abhrainc.core.jalo.ApparelSizeVariantProduct;
 import com.abhrainc.core.jalo.ApparelStyleVariantProduct;
+import com.abhrainc.core.jalo.BTGViewed3ProductsOperand;
 import com.abhrainc.core.jalo.ElectronicsColorVariantProduct;
 import com.abhrainc.core.jalo.GoogleProductSearch;
 import com.abhrainc.core.jalo.OrderThresholdPercentageDiscount;
@@ -45,7 +46,6 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
 		tmp.put("expectedDeliveryDate", AttributeMode.INITIAL);
 		tmp.put("orderExpectedDeliveryDate", AttributeMode.INITIAL);
-		tmp.put("isCashOnDelivery", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.order.Order", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("trackingEmailSent", AttributeMode.INITIAL);
@@ -54,6 +54,9 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("isEmailActivated", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.user.User", Collections.unmodifiableMap(tmp));
+		tmp = new HashMap<String, AttributeMode>();
+		tmp.put("isCashOnDelivery", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.order.AbstractOrder", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -144,6 +147,32 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	public ApparelStyleVariantProduct createApparelStyleVariantProduct(final Map attributeValues)
 	{
 		return createApparelStyleVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public BTGViewed3ProductsOperand createBTGViewed3ProductsOperand(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AbhraincCoreConstants.TC.BTGVIEWED3PRODUCTSOPERAND );
+			return (BTGViewed3ProductsOperand)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating BTGViewed3ProductsOperand : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public BTGViewed3ProductsOperand createBTGViewed3ProductsOperand(final Map attributeValues)
+	{
+		return createBTGViewed3ProductsOperand( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final SessionContext ctx, final Map attributeValues)
@@ -267,74 +296,74 @@ public abstract class GeneratedAbhraincCoreManager extends Extension
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Order.isCashOnDelivery</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>AbstractOrder.isCashOnDelivery</code> attribute.
 	 * @return the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
 	 */
-	public Boolean isIsCashOnDelivery(final SessionContext ctx, final Order item)
+	public Boolean isIsCashOnDelivery(final SessionContext ctx, final AbstractOrder item)
 	{
-		return (Boolean)item.getProperty( ctx, AbhraincCoreConstants.Attributes.Order.ISCASHONDELIVERY);
+		return (Boolean)item.getProperty( ctx, AbhraincCoreConstants.Attributes.AbstractOrder.ISCASHONDELIVERY);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Order.isCashOnDelivery</code> attribute.
+	 * <i>Generated method</i> - Getter of the <code>AbstractOrder.isCashOnDelivery</code> attribute.
 	 * @return the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
 	 */
-	public Boolean isIsCashOnDelivery(final Order item)
+	public Boolean isIsCashOnDelivery(final AbstractOrder item)
 	{
 		return isIsCashOnDelivery( getSession().getSessionContext(), item );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>AbstractOrder.isCashOnDelivery</code> attribute. 
 	 * @return the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
 	 */
-	public boolean isIsCashOnDeliveryAsPrimitive(final SessionContext ctx, final Order item)
+	public boolean isIsCashOnDeliveryAsPrimitive(final SessionContext ctx, final AbstractOrder item)
 	{
 		Boolean value = isIsCashOnDelivery( ctx,item );
 		return value != null ? value.booleanValue() : false;
 	}
 	
 	/**
-	 * <i>Generated method</i> - Getter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * <i>Generated method</i> - Getter of the <code>AbstractOrder.isCashOnDelivery</code> attribute. 
 	 * @return the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
 	 */
-	public boolean isIsCashOnDeliveryAsPrimitive(final Order item)
+	public boolean isIsCashOnDeliveryAsPrimitive(final AbstractOrder item)
 	{
 		return isIsCashOnDeliveryAsPrimitive( getSession().getSessionContext(), item );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>AbstractOrder.isCashOnDelivery</code> attribute. 
 	 * @param value the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
 	 */
-	public void setIsCashOnDelivery(final SessionContext ctx, final Order item, final Boolean value)
+	public void setIsCashOnDelivery(final SessionContext ctx, final AbstractOrder item, final Boolean value)
 	{
-		item.setProperty(ctx, AbhraincCoreConstants.Attributes.Order.ISCASHONDELIVERY,value);
+		item.setProperty(ctx, AbhraincCoreConstants.Attributes.AbstractOrder.ISCASHONDELIVERY,value);
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>AbstractOrder.isCashOnDelivery</code> attribute. 
 	 * @param value the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
 	 */
-	public void setIsCashOnDelivery(final Order item, final Boolean value)
+	public void setIsCashOnDelivery(final AbstractOrder item, final Boolean value)
 	{
 		setIsCashOnDelivery( getSession().getSessionContext(), item, value );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>AbstractOrder.isCashOnDelivery</code> attribute. 
 	 * @param value the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
 	 */
-	public void setIsCashOnDelivery(final SessionContext ctx, final Order item, final boolean value)
+	public void setIsCashOnDelivery(final SessionContext ctx, final AbstractOrder item, final boolean value)
 	{
 		setIsCashOnDelivery( ctx, item, Boolean.valueOf( value ) );
 	}
 	
 	/**
-	 * <i>Generated method</i> - Setter of the <code>Order.isCashOnDelivery</code> attribute. 
+	 * <i>Generated method</i> - Setter of the <code>AbstractOrder.isCashOnDelivery</code> attribute. 
 	 * @param value the isCashOnDelivery - Used to know whether the payment is made using cash on delivery
 	 */
-	public void setIsCashOnDelivery(final Order item, final boolean value)
+	public void setIsCashOnDelivery(final AbstractOrder item, final boolean value)
 	{
 		setIsCashOnDelivery( getSession().getSessionContext(), item, value );
 	}

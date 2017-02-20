@@ -135,7 +135,14 @@ public class CheckoutController extends AbstractCheckoutController
 	{
 		SessionOverrideCheckoutFlowFacade.resetSessionOverrides();
 		final OrderData orderData = orderFacade.getOrderDetailsForCode(orderCode);
-		storeOrderDetailsInOtherSystem(orderData);
+		try
+		{
+			storeOrderDetailsInOtherSystem(orderData);
+		}
+		catch (final Exception e)
+		{
+			LOG.info("error placing order details in other system");
+		}
 		return processOrderCode(orderCode, model, request);
 	}
 

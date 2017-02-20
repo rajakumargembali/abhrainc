@@ -22,7 +22,7 @@
 		<requires-extension name="solrserver"/>
 		<requires-extension name="abhraincfulfilmentprocess"/>
 		<requires-extension name="acceleratorservices"/>
-
+	<requires-extension name="btg"/>
 		<coremodule generated="true" manager="com.abhrainc.core.jalo.AbhraincCoreManager" packageroot="com.abhrainc.core"/>
 
 		<hmcmodule extensionclassname="com.abhrainc.core.hmc.AbhraincCoreHMCExtension"/>

@@ -586,4 +586,32 @@
 		<!-- <property name="productAbhraDao" ref="abhraProductDAO"></property> --></bean>
 		
 		<bean id="seoController" class="com.abhrainc.core.jobs.SeoController" autowire="byName"/>
+		
+		<bean id="productCollectionExpressionEvaluator" class="com.abhrainc.core.btg.condition.impl.AbhraProductCollectionExpressionEvaluator" scope="tenant">
+		<constructor-arg name="operatorMap">
+			<map>
+				<entry key="contains">
+					<set>
+						<value>de.hybris.platform.btg.condition.operand.types.ProductSet</value>
+					</set>
+				</entry>
+				<entry key="containsAny">
+					<set>
+						<value>de.hybris.platform.btg.condition.operand.types.ProductSet</value>
+					</set>
+				</entry>
+				<entry key="notContains">
+					<set>
+						<value>de.hybris.platform.btg.condition.operand.types.ProductSet</value>
+					</set>
+				</entry>
+				<entry key="size">
+					<set>
+						<value>java.lang.Integer</value>
+					</set>
+				</entry>
+			</map>
+		</constructor-arg>
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>		
+	</bean>
 </beans>

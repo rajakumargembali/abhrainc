@@ -74,7 +74,7 @@ public class UrlEncoderFilter extends OncePerRequestFilter
 					request.getContextPath());
 
 			System.out.println("remote addre" + request.getRemoteAddr());
-			//newPattern = getGeoLocationPattern(newPattern, request.getRemoteAddr());
+			//	newPattern = getGeoLocationPattern(newPattern, request.getRemoteAddr());
 			final String newPatternWithSlash = "/" + newPattern;
 
 			if (!StringUtils.equalsIgnoreCase(currentPattern, newPatternWithSlash))
