@@ -19,6 +19,7 @@ import de.hybris.platform.acceleratorservices.payment.strategies.CreditCardPayme
 import de.hybris.platform.acceleratorservices.payment.strategies.PaymentResponseInterpretationStrategy;
 import de.hybris.platform.acceleratorservices.payment.strategies.PaymentTransactionStrategy;
 import de.hybris.platform.acceleratorservices.payment.strategies.SignatureValidationStrategy;
+import de.hybris.platform.commerceservices.strategies.CheckoutCustomerStrategy;
 import de.hybris.platform.core.model.order.payment.CreditCardPaymentInfoModel;
 import de.hybris.platform.core.model.user.CustomerModel;
 import de.hybris.platform.servicelayer.model.ModelService;
@@ -27,6 +28,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.util.Assert;
 
 
@@ -277,5 +280,27 @@ public class PaymentSeperator extends DefaultPaymentFacade
 	public void setPaymentResponseInterpretation(final PaymentResponseInterpretationStrategy paymentResponseInterpretation)
 	{
 		this.paymentResponseInterpretation = paymentResponseInterpretation;
+	}
+
+	@Autowired
+	private CheckoutCustomerStrategy checkoutCustomerStrategy;
+
+	@Override
+	protected CheckoutCustomerStrategy getCheckoutCustomerStrategy()
+	{
+		return checkoutCustomerStrategy;
+	}
+
+	@Override
+	@Required
+	public void setCheckoutCustomerStrategy(final CheckoutCustomerStrategy checkoutCustomerStrategy)
+	{
+		this.checkoutCustomerStrategy = checkoutCustomerStrategy;
+	}
+
+	@Override
+	protected CustomerModel getCurrentUserForCheckout()
+	{
+		return getCheckoutCustomerStrategy().getCurrentUserForCheckout();
 	}
 }

@@ -183,6 +183,7 @@ public class SummaryCheckoutStepController extends AbstractCheckoutStepControlle
 			InvalidCartException, CommerceCartModificationException
 	{
 		placeOrderForm.setTermsCheck(true);
+		final CartModel cartmodel = abhraIncFacadeService.getCartDetails(getCartFacade().getSessionCart().getCode());
 		if (validateOrderForm(placeOrderForm, model))
 		{
 			return enterStep(model, redirectModel);
@@ -199,7 +200,15 @@ public class SummaryCheckoutStepController extends AbstractCheckoutStepControlle
 		boolean isPaymentUthorized = false;
 		try
 		{
-			isPaymentUthorized = getCheckoutFacade().authorizePayment(placeOrderForm.getSecurityCode());
+			if (getCheckoutFacade().getCheckoutCart().getPaymentInfo() == null)
+			{
+				isPaymentUthorized = false;
+			}
+			else
+			{
+				isPaymentUthorized = true;
+			}
+
 		}
 		catch (final AdapterException ae)
 		{
@@ -207,7 +216,7 @@ public class SummaryCheckoutStepController extends AbstractCheckoutStepControlle
 			LOGGER.error(ae.getMessage(), ae);
 		}
 
-		final CartModel cartmodel = abhraIncFacadeService.getCartDetails(getCartFacade().getSessionCart().getCode());
+
 
 		if (cartmodel.getIsCashOnDelivery())
 		{

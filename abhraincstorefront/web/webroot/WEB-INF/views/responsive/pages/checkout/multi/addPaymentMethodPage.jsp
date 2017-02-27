@@ -46,7 +46,7 @@
                                             </c:forEach>
                                             <input type="hidden" value="${silentOrderPageData.parameters['billTo_email']}" name="billTo_email" id="billTo_email">
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 						function yesnoCheck() {
     if (document.getElementById('yesCheck').checked) {
         document.getElementById('ifYes').style.display = 'block';
@@ -54,7 +54,32 @@
     else document.getElementById('ifYes').style.display = 'none';
 
 }
-			</script>
+			</script> -->
+			<script type="text/javascript">
+			function yesnoCheck()
+			{
+    			if (document.getElementById('yesCheck').checked)
+    			{
+        			window.open("https://localhost:9002/abhraincstorefront/electronics/en/silentOrderPostPage?site=electronics", "PayPal Payment Page", "scrollbars=1,resizable=1,height=520,width=520");
+   				}
+    			else
+    				document.getElementById('ifYes').style.display = 'none';
+			}
+		</script>
+		<script language="JavaScript">
+	
+		function refreshParent() {
+		  window.opener.location.href = 'silentOrderPage.jsp';
+		
+		  if (window.opener.progressWindow)
+				
+		 {
+		    window.opener.progressWindow.close()
+		  }
+		  window.close();
+		}
+		
+		</script>
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">Pay Using Paypal
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck">Cash On Delivery<br>
     <div id="ifYes" style="display:none">							

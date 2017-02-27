@@ -15,22 +15,10 @@
   <head>
     <title>Paypal Payment Method</title>
   </head>
-  <script>
-  window.onload = function()
-{
-    
-    setTimeout(function(){
-    	window.close();
-    },2000);
-}
-
-</script>
   <body>
-<c:if test="${PaymentStatus== true}">
-Thank you, your payment is successfull, please continue to place the order
-</c:if>
-<c:if test="${PaymentStatus== false}">
-Your transaction is failed, Please try again 
-</c:if>
+
+	<iframe src='https://pilot-payflowlink.paypal.com?SECURETOKEN=${SECURETOKEN}&SECURETOKENID=${SECURETOKENID}'
+width='1290' height='1065'border='0' frameborder='0' scrolling='no' allowtransparency='true'></iframe>
+
   </body>
 </html>

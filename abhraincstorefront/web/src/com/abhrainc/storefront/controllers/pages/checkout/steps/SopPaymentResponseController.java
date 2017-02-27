@@ -19,8 +19,17 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.SopPaymentDetailsFo
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.commercefacades.order.data.CCPaymentInfoData;
 import de.hybris.platform.commercefacades.user.data.AddressData;
+import de.hybris.platform.commerceservices.customer.CustomerAccountService;
+import de.hybris.platform.commerceservices.customer.CustomerEmailResolutionService;
+import de.hybris.platform.commerceservices.strategies.CheckoutCustomerStrategy;
+import de.hybris.platform.core.model.c2l.CountryModel;
 import de.hybris.platform.core.model.order.CartModel;
+import de.hybris.platform.core.model.order.payment.CreditCardPaymentInfoModel;
+import de.hybris.platform.core.model.user.AddressModel;
+import de.hybris.platform.core.model.user.CustomerModel;
+import de.hybris.platform.servicelayer.i18n.CommonI18NService;
 import de.hybris.platform.servicelayer.model.ModelService;
+import de.hybris.platform.servicelayer.user.UserService;
 
 import java.util.Map;
 
@@ -52,7 +61,127 @@ public class SopPaymentResponseController extends PaymentMethodCheckoutStepContr
 	AbhraIncFacadeService abhraIncFacadeService;
 
 	@Autowired
+	private CustomerAccountService customerAccountService;
+
+	@Autowired
 	private ModelService modelService;
+
+	@Autowired
+	private CommonI18NService commonI18NService;
+
+	@Autowired
+	private CustomerEmailResolutionService customerEmailResolutionService;
+
+	@Autowired
+	private UserService userService;
+
+	@Autowired
+	private CheckoutCustomerStrategy checkoutCustomerStrategy;
+
+
+
+	/**
+	 * @return the customerAccountService
+	 */
+	public CustomerAccountService getCustomerAccountService()
+	{
+		return customerAccountService;
+	}
+
+	/**
+	 * @param customerAccountService
+	 *           the customerAccountService to set
+	 */
+	public void setCustomerAccountService(final CustomerAccountService customerAccountService)
+	{
+		this.customerAccountService = customerAccountService;
+	}
+
+	/**
+	 * @return the checkoutCustomerStrategy
+	 */
+	@Override
+	public CheckoutCustomerStrategy getCheckoutCustomerStrategy()
+	{
+		return checkoutCustomerStrategy;
+	}
+
+	/**
+	 * @param checkoutCustomerStrategy
+	 *           the checkoutCustomerStrategy to set
+	 */
+	public void setCheckoutCustomerStrategy(final CheckoutCustomerStrategy checkoutCustomerStrategy)
+	{
+		this.checkoutCustomerStrategy = checkoutCustomerStrategy;
+	}
+
+	/**
+	 * @return the commonI18NService
+	 */
+	public CommonI18NService getCommonI18NService()
+	{
+		return commonI18NService;
+	}
+
+	/**
+	 * @param commonI18NService
+	 *           the commonI18NService to set
+	 */
+	public void setCommonI18NService(final CommonI18NService commonI18NService)
+	{
+		this.commonI18NService = commonI18NService;
+	}
+
+	/**
+	 * @return the customerEmailResolutionService
+	 */
+	public CustomerEmailResolutionService getCustomerEmailResolutionService()
+	{
+		return customerEmailResolutionService;
+	}
+
+	/**
+	 * @param customerEmailResolutionService
+	 *           the customerEmailResolutionService to set
+	 */
+	public void setCustomerEmailResolutionService(final CustomerEmailResolutionService customerEmailResolutionService)
+	{
+		this.customerEmailResolutionService = customerEmailResolutionService;
+	}
+
+	/**
+	 * @return the userService
+	 */
+	public UserService getUserService()
+	{
+		return userService;
+	}
+
+	/**
+	 * @param userService
+	 *           the userService to set
+	 */
+	public void setUserService(final UserService userService)
+	{
+		this.userService = userService;
+	}
+
+	/**
+	 * @return the modelService
+	 */
+	public ModelService getModelService()
+	{
+		return modelService;
+	}
+
+	/**
+	 * @param modelService
+	 *           the modelService to set
+	 */
+	public void setModelService(final ModelService modelService)
+	{
+		this.modelService = modelService;
+	}
 
 	@RequestMapping(value = "/response", method = RequestMethod.POST)
 	@RequireHardLogIn
@@ -61,42 +190,91 @@ public class SopPaymentResponseController extends PaymentMethodCheckoutStepContr
 			throws CMSItemNotFoundException
 	{
 		final Map<String, String> resultMap = getRequestParameterMap(request);
-		final String paymentMode = resultMap.get("yesno").toString();
-		if (paymentMode.equals("paypal"))
+		if (resultMap.get("yesno") != null)
 		{
-			final boolean savePaymentInfo = sopPaymentDetailsForm.isSavePaymentInfo()
-					|| getCheckoutCustomerStrategy().isAnonymousCheckout();
-			final PaymentSubscriptionResultData paymentSubscriptionResultData = this.getPaymentFacade()
-					.completeSopCreateSubscription(resultMap, savePaymentInfo);
+			final String paymentMode = resultMap.get("yesno").toString();
+			if (paymentMode.equals("paypal"))
+			{
 
-			if (paymentSubscriptionResultData.isSuccess())
-			{
-				createNewPaymentSubscription(paymentSubscriptionResultData);
-			}
-			else if (paymentSubscriptionResultData.getDecision() != null
-					&& "error".equalsIgnoreCase(paymentSubscriptionResultData.getDecision())
-					|| paymentSubscriptionResultData.getErrors() != null && !paymentSubscriptionResultData.getErrors().isEmpty())
-			{
-				return processErrors(sopPaymentDetailsForm, bindingResult, model, redirectAttributes, paymentSubscriptionResultData);
+				final CCPaymentInfoData ccPaymentInfoData = getCheckoutFacade().getCheckoutCart().getPaymentInfo();
+				if (ccPaymentInfoData == null)
+				{
+					final boolean savePaymentInfo = sopPaymentDetailsForm.isSavePaymentInfo()
+							|| getCheckoutCustomerStrategy().isAnonymousCheckout();
+					final PaymentSubscriptionResultData paymentSubscriptionResultData = this.getPaymentFacade()
+							.completeSopCreateSubscription(resultMap, savePaymentInfo);
+
+					if (paymentSubscriptionResultData.isSuccess())
+					{
+						createNewPaymentSubscription(paymentSubscriptionResultData);
+					}
+					else if (paymentSubscriptionResultData.getDecision() != null
+							&& "error".equalsIgnoreCase(paymentSubscriptionResultData.getDecision())
+							|| paymentSubscriptionResultData.getErrors() != null && !paymentSubscriptionResultData.getErrors().isEmpty())
+					{
+						return processErrors(sopPaymentDetailsForm, bindingResult, model, redirectAttributes,
+								paymentSubscriptionResultData);
+					}
+					else
+					{
+						// SOP ERROR!
+						LOGGER.error("Failed to create subscription.  Please check the log files for more information");
+						return REDIRECT_URL_ERROR + "/?decision=" + paymentSubscriptionResultData.getDecision() + "&reasonCode="
+								+ paymentSubscriptionResultData.getResultCode();
+					}
+				}
+				else
+				{
+					//
+
+					final AddressModel billingAddress = getModelService().create(AddressModel.class);
+					billingAddress.setFirstname(resultMap.get("billTo_firstName"));
+					billingAddress.setLastname(resultMap.get("billTo_lastName"));
+					billingAddress.setLine1(resultMap.get("billTo_street1"));
+					billingAddress.setLine2(resultMap.get("billTo_street2"));
+					billingAddress.setTown(resultMap.get("billTo_city"));
+					billingAddress.setPostalcode(resultMap.get("billTo_postalCode"));
+
+					if (StringUtils.isNotBlank(resultMap.get("billTo_titleCode")))
+					{
+						billingAddress.setTitle(getUserService().getTitleForCode(resultMap.get("billTo_titleCode")));
+					}
+
+					final CountryModel country = getCommonI18NService().getCountry(resultMap.get("billTo_country"));
+					billingAddress.setCountry(country);
+					if (StringUtils.isNotEmpty(resultMap.get("billTo_state")))
+					{
+						billingAddress.setRegion(
+								getCommonI18NService().getRegion(country, country.getIsocode() + "-" + resultMap.get("billTo_state")));
+					}
+					final CustomerModel currentUserForCheckout = getCurrentUserForCheckout();
+					final String email = getCustomerEmailResolutionService().getEmailForCustomer(currentUserForCheckout);
+					billingAddress.setEmail(email);
+					final CreditCardPaymentInfoModel ccPaymentInfoModel = getCustomerAccountService()
+							.getCreditCardPaymentInfoForCode(currentUserForCheckout, ccPaymentInfoData.getId());
+					ccPaymentInfoModel.setBillingAddress(billingAddress);
+					billingAddress.setOwner(ccPaymentInfoModel);
+					getModelService().saveAll(ccPaymentInfoModel, billingAddress);
+				}
 			}
 			else
 			{
-				// SOP ERROR!
-				LOGGER.error("Failed to create subscription.  Please check the log files for more information");
-				return REDIRECT_URL_ERROR + "/?decision=" + paymentSubscriptionResultData.getDecision() + "&reasonCode="
-						+ paymentSubscriptionResultData.getResultCode();
+				final CartModel cartmodel = abhraIncFacadeService.getCartDetails(getCartFacade().getSessionCart().getCode());
+				cartmodel.setIsCashOnDelivery(true);
+				modelService.save(cartmodel);
 			}
 		}
 		else
 		{
-			//
-
-			final CartModel cartmodel = abhraIncFacadeService.getCartDetails(getCartFacade().getSessionCart().getCode());
-			cartmodel.setIsCashOnDelivery(true);
-			modelService.save(cartmodel);
-
+			GlobalMessages.addErrorMessage(model, "checkout.multi.paymentDetails.notprovided");
+			return enterStep(model, redirectAttributes);
 		}
 		return getCheckoutStep().nextStep();
+	}
+
+	protected CustomerModel getCurrentUserForCheckout()
+	{
+		return getCheckoutCustomerStrategy().getCurrentUserForCheckout();
 	}
 
 	protected String processErrors(@Valid final SopPaymentDetailsForm sopPaymentDetailsForm, final BindingResult bindingResult,

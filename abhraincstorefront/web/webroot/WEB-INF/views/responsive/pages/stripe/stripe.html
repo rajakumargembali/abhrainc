@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Stripe Payment</title>
+
+		<meta charset="UTF-8">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="description">
+		<meta name="keywords" content="keywords">
+		<meta name="author" content="name">
+		<meta name="copyright" content="&copy; year name">
+
+		<link rel="icon" type="image/png" href="">
+        <!--<link rel="stylesheet" href="css/style.bk.css">-->
+
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+	</head>
+
+	<body id="checkout">
+
+        <div class="payment-errors"></div>
+        <form id="payment-form">
+            Credit Card Number: <input type="text" class="card-number"><br>
+            CVC: <input type="text" class="card-cvc"><br>
+            Expiry Month: <input type="text" class="card-expiry-month"><br>
+            Expiry Year: <input type="text" class="card-expiry-year"><br>
+            <input value="Pay!" id="payment-submit">
+            <!--<input type="submit" value="Pay!" id="payment-submit">-->
+        </form>
+
+		<!-- Scripts -->
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <!--<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>-->
+        <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+		<script src="stripe.js"></script>
+
+	</body>
+</html>

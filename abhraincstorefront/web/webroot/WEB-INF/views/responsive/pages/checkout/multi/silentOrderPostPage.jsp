@@ -68,7 +68,7 @@
 						 <input type="radio" name=paymentType value="1" />Cash On Delivery
         				 <input type="radio" name=paymentType value="2" />Pay Using Paypal
 						</div> -->
-						<script type="text/javascript">
+						<!-- <script type="text/javascript">
 						function yesnoCheck() {
     if (document.getElementById('yesCheck').checked) {
         document.getElementById('ifYes').style.display = 'block';
@@ -76,11 +76,28 @@
     else document.getElementById('ifYes').style.display = 'none';
 
 }
-			</script>
+			</script> -->
+			<script type="text/javascript">
+			var myWindow;
+		function yesnoCheck()
+		{
+   			if (document.getElementById('yesCheck').checked)
+   			{
+   				myWindow = window.open("https://localhost:9002/abhraincstorefront/electronics/en/silentOrderPostPage?site=electronics", "PayPal Payment Page", "scrollbars=1,resizable=1,height=520,width=520");
+  				}
+   			else
+   				document.getElementById('ifYes').style.display = 'none';
+		}
+		function closewindow() {
+			if(myWindow!=null)
+		    	myWindow.close();
+		}
+	</script>
+	<input type="button" onload="javascript:closewindow()" hidden="true"/>
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck" value="paypal">Pay Using Paypal
   <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck" value="cashondelivery">Cash On Delivery<br>
     <div id="ifYes" style="display:none">
-									<div class="form-group">
+									<%-- <div class="form-group">
 										<c:if test="${not empty paymentInfos}">
 											<button type="button"
 													class="btn btn-default btn-block js-saved-payments">
@@ -181,7 +198,7 @@
 												path="savePaymentInfo" inputCSS="" labelCSS=""
 												mandatory="false" tabindex="10" />
 									</sec:authorize>
-							        <hr />
+ --%>							        <hr />
 							        </div>
                                    <div class="headline">
                                         <spring:theme
