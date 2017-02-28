@@ -9,7 +9,7 @@
  * Information and shall use it only in accordance with the terms of the
  * license agreement you entered into with hybris.
  *
- *  
+ *
  */
 package com.abhrainc.storefront.security;
 
@@ -29,6 +29,8 @@ import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuc
 
 public class StorefrontLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler
 {
+	private final String homepageUrl = "/";
+
 	private GUIDCookieStrategy guidCookieStrategy;
 	private List<String> restrictedPages;
 
@@ -54,7 +56,8 @@ public class StorefrontLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandle
 	}
 
 	@Override
-	public void onLogoutSuccess(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException, ServletException
+	public void onLogoutSuccess(final HttpServletRequest request, final HttpServletResponse response,
+			final Authentication authentication) throws IOException, ServletException
 	{
 		getGuidCookieStrategy().deleteCookie(request, response);
 
@@ -76,6 +79,6 @@ public class StorefrontLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandle
 			}
 		}
 
-		return targetUrl;
+		return homepageUrl;
 	}
 }
