@@ -614,4 +614,8 @@
 		</constructor-arg>
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>		
 	</bean>
+	<bean id="assignToGroup" class="com.abhrainc.core.btg.condition.impl.AbhraAssignToGroup" scope="tenant">
+<property name="modelService" ref="modelService"/>
+<property name="userService" ref="userService"/>
+</bean>
 </beans>
